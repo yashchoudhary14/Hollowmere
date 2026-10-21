@@ -62,7 +62,11 @@ namespace Hollowmere.Tests
             {
                 Assert.That(h.Rooms.Length, Is.EqualTo(3), h.name);
                 Assert.That(h.HearthRoom, Is.Not.Null, h.name);
-                Assert.That(h.NoteSpots.Length, Is.EqualTo(3), h.name);
+                Assert.That(h.Notes.Length, Is.EqualTo(3), h.name);
+                Assert.That(h.Door, Is.Not.Null, h.name);
+                Assert.That(h.Hearth, Is.Not.Null, h.name);
+                Assert.That(h.FuseBox, Is.Not.Null, h.name);
+                Assert.That(h.Wardrobe, Is.Not.Null, h.name);
                 Assert.That(h.ItemSpots.Length, Is.GreaterThanOrEqualTo(3), h.name);
                 Assert.That(h.ShrineMarker, Is.Not.Null, h.name);
                 Assert.That(h.ShrineMarker.activeSelf, Is.False, "Shrine markers are hidden until the match plan says otherwise.");

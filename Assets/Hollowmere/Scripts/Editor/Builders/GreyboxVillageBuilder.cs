@@ -222,7 +222,8 @@ namespace Hollowmere.EditorTools
             Ball(doorVisual, "KnobIn", new Vector3(DoorWidth - 0.18f, 1.0f, -0.07f), 0.08f, Mat("Metal", new Color(0.22f, 0.23f, 0.25f), 0.5f), collider: false);
             ExcludeFromNavMesh(doorPivot.gameObject);
             AddCarvingObstacle(doorPivot.gameObject, new Vector3(DoorWidth * 0.5f, DoorHeight * 0.5f, 0f), new Vector3(DoorWidth, DoorHeight, 0.3f));
-            house.DoorPivot = doorPivot;
+            house.Door = doorPivot.gameObject.AddComponent<Door>();
+            house.Door.House = house;
 
             BuildHouseFront(root, def, house, hz);
 
@@ -237,23 +238,33 @@ namespace Hollowmere.EditorTools
             house.HearthRoom = hearthRoom;
 
             var interior = Node(root, "Interior");
-            BuildHearth(interior, hearthRoom.Bounds.center.x - origin.x, -inZ);
-            BuildFuseBox(interior, new Vector3(-2.3f, 1.5f, inZ));
-            BuildLightSwitch(interior, "Switch_Hall", new Vector3(1.15f, 1.3f, inZ));
-            BuildLightSwitch(interior, "Switch_HearthRoom", new Vector3(-4.3f, 1.3f, innerBack));
-            BuildLightSwitch(interior, "Switch_PuzzleRoom", new Vector3(4.3f, 1.3f, innerBack));
-            BuildWardrobe(interior, new Vector3(inX, 0f, -1.4f));
+            house.Hearth = BuildHearth(interior, house, hearthRoom.Bounds.center.x - origin.x, -inZ);
+            house.FuseBox = BuildFuseBox(interior, house, new Vector3(-2.3f, 1.5f, inZ));
+            BuildLightSwitch(interior, "Switch_Hall", new Vector3(1.15f, 1.3f, inZ), hall);
+            BuildLightSwitch(interior, "Switch_HearthRoom", new Vector3(-4.3f, 1.3f, innerBack), hearthRoom);
+            BuildLightSwitch(interior, "Switch_PuzzleRoom", new Vector3(4.3f, 1.3f, innerBack), puzzleRoom);
+            house.Wardrobe = BuildWardrobe(interior, new Vector3(inX, 0f, -1.4f));
 
-            var noteSpots = new List<Transform>();
+            // The hearth room is a safe zone while the fire burns: a carving obstacle keeps the Hollow's paths out.
+            var zone = Node(root, "HearthSafeZone", root.InverseTransformPoint(hearthRoom.Bounds.center));
+            var zoneObstacle = zone.gameObject.AddComponent<NavMeshObstacle>();
+            zoneObstacle.shape = NavMeshObstacleShape.Box;
+            zoneObstacle.size = hearthRoom.Bounds.size;
+            zoneObstacle.carving = true;
+            zoneObstacle.carveOnlyStationary = true;
+            zoneObstacle.enabled = false; // MatchDirector lights the hearth
+            house.Hearth.SafeZone = zoneObstacle;
+
+            var notes = new List<Readable>();
             var itemSpots = new List<Transform>();
-            noteSpots.Add(BuildTable(interior, "Table_Hall", new Vector3(-4.4f, 0f, 2.7f)));
-            noteSpots.Add(BuildTable(interior, "Table_HearthRoom", new Vector3(-5.0f, 0f, -1.0f)));
-            noteSpots.Add(BuildTable(interior, "Table_PuzzleRoom", new Vector3(1.0f, 0f, -2.5f)));
+            notes.Add(BuildTable(interior, "Table_Hall", new Vector3(-4.4f, 0f, 2.7f)).gameObject.AddComponent<Readable>());
+            notes.Add(BuildTable(interior, "Table_HearthRoom", new Vector3(-5.0f, 0f, -1.0f)).gameObject.AddComponent<Readable>());
+            notes.Add(BuildTable(interior, "Table_PuzzleRoom", new Vector3(1.0f, 0f, -2.5f)).gameObject.AddComponent<Readable>());
             var sideTable = BuildTable(interior, "SideTable_Hall", new Vector3(4.6f, 0f, 2.7f), paper: false);
             itemSpots.Add(Node(interior, "ItemSpot_Mantel", new Vector3(hearthRoom.Bounds.center.x - origin.x + 0.75f, 1.43f, -inZ + 0.45f)));
             itemSpots.Add(Node(interior, "ItemSpot_HallTable", interior.InverseTransformPoint(sideTable.position)));
             itemSpots.Add(Node(interior, "ItemSpot_PuzzleTable", new Vector3(1.25f, 0.76f, -2.35f)));
-            house.NoteSpots = noteSpots.ToArray();
+            house.Notes = notes.ToArray();
             house.ItemSpots = itemSpots.ToArray();
 
             // DESIGN.md "Items and tools": matches in every house; batteries in drawers.
@@ -354,11 +365,11 @@ namespace Hollowmere.EditorTools
             room.IsHearthRoom = hearthRoom;
             room.Bounds = new Bounds(t.position + Vector3.up * size.y * 0.5f, size);
             room.Light = PointLight(t, "CeilingLight", new Vector3(0f, HouseH - 0.25f, 0f), new Color(1f, 0.82f, 0.6f), 7f, 1.6f);
-            Ball(t, "Bulb", new Vector3(0f, HouseH - 0.12f, 0f), 0.14f, Mat("Bulb", new Color(1f, 0.95f, 0.8f), 0.5f, new Color(2f, 1.8f, 1.4f)), collider: false);
+            room.Bulb = Ball(t, "Bulb", new Vector3(0f, HouseH - 0.12f, 0f), 0.14f, Mat("Bulb", new Color(1f, 0.95f, 0.8f), 0.5f, new Color(2f, 1.8f, 1.4f)), collider: false);
             return room;
         }
 
-        static void BuildHearth(Transform interior, float x, float backWallZ)
+        static Hearth BuildHearth(Transform interior, House house, float x, float backWallZ)
         {
             var stone = Mat("HearthStone", new Color(0.35f, 0.33f, 0.31f));
             var hearth = Node(interior, "Hearth", new Vector3(x, 0f, backWallZ));
@@ -371,31 +382,43 @@ namespace Hollowmere.EditorTools
             Ball(fire, "Flames", Vector3.zero, 0.38f, Mat("Fire", new Color(1f, 0.5f, 0.15f), 0.2f, new Color(4f, 1.6f, 0.4f)), collider: false);
             PointLight(fire, "FireLight", new Vector3(0f, 0.3f, 0.2f), new Color(1f, 0.55f, 0.25f), 6f, 2.5f);
             fire.gameObject.SetActive(false);
+
+            var component = hearth.gameObject.AddComponent<Hearth>();
+            component.House = house;
+            component.Fire = fire.gameObject;
+            return component;
         }
 
-        static void BuildFuseBox(Transform interior, Vector3 localPos)
+        static FuseBox BuildFuseBox(Transform interior, House house, Vector3 localPos)
         {
             var box = Node(interior, "FuseBox", localPos, Quaternion.Euler(0f, 180f, 0f)); // +z points into the hall
             var visual = Node(box, "Visual");
             Box(visual, "Case", new Vector3(0f, 0f, 0.07f), new Vector3(0.45f, 0.6f, 0.14f), Mat("Metal", new Color(0.22f, 0.23f, 0.25f), 0.5f));
             var lever = Node(box, "Lever", new Vector3(0.12f, 0f, 0.16f));
             Box(lever, "Handle", new Vector3(0f, 0.06f, 0f), new Vector3(0.05f, 0.14f, 0.05f), Mat("Dark", new Color(0.08f, 0.08f, 0.08f)), false);
+            var fuse = box.gameObject.AddComponent<FuseBox>();
+            fuse.House = house;
+            fuse.Lever = lever;
+            return fuse;
         }
 
-        static void BuildLightSwitch(Transform interior, string name, Vector3 localPos)
+        static void BuildLightSwitch(Transform interior, string name, Vector3 localPos, Room room)
         {
             var sw = Node(interior, name, localPos, Quaternion.Euler(0f, 180f, 0f));
             Box(Node(sw, "Visual"), "Plate", new Vector3(0f, 0f, 0.015f), new Vector3(0.09f, 0.13f, 0.03f), Mat("Cream", new Color(0.90f, 0.87f, 0.78f)));
+            sw.gameObject.AddComponent<LightSwitch>().Room = room;
         }
 
-        static void BuildWardrobe(Transform interior, Vector3 localPos)
+        static HidingSpot BuildWardrobe(Transform interior, Vector3 localPos)
         {
             var wardrobe = Node(interior, "Wardrobe", localPos, Quaternion.Euler(0f, -90f, 0f)); // +z points west, into the room
             var visual = Node(wardrobe, "Visual");
             var wood = Mat("Wood", new Color(0.25f, 0.17f, 0.11f));
             Box(visual, "Body", new Vector3(0f, 1.05f, 0.33f), new Vector3(1.2f, 2.1f, 0.65f), wood);
             Box(visual, "DoorGap", new Vector3(0f, 1.05f, 0.66f), new Vector3(0.02f, 1.9f, 0.01f), Mat("Soot", new Color(0.04f, 0.035f, 0.03f)), false);
-            Node(wardrobe, "Inside", new Vector3(0f, 0f, 0.33f));
+            var spot = wardrobe.gameObject.AddComponent<HidingSpot>();
+            spot.Inside = Node(wardrobe, "Inside", new Vector3(0f, 0f, 0.33f));
+            return spot;
         }
 
         /// <summary>A small table; returns the note spot on top (a sheet of paper unless paper is false).</summary>
@@ -524,6 +547,7 @@ namespace Hollowmere.EditorTools
             {
                 var letter = Node(board, $"Letter_{i + 1}", new Vector3(-1.1f + 1.1f * (i % 3), i < 3 ? 1.88f : 1.3f, -0.05f));
                 Box(Node(letter, "Visual"), "Envelope", Vector3.zero, new Vector3(0.36f, 0.26f, 0.01f), Mat("Paper", new Color(0.88f, 0.85f, 0.76f)));
+                letter.gameObject.AddComponent<Readable>().Set("A sealed letter", "", "Read the letter");
             }
 
             // Bell tower on the square.
@@ -576,6 +600,7 @@ namespace Hollowmere.EditorTools
             Box(visual, "Top", new Vector3(0f, 1.15f, 0f), new Vector3(0.7f, 0.05f, 0.5f), wood, true, Quaternion.Euler(-15f, 0f, 0f));
             Box(visual, "Book", new Vector3(0f, 1.2f, 0.01f), new Vector3(0.48f, 0.06f, 0.34f), Mat("BookLeather", new Color(0.32f, 0.1f, 0.08f)), true, Quaternion.Euler(-15f, 0f, 0f));
             Box(visual, "Chain", new Vector3(0.2f, 0.75f, 0f), new Vector3(0.03f, 0.75f, 0.03f), Mat("Metal", new Color(0.22f, 0.23f, 0.25f), 0.5f), false);
+            lectern.gameObject.AddComponent<Readable>().Set("The Ritual Book", "", "Read the Ritual Book");
 
             return Node(chapel, "HollowSpawn", new Vector3(-4.6f, 0f, 5f));
         }

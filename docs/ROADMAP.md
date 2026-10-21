@@ -44,10 +44,10 @@ One player can play a complete match, from arrival to results, in a greybox vill
 
 **World objects**
 
-- [ ] Doors: crouch-open is quiet, a normal open creaks. Latching at dusk.
+- [ ] Doors: holding E opens slowly and quietly, a quick open creaks (DESIGN.md "Player systems"). Latching at dusk.
 - [ ] Readables: notes, letters on the notice board, the Ritual Book.
-- [ ] Fuse box and room lights. Hearth (lit or cold) with a safe zone.
-- [ ] Wardrobe hiding with hold-breath (Space, 8 s, then a gasp).
+- [x] Fuse box and room lights. Hearth (lit or cold) with a safe zone.
+- [x] Wardrobe hiding with hold-breath (Space, 8 s, then a gasp).
 
 **Match flow** [Core loop, Dusk, Night phase]
 

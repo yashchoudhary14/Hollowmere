@@ -48,6 +48,9 @@ namespace Hollowmere
 
         /// <summary>True while hiding; movement stops but the view can peek.</summary>
         public bool InHiding;
+        public HidingSpot Hiding;
+        public bool HoldingBreath;
+        public float Breath01;
 
         public bool CanMove => Condition == PlayerCondition.Alive && !PanelOpen && !Paused && !Frozen && !InHiding;
         public bool CanLook => Condition == PlayerCondition.Alive && !PanelOpen && !Paused && !UiCapture;

@@ -29,6 +29,7 @@ namespace Hollowmere
                 return;
             }
             if (!Player.IsAlive) return;
+            if (Player.InHiding) DrawHidingView();
             DrawCrosshair();
             DrawPrompt();
             DrawBars();
@@ -177,6 +178,22 @@ namespace Hollowmere
                 Shadowed(new Rect(x, y, Px(600), line), text, i == inv.Selected ? _text : _small);
                 y -= line;
             }
+        }
+
+        /// <summary>Inside the wardrobe: darkness with a slit of view through the doors, and the breath meter.</summary>
+        void DrawHidingView()
+        {
+            float slit = Screen.width * 0.16f;
+            float side = (Screen.width - slit) * 0.5f;
+            var dark = new Color(0f, 0f, 0f, 0.96f);
+            Fill(new Rect(0f, 0f, side, Screen.height), dark);
+            Fill(new Rect(side + slit, 0f, side, Screen.height), dark);
+
+            float w = Px(260), h = Px(8), y = Screen.height * 0.78f;
+            string label = Player.HoldingBreath ? "Holding your breath" : "Hold Space to hold your breath";
+            Shadowed(new Rect(0f, y - Px(30), Screen.width, Px(26)), label, _hint);
+            if (Player.Breath01 > 0f)
+                Bar(new Rect((Screen.width - w) * 0.5f, y, w, h), 1f - Player.Breath01, new Color(0.7f, 0.8f, 0.85f));
         }
 
         void DrawMessages()
