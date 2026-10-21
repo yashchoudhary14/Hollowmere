@@ -65,14 +65,30 @@ namespace Hollowmere.Tests
         }
 
         [Test]
-        public void Chant_StartsAgainFromZero_WhenEveryCandleIsOut()
+        public void Chant_StartsAgainFromZero_WhenEveryCandleStaysOutFor3Seconds()
         {
             var chant = new ChantState();
             chant.Begin();
             chant.Tick(40f, true, 2);
-            Assert.That(chant.Tick(0.1f, true, 0), Is.EqualTo(ChantStatus.Reset));
+            Assert.That(chant.Tick(1f, true, 0), Is.EqualTo(ChantStatus.Guttering));
+            Assert.That(chant.Tick(1f, true, 0), Is.EqualTo(ChantStatus.Guttering));
+            Assert.That(chant.Progress, Is.EqualTo(40f), "No progress while guttering, but nothing lost yet.");
+            Assert.That(chant.Tick(1f, true, 0), Is.EqualTo(ChantStatus.Reset));
             Assert.That(chant.Progress, Is.EqualTo(0f));
             Assert.That(chant.Tick(1f, true, 1), Is.EqualTo(ChantStatus.Chanting), "Relighting one candle starts it again.");
+        }
+
+        [Test]
+        public void Chant_AQuickRelight_SavesTheProgress()
+        {
+            var chant = new ChantState();
+            chant.Begin();
+            chant.Tick(30f, true, 1);
+            chant.Tick(2.5f, true, 0);
+            Assert.That(chant.Tick(1f, true, 1), Is.EqualTo(ChantStatus.Chanting));
+            Assert.That(chant.Progress, Is.EqualTo(31f));
+            chant.Tick(2.5f, true, 0);
+            Assert.That(chant.Tick(1f, true, 0), Is.EqualTo(ChantStatus.Reset), "The grace starts over after each relight, then runs out.");
         }
 
         [Test]

@@ -4,8 +4,9 @@ namespace Hollowmere
 {
     /// <summary>
     /// The stone circle and its candles. With every part on the altar and every living player inside, the chant
-    /// begins: 60 seconds, paused while anyone living is outside, back to zero whenever every candle is out.
-    /// When it completes the gate opens. Design: docs/DESIGN.md "The Ritual of Passage".
+    /// begins: 60 seconds, paused while anyone living is outside, back to zero if every candle stays out for 3 s.
+    /// While it lasts the stones protect whoever stands inside them. When it completes the gate opens.
+    /// Design: docs/DESIGN.md "The Ritual of Passage" and "Decisions".
     /// </summary>
     public class RitualCircle : MonoBehaviour
     {
@@ -37,6 +38,9 @@ namespace Hollowmere
             d.y = 0f;
             return d.magnitude <= Radius;
         }
+
+        /// <summary>During the chant the Hollow can't grab anyone inside the stones (docs/DESIGN.md "Decisions").</summary>
+        public bool Shelters(Vector3 worldPos) => Chant.Started && !Chant.Complete && Contains(worldPos);
 
         public int LitCount
         {
@@ -106,9 +110,10 @@ namespace Hollowmere
             switch (status)
             {
                 case ChantStatus.Paused: _director.NotifyAll("The chant falters. Everyone living must stand within the stones."); break;
-                case ChantStatus.Reset: _director.NotifyAll("Every candle is out. The chant starts again from the beginning."); break;
+                case ChantStatus.Guttering: _director.NotifyAll("Every candle is out. Relight one, quickly."); break;
+                case ChantStatus.Reset: _director.NotifyAll("The chant dies. It must start again from the beginning."); break;
                 case ChantStatus.Chanting:
-                    if (Status == ChantStatus.Paused || Status == ChantStatus.Reset) _director.NotifyAll("The chant goes on.");
+                    if (Status != ChantStatus.Waiting) _director.NotifyAll("The chant goes on.");
                     break;
             }
         }

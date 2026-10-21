@@ -11,6 +11,7 @@ namespace Hollowmere
     {
         public MatchDirector Director;
         public PlayerAgent Player;
+        public HollowAI Hollow;
         public bool Visible;
 
         /// <summary>Other systems (the Hollow) add their own lines.</summary>
@@ -36,6 +37,11 @@ namespace Hollowmere
             Player.DebugCapture = Visible;
             if (GameInput.Pressed(GameKey.DebugSkip)) Director.SkipToNextPhase();
             if (GameInput.Pressed(GameKey.DebugTeleportHome)) Director.TeleportHome(Player);
+            if (GameInput.Pressed(GameKey.DebugFreezeMonster) && Hollow != null)
+            {
+                Hollow.Frozen = !Hollow.Frozen;
+                Player.Notify(Hollow.Frozen ? "Debug: the Hollow is frozen." : "Debug: the Hollow moves again.");
+            }
         }
 
         void SyncFields()
@@ -58,6 +64,7 @@ namespace Hollowmere
 
             _lines.Clear();
             Director.AppendDebug(_lines);
+            if (Hollow != null) Hollow.AppendDebug(_lines);
             ExtraLines?.Invoke(_lines);
 
             GUILayout.BeginArea(new Rect(16f, 16f, Mathf.Max(420f, Screen.width * 0.42f), Screen.height - 32f), GUI.skin.box);

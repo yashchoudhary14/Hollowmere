@@ -692,6 +692,8 @@ Your checklist answers and the design conversation are now built into the sectio
 | Starting the ritual | Any time once all parts are placed and every living player is in the circle |
 | Looking back on the Crossing | The Hollow takes you; you join the villagers |
 | Restoring power | Hold interact at a tripped fuse box (2 s, a little noise); fuse items may come later |
+| Chant reset | One candle per part; the chant only resets if every candle stays out for 3 seconds, so a quick relight saves it |
+| The Hollow during the chant | It snuffs candles and hunts anyone outside the stones, but can't grab players standing inside the circle |
 
 - [ ] **Ritual circle:** must every living player stand in it, or is one enough?
 - [ ] **Shrine houses:** random 3–4 each match, or always the same houses?

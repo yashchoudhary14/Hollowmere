@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 in progress. A full solo match can be won end to end; next is the Hollow v1, then the remaining debug keys and tests, then the build and playtest.
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests). Next: the Windows build and the user's playtest of a full solo match.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -70,19 +70,19 @@ One player can play a complete match, from arrival to results, in a greybox vill
 
 **The Hollow v1** [The monster]
 
-- [ ] NavMeshAgent with states Dormant, Roam, Investigate, TestHouse, Hunt, Grab, Ritual, Banished.
-- [ ] Hearing through `NoiseSystem`, with wall occlusion (40 m outdoors, about 15 m through walls). Sight 20 m, needing light or a target within 3 m.
-- [ ] Entry rules by act. Lit-hearth safe zones. Grab, then death after 5 s.
-- [ ] Snuffs candles during the chant. Banished when the gate opens.
+- [x] NavMeshAgent with states Dormant, Roam, Investigate, TestHouse, Hunt, Grab, Ritual, Banished.
+- [x] Hearing through `NoiseSystem`, with wall occlusion (40 m outdoors, about 15 m through walls). Sight 20 m, needing light or a target within 3 m.
+- [x] Entry rules by act. Lit-hearth safe zones. Grab, then death after 5 s.
+- [x] Snuffs candles during the chant. Banished when the gate opens.
 
 **HUD and debug**
 
-- [ ] OnGUI HUD: crosshair, prompt and hold bar, phase and timer (debug), inventory, stamina, panels, results.
-- [ ] F1 debug overlay (answers, monster state), F2 skip phase, F3 freeze the Hollow, F4 teleport to your house.
+- [x] OnGUI HUD: crosshair, prompt and hold bar, phase and timer (debug), inventory, stamina, panels, results.
+- [x] F1 debug overlay (answers, monster state), F2 skip phase, F3 freeze the Hollow, F4 teleport to your house.
 
 **Tests**
 
-- [ ] Altar order logic, puzzle answer checks, phase timeline maths.
+- [x] Altar order logic, puzzle answer checks, phase timeline maths.
 
 **Done when:** the user plays a full solo match in the greybox (read letter, find house, solve puzzle, carry part, place it, chant, cross, results) and can also lose to the Hollow.
 

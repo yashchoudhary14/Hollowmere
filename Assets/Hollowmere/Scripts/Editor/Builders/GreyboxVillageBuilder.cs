@@ -71,7 +71,7 @@ namespace Hollowmere.EditorTools
 
             var lighting = BuildLights();
             var player = BuildPlayer(layout.PlayerSpawn);
-            BuildHollow(layout.HollowNightSpawn);
+            var hollow = BuildHollow(layout.HollowNightSpawn, layout);
             BuildShotCameras();
             ApplyRenderSettings();
 
@@ -91,14 +91,17 @@ namespace Hollowmere.EditorTools
             crossing.Director = director;
             crossing.Layout = layout;
             crossing.Lighting = lighting;
+            hollow.Director = director;
 
             var ui = new GameObject("HUD");
             var hud = ui.AddComponent<Hud>();
             hud.Player = player;
             hud.Director = director;
+            hud.Hollow = hollow;
             var overlay = ui.AddComponent<DebugOverlay>();
             overlay.Player = player;
             overlay.Director = director;
+            overlay.Hollow = hollow;
             AddNavMeshSurface(village);
             BakeNavMesh();
 
@@ -841,7 +844,7 @@ namespace Hollowmere.EditorTools
             return pickup;
         }
 
-        static void BuildHollow(Transform spawn)
+        static HollowAI BuildHollow(Transform spawn, VillageLayout layout)
         {
             var hollow = new GameObject("Hollow");
             hollow.transform.SetPositionAndRotation(spawn.position, spawn.rotation);
@@ -867,6 +870,14 @@ namespace Hollowmere.EditorTools
             var eyes = Mat("HollowEyes", new Color(0.9f, 0.9f, 0.85f), 0.5f, new Color(1.5f, 1.5f, 1.3f));
             Ball(visual, "EyeW", new Vector3(-0.08f, 2.33f, 0.17f), 0.05f, eyes, collider: false);
             Ball(visual, "EyeE", new Vector3(0.08f, 2.33f, 0.17f), 0.05f, eyes, collider: false);
+
+            var ai = hollow.AddComponent<HollowAI>();
+            ai.Layout = layout;
+            ai.Eyes = Node(hollow.transform, "Eyes", new Vector3(0f, 2.33f, 0.2f));
+            ai.Visual = visual.gameObject;
+            // Ignore Raycast: its own body never blocks its sight and hearing checks, or the player's interact ray.
+            foreach (var t in hollow.GetComponentsInChildren<Transform>(true)) t.gameObject.layer = 2;
+            return ai;
         }
 
         /// <summary>Disabled cameras for tools/unity.ps1 shot -Camera &lt;name&gt;.</summary>

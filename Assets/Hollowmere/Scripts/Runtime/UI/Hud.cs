@@ -10,6 +10,7 @@ namespace Hollowmere
     {
         public PlayerAgent Player;
         public MatchDirector Director;
+        public HollowAI Hollow;
 
         GUIStyle _text, _center, _small, _hint, _title, _body;
         Texture2D _pixel;
@@ -35,6 +36,11 @@ namespace Hollowmere
                 return;
             }
             if (!Player.IsAlive) return;
+            if (Player.Condition == PlayerCondition.Grabbed)
+            {
+                DrawGrabbed();
+                return;
+            }
             if (Player.InHiding) DrawHidingView();
             DrawChant();
             DrawCrosshair();
@@ -203,6 +209,16 @@ namespace Hollowmere
                 Bar(new Rect((Screen.width - w) * 0.5f, y, w, h), 1f - Player.Breath01, new Color(0.7f, 0.8f, 0.85f));
         }
 
+        /// <summary>Held by the Hollow: five seconds for a teammate to save you (rescues come with multiplayer).</summary>
+        void DrawGrabbed()
+        {
+            float held = Hollow != null ? Hollow.GrabProgress01(Player) : 0f;
+            Fill(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0.25f, 0f, 0f, 0.25f + 0.5f * held));
+            DrawCentered("It has you.", Screen.height * 0.42f);
+            float w = Px(300);
+            Bar(new Rect((Screen.width - w) * 0.5f, Screen.height * 0.42f + Px(48), w, Px(8)), 1f - held, new Color(0.8f, 0.2f, 0.15f));
+        }
+
         void DrawMessages()
         {
             float y = Px(24);
@@ -251,7 +267,8 @@ namespace Hollowmere
             switch (circle.Status)
             {
                 case ChantStatus.Paused: text = "The chant falters. Everyone into the circle."; break;
-                case ChantStatus.Reset: text = "Every candle is out. Relight one with your matches."; break;
+                case ChantStatus.Guttering: text = "Every candle is out. Relight one, quickly!"; break;
+                case ChantStatus.Reset: text = "The chant died. Relight a candle to start again."; break;
                 default: text = $"The chant: {Mathf.CeilToInt(circle.Chant.Seconds - circle.Chant.Progress)} s"; break;
             }
             float w = Px(360);

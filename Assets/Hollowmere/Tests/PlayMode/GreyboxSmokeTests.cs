@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
@@ -39,6 +40,7 @@ namespace Hollowmere.Tests
             yield return null;
 
             var d = Object.FindAnyObjectByType<MatchDirector>();
+            FreezeHollow();
             Assert.That(d.Plan, Is.Not.Null);
             foreach (var h in d.Houses)
             {
@@ -83,6 +85,7 @@ namespace Hollowmere.Tests
             yield return null;
             var d = Object.FindAnyObjectByType<MatchDirector>();
             var player = Object.FindAnyObjectByType<PlayerAgent>();
+            FreezeHollow();
 
             var codeHouse = d.Houses.First(h => h.Def.Puzzle == PuzzleKind.CodeLock);
             var codeRig = (CodeLockPuzzle)codeHouse.Puzzle;
@@ -151,7 +154,7 @@ namespace Hollowmere.Tests
 
             d.Circle.SnuffAll();
             yield return null;
-            Assert.That(d.Circle.Status, Is.EqualTo(ChantStatus.Reset));
+            Assert.That(d.Circle.Status, Is.EqualTo(ChantStatus.Guttering), "All out: a few seconds to relight before it resets.");
             var candle = d.Circle.Candles[0];
             Assert.That(candle.CanInteract(player), Is.True, "Relight from inside the circle with a match.");
             int matches = player.Inventory.Matches;
@@ -188,6 +191,65 @@ namespace Hollowmere.Tests
             Assert.That(d.Outcome, Is.EqualTo(MatchOutcome.Lost));
         }
 
+        /// <summary>DESIGN.md "Dusk transition": a player outside when the bell ends is hunted at once; a grab kills in 5 s.</summary>
+        [UnityTest]
+        public IEnumerator CaughtOutsideAtNightfall_TheHollowHuntsGrabsAndKills()
+        {
+            SceneManager.LoadScene("Greybox");
+            yield return null;
+            yield return null;
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            var player = Object.FindAnyObjectByType<PlayerAgent>();
+            var hollow = Object.FindAnyObjectByType<HollowAI>();
+            Assert.That(hollow.State, Is.EqualTo(HollowState.Dormant), "It sleeps through the day.");
+
+            for (int i = 0; i < 3; i++) d.SkipToNextPhase(); // day, dusk, night
+            yield return null;
+            Assert.That(d.HouseAt(player.transform.position), Is.Null, "The player is out on the square.");
+            Assert.That(hollow.State, Is.EqualTo(HollowState.Hunt));
+            Assert.That(hollow.Target, Is.EqualTo(player));
+
+            float give = Time.time + 40f;
+            while (player.Condition == PlayerCondition.Alive && Time.time < give) yield return null;
+            Assert.That(player.Condition, Is.EqualTo(PlayerCondition.Grabbed), "It should reach and grab the player.");
+
+            yield return new WaitForSeconds(5.5f);
+            Assert.That(player.Condition, Is.EqualTo(PlayerCondition.Dead));
+            Assert.That(d.Outcome, Is.EqualTo(MatchOutcome.Lost));
+        }
+
+        /// <summary>DESIGN.md "The monster": it cannot cross a lit hearth. Doors open, the hall is reachable, the hearth room isn't.</summary>
+        [UnityTest]
+        public IEnumerator LitHearthRoom_IsShutToTheHollow_EvenWithTheDoorOpen()
+        {
+            SceneManager.LoadScene("Greybox");
+            yield return null;
+            yield return null;
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            FreezeHollow();
+            var home = d.HomeOf(Object.FindAnyObjectByType<PlayerAgent>());
+            Assert.That(home.Hearth.Lit, Is.True);
+            home.Door.Swing(true, 0.1f, 0f);
+            yield return new WaitForSeconds(1.5f); // carving updates once the door has stopped
+
+            var outside = home.Door.transform.position + home.transform.forward * 3f;
+            Assert.That(PathStatus(outside, home.Rooms[0].Bounds.center), Is.EqualTo(NavMeshPathStatus.PathComplete), "The hall");
+            Assert.That(PathStatus(outside, home.HearthRoom.Bounds.center), Is.Not.EqualTo(NavMeshPathStatus.PathComplete), "The hearth room");
+        }
+
+        static NavMeshPathStatus PathStatus(Vector3 from, Vector3 to)
+        {
+            NavMesh.SamplePosition(from, out var a, 3f, NavMesh.AllAreas);
+            to.y = from.y;
+            var path = new NavMeshPath();
+            NavMesh.CalculatePath(a.position, to, NavMesh.AllAreas, path);
+            if (path.status == NavMeshPathStatus.PathComplete && path.corners.Length > 0 && Vector3.Distance(path.corners[^1], to) > 0.6f)
+                return NavMeshPathStatus.PathPartial;
+            return path.status;
+        }
+
+        static void FreezeHollow() => Object.FindAnyObjectByType<HollowAI>().Frozen = true;
+
         static IEnumerator StartNightOfTwoPlayerMatch()
         {
             MatchLaunch.Next = new MatchLaunch.Settings { Seed = 2026, Players = 2, ClockSpeed = 1f };
@@ -195,6 +257,7 @@ namespace Hollowmere.Tests
             yield return null;
             yield return null;
             var d = Object.FindAnyObjectByType<MatchDirector>();
+            FreezeHollow();
             Assert.That(d.Plan.PlayerCount, Is.EqualTo(2));
             for (int i = 0; i < 3; i++) d.SkipToNextPhase(); // day, dusk, night
             yield return null;
