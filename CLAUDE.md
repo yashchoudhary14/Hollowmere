@@ -49,6 +49,8 @@ Commands can take several minutes. Wait for them to finish; don't start a second
 - Builders are idempotent: running one again rebuilds its output from scratch. Never hand-write `.unity`, `.prefab` or `.asset` YAML, and never edit `.meta` files or GUIDs.
 - Placeholder art is primitives with URP Lit materials. Give builders clear prefab slots so real art can replace primitives later (milestone 7) without code changes.
 - After generating a scene, take a `shot` and look at it before telling the user it's ready.
+- Surface art comes from `Art/MaterialLibrary.asset` (seeded by `MaterialLibraryBuilder`, keyed by `BuilderKit.Mat()` names; untick an entry's Auto to keep hand edits). `BuilderKit.Box`/`Cyl` use cached meshes with UVs in metres (`Art/Meshes/BuilderMeshes.asset`); call `BuilderKit.End()` before saving a scene.
+- Art passes must not move gameplay. `LookPassTests` compares every collider, NavMesh obstacle and Hollowmere component transform against `Tests/EditMode/GreyboxLayout.txt`. Only re-record it (`run -Method Hollowmere.EditorTools.LayoutFingerprint.Record`) for a layout change the user asked for.
 
 ## Code layout
 

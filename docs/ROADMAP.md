@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–3 done; next: step 4, materials).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–4 done; next: step 5, props and set dressing).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -111,8 +111,8 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **4. Materials**
 
-- [ ] `MaterialLibrary` ScriptableObject keyed by the builder's existing material names (HouseWall, InnerWall, Roof, Floor, Ceiling, Road, Ground, Paving, Stone, Wood, ChestWood, GateWood, BridgeWood, Metal, HearthStone, Chimney, ChapelWall, Trunk, Leaves, Door_*, ...): base, normal, metallic/smoothness and occlusion maps, tint and metres-per-tile. `BuilderKit.Mat()` resolves through it and falls back to today's flat colour when a texture is missing.
-- [ ] World-space tiling: `BuilderKit.Box()` uses cached box meshes whose UVs are in metres (one generated mesh asset per distinct size), so a 1 m patch of wall looks the same on a 12 m wall as on a 3 m one. Box colliders stay exactly as they are.
+- [x] `MaterialLibrary` ScriptableObject keyed by the builder's existing material names (HouseWall, InnerWall, Roof, Floor, Ceiling, Road, Ground, Paving, Stone, Wood, ChestWood, GateWood, BridgeWood, Metal, HearthStone, Chimney, ChapelWall, Trunk, Leaves, Door_*, ...): base, normal, metallic/smoothness and occlusion maps, tint and metres-per-tile. `BuilderKit.Mat()` resolves through it and falls back to today's flat colour when a texture is missing. Seeded by `MaterialLibraryBuilder` (entries with Auto off keep hand edits); door materials scale their texture to the builder's door colour, so door colour still reads as a clue. New keys: ChapelRoof, StandingStone, Planks, Bark, Cloth, Grass, Garden, LeafLitter.
+- [x] World-space tiling: `BuilderKit.Box()` uses cached box meshes whose UVs are in metres (one generated mesh per distinct size, all in `Art/Meshes/BuilderMeshes.asset`), so a 1 m patch of wall looks the same on a 12 m wall as on a 3 m one. Cylinders too (sizes rounded to 5 cm across and 25 cm up). Box colliders stay exactly as they are: `LookPassTests` checks every collider, NavMesh obstacle and gameplay transform against a snapshot of the M1 scene (`Tests/EditMode/GreyboxLayout.txt`).
 
 **5. Props and dressing**
 

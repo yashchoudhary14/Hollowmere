@@ -104,6 +104,7 @@ namespace Hollowmere.EditorTools
             overlay.Hollow = hollow;
             AddNavMeshSurface(village);
             BakeNavMesh();
+            End();
 
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
@@ -591,7 +592,7 @@ namespace Hollowmere.EditorTools
 
             // Stone circle and its six candles, one per possible part.
             var circleNode = Node(square, "StoneCircle", AltarPos);
-            var stone = Mat("Stone", new Color(0.45f, 0.44f, 0.42f));
+            var stone = Mat("StandingStone", new Color(0.45f, 0.44f, 0.42f));
             for (int k = 0; k < 12; k++)
             {
                 float a = k * 30f * Mathf.Deg2Rad;
@@ -639,13 +640,14 @@ namespace Hollowmere.EditorTools
             // Bell tower on the square.
             var tower = Node(square, "BellTower", new Vector3(26f, 0f, 132f));
             var towerVisual = Node(tower, "Visual");
-            Box(towerVisual, "Shaft", new Vector3(0f, 8f, 0f), new Vector3(4f, 16f, 4f), stone);
+            var masonry = Mat("Stone", new Color(0.45f, 0.44f, 0.42f));
+            Box(towerVisual, "Shaft", new Vector3(0f, 8f, 0f), new Vector3(4f, 16f, 4f), masonry);
             for (int c = 0; c < 4; c++)
             {
                 float px = (c % 2 == 0 ? -1.75f : 1.75f), pz = (c < 2 ? -1.75f : 1.75f);
-                Box(towerVisual, $"Post{c}", new Vector3(px, 17.5f, pz), new Vector3(0.5f, 3f, 0.5f), stone);
+                Box(towerVisual, $"Post{c}", new Vector3(px, 17.5f, pz), new Vector3(0.5f, 3f, 0.5f), masonry);
             }
-            Box(towerVisual, "Cap", new Vector3(0f, 19.2f, 0f), new Vector3(4.6f, 0.4f, 4.6f), Mat("Roof", new Color(0.28f, 0.15f, 0.11f)));
+            Box(towerVisual, "Cap", new Vector3(0f, 19.2f, 0f), new Vector3(4.6f, 0.4f, 4.6f), Mat("ChapelRoof", new Color(0.24f, 0.24f, 0.26f)));
             var bell = Node(tower, "Bell", new Vector3(0f, 17.6f, 0f));
             Ball(bell, "Visual", Vector3.zero, 1.3f, Mat("Bronze", new Color(0.55f, 0.38f, 0.2f), 0.6f), collider: false);
             var bellTower = tower.gameObject.AddComponent<BellTower>();
@@ -671,7 +673,7 @@ namespace Hollowmere.EditorTools
             const float pitch = 35f;
             float halfW = w * 0.5f + 0.3f;
             float slab = halfW / Mathf.Cos(pitch * Mathf.Deg2Rad), rise = halfW * Mathf.Tan(pitch * Mathf.Deg2Rad);
-            var roof = Mat("Roof", new Color(0.28f, 0.15f, 0.11f));
+            var roof = Mat("ChapelRoof", new Color(0.24f, 0.24f, 0.26f));
             Box(shell, "RoofEast", new Vector3(halfW * 0.5f, h + 0.15f + rise * 0.5f, 0f), new Vector3(slab, 0.2f, d + 0.6f), roof, true, Quaternion.Euler(0f, 0f, -pitch));
             Box(shell, "RoofWest", new Vector3(-halfW * 0.5f, h + 0.15f + rise * 0.5f, 0f), new Vector3(slab, 0.2f, d + 0.6f), roof, true, Quaternion.Euler(0f, 0f, pitch));
 

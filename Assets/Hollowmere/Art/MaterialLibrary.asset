@@ -1,0 +1,431 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6540e2a8ba4c6b45a90fc9a4f306866, type: 3}
+  m_Name: MaterialLibrary
+  m_EditorClassIdentifier: Hollowmere.Runtime::Hollowmere.MaterialLibrary
+  Entries:
+  - Key: Ground
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 736fa326ee8610c4fad44d7e4168505a, type: 3}
+    NormalMap: {fileID: 2800000, guid: 2ccbb6a7e94e5ac45b4f6ab27515c432, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 57bceabb3a665c64ab9c376b7f1bacc9, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 57bceabb3a665c64ab9c376b7f1bacc9, type: 3}
+    MetresPerTile: 4
+    Tint: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Grass
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 4a4e9ee7b5880bf499c3806ea2f03c89, type: 3}
+    NormalMap: {fileID: 2800000, guid: 37d9da03d7427b94eaa4db5cf96681ad, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: ea958b8b92f43814c9549564d117d014, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: ea958b8b92f43814c9549564d117d014, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Garden
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 96b93bec0aa78e844885a9b6228d1ffb, type: 3}
+    NormalMap: {fileID: 2800000, guid: 8d745d819ec049f418ba62718338cf0e, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: LeafLitter
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 1b520d30cf3cebe4a840b947e74af3ee, type: 3}
+    NormalMap: {fileID: 2800000, guid: 189ef9b8c880e64448b696aa57f74753, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 8743cfaea6d809b438f9b49533f96a40, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 8743cfaea6d809b438f9b49533f96a40, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Road
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 53c61ad830ee6bd48bb0b7a4730a1e43, type: 3}
+    NormalMap: {fileID: 2800000, guid: c8a7564bc6cd2a14b92381766da852ab, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: c0beb5c274f3fd3459afa04f33b968d1, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: c0beb5c274f3fd3459afa04f33b968d1, type: 3}
+    MetresPerTile: 4
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Paving
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 5b1b138b13bea8f4cb1f58fe82c692fe, type: 3}
+    NormalMap: {fileID: 2800000, guid: 000943c9659e65a4b9f341b5aed55ca8, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: a6c5e4cf235971242bfba36c50dfabd2, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: a6c5e4cf235971242bfba36c50dfabd2, type: 3}
+    MetresPerTile: 4
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Stone
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 8c86a3c30104cec4eaef3a66455068e1, type: 3}
+    NormalMap: {fileID: 2800000, guid: 73663c0397513d34cb204895eded60af, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: fd95c39c7765e664d9409617bee97069, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: fd95c39c7765e664d9409617bee97069, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: StandingStone
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 035d8ce357062c445a2d5d28668250dd, type: 3}
+    NormalMap: {fileID: 2800000, guid: acab3c55fe88a5549a4a7142813dde0a, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: fa732db62db5b2c45b4d47739f19002a, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 4600f6960a1e11544bd7158f946ee37f, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: AltarStone
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 035d8ce357062c445a2d5d28668250dd, type: 3}
+    NormalMap: {fileID: 2800000, guid: acab3c55fe88a5549a4a7142813dde0a, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: fa732db62db5b2c45b4d47739f19002a, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 4600f6960a1e11544bd7158f946ee37f, type: 3}
+    MetresPerTile: 1.5
+    Tint: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Trunk
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: e314a860b6103734bbae7a07d97837ff, type: 3}
+    NormalMap: {fileID: 2800000, guid: 749f6e40ddb077340b17f5395274465c, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 113e49589a5a9254d9ab1e35f8d29117, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 113e49589a5a9254d9ab1e35f8d29117, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Bark
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: e314a860b6103734bbae7a07d97837ff, type: 3}
+    NormalMap: {fileID: 2800000, guid: 749f6e40ddb077340b17f5395274465c, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 113e49589a5a9254d9ab1e35f8d29117, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 113e49589a5a9254d9ab1e35f8d29117, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Planks
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: af6e352fccaeae548aef39958a1db97b, type: 3}
+    NormalMap: {fileID: 2800000, guid: 038a6f7fbfde2d144a972decffc776e7, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: GateWood
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: af6e352fccaeae548aef39958a1db97b, type: 3}
+    NormalMap: {fileID: 2800000, guid: 038a6f7fbfde2d144a972decffc776e7, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: BridgeWood
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: af6e352fccaeae548aef39958a1db97b, type: 3}
+    NormalMap: {fileID: 2800000, guid: 038a6f7fbfde2d144a972decffc776e7, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    MetresPerTile: 2
+    Tint: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: HouseWall
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 402d1f381998bed4ab8e99aa12c1d89f, type: 3}
+    NormalMap: {fileID: 2800000, guid: be6d8502c00cdeb49843b10390b96f08, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: c3dc785227d267b4ab8c97fe02270f43, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: c3dc785227d267b4ab8c97fe02270f43, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 1, g: 0.94, b: 0.84, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: InnerWall
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: a97b1a5561434bb448e6631c6fe72f4c, type: 3}
+    NormalMap: {fileID: 2800000, guid: cede54e8570d9b64081b251e0e99ee3b, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: b90c7be24d0442e48ae3c17383ec7ec6, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: b90c7be24d0442e48ae3c17383ec7ec6, type: 3}
+    MetresPerTile: 2.5
+    Tint: {r: 0.92, g: 0.85, b: 0.74, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Roof
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: a7137e992bd14254cb89291bd526f5e2, type: 3}
+    NormalMap: {fileID: 2800000, guid: a87489b1b9253994fa18d87a717fb8ef, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: b74c50a387b879144b617068dd58e4c9, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: b74c50a387b879144b617068dd58e4c9, type: 3}
+    MetresPerTile: 2.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: ChapelRoof
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: fdbe340621bdfbc49b4f0712bac1eed5, type: 3}
+    NormalMap: {fileID: 2800000, guid: 190983681ef239f4ca7a04e20fd83fc6, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 0424885f0bd71324eafffc6d9d53814e, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 0424885f0bd71324eafffc6d9d53814e, type: 3}
+    MetresPerTile: 2.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: ChapelWall
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 6658b4da44463d74e9da5f98cccac186, type: 3}
+    NormalMap: {fileID: 2800000, guid: 6a3b456e36d08b844b1b5d0610197dab, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 497dc52f65f854d4b9545d28db78822a, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 497dc52f65f854d4b9545d28db78822a, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Chimney
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 94d195b4f3fa4bb47a499c083dad1ef4, type: 3}
+    NormalMap: {fileID: 2800000, guid: 68b748a65fb43d441a031ec9e7eae3fa, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: ecdd97cf23ccbe848b23e2b1ab010882, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: ecdd97cf23ccbe848b23e2b1ab010882, type: 3}
+    MetresPerTile: 1.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Floor
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 59211fc3d07a5964585300df728837a5, type: 3}
+    NormalMap: {fileID: 2800000, guid: fac74e47231848a46a29b9c2894ddf78, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 438db8955221e3a4d997cd004130e219, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 3913556ce47363541a364eb274bf2f99, type: 3}
+    MetresPerTile: 3
+    Tint: {r: 0.8, g: 0.75, b: 0.7, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Ceiling
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: af6e352fccaeae548aef39958a1db97b, type: 3}
+    NormalMap: {fileID: 2800000, guid: 038a6f7fbfde2d144a972decffc776e7, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: d308ee4291e7c7b41a7cc3f4773aea7d, type: 3}
+    MetresPerTile: 2.5
+    Tint: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: HearthStone
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 2b23eecbea5cbe7449d41fd98d5e6e5f, type: 3}
+    NormalMap: {fileID: 2800000, guid: 50b6a257a8fac914bbe3276b8db0ec5f, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: e4e5080e2f08a6b4c9ade76e2f6cc40c, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: e4e5080e2f08a6b4c9ade76e2f6cc40c, type: 3}
+    MetresPerTile: 1.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Door_*
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: ac5dc49fcaa25b14c8b293453b8aa849, type: 3}
+    NormalMap: {fileID: 2800000, guid: 69b5e0e43f86a374ca0fd82a5469f826, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 82880bbf315888f489f7d762e8fe419d, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 82880bbf315888f489f7d762e8fe419d, type: 3}
+    MetresPerTile: 1.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 1
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Wood
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 59211fc3d07a5964585300df728837a5, type: 3}
+    NormalMap: {fileID: 2800000, guid: fac74e47231848a46a29b9c2894ddf78, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 438db8955221e3a4d997cd004130e219, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 3913556ce47363541a364eb274bf2f99, type: 3}
+    MetresPerTile: 1.5
+    Tint: {r: 0.6, g: 0.55, b: 0.5, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: ChestWood
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 59211fc3d07a5964585300df728837a5, type: 3}
+    NormalMap: {fileID: 2800000, guid: fac74e47231848a46a29b9c2894ddf78, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 438db8955221e3a4d997cd004130e219, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 3913556ce47363541a364eb274bf2f99, type: 3}
+    MetresPerTile: 1.2
+    Tint: {r: 0.7, g: 0.62, b: 0.55, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Metal
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: 602955609376dae41b95d428616f822c, type: 3}
+    NormalMap: {fileID: 2800000, guid: 457c93deee31a86488a6dc728ce095c7, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: a2cbf298c81165149b17333d2cbc3b39, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: a2cbf298c81165149b17333d2cbc3b39, type: 3}
+    MetresPerTile: 0.8
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: BookLeather
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: cba92f551dcf32340ae945a80d3aae52, type: 3}
+    NormalMap: {fileID: 2800000, guid: 999f84a3b40fc8a43906f75f408374dc, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 25ed47cc2b9680647a6ca6f21d4c4723, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 25ed47cc2b9680647a6ca6f21d4c4723, type: 3}
+    MetresPerTile: 0.5
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Cloth
+    Auto: 1
+    BaseMap: {fileID: 2800000, guid: db970a5da571c544a86f34c6fc7153cb, type: 3}
+    NormalMap: {fileID: 2800000, guid: eb70e2c169cec374b89451305926794d, type: 3}
+    MetallicGlossMap: {fileID: 2800000, guid: 7131ae948c17a3144a01a86017b430b5, type: 3}
+    OcclusionMap: {fileID: 2800000, guid: 7131ae948c17a3144a01a86017b430b5, type: 3}
+    MetresPerTile: 1
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.85
+    Metallic: -1
+    OcclusionStrength: 1
+  - Key: Bronze
+    Auto: 1
+    BaseMap: {fileID: 0}
+    NormalMap: {fileID: 0}
+    MetallicGlossMap: {fileID: 0}
+    OcclusionMap: {fileID: 0}
+    MetresPerTile: 1
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.55
+    Metallic: 0.9
+    OcclusionStrength: 1
+  - Key: Brass
+    Auto: 1
+    BaseMap: {fileID: 0}
+    NormalMap: {fileID: 0}
+    MetallicGlossMap: {fileID: 0}
+    OcclusionMap: {fileID: 0}
+    MetresPerTile: 1
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.6
+    Metallic: 1
+    OcclusionStrength: 1
+  - Key: Gold
+    Auto: 1
+    BaseMap: {fileID: 0}
+    NormalMap: {fileID: 0}
+    MetallicGlossMap: {fileID: 0}
+    OcclusionMap: {fileID: 0}
+    MetresPerTile: 1
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    KeepBuilderColour: 0
+    NormalScale: 1
+    Smoothness: 0.7
+    Metallic: 1
+    OcclusionStrength: 1
