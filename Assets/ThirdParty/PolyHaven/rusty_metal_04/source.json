@@ -1,0 +1,13 @@
+﻿{
+    "id":  "rusty_metal_04",
+    "name":  "Rusty Metal 04",
+    "kind":  "texture",
+    "key":  "Metal",
+    "use":  "rusty metal: fuse boxes, the safe, knobs, the chain",
+    "authors":  [
+                    "Amal Kumar"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/rusty_metal_04",
+    "licence":  "CC0 1.0"
+}

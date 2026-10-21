@@ -1,0 +1,14 @@
+﻿{
+    "id":  "stone_wall",
+    "name":  "Stone Wall",
+    "kind":  "texture",
+    "key":  "Stone",
+    "use":  "dry-stone wall: the village wall, gate posts, bell tower",
+    "authors":  [
+                    "Dario Barresi",
+                    "Charlotte Baglioni"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/stone_wall",
+    "licence":  "CC0 1.0"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "id":  "book_encyclopedia_set_01",
+    "name":  "Book Encyclopedia Set 01",
+    "kind":  "model",
+    "key":  "Books",
+    "use":  "set dressing on shelves and tables",
+    "authors":  [
+                    "John Malcolm"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/book_encyclopedia_set_01",
+    "licence":  "CC0 1.0"
+}

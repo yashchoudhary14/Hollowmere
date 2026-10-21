@@ -1,0 +1,13 @@
+﻿{
+    "id":  "Rock034",
+    "name":  "Rock 034",
+    "kind":  "texture",
+    "key":  "StandingStone",
+    "use":  "mossy rock for the stone circle and the altar",
+    "authors":  [
+                    "ambientCG (Lennart Demes)"
+                ],
+    "source":  "ambientCG",
+    "url":  "https://ambientcg.com/view?id=Rock034",
+    "licence":  "CC0 1.0"
+}

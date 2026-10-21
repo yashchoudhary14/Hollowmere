@@ -1,0 +1,14 @@
+﻿{
+    "id":  "wood_peeling_paint_weathered",
+    "name":  "Wood Peeling Paint Weathered",
+    "kind":  "texture",
+    "key":  "Door",
+    "use":  "front doors, tinted to each house\u0027s door colour",
+    "authors":  [
+                    "Rob Tuytel",
+                    "Dimitrios Savva"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wood_peeling_paint_weathered",
+    "licence":  "CC0 1.0"
+}

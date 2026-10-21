@@ -1,0 +1,13 @@
+﻿{
+    "id":  "mossy_cobblestone",
+    "name":  "Mossy Cobblestone",
+    "kind":  "texture",
+    "key":  "Paving",
+    "use":  "mossy cobbles on the square and the chapel floor",
+    "authors":  [
+                    "Sơn Nguyễn"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/mossy_cobblestone",
+    "licence":  "CC0 1.0"
+}

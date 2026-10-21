@@ -1,0 +1,13 @@
+﻿{
+    "id":  "boulder_01",
+    "name":  "Boulder 01",
+    "kind":  "model",
+    "key":  "Boulder",
+    "use":  "the forest edge",
+    "authors":  [
+                    "Rico Cilliers"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/boulder_01",
+    "licence":  "CC0 1.0"
+}

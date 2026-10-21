@@ -1,0 +1,13 @@
+﻿{
+    "id":  "brown_planks_03",
+    "name":  "Brown Planks 03",
+    "kind":  "texture",
+    "key":  "Planks",
+    "use":  "old timber planks: gate, bridge, chests, fences, notice board",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/brown_planks_03",
+    "licence":  "CC0 1.0"
+}

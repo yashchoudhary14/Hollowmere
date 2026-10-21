@@ -1,0 +1,13 @@
+﻿{
+    "id":  "roof_slates_03",
+    "name":  "Roof Slates 03",
+    "kind":  "texture",
+    "key":  "ChapelRoof",
+    "use":  "dark slate roof for the chapel",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/roof_slates_03",
+    "licence":  "CC0 1.0"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_bookshelf_worn",
+    "name":  "Wooden Bookshelf Worn",
+    "kind":  "model",
+    "key":  "Shelf",
+    "use":  "set dressing",
+    "authors":  [
+                    "Ulan Cabanilla"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_bookshelf_worn",
+    "licence":  "CC0 1.0"
+}

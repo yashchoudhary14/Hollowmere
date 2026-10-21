@@ -1,0 +1,13 @@
+﻿{
+    "id":  "fabric_pattern_05",
+    "name":  "Fabric Pattern 05",
+    "kind":  "texture",
+    "key":  "Cloth",
+    "use":  "old cloth: dust sheets in the hollow houses",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/fabric_pattern_05",
+    "licence":  "CC0 1.0"
+}

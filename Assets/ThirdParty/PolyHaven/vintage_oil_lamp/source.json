@@ -1,0 +1,13 @@
+﻿{
+    "id":  "vintage_oil_lamp",
+    "name":  "Vintage Oil Lamp",
+    "kind":  "model",
+    "key":  "OilLamp",
+    "use":  "set dressing",
+    "authors":  [
+                    "Monsta3D"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/vintage_oil_lamp",
+    "licence":  "CC0 1.0"
+}

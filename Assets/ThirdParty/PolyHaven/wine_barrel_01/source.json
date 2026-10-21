@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wine_barrel_01",
+    "name":  "Wine Barrel 01",
+    "kind":  "model",
+    "key":  "Barrel",
+    "use":  "street and house dressing",
+    "authors":  [
+                    "James Ray Cock"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wine_barrel_01",
+    "licence":  "CC0 1.0"
+}

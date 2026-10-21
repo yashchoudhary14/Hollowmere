@@ -1,0 +1,13 @@
+﻿{
+    "id":  "dead_tree_trunk",
+    "name":  "Dead Tree Trunk",
+    "kind":  "model",
+    "key":  "DeadTrunk",
+    "use":  "fallen dead trees in the forest",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/dead_tree_trunk",
+    "licence":  "CC0 1.0"
+}

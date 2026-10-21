@@ -1,0 +1,13 @@
+﻿{
+    "id":  "tree_stump_01",
+    "name":  "Tree Stump 01",
+    "kind":  "model",
+    "key":  "Stump",
+    "use":  "forest and street dressing",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/tree_stump_01",
+    "licence":  "CC0 1.0"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "id":  "Lantern_01",
+    "name":  "Lantern 01",
+    "kind":  "model",
+    "key":  "Lantern",
+    "use":  "street and porch dressing",
+    "authors":  [
+                    "Rajil Jose Macatangay"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/Lantern_01",
+    "licence":  "CC0 1.0"
+}

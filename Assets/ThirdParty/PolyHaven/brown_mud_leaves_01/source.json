@@ -1,0 +1,13 @@
+﻿{
+    "id":  "brown_mud_leaves_01",
+    "name":  "Brown Mud Leaves 01",
+    "kind":  "texture",
+    "key":  "Road",
+    "use":  "muddy road with leaves and moss",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/brown_mud_leaves_01",
+    "licence":  "CC0 1.0"
+}

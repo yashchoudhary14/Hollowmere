@@ -1,0 +1,14 @@
+﻿{
+    "id":  "mantel_clock_01",
+    "name":  "Mantel Clock 01",
+    "kind":  "model",
+    "key":  "MantelClock",
+    "use":  "on the hearth mantels",
+    "authors":  [
+                    "Yann Kervran",
+                    "Rico Cilliers"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/mantel_clock_01",
+    "licence":  "CC0 1.0"
+}

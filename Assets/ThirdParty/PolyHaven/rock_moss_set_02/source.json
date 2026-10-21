@@ -1,0 +1,13 @@
+﻿{
+    "id":  "rock_moss_set_02",
+    "name":  "Rock Moss Set 02",
+    "kind":  "model",
+    "key":  "Rocks",
+    "use":  "mossy rocks along walls and in the forest",
+    "authors":  [
+                    "Kless Gyzen"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/rock_moss_set_02",
+    "licence":  "CC0 1.0"
+}

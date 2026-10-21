@@ -1,0 +1,13 @@
+﻿{
+    "id":  "WoodenChair_01",
+    "name":  "Wooden Chair 01",
+    "kind":  "model",
+    "key":  "Chair",
+    "use":  "set dressing",
+    "authors":  [
+                    "Jake Mobley"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/WoodenChair_01",
+    "licence":  "CC0 1.0"
+}

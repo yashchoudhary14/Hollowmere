@@ -1,0 +1,13 @@
+﻿{
+    "id":  "watering_can_metal_01",
+    "name":  "Watering Can Metal 01",
+    "kind":  "model",
+    "key":  "WateringCan",
+    "use":  "set dressing",
+    "authors":  [
+                    "Charles Nderitu"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/watering_can_metal_01",
+    "licence":  "CC0 1.0"
+}

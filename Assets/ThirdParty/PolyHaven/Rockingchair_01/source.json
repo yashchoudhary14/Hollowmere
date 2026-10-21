@@ -1,0 +1,13 @@
+﻿{
+    "id":  "Rockingchair_01",
+    "name":  "Rockingchair 01",
+    "kind":  "model",
+    "key":  "RockingChair",
+    "use":  "set dressing (DESIGN: the Widow\u0027s porch)",
+    "authors":  [
+                    "Jorge Camacho"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/Rockingchair_01",
+    "licence":  "CC0 1.0"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_candlestick",
+    "name":  "Wooden Candlestick",
+    "kind":  "model",
+    "key":  "Candlestick",
+    "use":  "the ritual circle\u0027s candles",
+    "authors":  [
+                    "Josh Dean"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_candlestick",
+    "licence":  "CC0 1.0"
+}

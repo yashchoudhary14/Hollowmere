@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_stool_02",
+    "name":  "Wooden Stool 02",
+    "kind":  "model",
+    "key":  "Stool",
+    "use":  "set dressing",
+    "authors":  [
+                    "Kuutti Siitonen"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_stool_02",
+    "licence":  "CC0 1.0"
+}

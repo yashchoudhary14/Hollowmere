@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_axe_02",
+    "name":  "Wooden Axe 02",
+    "kind":  "model",
+    "key":  "Axe",
+    "use":  "set dressing",
+    "authors":  [
+                    "Ulan Cabanilla"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_axe_02",
+    "licence":  "CC0 1.0"
+}

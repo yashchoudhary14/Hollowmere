@@ -1,0 +1,13 @@
+﻿{
+    "id":  "forrest_ground_01",
+    "name":  "Forest Ground 01",
+    "kind":  "texture",
+    "key":  "Ground",
+    "use":  "forest-floor ground: dry grass, twigs, dirt",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/forrest_ground_01",
+    "licence":  "CC0 1.0"
+}

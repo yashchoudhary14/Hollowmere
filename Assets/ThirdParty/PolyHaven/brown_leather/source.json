@@ -1,0 +1,13 @@
+﻿{
+    "id":  "brown_leather",
+    "name":  "Brown Leather",
+    "kind":  "texture",
+    "key":  "BookLeather",
+    "use":  "the Ritual Book\u0027s cover",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/brown_leather",
+    "licence":  "CC0 1.0"
+}

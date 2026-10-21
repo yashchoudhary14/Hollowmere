@@ -1,0 +1,13 @@
+﻿{
+    "id":  "brass_candleholders",
+    "name":  "Brass Candleholders",
+    "kind":  "model",
+    "key":  "Candleholders",
+    "use":  "chapel and house dressing",
+    "authors":  [
+                    "Tina"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/brass_candleholders",
+    "licence":  "CC0 1.0"
+}

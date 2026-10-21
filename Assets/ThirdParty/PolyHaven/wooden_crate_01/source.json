@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_crate_01",
+    "name":  "Wooden Crate 01",
+    "kind":  "model",
+    "key":  "Crate",
+    "use":  "street and house dressing",
+    "authors":  [
+                    "James Ray Cock"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_crate_01",
+    "licence":  "CC0 1.0"
+}

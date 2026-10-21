@@ -1,0 +1,13 @@
+﻿{
+    "id":  "grey_plaster",
+    "name":  "Grey Plaster",
+    "kind":  "texture",
+    "key":  "HouseWall",
+    "use":  "weathered, damp exterior plaster",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/grey_plaster",
+    "licence":  "CC0 1.0"
+}

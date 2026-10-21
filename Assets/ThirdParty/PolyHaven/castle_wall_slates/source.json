@@ -1,0 +1,13 @@
+﻿{
+    "id":  "castle_wall_slates",
+    "name":  "Castle Wall Slates",
+    "kind":  "texture",
+    "key":  "ChapelWall",
+    "use":  "old stone chapel walls",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/castle_wall_slates",
+    "licence":  "CC0 1.0"
+}

@@ -1,0 +1,14 @@
+﻿{
+    "id":  "stone_brick_wall_001",
+    "name":  "Stone Brick Wall 001",
+    "kind":  "texture",
+    "key":  "HearthStone",
+    "use":  "dark, rough hearth stone",
+    "authors":  [
+                    "Dimitrios Savva",
+                    "Rico Cilliers"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/stone_brick_wall_001",
+    "licence":  "CC0 1.0"
+}

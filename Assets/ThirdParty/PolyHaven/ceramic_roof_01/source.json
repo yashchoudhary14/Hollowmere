@@ -1,0 +1,13 @@
+﻿{
+    "id":  "ceramic_roof_01",
+    "name":  "Ceramic Roof 01",
+    "kind":  "texture",
+    "key":  "Roof",
+    "use":  "mossy clay roof tiles",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/ceramic_roof_01",
+    "licence":  "CC0 1.0"
+}

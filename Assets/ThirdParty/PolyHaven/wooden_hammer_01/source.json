@@ -1,0 +1,13 @@
+﻿{
+    "id":  "wooden_hammer_01",
+    "name":  "Wooden Hammer 01",
+    "kind":  "model",
+    "key":  "Hammer",
+    "use":  "set dressing",
+    "authors":  [
+                    "James Ray Cock"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/wooden_hammer_01",
+    "licence":  "CC0 1.0"
+}

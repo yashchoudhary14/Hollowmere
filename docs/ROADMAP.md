@@ -98,11 +98,11 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **2. CC0 assets (Poly Haven, ambientCG)**
 
-- [ ] `tools/third-party.json`: one entry per chosen asset (id, source, URL, licence, what it's for). `tools/fetch-assets.ps1` downloads exactly those at 2K into `Assets/ThirdParty/PolyHaven/<id>/` and `Assets/ThirdParty/AmbientCG/<id>/`, so the set can be re-fetched.
-- [ ] Pick each asset from contact sheets of the APIs' preview images (damp, weathered, rural). Texture sets: weathered plaster, old timber planks, rotten floorboards, mossy roof shingles or thatch, dry-stone wall, muddy dirt road, cobblestone, forest-floor ground, rusty metal, soot/stone hearth, old fabric. Two 2K night/overcast HDRIs.
-- [ ] Models (FBX mesh + 2K JPG maps, no EXR): wooden chair, table, wardrobe/cabinet, bed, shelves, barrels, crates, lantern, candles, books, clock, buckets, tools, fence, dead trees, rocks.
-- [ ] `ThirdPartyImport` editor script (an AssetPostprocessor): normal maps typed as Normal, roughness/AO/metal/mask maps linear (sRGB off), max size 2048; packs roughness + metal into URP's metallic/smoothness map. Each model's materials are rebuilt as URP Lit from its own maps.
-- [ ] EditMode test: every third-party texture is ≤ 2048 px and has the right import type.
+- [x] `tools/third-party.json`: one entry per chosen asset (id, source, URL, licence, what it's for). `tools/fetch-assets.ps1` downloads exactly those at 2K into `Assets/ThirdParty/PolyHaven/<id>/` and `Assets/ThirdParty/AmbientCG/<id>/`, so the set can be re-fetched.
+- [x] Pick each asset from contact sheets of the APIs' preview images (damp, weathered, rural). Texture sets: weathered plaster, old timber planks, rotten floorboards, mossy roof shingles or thatch, dry-stone wall, muddy dirt road, cobblestone, forest-floor ground, rusty metal, soot/stone hearth, old fabric, plus bark. Two 2K night/overcast HDRIs.
+- [x] Models (FBX mesh + 2K JPG maps, no EXR; small props at 1K): wooden chair, rocking chair, table, wardrobe/cabinet, bed, shelves, barrels, crates, lantern, candles, books, clocks, buckets, tools, dead trunks and stumps, rocks. Poly Haven has no wooden fence and its trees are 50–650 MB each, so fences and dead trees are built from textured primitives instead.
+- [x] `ThirdPartyImport` editor script (an AssetPostprocessor): normal maps typed as Normal, mask maps linear, max size 2048; packed AO/rough/metal maps swizzled at import into URP Lit's metallic/occlusion/smoothness layout (no repacked files). `BuildModelMaterials` gives each model material a URP Lit asset filled from its own maps and remaps the FBX onto it.
+- [x] EditMode test: every third-party texture is ≤ 2048 px and has the right import type; every model material is a remapped URP Lit asset with colour and normal maps.
 
 **3. Manual downloads (`C:\dev\Hollowmere\AssetDownloads`)**
 

@@ -1,0 +1,13 @@
+﻿{
+    "id":  "GothicCabinet_01",
+    "name":  "Gothic Cabinet 01",
+    "kind":  "model",
+    "key":  "Wardrobe",
+    "use":  "the wardrobe hiding spot",
+    "authors":  [
+                    "Kirill Sannikov"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/GothicCabinet_01",
+    "licence":  "CC0 1.0"
+}

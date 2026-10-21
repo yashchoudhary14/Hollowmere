@@ -1,0 +1,14 @@
+﻿{
+    "id":  "vintage_grandfather_clock_01",
+    "name":  "Vintage Grandfather Clock 01",
+    "kind":  "model",
+    "key":  "GrandfatherClock",
+    "use":  "the clock puzzle\u0027s case",
+    "authors":  [
+                    "Yann Kervran",
+                    "James Ray Cock"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/vintage_grandfather_clock_01",
+    "licence":  "CC0 1.0"
+}

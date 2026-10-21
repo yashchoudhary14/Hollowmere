@@ -3,6 +3,7 @@
     "rootNamespace": "Hollowmere.Tests",
     "references": [
         "Hollowmere.Runtime",
+        "Hollowmere.Editor",
         "Unity.AI.Navigation",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"

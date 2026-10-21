@@ -1,0 +1,13 @@
+﻿{
+    "id":  "WoodFloor043",
+    "name":  "Wood Floor 043",
+    "kind":  "texture",
+    "key":  "Floor",
+    "use":  "worn, knotted floorboards",
+    "authors":  [
+                    "ambientCG (Lennart Demes)"
+                ],
+    "source":  "ambientCG",
+    "url":  "https://ambientcg.com/view?id=WoodFloor043",
+    "licence":  "CC0 1.0"
+}

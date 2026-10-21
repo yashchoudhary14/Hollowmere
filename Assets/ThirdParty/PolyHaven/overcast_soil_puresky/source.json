@@ -1,0 +1,14 @@
+﻿{
+    "id":  "overcast_soil_puresky",
+    "name":  "Overcast Soil (Pure Sky)",
+    "kind":  "hdri",
+    "key":  "SkyOvercast",
+    "use":  "heavy grey sky for day and dusk",
+    "authors":  [
+                    "Jarod Guest",
+                    "Sergej Majboroda"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/overcast_soil_puresky",
+    "licence":  "CC0 1.0"
+}

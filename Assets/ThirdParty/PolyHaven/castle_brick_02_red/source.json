@@ -1,0 +1,13 @@
+﻿{
+    "id":  "castle_brick_02_red",
+    "name":  "Castle Brick 02 Red",
+    "kind":  "texture",
+    "key":  "Chimney",
+    "use":  "old brick chimneys",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/castle_brick_02_red",
+    "licence":  "CC0 1.0"
+}

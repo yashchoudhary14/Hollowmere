@@ -1,0 +1,13 @@
+﻿{
+    "id":  "white_plaster_02",
+    "name":  "White Plaster 02",
+    "kind":  "texture",
+    "key":  "InnerWall",
+    "use":  "stained interior plaster, also ceilings",
+    "authors":  [
+                    "Rob Tuytel"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/white_plaster_02",
+    "licence":  "CC0 1.0"
+}

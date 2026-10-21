@@ -1,0 +1,13 @@
+﻿{
+    "id":  "dry_branches_medium_01",
+    "name":  "Dry Branches Medium 01",
+    "kind":  "model",
+    "key":  "Branches",
+    "use":  "dead wood on the ground",
+    "authors":  [
+                    "Rico Cilliers"
+                ],
+    "source":  "Poly Haven",
+    "url":  "https://polyhaven.com/a/dry_branches_medium_01",
+    "licence":  "CC0 1.0"
+}
