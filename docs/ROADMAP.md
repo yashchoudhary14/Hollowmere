@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests). Next: the Windows build and the user's playtest of a full solo match.
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`). Waiting for the user's playtest of a full solo match; feedback goes in PLAYTEST_LOG.md via `/playtest`.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
