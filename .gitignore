@@ -112,3 +112,8 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Hollowmere: kept out of the repo on purpose
+# HS_MP tension music: DESIGN.md allows only in-world music (user decision, M1.5).
+/[Aa]ssets/HS_MP/
+/[Aa]ssets/HS_MP.meta

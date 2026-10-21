@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`). Waiting for the user's playtest of a full solo match; feedback goes in PLAYTEST_LOG.md via `/playtest`.
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (step 2, CC0 assets).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -85,6 +85,64 @@ One player can play a complete match, from arrival to results, in a greybox vill
 - [x] Altar order logic, puzzle answer checks, phase timeline maths.
 
 **Done when:** the user plays a full solo match in the greybox (read letter, find house, solve puzzle, carry part, place it, chant, cross, results) and can also lose to the Hollow.
+
+---
+
+## M1.5 — Look pass (interim, ahead of M7)
+
+Replace greybox art with real free assets so playtests read as a damp, abandoned 1970s village at night. Rules for the whole pass: no changes to gameplay, layout, the `MatchPlan` or tuning numbers; every existing test stays green; art enters only through builders and editor scripts (no hand-written YAML, no `.meta` edits); gameplay colliders and interaction volumes stay exactly as they are. Commit after each green step.
+
+**1. Plan**
+
+- [x] This section, approved by the user before any downloads. Decisions (2026-10-22): remove HDRP and Terrain Tools, keep Shader Graph; import Essential Footsteps, Saloon Interior and Terrain Textures Free (only the files the builders use); leave the HS_MP music pack out (DESIGN: only in-world music).
+
+**2. CC0 assets (Poly Haven, ambientCG)**
+
+- [ ] `tools/third-party.json`: one entry per chosen asset (id, source, URL, licence, what it's for). `tools/fetch-assets.ps1` downloads exactly those at 2K into `Assets/ThirdParty/PolyHaven/<id>/` and `Assets/ThirdParty/AmbientCG/<id>/`, so the set can be re-fetched.
+- [ ] Pick each asset from contact sheets of the APIs' preview images (damp, weathered, rural). Texture sets: weathered plaster, old timber planks, rotten floorboards, mossy roof shingles or thatch, dry-stone wall, muddy dirt road, cobblestone, forest-floor ground, rusty metal, soot/stone hearth, old fabric. Two 2K night/overcast HDRIs.
+- [ ] Models (FBX mesh + 2K JPG maps, no EXR): wooden chair, table, wardrobe/cabinet, bed, shelves, barrels, crates, lantern, candles, books, clock, buckets, tools, fence, dead trees, rocks.
+- [ ] `ThirdPartyImport` editor script (an AssetPostprocessor): normal maps typed as Normal, roughness/AO/metal/mask maps linear (sRGB off), max size 2048; packs roughness + metal into URP's metallic/smoothness map. Each model's materials are rebuilt as URP Lit from its own maps.
+- [ ] EditMode test: every third-party texture is ≤ 2048 px and has the right import type.
+
+**3. Manual downloads (`C:\dev\Hollowmere\AssetDownloads`)**
+
+- [ ] Import only the Asset Store packs the user picks, and only the files the builders use; everything else stays out of the project. Fab/Megascans → `Assets/ThirdParty/Fab`, Mixamo FBX → `Assets/ThirdParty/Mixamo` (Humanoid rig), if any appear.
+- [ ] Sonniss: copy only the clips SoundBank needs plus ambience (wind, night forest, rain, house creaks, distant dogs and crows) into `Assets/Hollowmere/Audio`, never whole libraries. OGG where ffmpeg is available, otherwise trimmed WAV.
+
+**4. Materials**
+
+- [ ] `MaterialLibrary` ScriptableObject keyed by the builder's existing material names (HouseWall, InnerWall, Roof, Floor, Ceiling, Road, Ground, Paving, Stone, Wood, ChestWood, GateWood, BridgeWood, Metal, HearthStone, Chimney, ChapelWall, Trunk, Leaves, Door_*, ...): base, normal, metallic/smoothness and occlusion maps, tint and metres-per-tile. `BuilderKit.Mat()` resolves through it and falls back to today's flat colour when a texture is missing.
+- [ ] World-space tiling: `BuilderKit.Box()` uses cached box meshes whose UVs are in metres (one generated mesh asset per distinct size), so a 1 m patch of wall looks the same on a 12 m wall as on a 3 m one. Box colliders stay exactly as they are.
+
+**5. Props and dressing**
+
+- [ ] Swap primitives for models through the `Visual`/`Shell` slots where a good model exists: wardrobe, tables, hearth dressing, lantern and candles, chest, fences, dead trees, rocks. The primitive's collider stays (renderer hidden) and the model is fitted to its bounds, so collision, interaction and NavMesh don't change.
+- [ ] Seeded, deterministic set dressing in rooms and streets (chairs, beds, shelves, books, buckets, tools, barrels, crates, debris, cobwebs if available), with no colliders, so it can't affect movement, interaction rays or the NavMesh bake.
+
+**6. Lighting and atmosphere**
+
+- [ ] `RenderSetup` editor script: Hollowmere's own URP asset and renderer for the PC quality level (Forward+, HDR, soft shadows at high resolution with 4 cascades, additional-light shadows for the flashlight and lamps, SSAO).
+- [ ] Global Volume profile built by script: ACES tonemapping, colour grading, bloom on light sources, vignette, film grain. `PhaseLighting` also drives the post-processing per phase (gold day, draining dusk, dark readable night, thick Crossing fog).
+- [ ] Warm lamp, candle and fire colours with a subtle cosmetic flicker (intensity only; a room light's on/off state, which the Hollow's sight uses, never changes). Flashlight: soft spot with a generated cookie.
+- [ ] HDRIs for the overcast day sky and for reflections; night stays dark.
+
+**7. Audio**
+
+- [ ] `SoundLibrary` ScriptableObject; `SoundBank` uses its clips and falls back to the synthesised ones for anything missing.
+- [ ] Looping ambience per phase and for indoors versus outdoors; footsteps per surface (wood, stone, dirt) chosen from what's under the step; door and creak variations. Every sound the Hollow can hear still goes through `NoiseSystem.Emit`.
+
+**8. Repo hygiene**
+
+- [ ] Git LFS for every binary (already set up by `.gitattributes`); nothing above 2K committed; `AssetDownloads` and raw packs never committed.
+- [ ] `CREDITS.md` generated from `tools/third-party.json` plus the imported packs: every asset, its source URL and licence (CC0, Fab Standard, Mixamo, Sonniss, Unity Asset Store EULA).
+
+**9. Verify**
+
+- [ ] Rebuild the village; `check`, `test` (EditMode and PlayMode) green.
+- [ ] `LookTools` renders day, dusk and night outside plus a house interior under runtime lighting; look at them and iterate.
+- [ ] Screenshots and a short playtest script for the user.
+
+**Done when:** the user's playtest says it looks like a place, and every M1 test still passes.
 
 ---
 
