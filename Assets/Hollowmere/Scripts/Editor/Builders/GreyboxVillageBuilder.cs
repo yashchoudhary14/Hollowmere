@@ -56,7 +56,7 @@ namespace Hollowmere.EditorTools
             var village = new GameObject("Village").transform; // the NavMesh bakes from everything under here
             BuildGround(village);
             BuildRingWall(village);
-            BuildGate(village);
+            var gate = BuildGate(village);
             BuildRoad(village);
             BuildForest(village);
 
@@ -65,15 +65,34 @@ namespace Hollowmere.EditorTools
             for (int i = 0; i < houses.Length; i++)
                 houses[i] = BuildHouse(houseRoot, i, HousePosition(i));
 
-            BuildSquare(village);
-            var chapelSpawn = BuildChapel(village);
+            var (board, bell) = BuildSquare(village);
+            var chapelSpawn = BuildChapel(village, out var ritualBook);
             var layout = BuildLayout(chapelSpawn);
 
-            BuildLights();
-            BuildPlayer(layout.PlayerSpawn);
+            var lighting = BuildLights();
+            var player = BuildPlayer(layout.PlayerSpawn);
             BuildHollow(layout.HollowNightSpawn);
             BuildShotCameras();
             ApplyRenderSettings();
+
+            var director = new GameObject("Match").AddComponent<MatchDirector>();
+            director.Houses = houses;
+            director.Players = new[] { player };
+            director.Layout = layout;
+            director.Board = board;
+            director.RitualBook = ritualBook;
+            director.Bell = bell;
+            director.Lighting = lighting;
+            director.Gate = gate;
+            director.gameObject.AddComponent<NoiseAudio>();
+
+            var ui = new GameObject("HUD");
+            var hud = ui.AddComponent<Hud>();
+            hud.Player = player;
+            hud.Director = director;
+            var overlay = ui.AddComponent<DebugOverlay>();
+            overlay.Player = player;
+            overlay.Director = director;
             AddNavMeshSurface(village);
             BakeNavMesh();
 
@@ -108,7 +127,7 @@ namespace Hollowmere.EditorTools
             WallAlongZ(wall, "East", Half, -Half, Half, RingWallHeight, RingWallThickness, stone);
         }
 
-        static void BuildGate(Transform village)
+        static VillageGate BuildGate(Transform village)
         {
             var stone = Mat("Stone", new Color(0.45f, 0.44f, 0.42f));
             var wood = Mat("GateWood", new Color(0.20f, 0.14f, 0.09f));
@@ -120,6 +139,7 @@ namespace Hollowmere.EditorTools
             Label(gate, "Inscription", "DO NOT LOOK BACK", new Vector3(0f, 6.4f, -0.81f), Quaternion.identity, 0.32f, new Color(0.15f, 0.13f, 0.12f));
 
             // Leaves open outwards (north). Left hinge at -x swings with -90, right hinge at +x with +90.
+            var component = gate.gameObject.AddComponent<VillageGate>();
             for (int side = 0; side < 2; side++)
             {
                 float sign = side == 0 ? -1f : 1f;
@@ -129,7 +149,10 @@ namespace Hollowmere.EditorTools
                 Box(visual, "Brace", new Vector3(-sign * GateHalfWidth * 0.5f, 2.25f, -0.15f), new Vector3(GateHalfWidth - 0.4f, 0.25f, 0.06f), wood);
                 ExcludeFromNavMesh(pivot.gameObject);
                 AddCarvingObstacle(pivot.gameObject, new Vector3(-sign * GateHalfWidth * 0.5f, 2.25f, 0f), new Vector3(GateHalfWidth, 4.5f, 0.5f));
+                if (side == 0) component.LeafWest = pivot;
+                else component.LeafEast = pivot;
             }
+            return component;
         }
 
         static void BuildRoad(Transform village)
@@ -494,7 +517,7 @@ namespace Hollowmere.EditorTools
 
         // ------------------------------------------------------------ square and chapel
 
-        static void BuildSquare(Transform village)
+        static (NoticeBoard board, BellTower bell) BuildSquare(Transform village)
         {
             var square = Node(village, "Square");
             Box(square, "Paving", new Vector3(0f, 0.02f, 117f), new Vector3(70f, 0.04f, 60f), Mat("Paving", new Color(0.42f, 0.40f, 0.37f)));
@@ -543,11 +566,14 @@ namespace Hollowmere.EditorTools
             Box(boardVisual, "Board", new Vector3(0f, 1.6f, 0f), new Vector3(3.4f, 1.5f, 0.08f), Mat("Cork", new Color(0.45f, 0.33f, 0.22f)));
             Box(boardVisual, "Roof", new Vector3(0f, 2.48f, -0.05f), new Vector3(3.8f, 0.1f, 0.5f), wood);
             Label(board, "Heading", "LETTERS FOR OUR GUESTS", new Vector3(0f, 2.24f, -0.05f), Quaternion.identity, 0.14f, new Color(0.92f, 0.88f, 0.75f));
+            var noticeBoard = board.gameObject.AddComponent<NoticeBoard>();
+            noticeBoard.Letters = new Readable[6];
             for (int i = 0; i < 6; i++)
             {
                 var letter = Node(board, $"Letter_{i + 1}", new Vector3(-1.1f + 1.1f * (i % 3), i < 3 ? 1.88f : 1.3f, -0.05f));
                 Box(Node(letter, "Visual"), "Envelope", Vector3.zero, new Vector3(0.36f, 0.26f, 0.01f), Mat("Paper", new Color(0.88f, 0.85f, 0.76f)));
-                letter.gameObject.AddComponent<Readable>().Set("A sealed letter", "", "Read the letter");
+                noticeBoard.Letters[i] = letter.gameObject.AddComponent<Readable>();
+                noticeBoard.Letters[i].Set("A sealed letter", "", "Read the letter");
             }
 
             // Bell tower on the square.
@@ -562,10 +588,14 @@ namespace Hollowmere.EditorTools
             Box(towerVisual, "Cap", new Vector3(0f, 19.2f, 0f), new Vector3(4.6f, 0.4f, 4.6f), Mat("Roof", new Color(0.28f, 0.15f, 0.11f)));
             var bell = Node(tower, "Bell", new Vector3(0f, 17.6f, 0f));
             Ball(bell, "Visual", Vector3.zero, 1.3f, Mat("Bronze", new Color(0.55f, 0.38f, 0.2f), 0.6f), collider: false);
+            var bellTower = tower.gameObject.AddComponent<BellTower>();
+            bellTower.Bell = bell;
+
+            return (noticeBoard, bellTower);
         }
 
         /// <summary>The chapel west of the square, with the chained Ritual Book. Returns the Hollow's night spawn.</summary>
-        static Transform BuildChapel(Transform village)
+        static Transform BuildChapel(Transform village, out Readable ritualBook)
         {
             const float w = 12f, d = 18f, h = 7f, t = 0.4f;
             var wallMat = Mat("ChapelWall", new Color(0.58f, 0.57f, 0.55f));
@@ -600,7 +630,8 @@ namespace Hollowmere.EditorTools
             Box(visual, "Top", new Vector3(0f, 1.15f, 0f), new Vector3(0.7f, 0.05f, 0.5f), wood, true, Quaternion.Euler(-15f, 0f, 0f));
             Box(visual, "Book", new Vector3(0f, 1.2f, 0.01f), new Vector3(0.48f, 0.06f, 0.34f), Mat("BookLeather", new Color(0.32f, 0.1f, 0.08f)), true, Quaternion.Euler(-15f, 0f, 0f));
             Box(visual, "Chain", new Vector3(0.2f, 0.75f, 0f), new Vector3(0.03f, 0.75f, 0.03f), Mat("Metal", new Color(0.22f, 0.23f, 0.25f), 0.5f), false);
-            lectern.gameObject.AddComponent<Readable>().Set("The Ritual Book", "", "Read the Ritual Book");
+            ritualBook = lectern.gameObject.AddComponent<Readable>();
+            ritualBook.Set("The Ritual Book", "", "Read the Ritual Book");
 
             return Node(chapel, "HollowSpawn", new Vector3(-4.6f, 0f, 5f));
         }
@@ -611,7 +642,8 @@ namespace Hollowmere.EditorTools
         {
             var layout = new GameObject("Layout").AddComponent<VillageLayout>();
             var t = layout.transform;
-            layout.PlayerSpawn = Node(t, "PlayerSpawn", new Vector3(0f, 0.1f, 144f), Quaternion.Euler(0f, 180f, 0f));
+            // Arrival: the guests start on the road and walk in through the open gate (docs/DESIGN.md "Core loop").
+            layout.PlayerSpawn = Node(t, "PlayerSpawn", new Vector3(0f, 0.1f, Half + 12f), Quaternion.Euler(0f, 180f, 0f));
             layout.HollowNightSpawn = hollowSpawn;
             layout.SquareCenter = Node(t, "SquareCenter", AltarPos);
             layout.CircleRadius = CircleRadius;
@@ -641,7 +673,7 @@ namespace Hollowmere.EditorTools
             return layout;
         }
 
-        static void BuildLights()
+        static PhaseLighting BuildLights()
         {
             var sun = new GameObject("Sun").AddComponent<Light>();
             sun.type = LightType.Directional;
@@ -658,9 +690,14 @@ namespace Hollowmere.EditorTools
             moon.shadows = LightShadows.Soft;
             moon.transform.rotation = Quaternion.Euler(35f, 160f, 0f);
             moon.enabled = false;
+
+            var lighting = new GameObject("Lighting").AddComponent<PhaseLighting>();
+            lighting.Sun = sun;
+            lighting.Moon = moon;
+            return lighting;
         }
 
-        static void BuildPlayer(Transform spawn)
+        static PlayerAgent BuildPlayer(Transform spawn)
         {
             var player = new GameObject("Player");
             player.transform.SetPositionAndRotation(spawn.position, spawn.rotation);
@@ -711,9 +748,7 @@ namespace Hollowmere.EditorTools
             flashlight.Agent = agent;
             flashlight.Beam = beam;
             mic.Agent = agent;
-
-            var hud = new GameObject("HUD").AddComponent<Hud>();
-            hud.Player = agent;
+            return agent;
         }
 
         static Pickup BuildPickup(Transform parent, string name, Vector3 localPos, ItemKind kind, string label, int amount = 1)

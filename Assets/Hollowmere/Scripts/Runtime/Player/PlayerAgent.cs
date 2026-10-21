@@ -37,8 +37,10 @@ namespace Hollowmere
         /// <summary>Esc frees the mouse; a click takes it back. The match keeps running.</summary>
         public bool Paused { get; private set; }
 
-        /// <summary>Set by screens that need the mouse (results).</summary>
-        public bool UiCapture;
+        /// <summary>Screens that need the mouse: the debug overlay and the results screen.</summary>
+        public bool DebugCapture;
+        public bool ResultsCapture;
+        public bool UiCapture => DebugCapture || ResultsCapture;
 
         /// <summary>Set by the match (arrival cut, results) to stop movement.</summary>
         public bool Frozen;
@@ -52,7 +54,7 @@ namespace Hollowmere
         public bool HoldingBreath;
         public float Breath01;
 
-        public bool CanMove => Condition == PlayerCondition.Alive && !PanelOpen && !Paused && !Frozen && !InHiding;
+        public bool CanMove => Condition == PlayerCondition.Alive && !PanelOpen && !Paused && !Frozen && !InHiding && !UiCapture;
         public bool CanLook => Condition == PlayerCondition.Alive && !PanelOpen && !Paused && !UiCapture;
 
         readonly GameObject[] _handObjects = new GameObject[Inventory.HandSlotCount];

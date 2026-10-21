@@ -9,6 +9,7 @@ namespace Hollowmere
     public class Hud : MonoBehaviour
     {
         public PlayerAgent Player;
+        public MatchDirector Director;
 
         GUIStyle _text, _center, _small, _hint, _title, _body;
         Texture2D _pixel;
@@ -23,6 +24,11 @@ namespace Hollowmere
         {
             if (Player == null) return;
             Setup();
+            if (Director != null && Director.Outcome != MatchOutcome.Running)
+            {
+                DrawOutcome();
+                return;
+            }
             if (Player.PanelOpen)
             {
                 DrawPanel();
@@ -209,6 +215,15 @@ namespace Hollowmere
                 _center.normal.textColor = c;
                 y += Px(30);
             }
+        }
+
+        void DrawOutcome()
+        {
+            Fill(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0f, 0f, 0f, 0.85f));
+            string heading = Director.Outcome == MatchOutcome.Won ? "You made it out." : "Hollowmere keeps you.";
+            GUI.Label(new Rect(Screen.width * 0.2f, Screen.height * 0.3f, Screen.width * 0.6f, Px(50)), heading, _title);
+            GUI.Label(new Rect(Screen.width * 0.2f, Screen.height * 0.3f + Px(60), Screen.width * 0.6f, Px(200)), Director.OutcomeText, _body);
+            GUI.Label(new Rect(0f, Screen.height * 0.8f, Screen.width, Px(30)), "Press R to play again", _hint);
         }
 
         void DrawPanel()
