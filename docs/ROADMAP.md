@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (step 2, CC0 assets).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–3 done; next: step 4, materials).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -106,8 +106,8 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **3. Manual downloads (`C:\dev\Hollowmere\AssetDownloads`)**
 
-- [ ] Import only the Asset Store packs the user picks, and only the files the builders use; everything else stays out of the project. Fab/Megascans → `Assets/ThirdParty/Fab`, Mixamo FBX → `Assets/ThirdParty/Mixamo` (Humanoid rig), if any appear.
-- [ ] Sonniss: copy only the clips SoundBank needs plus ambience (wind, night forest, rain, house creaks, distant dogs and crows) into `Assets/Hollowmere/Audio`, never whole libraries. OGG where ffmpeg is available, otherwise trimmed WAV.
+- [x] Import only the Asset Store packs the user picks, and only the files the builders use; everything else stays out of the project. `tools/import-assetstore.ps1` reads `tools/assetstore-imports.json` and extracts just the selected items from each `.unitypackage` into `Assets/ThirdParty/AssetStore/<pack>/`, without the vendor's metas, materials or prefabs: Essential Footsteps (wood, concrete, dirt and leaves walks 1–8 and landings), Terrain Textures Free (Grass 06, Grass 09, Leaves 02; HDRP mask maps converted to arm), and 13 Saloon Interior Megascans props (cart wheel, chest, bucket, barrel, chair, shelf, oil lamp, horseshoe, picture frame, beam, jug, stool, table). Megascans textures are read through their materials: albedo tint and brightness baked into `_diff`, the roughness channel remapped to the material's range in `_arm`, all at most 2K. Their `_ConvexHulls` collision meshes are dropped at import. `AssetDownloads/Mixamo` is empty and there is no Fab folder, so nothing was imported there; the import rules already rig `Assets/ThirdParty/Mixamo` as Humanoid.
+- [x] Sonniss: copy only the clips SoundBank needs plus ambience (wind, night forest, rain, house creaks, distant dogs and crows) into `Assets/Hollowmere/Audio`, never whole libraries. `tools/prepare-audio.ps1` cuts 29 clips listed in `tools/audio-sources.json` (bell strikes, ambience loops with crossfaded seams, creaks, knocks, thuds, chimes, gasp, Hollow breathing, chant drone): 57 MB of 48 kHz WAV. ffmpeg isn't installed, so the sources stay WAV and `AudioImportRules` compresses every clip to Vorbis on import (ambience streamed, one-shots mono). The sampler has no crows.
 
 **4. Materials**
 

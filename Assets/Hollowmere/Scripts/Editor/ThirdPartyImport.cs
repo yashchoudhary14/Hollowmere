@@ -28,19 +28,22 @@ namespace Hollowmere.EditorTools
 
         public static bool IsThirdParty(string path) => path.Replace('\\', '/').StartsWith(Root);
 
-        /// <summary>Reimports every third-party asset under these rules: textures first, so models can find their maps.</summary>
+        /// <summary>
+        /// Reimports every third-party asset (and the game's recorded audio) under these rules: textures first, so
+        /// models can find their maps.
+        /// </summary>
         [MenuItem("Hollowmere/Reimport Third-Party Assets")]
         public static void ReimportAll()
         {
-            var paths = AssetDatabase.FindAssets("", new[] { Root.TrimEnd('/') })
+            var paths = AssetDatabase.FindAssets("", new[] { Root.TrimEnd('/'), AudioImportRules.AudioRoot.TrimEnd('/') })
                 .Select(AssetDatabase.GUIDToAssetPath)
                 .Where(p => !AssetDatabase.IsValidFolder(p))
                 .Distinct().ToArray();
             var textures = paths.Where(p => AssetImporter.GetAtPath(p) is TextureImporter).ToArray();
             var models = paths.Where(p => AssetImporter.GetAtPath(p) is ModelImporter).ToArray();
-            foreach (var p in textures) AssetDatabase.ImportAsset(p, ImportAssetOptions.ForceUpdate);
-            foreach (var p in models) AssetDatabase.ImportAsset(p, ImportAssetOptions.ForceUpdate);
-            Debug.Log($"[Hollowmere] THIRD-PARTY REIMPORTED: {textures.Length} textures, {models.Length} models");
+            var audio = paths.Where(p => AssetImporter.GetAtPath(p) is AudioImporter).ToArray();
+            foreach (var p in textures.Concat(models).Concat(audio)) AssetDatabase.ImportAsset(p, ImportAssetOptions.ForceUpdate);
+            Debug.Log($"[Hollowmere] THIRD-PARTY REIMPORTED: {textures.Length} textures, {models.Length} models, {audio.Length} audio clips");
             BuildModelMaterials();
         }
 
@@ -153,6 +156,20 @@ namespace Hollowmere.EditorTools
             mi.materialImportMode = ModelImporterMaterialImportMode.ImportViaMaterialDescription;
             if (assetPath.Contains("/Mixamo/")) mi.animationType = ModelImporterAnimationType.Human;
         }
+
+        /// <summary>
+        /// Drops collision proxies baked into the FBX (Megascans "_ConvexHulls", Unreal "UCX_" meshes): they carry no
+        /// material and would render as grey hulls. Gameplay keeps its own primitive colliders.
+        /// </summary>
+        void OnPostprocessModel(GameObject root)
+        {
+            if (!IsThirdParty(assetPath)) return;
+            foreach (var t in root.GetComponentsInChildren<Transform>(true).Where(t => IsCollisionProxy(t.name)).ToArray())
+                if (t != null && t != root.transform) Object.DestroyImmediate(t.gameObject);
+        }
+
+        public static bool IsCollisionProxy(string name)
+            => name.EndsWith("_ConvexHulls", System.StringComparison.OrdinalIgnoreCase) || name.StartsWith("UCX_", System.StringComparison.OrdinalIgnoreCase);
 
         // ------------------------------------------------------------ model materials
 

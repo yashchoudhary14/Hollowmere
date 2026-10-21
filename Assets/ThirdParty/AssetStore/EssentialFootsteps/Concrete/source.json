@@ -1,0 +1,10 @@
+﻿{
+    "id":  "Concrete",
+    "name":  "Concrete",
+    "kind":  "asset-store",
+    "pack":  "Essential Footsteps",
+    "use":  "footsteps on wood (houses), concrete (cobbles and stone), dirt (streets and road) and leaves (forest ground)",
+    "source":  "Unity Asset Store",
+    "url":  null,
+    "licence":  "Unity Asset Store EULA (Standard)"
+}

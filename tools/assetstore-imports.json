@@ -1,0 +1,34 @@
+{
+  "comment": "Files taken from the user's Asset Store packages in AssetDownloads by tools/import-assetstore.ps1. Only these are imported; the packages themselves never enter the project. 'select' is a regex over each item's path inside the package; 'strip' is removed from that path to form the output path. Textures become <name>_diff/_nor_gl/_arm JPGs at most 2K so the ThirdParty import rules apply unchanged.",
+  "packs": [
+    {
+      "name": "Essential Footsteps",
+      "file": "essential_footsteps.unitypackage",
+      "out": "Assets/ThirdParty/AssetStore/EssentialFootsteps",
+      "licence": "Unity Asset Store EULA (Standard)",
+      "select": "Essential_Footsteps_SFX_SK/(Wood|Concrete|Dirt|Leaves)/(Footsteps/[^/]*_Walk_[1-8]\\.wav|Jump_Land/[^/]*_Land_[12]\\.wav)$",
+      "strip": "Assets/Essential_Footsteps_SFX_SK/",
+      "use": "footsteps on wood (houses), concrete (cobbles and stone), dirt (streets and road) and leaves (forest ground)"
+    },
+    {
+      "name": "Terrain Textures Free (MicroVerse Extras)",
+      "file": "terrain_textures_free.unitypackage",
+      "out": "Assets/ThirdParty/AssetStore/TerrainTexturesFree",
+      "licence": "Unity Asset Store EULA (Standard)",
+      "select": "Terrain Textures/Textures/(Grass 09|Grass 06|Leaves 02)/[^/]*_(BaseColor|Normal|MaskMap)\\.png$",
+      "strip": "Assets/MicroVerse-Extras/Terrain Textures/Textures/",
+      "use": "damp patchy grass for the village ground, overgrown grass for gardens, dead leaves under trees"
+    },
+    {
+      "name": "Saloon Interior (Quixel Megascans)",
+      "file": "salooninterior.unitypackage",
+      "out": "Assets/ThirdParty/AssetStore/SaloonInterior",
+      "licence": "Unity Asset Store EULA (Standard)",
+      "megascans": true,
+      "select": "Art/Assets/MS/3D/(His_Wil_Cart_Wheel_Wood_Old_01|Res_Sto_Chest_Wood_Worn_08|Res_Rur_Storage_Bucket_Metal_Worn_03|His_Med_Storage_Barrel_Wood_Worn_01|Res_Fur_Chair_Wood_Old_03|Res_Rur_Furniture_Shelf_Wood_Old_01|His_Sal_Furniture_Lamp_Wood_Old_02|His_Wil_Equipment_Horseshoe_Metal_Rusted_01|Urb_Dec_PictureFrame_Wood_Worn_01|Ind_Sup_Beam_Wood_Old_04|Res_Sto_Flask_Ceramic_Worn_01|Res_Fur_Stool_Wood_Armless_01|His_Wil_Furniture_Table_Wood_Worn_01)/(SM_[^/]*\\.fbx|M_[^/]*\\.mat)$",
+      "skip": "_B\\.(fbx|mat)$",
+      "strip": "Assets/Quixel/SaloonInterior/HDRP (Default)/Art/Assets/MS/3D/",
+      "use": "worn rural props: cart wheel, chest, metal bucket, barrel, old chair, shelf, oil lamp, horseshoe over doors, family picture frames, ceiling beams, jug, stool, table"
+    }
+  ]
+}

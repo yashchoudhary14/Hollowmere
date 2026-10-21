@@ -1,0 +1,44 @@
+{
+  "comment": "Clips cut from the Sonniss GDC 2026 Game Audio Bundle (sampler, Part 9) into Assets/Hollowmere/Audio by tools/prepare-audio.ps1. 'onset' starts the cut at the Nth detected transient (single bell tolls, knocks); otherwise 'start' in seconds. 'loop' crossfades the end into the start. Output is 48 kHz 16-bit WAV (no ffmpeg on this machine for OGG; Unity compresses to Vorbis on import).",
+  "bundle": "../../AssetDownloads/Sonniss.com-GDC2026-GameAudioBundle",
+  "source": "Sonniss GDC 2026 Game Audio Bundle",
+  "url": "https://gdc.sonniss.com/",
+  "licence": "Sonniss GDC Game Audio Bundle licence: royalty-free for commercial and non-commercial projects, no attribution required, not to be redistributed as a sound library (see 'License - GDC Game Audio.pdf' in the bundle)",
+  "clips": [
+    { "out": "Bells/BellToll_A.wav",       "pack": "Ivo Vicic - Church Bells", "file": "04 Church Bells, Near Distance, In Church Tower-3 Different Bell 02.wav", "onset": 1, "length": 1.25, "mono": true, "fadeOut": 0.45, "use": "the strike of a chapel-bell toll (the synthesised bell rings on under it)" },
+    { "out": "Bells/BellToll_B.wav",       "pack": "Ivo Vicic - Church Bells", "file": "04 Church Bells, Near Distance, In Church Tower-3 Different Bell 02.wav", "onset": 2, "length": 1.25, "mono": true, "fadeOut": 0.45, "use": "a second strike variation" },
+    { "out": "Ambience/BellsDistant.wav",  "pack": "Ivo Vicic - Church Bells", "file": "25 Church Bells, Far Distance, Rural Soundscape Distant, Hills Ridge, Spring 02.wav", "start": 5, "length": 40, "loop": 3, "use": "dusk: far bells over the hills" },
+
+    { "out": "Doors/Creak_A.wav",          "pack": "Epic Stock Media - HD Game Materials", "file": "ICEFric_Dry Ice High Metal Squeal Groan Bright Squeak Dissonant Short 13_ESM_HDGM.wav", "start": 0, "length": 2.2, "mono": true, "fadeOut": 0.3, "use": "a door swung open fast" },
+    { "out": "Doors/Creak_B.wav",          "pack": "Epic Stock Media - HD Game Materials", "file": "ICEFric_Dry Ice Squeak Metal Animal Mouse Imitation Short 07_ESM_HDGM.wav", "start": 0, "length": 0.55, "mono": true, "fadeOut": 0.15, "use": "door creak variation: one hinge chirp" },
+    { "out": "Doors/GateGroan.wav",        "pack": "The Noisery - Moaning Metal", "file": "DSGNTonl_Metal Scrape Low Tonal LFE 4_The Noisery_Moaning Metal.wav", "start": 0, "length": 5.0, "mono": true, "fadeOut": 1.0, "use": "the village gate swinging" },
+    { "out": "Doors/Knock_A.wav",          "pack": "344 Audio - Haunting Ambiences Vol. 3", "file": "WOODImpt_Wooden Hit, Dark, Heavy Hit, Vampire's Prison_344 Audio_Haunting Ambiences Vol 3.wav", "onset": 1, "length": 2.5, "mono": true, "fadeOut": 0.6, "use": "the Hollow knocking" },
+    { "out": "Doors/Knock_B.wav",          "pack": "344 Audio - Haunting Ambiences Vol. 3", "file": "METLImpt_Metal Bangs, Metal Hits, Banging On Doors_344 Audio_Haunting Ambiences Vol 3.wav", "onset": 1, "length": 2.5, "mono": true, "fadeOut": 0.6, "use": "the Hollow banging on a door" },
+
+    { "out": "Impacts/Thud_A.wav",         "pack": "Epic Stock Media - HD Lock And Mechanism Sound Design Kit", "file": "MECHLtch_Click Deep Mechanism Latch Button Nearfield Thunk 02_ESM_HDLM.wav", "start": 0, "length": 0.4, "mono": true, "use": "something set down or dropped" },
+    { "out": "Impacts/Thud_B.wav",         "pack": "The Noisery - Moaning Metal", "file": "DSGNImpt_Metal Hit Thud Thump Low Ring Geofon 1_The Noisery_Moaning Metal.wav", "start": 0, "length": 2.5, "mono": true, "fadeOut": 0.8, "use": "a heavy thud (the altar throwing a part back)" },
+    { "out": "Impacts/BooksFall.wav",      "pack": "344 Audio - Antique Books", "file": "PAPRMisc_Pile Of Antique Books Falling Over 8_344 Audio_Antiques - Books.wav", "start": 0, "length": 2.8, "mono": true, "use": "dropped-item variation" },
+    { "out": "Impacts/HouseCreak.wav",     "pack": "344 Audio - Haunting Ambiences Vol. 3", "file": "WOODImpt_Wooden Hit, Dark, Heavy Hit, Vampire's Prison_344 Audio_Haunting Ambiences Vol 3.wav", "onset": 4, "length": 3.0, "mono": true, "fadeOut": 1.0, "use": "a house settling somewhere far off" },
+
+    { "out": "Puzzle/Clunk.wav",           "pack": "344 Audio - Antique Small Metals", "file": "METLMvmt_  Tinkering Antique Lock_344 Audio_Antique Small Metals.wav", "onset": 1, "length": 1.2, "mono": true, "fadeOut": 0.2, "use": "a wrong dial, symbol or hour" },
+    { "out": "Puzzle/Chime_A.wav",         "pack": "Sonic Bat - Music Boxes", "file": "SBmb_Music Box A 013.wav", "start": 0, "length": 2.8, "mono": true, "use": "a puzzle opening: a music box phrase" },
+    { "out": "Puzzle/Chime_B.wav",         "pack": "Sonic Bat - Music Boxes", "file": "SBmb_Music Box B 028.wav", "start": 0, "length": 2.6, "mono": true, "use": "puzzle chime variation" },
+
+    { "out": "Voice/Gasp.wav",             "pack": "SoundBits - Vox Hominis - Human Effort Voices", "file": "HMNBrth_Panting Male 02 04_SNDBTS_VH.wav", "start": 0, "length": 1.6, "mono": true, "fadeOut": 0.3, "use": "gasping after holding your breath" },
+    { "out": "Hollow/Breath_A.wav",        "pack": "344 Audio - Haunting Ambiences Vol. 5", "file": "HMNBrth_Respirator, Specimen Breathing, Mad Scientist Lab_344 Audio_Haunting Ambiences Vol 5.wav", "start": 12, "length": 6.0, "mono": true, "fadeIn": 0.5, "fadeOut": 1.0, "use": "the Hollow's wet breathing" },
+    { "out": "Hollow/Breath_B.wav",        "pack": "SoundBits - Vox Bestiae - Source Elements", "file": "CREAAqua_Aquatic Creature Gurgling 2_SNDBTS_VB-SE.wav", "start": 0, "length": 4.2, "mono": true, "fadeOut": 0.5, "use": "breathing variation" },
+    { "out": "Hollow/Exhale.wav",          "pack": "SoundBits - Vox Bestiae - Source Elements", "file": "CREAHmn_Violent Humanoid Creature Exhale Short 4_SNDBTS_VB-SE.wav", "start": 0, "length": 0.4, "mono": true, "use": "the Hollow starting a hunt" },
+
+    { "out": "Ritual/ChantDrone.wav",      "pack": "Epic Stock Media - Strange Game Ambient Loops 3", "file": "DSGNSynth_Dark Loop Mystic Forest Tonal Steady Synth_ESM_SGA3.wav", "start": 0, "length": 30, "loop": 3, "use": "the ritual's drone" },
+
+    { "out": "Ambience/DayOutdoors.wav",   "pack": "Just Sound Effects - Highlands of Norway", "file": "AMBSwmp_Meadow Pipits calling many Insects humming Wind blowing through Grass_JSE_HoN_Stereo.wav", "start": 4, "length": 40, "loop": 3, "use": "day outside: birds, insects, grass" },
+    { "out": "Ambience/NightWind.wav",     "pack": "344 Audio - Extreme Winds Vol. 1", "file": "WINDDsgn_EXT, Eye Of The Storm_344 Audio_Extreme Winds Vol 1.wav", "start": 30, "length": 40, "loop": 3, "use": "night outside: wind" },
+    { "out": "Ambience/ChimneyWind.wav",   "pack": "InMotionAudio - Chimney Wind", "file": "WINDInt_ChimneyWind05_InMotionAudio_ChimneyWind.wav", "start": 10, "length": 40, "loop": 3, "use": "night inside: wind in the chimney" },
+    { "out": "Ambience/RoomTone.wav",      "pack": "Jake Fielding - Fridge Hums Vol.2", "file": "MACHAppl_Deep Fridge Hum, Buzz, Electric Tone, Deep_Jake Fielding_Fridge Hums Pt2.wav", "start": 20, "length": 20, "loop": 2, "mono": true, "use": "inside: a low electric room tone" },
+    { "out": "Ambience/ClockTicks.wav",    "pack": "344 Audio - Antique Clocks", "file": "CLOCKTick_Crooked Antique Clock_344 Audio_Antique Clocks.wav", "start": 5, "length": 20, "loop": 1, "mono": true, "use": "inside: a clock ticking" },
+    { "out": "Ambience/RainWindow.wav",    "pack": "Jake Fielding - Interior Wind Rain and Storms", "file": "RAINInt_Heavy Rain on Window,  Constant _JF_INT Storm.wav", "start": 2, "length": 25, "loop": 2, "use": "Act 3 inside: rain on the windows" },
+    { "out": "Ambience/RainOutdoors.wav",  "pack": "InMotionAudio - Back Garden Storm", "file": "STORM_StormAmbience13_InMotionAudio_BackGardenStorm.wav", "start": 20, "length": 40, "loop": 3, "use": "Act 3 outside: rain" },
+    { "out": "Ambience/HearthFire.wav",    "pack": "344 Audio - Haunting Ambiences Vol. 5", "file": "FIRECrkl_Fire Crackling, Popping, Witch's Cauldron_344 Audio_Haunting Ambiences Vol 5.wav", "start": 20, "length": 25, "loop": 2, "mono": true, "use": "a lit hearth, placed in the room" },
+    { "out": "Ambience/DogsDistant.wav",   "pack": "344 Audio - Dog Vocalisations Vol. 1", "file": "ANMLDog_Dog Barks, Multiple, Indoors, Perspective,_344 Audio_Dog Vocalisations_02.wav", "start": 0, "length": 5.9, "mono": true, "fadeOut": 0.8, "use": "day and dusk: dogs somewhere in the valley" }
+  ]
+}

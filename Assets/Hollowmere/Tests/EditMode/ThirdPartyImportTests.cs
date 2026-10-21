@@ -98,5 +98,26 @@ namespace Hollowmere.Tests
                 }
             }
         }
+
+        [Test]
+        public void Audio_IsVorbis_LoopsStream_OneShotsAreMono()
+        {
+            var paths = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/ThirdParty", AudioImportRules.AudioRoot.TrimEnd('/') })
+                .Select(AssetDatabase.GUIDToAssetPath).Distinct().ToArray();
+            if (paths.Length == 0) Assert.Ignore("No recorded audio in the project yet.");
+            foreach (var p in paths)
+            {
+                var ai = (AudioImporter)AssetImporter.GetAtPath(p);
+                var s = ai.defaultSampleSettings;
+                Assert.That(s.compressionFormat, Is.EqualTo(AudioCompressionFormat.Vorbis), p);
+                if (AudioImportRules.IsLoop(p))
+                    Assert.That(s.loadType, Is.EqualTo(AudioClipLoadType.Streaming), p);
+                else
+                {
+                    Assert.That(ai.forceToMono, Is.True, p);
+                    Assert.That(s.loadType, Is.EqualTo(AudioClipLoadType.DecompressOnLoad), p);
+                }
+            }
+        }
     }
 }
