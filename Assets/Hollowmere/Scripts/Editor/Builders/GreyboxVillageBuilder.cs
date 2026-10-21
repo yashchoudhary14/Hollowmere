@@ -394,7 +394,7 @@ namespace Hollowmere.EditorTools
             room.House = house;
             room.IsHearthRoom = hearthRoom;
             room.Bounds = new Bounds(t.position + Vector3.up * size.y * 0.5f, size);
-            room.Light = PointLight(t, "CeilingLight", new Vector3(0f, HouseH - 0.25f, 0f), new Color(1f, 0.82f, 0.6f), 7f, 1.6f);
+            room.Light = PointLight(t, "CeilingLight", new Vector3(0f, HouseH - 0.25f, 0f), new Color(1f, 0.82f, 0.6f), 7f, 2.5f);
             room.Bulb = Ball(t, "Bulb", new Vector3(0f, HouseH - 0.12f, 0f), 0.14f, Mat("Bulb", new Color(1f, 0.95f, 0.8f), 0.5f, new Color(2f, 1.8f, 1.4f)), collider: false);
             return room;
         }
@@ -410,7 +410,7 @@ namespace Hollowmere.EditorTools
             Box(visual, "Breast", new Vector3(0f, 2.2f, 0.3f), new Vector3(1.6f, 1.6f, 0.6f), stone);
             var fire = Node(hearth, "Fire", new Vector3(0f, 0.3f, 1.0f));
             Ball(fire, "Flames", Vector3.zero, 0.38f, Mat("Fire", new Color(1f, 0.5f, 0.15f), 0.2f, new Color(4f, 1.6f, 0.4f)), collider: false);
-            PointLight(fire, "FireLight", new Vector3(0f, 0.3f, 0.2f), new Color(1f, 0.55f, 0.25f), 6f, 2.5f);
+            PointLight(fire, "FireLight", new Vector3(0f, 0.3f, 0.2f), new Color(1f, 0.55f, 0.25f), 6f, 5f);
             fire.gameObject.SetActive(false);
 
             var component = hearth.gameObject.AddComponent<Hearth>();
@@ -611,7 +611,7 @@ namespace Hollowmere.EditorTools
                 Cyl(visual, "Wax", new Vector3(0f, 0.75f, 0f), 0.1f, 0.3f, Mat("Candle", new Color(0.92f, 0.9f, 0.8f)));
                 var flame = Node(candle, "Flame", new Vector3(0f, 0.95f, 0f));
                 Ball(flame, "Glow", Vector3.zero, 0.07f, Mat("Flame", new Color(1f, 0.7f, 0.3f), 0.2f, new Color(3f, 1.8f, 0.6f)), collider: false);
-                PointLight(flame, "Light", new Vector3(0f, 0.1f, 0f), new Color(1f, 0.7f, 0.35f), 4f, 1.2f);
+                PointLight(flame, "Light", new Vector3(0f, 0.1f, 0f), new Color(1f, 0.7f, 0.35f), 4f, 2.5f);
                 flame.gameObject.SetActive(false);
                 circle.Candles[i] = candle.gameObject.AddComponent<Candle>();
                 circle.Candles[i].Flame = flame.gameObject;

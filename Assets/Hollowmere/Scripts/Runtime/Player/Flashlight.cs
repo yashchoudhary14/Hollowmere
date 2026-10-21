@@ -16,7 +16,8 @@ namespace Hollowmere
         public float BatterySeconds = 480f;
         [Tooltip("Not in DESIGN.md yet: below this charge the beam flickers.")]
         public float FlickerBelow = 0.15f;
-        public float Intensity = 6f;
+        [Tooltip("URP lights fall off with distance squared; this keeps the beam useful out to its 15 m range.")]
+        public float Intensity = 50f;
 
         public float Charge01 = 1f;
         public bool IsOn { get; private set; }

@@ -186,29 +186,8 @@ namespace Hollowmere.EditorTools
                     return;
                 }
 
-                const int w = 1600, h = 900;
-                var rt = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32);
-                var previousTarget = cam.targetTexture;
-                cam.targetTexture = rt;
-                cam.Render();
-
-                var previousActive = RenderTexture.active;
-                RenderTexture.active = rt;
-                var tex = new Texture2D(w, h, TextureFormat.RGB24, false);
-                tex.ReadPixels(new Rect(0, 0, w, h), 0, 0);
-                tex.Apply();
-                RenderTexture.active = previousActive;
-                cam.targetTexture = previousTarget;
-
                 var outPath = Arg("-hmOut") ?? Path.Combine(ClaudeLogDir, "screenshot.png");
-                var dir = Path.GetDirectoryName(outPath);
-                if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
-                File.WriteAllBytes(outPath, tex.EncodeToPNG());
-
-                UnityEngine.Object.DestroyImmediate(tex);
-                rt.Release();
-                UnityEngine.Object.DestroyImmediate(rt);
-
+                RenderToPng(cam, outPath);
                 Debug.Log($"{Tag} SHOT OK: {outPath} (camera '{cam.name}')");
                 EditorApplication.Exit(0);
             }
@@ -217,6 +196,32 @@ namespace Hollowmere.EditorTools
                 Debug.LogError($"{Tag} SHOT FAILED: {e}");
                 EditorApplication.Exit(1);
             }
+        }
+
+        /// <summary>Renders one camera to a 1600x900 PNG. Needs graphics (not -nographics).</summary>
+        public static void RenderToPng(Camera cam, string outPath)
+        {
+            const int w = 1600, h = 900;
+            var rt = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32);
+            var previousTarget = cam.targetTexture;
+            cam.targetTexture = rt;
+            cam.Render();
+
+            var previousActive = RenderTexture.active;
+            RenderTexture.active = rt;
+            var tex = new Texture2D(w, h, TextureFormat.RGB24, false);
+            tex.ReadPixels(new Rect(0, 0, w, h), 0, 0);
+            tex.Apply();
+            RenderTexture.active = previousActive;
+            cam.targetTexture = previousTarget;
+
+            var dir = Path.GetDirectoryName(outPath);
+            if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+            File.WriteAllBytes(outPath, tex.EncodeToPNG());
+
+            UnityEngine.Object.DestroyImmediate(tex);
+            rt.Release();
+            UnityEngine.Object.DestroyImmediate(rt);
         }
 
         // ---------------------------------------------------------------- helpers
