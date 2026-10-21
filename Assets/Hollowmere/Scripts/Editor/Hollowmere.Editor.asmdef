@@ -2,7 +2,8 @@
     "name": "Hollowmere.Editor",
     "rootNamespace": "Hollowmere.EditorTools",
     "references": [
-        "Hollowmere.Runtime"
+        "Hollowmere.Runtime",
+        "Unity.AI.Navigation"
     ],
     "includePlatforms": [
         "Editor"

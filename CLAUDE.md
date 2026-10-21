@@ -72,7 +72,7 @@ Assets/Hollowmere/
 - **Tuning numbers** (speeds, timers, radii) come from DESIGN.md. Keep them as serialized fields or in one tuning ScriptableObject, with the design value as the default and a comment naming the DESIGN.md section.
 - **Plan for multiplayer from the start.** Match state lives in a few authority objects (e.g. a `MatchDirector`); players send intents ("interact with X"); UI never holds game logic. Milestone 2 moves this onto Netcode for GameObjects with the host as authority, so avoid statics that hold per-match state.
 - Unity 6 APIs: `FindObjectsByType` / `FindAnyObjectByType` (not `FindObjectOfType`). URP materials use shader `Universal Render Pipeline/Lit` and `_BaseColor`.
-- NavMesh: use the AI Navigation package (`NavMeshSurface`), baked by the builder after geometry exists. Exclude door panels from the bake (`NavMeshModifier` with ignore-from-build) and give them carving `NavMeshObstacle`s.
+- NavMesh: use the AI Navigation package (`NavMeshSurface`), baked by the builder after geometry exists. Exclude door panels from the bake (`NavMeshModifier` with ignore-from-build) and give them carving `NavMeshObstacle`s. Those obstacles carve as soon as the NavMesh loads, in edit mode too, so a test that needs open doorways must disable them and reload the surface's data (see `GreyboxSceneTests`).
 - Until the UI milestone, HUD and debug UI use `OnGUI`, which needs no extra assets. Avoid TextMeshPro until then; it needs an Essential Resources import.
 - Pure logic gets EditMode tests. Behaviour that needs a running scene gets a PlayMode test when that's practical.
 - Packages are added through `BatchTools.RequiredPackages` + `setup`, not by hand-editing versions in `Packages/manifest.json`.

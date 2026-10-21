@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M0 done (check and test green on 2026-10-21). Next is M1, starting with the world builder.
+**Status:** M1 in progress. The greybox village builder is done; next is the player.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -27,12 +27,12 @@ One player can play a complete match, from arrival to results, in a greybox vill
 
 **World builder** (`Hollowmere/Build Greybox Village` → `Assets/Hollowmere/Scenes/Greybox.unity`)
 
-- [ ] Ground, wall ring, village gate in the north wall, fog road beyond it to the bridge [The village map].
-- [ ] 15 houses from `HouseCatalog` with visible traits: door colour, chimney count, family nameplate, stopped clock beside the door. Each house has 3 rooms, a hearth, room lights, a fuse box, a wardrobe hiding spot, 3 note spots, and its puzzle rig and part container [Houses and puzzles].
-- [ ] Town square: altar with 6 slots, stone circle with 6 candles, notice board, bell tower. Chapel with the chained Ritual Book.
-- [ ] Shrine diamond marker above every house door, hidden by default.
-- [ ] Roam points on the streets, forest-edge spawn points, NavMeshSurface bake (door panels excluded and carving).
-- [ ] Sun and moon lights, player, Hollow placeholder. Scene added to Build Settings.
+- [x] Ground, wall ring, village gate in the north wall, fog road beyond it to the bridge [The village map].
+- [x] 15 houses from `HouseCatalog` with visible traits: door colour, chimney count, family nameplate, stopped clock beside the door. Each house has 3 rooms, a hearth, room lights, a fuse box, a wardrobe hiding spot, 3 note spots, and its puzzle rig and part container [Houses and puzzles].
+- [x] Town square: altar with 6 slots, stone circle with 6 candles, notice board, bell tower. Chapel with the chained Ritual Book.
+- [x] Shrine diamond marker above every house door, hidden by default.
+- [x] Roam points on the streets, forest-edge spawn points, NavMeshSurface bake (door panels excluded and carving).
+- [x] Sun and moon lights, player, Hollow placeholder. Scene added to Build Settings.
 
 **Player** [Player systems]
 
