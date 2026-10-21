@@ -32,6 +32,13 @@ namespace Hollowmere.EditorTools
             "com.unity.test-framework",
         };
 
+        /// <summary>Packages that must not be installed. This is a URP project; HDRP and Terrain Tools were removed in M1.5.</summary>
+        static readonly string[] UnwantedPackages =
+        {
+            "com.unity.render-pipelines.high-definition",
+            "com.unity.terrain-tools",
+        };
+
         static readonly string[] ProjectFolders =
         {
             "Assets/Hollowmere/Art",
@@ -97,15 +104,17 @@ namespace Hollowmere.EditorTools
 
             var manifest = File.Exists("Packages/manifest.json") ? File.ReadAllText("Packages/manifest.json") : "";
             var missing = RequiredPackages.Where(p => !manifest.Contains("\"" + p + "\"")).ToArray();
-            if (missing.Length == 0)
+            var unwanted = UnwantedPackages.Where(p => manifest.Contains("\"" + p + "\"")).ToArray();
+            if (missing.Length == 0 && unwanted.Length == 0)
             {
                 Debug.Log($"{Tag} SETUP OK: folders ready, all required packages already installed.");
                 EditorApplication.Exit(0);
                 return;
             }
 
-            Debug.Log($"{Tag} Adding packages: {string.Join(", ", missing)}");
-            s_packageRequest = Client.AddAndRemove(missing, null);
+            if (missing.Length > 0) Debug.Log($"{Tag} Adding packages: {string.Join(", ", missing)}");
+            if (unwanted.Length > 0) Debug.Log($"{Tag} Removing packages: {string.Join(", ", unwanted)}");
+            s_packageRequest = Client.AddAndRemove(missing, unwanted);
             EditorApplication.update += WaitForPackages;
         }
 
