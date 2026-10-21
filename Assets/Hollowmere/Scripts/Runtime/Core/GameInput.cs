@@ -8,7 +8,8 @@ namespace Hollowmere
     public enum GameKey
     {
         Interact, Flashlight, Sprint, Crouch, CloseEyes, HoldBreath, MicToggle,
-        Pause, DebugOverlay, DebugSkip, DebugFreezeMonster, DebugTeleportHome, Restart
+        Pause, DebugOverlay, DebugSkip, DebugFreezeMonster, DebugTeleportHome, Restart,
+        Jump, Slot1, Slot2, Slot3, Drop, SwapBattery
     }
 
     /// <summary>
@@ -100,6 +101,7 @@ namespace Hollowmere
                 case GameKey.Flashlight:         return Key.F;
                 case GameKey.CloseEyes:          return Key.Q;
                 case GameKey.HoldBreath:         return Key.Space;
+                case GameKey.Jump:               return Key.Space;
                 case GameKey.MicToggle:          return Key.M;
                 case GameKey.Pause:              return Key.Escape;
                 case GameKey.DebugOverlay:       return Key.F1;
@@ -107,6 +109,11 @@ namespace Hollowmere
                 case GameKey.DebugFreezeMonster: return Key.F3;
                 case GameKey.DebugTeleportHome:  return Key.F4;
                 case GameKey.Restart:            return Key.R;
+                case GameKey.Slot1:              return Key.Digit1;
+                case GameKey.Slot2:              return Key.Digit2;
+                case GameKey.Slot3:              return Key.Digit3;
+                case GameKey.Drop:               return Key.G;
+                case GameKey.SwapBattery:        return Key.B;
                 default:                         return Key.None;
             }
         }
@@ -134,6 +141,7 @@ namespace Hollowmere
                 case GameKey.Flashlight:         return KeyCode.F;
                 case GameKey.CloseEyes:          return KeyCode.Q;
                 case GameKey.HoldBreath:         return KeyCode.Space;
+                case GameKey.Jump:               return KeyCode.Space;
                 case GameKey.MicToggle:          return KeyCode.M;
                 case GameKey.Pause:              return KeyCode.Escape;
                 case GameKey.DebugOverlay:       return KeyCode.F1;
@@ -141,6 +149,11 @@ namespace Hollowmere
                 case GameKey.DebugFreezeMonster: return KeyCode.F3;
                 case GameKey.DebugTeleportHome:  return KeyCode.F4;
                 case GameKey.Restart:            return KeyCode.R;
+                case GameKey.Slot1:              return KeyCode.Alpha1;
+                case GameKey.Slot2:              return KeyCode.Alpha2;
+                case GameKey.Slot3:              return KeyCode.Alpha3;
+                case GameKey.Drop:               return KeyCode.G;
+                case GameKey.SwapBattery:        return KeyCode.B;
                 default:                         return KeyCode.None;
             }
         }

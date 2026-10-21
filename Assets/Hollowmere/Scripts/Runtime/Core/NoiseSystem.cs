@@ -14,6 +14,29 @@ namespace Hollowmere
     }
 
     /// <summary>
+    /// Noise radii in metres. Values come from docs/DESIGN.md "Player systems" unless marked as placeholders,
+    /// which DESIGN.md doesn't give a number for yet; playtests will tune them.
+    /// </summary>
+    public static class NoiseRadius
+    {
+        public const float CrouchWalk = 0f;   // silent
+        public const float Walk = 5f;
+        public const float Sprint = 25f;
+        public const float Jump = 10f;        // "vault or jump"
+
+        // Placeholders.
+        public const float DoorCreak = 12f;   // a quick open creaks
+        public const float DoorQuiet = 0f;    // holding the button opens slowly and quietly
+        public const float DroppedItem = 6f;
+        public const float Gasp = 10f;        // holding your breath too long ends with a loud gasp
+        public const float FuseReset = 4f;
+        public const float PuzzleClunk = 4f;  // a wrong dial or symbol
+        public const float PuzzleSolved = 10f;
+        public const float LoudPuzzle = 40f;  // HouseDef.LoudPuzzle, e.g. the Organist's pump organ
+        public const float AltarWrongSlot = 40f;
+    }
+
+    /// <summary>
     /// Every gameplay sound the Hollow might hear goes through here, so hearing rules live in one place.
     /// Design reference: docs/DESIGN.md, "Player systems" (noise radii) and "The monster" (hearing ranges).
     /// </summary>

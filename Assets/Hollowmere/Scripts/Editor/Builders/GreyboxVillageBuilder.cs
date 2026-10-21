@@ -256,6 +256,10 @@ namespace Hollowmere.EditorTools
             house.NoteSpots = noteSpots.ToArray();
             house.ItemSpots = itemSpots.ToArray();
 
+            // DESIGN.md "Items and tools": matches in every house; batteries in drawers.
+            BuildPickup(interior, "Matches", new Vector3(-4.1f, 0.76f, 2.8f), ItemKind.Matches, "a box of matches", 5);
+            BuildPickup(interior, "Battery", new Vector3(4.85f, 0.76f, 2.85f), ItemKind.Battery, "a battery");
+
             house.PuzzleAnchor = Node(interior, "PuzzleRig", new Vector3(3f, 0f, -inZ));
             BuildPuzzleRigVisual(house.PuzzleAnchor, def.Puzzle);
             house.ContainerAnchor = Node(interior, "PartContainer", new Vector3(4.85f, 0f, -3.55f));
@@ -655,6 +659,69 @@ namespace Hollowmere.EditorTools
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = FogDay;
             head.gameObject.AddComponent<AudioListener>();
+
+            // Flashlight beam, slightly below and right of the eyes so its shadows read.
+            var beam = Node(head, "FlashlightBeam", new Vector3(0.12f, -0.12f, 0.1f)).gameObject.AddComponent<Light>();
+            beam.type = LightType.Spot;
+            beam.spotAngle = 55f;
+            beam.innerSpotAngle = 28f;
+            beam.color = new Color(1f, 0.95f, 0.85f);
+            beam.shadows = LightShadows.Soft;
+            beam.enabled = false;
+
+            var agent = player.AddComponent<PlayerAgent>();
+            var motor = player.AddComponent<PlayerMotor>();
+            var interactor = player.AddComponent<PlayerInteractor>();
+            var flashlight = player.AddComponent<Flashlight>();
+            var mic = player.AddComponent<MicNoise>();
+            agent.Head = head;
+            agent.Motor = motor;
+            agent.Interactor = interactor;
+            agent.Flashlight = flashlight;
+            agent.Mic = mic;
+            agent.DisplayName = "You";
+            motor.Agent = agent;
+            motor.Head = head;
+            interactor.Agent = agent;
+            flashlight.Agent = agent;
+            flashlight.Beam = beam;
+            mic.Agent = agent;
+
+            var hud = new GameObject("HUD").AddComponent<Hud>();
+            hud.Player = agent;
+        }
+
+        static Pickup BuildPickup(Transform parent, string name, Vector3 localPos, ItemKind kind, string label, int amount = 1)
+        {
+            var t = Node(parent, name, localPos);
+            var pickup = t.gameObject.AddComponent<Pickup>();
+            pickup.Kind = kind;
+            pickup.Label = label;
+            pickup.Amount = amount;
+            // A generous trigger so small things are easy to aim at.
+            var hitbox = t.gameObject.AddComponent<BoxCollider>();
+            hitbox.isTrigger = true;
+            hitbox.size = new Vector3(0.3f, 0.2f, 0.3f);
+            hitbox.center = new Vector3(0f, 0.08f, 0f);
+
+            var visual = Node(t, "Visual");
+            switch (kind)
+            {
+                case ItemKind.Matches:
+                    Box(visual, "Matchbox", new Vector3(0f, 0.015f, 0f), new Vector3(0.11f, 0.03f, 0.07f), Mat("Matchbox", new Color(0.6f, 0.12f, 0.08f)), false);
+                    break;
+                case ItemKind.Battery:
+                    Cyl(visual, "Cell", new Vector3(0f, 0.02f, 0f), 0.035f, 0.1f, Mat("Battery", new Color(0.15f, 0.25f, 0.4f), 0.5f), false, Quaternion.Euler(0f, 0f, 90f));
+                    break;
+                case ItemKind.WindingKey:
+                    Box(visual, "Bow", new Vector3(0f, 0.01f, 0f), new Vector3(0.06f, 0.015f, 0.05f), Mat("Brass", new Color(0.75f, 0.6f, 0.25f), 0.7f), false);
+                    Box(visual, "Shaft", new Vector3(0f, 0.01f, 0.06f), new Vector3(0.015f, 0.015f, 0.08f), Mat("Brass", new Color(0.75f, 0.6f, 0.25f), 0.7f), false);
+                    break;
+                default:
+                    Ball(visual, "Thing", new Vector3(0f, 0.06f, 0f), 0.12f, Mat("Gold", new Color(0.85f, 0.65f, 0.25f), 0.7f), collider: false);
+                    break;
+            }
+            return pickup;
         }
 
         static void BuildHollow(Transform spawn)

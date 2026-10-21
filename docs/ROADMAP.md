@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 in progress. The greybox village builder is done; next is the player.
+**Status:** M1 in progress. Village builder and player are done; next are the world objects (doors, readables, fuse box, hearth, wardrobe).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -36,11 +36,11 @@ One player can play a complete match, from arrival to results, in a greybox vill
 
 **Player** [Player systems]
 
-- [ ] First-person controller: walk 2.5 m/s, crouch 1.5, sprint 5 for 6 s with recovery. Footstep noise radii 0 / 5 / 25 m.
-- [ ] Interaction raycast with tap and hold prompts.
-- [ ] Inventory: 3 hand slots, a ritual-part slot (no sprinting while it's full), matches, batteries, keepsake.
-- [ ] Flashlight with battery drain and flicker when low.
-- [ ] Microphone loudness to noise with `NoiseSystem.VoiceRadius`, toggled with M.
+- [x] First-person controller: walk 2.5 m/s, crouch 1.5, sprint 5 for 6 s with recovery. Footstep noise radii 0 / 5 / 25 m.
+- [x] Interaction raycast with tap and hold prompts.
+- [x] Inventory: 3 hand slots, a ritual-part slot (no sprinting while it's full), matches, batteries, keepsake.
+- [x] Flashlight with battery drain and flicker when low.
+- [x] Microphone loudness to noise with `NoiseSystem.VoiceRadius`, toggled with M.
 
 **World objects**
 
