@@ -19,7 +19,7 @@ namespace Hollowmere.EditorTools
     /// object keeps its primitives under a child named "Visual", so either can be swapped for a prefab
     /// without touching the gameplay components.
     /// </summary>
-    public static class GreyboxVillageBuilder
+    public static partial class GreyboxVillageBuilder
     {
         public const string ScenePath = "Assets/Hollowmere/Scenes/Greybox.unity";
         const string NavMeshPath = "Assets/Hollowmere/Scenes/Greybox_NavMesh.asset";
@@ -49,6 +49,7 @@ namespace Hollowmere.EditorTools
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
 
             Begin();
+            BeginDressing();
             EnsureFolder("Assets/Hollowmere/Scenes");
             EnsureFolder("Assets/Hollowmere/Settings");
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
@@ -64,6 +65,8 @@ namespace Hollowmere.EditorTools
             var houses = new House[HouseCatalog.Count];
             for (int i = 0; i < houses.Length; i++)
                 houses[i] = BuildHouse(houseRoot, i, HousePosition(i));
+
+            DressGrounds(village);
 
             var (board, bell, altar, circle) = BuildSquare(village);
             var chapelSpawn = BuildChapel(village, out var ritualBook);
@@ -191,7 +194,6 @@ namespace Hollowmere.EditorTools
         static void BuildForest(Transform village)
         {
             var trunk = Mat("Trunk", new Color(0.24f, 0.18f, 0.13f));
-            var leaves = Mat("Leaves", new Color(0.12f, 0.20f, 0.12f));
             var forest = Node(village, "Forest");
             var rng = new System.Random(1971); // fixed: the forest is scenery, not match randomness
             int n = 0;
@@ -203,27 +205,26 @@ namespace Hollowmere.EditorTools
                 var p = new Vector3(x + Jitter(rng, 4f), 0f, z + Jitter(rng, 4f));
                 bool outsideWall = Mathf.Abs(p.x) > 155f || Mathf.Abs(p.z) > 155f;
                 bool onRoad = Mathf.Abs(p.x) < 10f && p.z > 140f;
-                if (outsideWall && !onRoad) Tree(forest, n++, p, rng, trunk, leaves);
+                if (outsideWall && !onRoad) Tree(forest, n++, p, rng, trunk);
             }
 
             // Both sides of the fog road.
             for (float z = 156f; z <= 384f; z += 8f)
             for (float x = 10f; x <= 38f; x += 8f)
             {
-                Tree(forest, n++, new Vector3(x + Jitter(rng, 2.5f), 0f, z + Jitter(rng, 3f)), rng, trunk, leaves);
-                Tree(forest, n++, new Vector3(-x + Jitter(rng, 2.5f), 0f, z + Jitter(rng, 3f)), rng, trunk, leaves);
+                Tree(forest, n++, new Vector3(x + Jitter(rng, 2.5f), 0f, z + Jitter(rng, 3f)), rng, trunk);
+                Tree(forest, n++, new Vector3(-x + Jitter(rng, 2.5f), 0f, z + Jitter(rng, 3f)), rng, trunk);
             }
         }
 
         static float Jitter(System.Random rng, float amount) => ((float)rng.NextDouble() * 2f - 1f) * amount;
 
-        static void Tree(Transform parent, int n, Vector3 pos, System.Random rng, Material trunk, Material leaves)
+        static void Tree(Transform parent, int n, Vector3 pos, System.Random rng, Material trunk)
         {
             float h = 7f + (float)rng.NextDouble() * 5f;
             var t = Node(parent, $"Tree_{n:000}", pos);
             Cyl(t, "Trunk", new Vector3(0f, h * 0.5f, 0f), 0.5f, h, trunk);
-            var crown = Ball(t, "Crown", new Vector3(0f, h, 0f), 1f, leaves, collider: false);
-            crown.transform.localScale = new Vector3(3.6f, 5f, 3.6f);
+            DeadTree(t, n, h); // M1.5: bare limbs instead of the greybox crown
         }
 
         static void Blocker(Transform parent, string name, Vector3 pos, Vector3 size)
@@ -306,6 +307,7 @@ namespace Hollowmere.EditorTools
 
             house.Container = BuildContainer(Node(interior, "PartContainer", new Vector3(4.85f, 0f, -3.55f)), house);
             house.Puzzle = BuildPuzzleRig(Node(interior, "PuzzleRig", new Vector3(3f, 0f, -inZ)), interior, house, house.Container);
+            DressHouse(root, house);
 
             return house;
         }
@@ -447,6 +449,7 @@ namespace Hollowmere.EditorTools
             var wood = Mat("Wood", new Color(0.25f, 0.17f, 0.11f));
             Box(visual, "Body", new Vector3(0f, 1.05f, 0.33f), new Vector3(1.2f, 2.1f, 0.65f), wood);
             Box(visual, "DoorGap", new Vector3(0f, 1.05f, 0.66f), new Vector3(0.02f, 1.9f, 0.01f), Mat("Soot", new Color(0.04f, 0.035f, 0.03f)), false);
+            PropKit.SwapVisual(visual, PropKit.Wardrobe);
             var spot = wardrobe.gameObject.AddComponent<HidingSpot>();
             spot.Inside = Node(wardrobe, "Inside", new Vector3(0f, 0f, 0.33f));
             return spot;
@@ -456,7 +459,9 @@ namespace Hollowmere.EditorTools
         static Transform BuildTable(Transform interior, string name, Vector3 localPos, bool paper = true)
         {
             var table = Node(interior, name, localPos);
-            Box(Node(table, "Visual"), "Top", new Vector3(0f, 0.375f, 0f), new Vector3(0.9f, 0.75f, 0.6f), Mat("Wood", new Color(0.25f, 0.17f, 0.11f)));
+            var visual = Node(table, "Visual");
+            var wood = Mat("Wood", new Color(0.25f, 0.17f, 0.11f));
+            TableLook(visual, Box(visual, "Top", new Vector3(0f, 0.375f, 0f), new Vector3(0.9f, 0.75f, 0.6f), wood), wood);
             var spot = Node(table, "NoteSpot", new Vector3(-0.15f, 0.76f, 0f));
             if (paper)
                 Box(spot, "Paper", new Vector3(0f, 0.003f, 0f), new Vector3(0.22f, 0.006f, 0.3f), Mat("Paper", new Color(0.88f, 0.85f, 0.76f)));
@@ -502,6 +507,7 @@ namespace Hollowmere.EditorTools
                 {
                     Box(visual, "Case", new Vector3(0f, 1.1f, 0.23f), new Vector3(0.7f, 2.2f, 0.45f), wood);
                     Box(visual, "PendulumWindow", new Vector3(0f, 0.8f, 0.46f), new Vector3(0.34f, 0.8f, 0.02f), Mat("Window", new Color(0.07f, 0.09f, 0.12f), 0.8f), false);
+                    PropKit.SwapVisual(visual, PropKit.GrandfatherClock);
                     var clock = anchor.gameObject.AddComponent<ClockPuzzle>();
                     var face = Node(anchor, "Face", new Vector3(0f, 1.75f, 0.45f));
                     Cyl(Node(face, "Visual"), "Dial", new Vector3(0f, 0f, 0.01f), 0.5f, 0.02f, cream, true, Quaternion.Euler(90f, 0f, 0f));
@@ -897,6 +903,15 @@ namespace Hollowmere.EditorTools
                 ShotCamera(root, name, o + new Vector3(1.6f, 1.6f, -0.6f), o + new Vector3(3.2f, 1.3f, -4.2f));
             }
             ShotCamera(root, "Cam_Road", new Vector3(0f, 1.7f, 160f), new Vector3(0f, 1.5f, 260f));
+
+            // Look pass (M1.5): house 7's rooms and yard, the forest band.
+            var h7 = HousePosition(7);
+            ShotCamera(root, "Cam_HearthRoom", h7 + new Vector3(-0.6f, 1.6f, 0.5f), h7 + new Vector3(-3.4f, 1.0f, -3.8f));
+            ShotCamera(root, "Cam_Hall", h7 + new Vector3(2.6f, 1.6f, 1.4f), h7 + new Vector3(-2.0f, 1.3f, 4.2f));
+            ShotCamera(root, "Cam_FrontYard", h7 + new Vector3(3.8f, 1.7f, 9.5f), h7 + new Vector3(0f, 1.4f, 4.5f));
+            ShotCamera(root, "Cam_Garden", h7 + new Vector3(13f, 2.6f, -17f), h7 + new Vector3(0f, 0.8f, -7f));
+            ShotCamera(root, "Cam_Forest", new Vector3(20f, 1.7f, -158f), new Vector3(36f, 2.5f, -176f));
+            ShotCamera(root, "Cam_Fireside", h7 + new Vector3(-1.2f, 1.3f, -0.6f), h7 + new Vector3(-4.6f, 0.6f, -2.4f));
         }
 
         static void ShotCamera(Transform root, string name, Vector3 pos, Vector3 lookAt)

@@ -46,7 +46,7 @@ MonoBehaviour:
     MetallicGlossMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
     OcclusionMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
     MetresPerTile: 3
-    Tint: {r: 1, g: 1, b: 1, a: 1}
+    Tint: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     KeepBuilderColour: 0
     NormalScale: 1
     Smoothness: 0.85

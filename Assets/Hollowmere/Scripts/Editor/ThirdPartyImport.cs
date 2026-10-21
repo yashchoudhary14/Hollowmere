@@ -225,7 +225,7 @@ namespace Hollowmere.EditorTools
             {
                 // Flame cards: the game lights its own flames.
                 mat.SetColor("_BaseColor", new Color(0f, 0f, 0f, 0f));
-                MakeTransparent(mat, 0f);
+                MakeTransparent(mat, 0f, reflective: false);
                 return;
             }
 
@@ -254,19 +254,38 @@ namespace Hollowmere.EditorTools
             return tex != null;
         }
 
-        public static void MakeTransparent(Material m, float alpha)
+        /// <summary>
+        /// URP Lit alpha blending, set the way URP's own material setup leaves it (so reimports don't rewrite it).
+        /// Glass keeps its reflections at full strength ("preserve specular"); with reflective false, reflections and
+        /// highlights are off and blending is plain, so clear parts stay clear (flame cards, cobwebs).
+        /// </summary>
+        public static void MakeTransparent(Material m, float alpha, bool reflective = true)
         {
             var c = m.GetColor("_BaseColor");
             m.SetColor("_BaseColor", new Color(c.r, c.g, c.b, alpha));
             m.SetFloat("_Surface", 1f);
             m.SetFloat("_Blend", 0f);
             m.SetFloat("_ZWrite", 0f);
-            m.SetFloat("_SrcBlend", (float)BlendMode.SrcAlpha);
+            m.SetFloat("_BlendModePreserveSpecular", reflective ? 1f : 0f);
+            m.SetFloat("_SrcBlend", (float)(reflective ? BlendMode.One : BlendMode.SrcAlpha));
             m.SetFloat("_DstBlend", (float)BlendMode.OneMinusSrcAlpha);
+            m.SetFloat("_SrcBlendAlpha", (float)BlendMode.One);
+            m.SetFloat("_DstBlendAlpha", (float)BlendMode.OneMinusSrcAlpha);
+            SetKeyword(m, "_ALPHAPREMULTIPLY_ON", reflective);
+            m.SetFloat("_EnvironmentReflections", reflective ? 1f : 0f);
+            SetKeyword(m, "_ENVIRONMENTREFLECTIONS_OFF", !reflective);
+            m.SetFloat("_SpecularHighlights", reflective ? 1f : 0f);
+            SetKeyword(m, "_SPECULARHIGHLIGHTS_OFF", !reflective);
             m.SetOverrideTag("RenderType", "Transparent");
             m.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
             m.renderQueue = (int)RenderQueue.Transparent;
             m.SetShaderPassEnabled("ShadowCaster", false);
+        }
+
+        static void SetKeyword(Material m, string keyword, bool on)
+        {
+            if (on) m.EnableKeyword(keyword);
+            else m.DisableKeyword(keyword);
         }
 
         /// <summary>"Lantern_01_brass_diff_1k.jpg" -> "lantern_01_brass": the name without its map suffix and resolution.</summary>

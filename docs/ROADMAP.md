@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–4 done; next: step 5, props and set dressing).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–5 done; next: step 6, lighting and atmosphere).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -116,8 +116,8 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **5. Props and dressing**
 
-- [ ] Swap primitives for models through the `Visual`/`Shell` slots where a good model exists: wardrobe, tables, hearth dressing, lantern and candles, chest, fences, dead trees, rocks. The primitive's collider stays (renderer hidden) and the model is fitted to its bounds, so collision, interaction and NavMesh don't change.
-- [ ] Seeded, deterministic set dressing in rooms and streets (chairs, beds, shelves, books, buckets, tools, barrels, crates, debris, cobwebs if available), with no colliders, so it can't affect movement, interaction rays or the NavMesh bake.
+- [x] Swap primitives for models through the `Visual`/`Shell` slots where a good model exists: wardrobe, tables, hearth dressing, lantern and candles, chest, fences, dead trees, rocks. The primitive's collider stays (renderer hidden) and the model is fitted to its bounds, so collision, interaction and NavMesh don't change. Done with `PropKit.SwapVisual` (wardrobe → Gothic cabinet, clock puzzle case → grandfather clock behind the puzzle's own dial); tables get a built top-and-legs look (the Poly Haven and Saloon tables are coffee-table height); the part chest keeps its primitive because its lid animates. Forest trees keep their trunk and collider and get one of 12 dead-limb prefabs (roots, crooked leader, limbs and twigs) scaled to the trunk. Fences are built post-and-rail.
+- [x] Seeded, deterministic set dressing in rooms and streets (chairs, beds, shelves, books, buckets, tools, barrels, crates, debris, cobwebs if available), with no colliders, so it can't affect movement, interaction rays or the NavMesh bake. `GreyboxVillageBuilder.Dressing.cs`: fixed clear spots in each room (every house shares the plan) filled per house seed — chairs, rocking chair by the fire, bed, bookshelves, wall shelf with books and a jug, picture frames, horseshoe over the door, ceiling beams, log pile, mantel candles, oil lamp, barrels/crates/buckets; yards with clutter, cart wheel, tools, a door lantern, and a fenced overgrown back garden; stumps, fallen trunks, boulders, moss rocks and dry branches in the forest band and along the ring wall; broken fences along the fog road on the lines of its invisible walls. No cobweb asset was available, so a corner-web texture is drawn by code. The layout snapshot test still passes unchanged.
 
 **6. Lighting and atmosphere**
 

@@ -41,7 +41,7 @@ namespace Hollowmere.EditorTools
             // Outdoors
             Set("Ground", "PolyHaven/forrest_ground_01", 4f, Grey(0.9f)),
             Set("Grass", "AssetStore/TerrainTexturesFree/Grass 09", 3f),
-            Set("Garden", "AssetStore/TerrainTexturesFree/Grass 06", 3f),
+            Set("Garden", "AssetStore/TerrainTexturesFree/Grass 06", 3f, Grey(0.7f)),
             Set("LeafLitter", "AssetStore/TerrainTexturesFree/Leaves 02", 2f, Grey(0.8f)),
             Set("Road", "PolyHaven/brown_mud_leaves_01", 4f),
             Set("Paving", "PolyHaven/mossy_cobblestone", 4f),
