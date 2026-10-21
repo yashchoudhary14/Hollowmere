@@ -38,6 +38,8 @@ namespace Hollowmere
         public BellTower Bell;
         public PhaseLighting Lighting;
         public VillageGate Gate;
+        public Altar Altar;
+        public RitualCircle Circle;
 
         public MatchPlan Plan { get; private set; }
         public float Clock { get; private set; }
@@ -48,10 +50,19 @@ namespace Hollowmere
         /// <summary>Stops the clock, e.g. once the gate is open and dawn no longer matters.</summary>
         public bool ClockStopped { get; set; }
 
+        /// <summary>The chant is done and the gate stands open onto the fog road (not the arrival's open gate).</summary>
+        public bool RitualComplete { get; private set; }
+
         /// <summary>House puzzles only work at night (docs/DESIGN.md "Decisions": puzzles by day).</summary>
         public bool PuzzlesActive => Now.Phase == MatchPhase.Night;
 
-        public event Action NightStarted, MidnightBell, Act3Started, PowerCut;
+        public event Action NightStarted, MidnightBell, Act3Started, PowerCut, ChantStarted, GateOpened;
+
+        /// <summary>Something loud and wrong happened (a part in the wrong altar slot): the Hollow comes.</summary>
+        public event Action<Vector3> HollowCalled;
+
+        /// <summary>House index → seconds into the night its puzzle was solved, or -1.</summary>
+        public float[] SolveTimes { get; private set; } = new float[0];
 
         static readonly string[] TravellerNames = { "Alex", "Sam", "Robin", "Jo", "Kit", "Lee" };
         static readonly string[] Keepsakes = { "a pocket watch", "a photograph", "a ring", "a lighter", "a locket", "a harmonica" };
@@ -119,6 +130,9 @@ namespace Hollowmere
             }
             Board.Post(Plan);
             RitualBook.Set("The Ritual Book", Plan.RitualBookText(), "Read the Ritual Book");
+            Altar.Setup(this);
+            Circle.Setup(this, Altar);
+            SolveTimes = Enumerable.Repeat(-1f, Houses.Length).ToArray();
         }
 
         void Update()
@@ -130,6 +144,7 @@ namespace Hollowmere
                 Fire(before, Clock);
             }
             UpdateArrival();
+            CheckForEnd();
             Lighting.Apply(Now);
 
             if (Outcome != MatchOutcome.Running && GameInput.Pressed(GameKey.Restart))
@@ -219,8 +234,57 @@ namespace Hollowmere
             ClockStopped = true;
             foreach (var p in Players)
             {
+                if (p.IsAlive) p.SetCondition(p.Condition, "Still in Hollowmere when the dawn bell rang.");
                 p.Frozen = true;
                 p.ResultsCapture = true;
+            }
+        }
+
+        /// <summary>The match is over once nobody is left alive in the village: escaped, taken or dead.</summary>
+        void CheckForEnd()
+        {
+            if (Outcome != MatchOutcome.Running || Players.Length == 0 || Players.Any(p => p.IsAlive)) return;
+            if (Players.Any(p => p.Condition == PlayerCondition.Escaped))
+                End(MatchOutcome.Won, "You walked out of Hollowmere. At the bridge you stop and count each other in the fog.\n\nThere is one more figure standing there than there should be.");
+            else
+                End(MatchOutcome.Lost, "Hollowmere keeps its guests. In the morning the villagers are back in the square, and you are standing among them, smiling, as a new car pulls up at the gate.");
+        }
+
+        public void OpenGate()
+        {
+            if (RitualComplete) return;
+            RitualComplete = true;
+            Gate.SetOpen(true);
+            ClockStopped = true; // dawn no longer matters once the gate is open
+            NotifyAll("The chant ends. The gate swings open onto the fog road. Walk, and do not look back.");
+            GateOpened?.Invoke();
+        }
+
+        public void RaiseChantStarted() => ChantStarted?.Invoke();
+
+        public void CallTheHollow(Vector3 where) => HollowCalled?.Invoke(where);
+
+        public void RecordSolve(int house)
+        {
+            if (house >= 0 && house < SolveTimes.Length)
+                SolveTimes[house] = Mathf.Max(0f, Clock - MatchTimeline.NightStart(Timeline));
+        }
+
+        /// <summary>The results screen: each player's fate, the Hollow's variant, and each needed house.</summary>
+        public void AppendResults(List<string> lines)
+        {
+            foreach (var p in Players)
+                lines.Add($"<b>{p.DisplayName}</b>: {(string.IsNullOrEmpty(p.Fate) ? "Unknown." : p.Fate)}");
+            lines.Add("");
+            lines.Add($"The Hollow was the {Plan.Variant}.");
+            lines.Add("");
+            for (int i = 0; i < Plan.PlayerCount; i++)
+            {
+                var h = Houses[Plan.AllottedHouses[i]];
+                int slot = Plan.SlotFor(h.Index);
+                bool placed = Altar.Placed.Length > slot && Altar.Placed[slot] == h.Index;
+                string puzzle = SolveTimes[h.Index] >= 0f ? $"puzzle solved {FormatClock(SolveTimes[h.Index])} into the night" : "puzzle unsolved";
+                lines.Add($"{Plan.PlayerNames[i]}'s {h.Def.Name}: {puzzle}; the {h.Def.Part.ToLowerInvariant()} {(placed ? "on the altar" : "never placed")}.");
             }
         }
 

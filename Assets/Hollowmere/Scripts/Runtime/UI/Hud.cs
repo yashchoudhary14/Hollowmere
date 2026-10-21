@@ -36,6 +36,7 @@ namespace Hollowmere
             }
             if (!Player.IsAlive) return;
             if (Player.InHiding) DrawHidingView();
+            DrawChant();
             DrawCrosshair();
             DrawPrompt();
             DrawBars();
@@ -217,13 +218,45 @@ namespace Hollowmere
             }
         }
 
+        readonly System.Collections.Generic.List<string> _results = new System.Collections.Generic.List<string>();
+
+        /// <summary>Results screen (docs/DESIGN.md "Results screen"): fates, the Hollow's variant, each house's puzzle.</summary>
         void DrawOutcome()
         {
-            Fill(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0f, 0f, 0f, 0.85f));
+            Fill(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0f, 0f, 0f, 0.88f));
+            float x = Screen.width * 0.18f, w = Screen.width * 0.64f, y = Screen.height * 0.14f;
             string heading = Director.Outcome == MatchOutcome.Won ? "You made it out." : "Hollowmere keeps you.";
-            GUI.Label(new Rect(Screen.width * 0.2f, Screen.height * 0.3f, Screen.width * 0.6f, Px(50)), heading, _title);
-            GUI.Label(new Rect(Screen.width * 0.2f, Screen.height * 0.3f + Px(60), Screen.width * 0.6f, Px(200)), Director.OutcomeText, _body);
-            GUI.Label(new Rect(0f, Screen.height * 0.8f, Screen.width, Px(30)), "Press R to play again", _hint);
+            GUI.Label(new Rect(x, y, w, Px(50)), heading, _title);
+            y += Px(60);
+            float h = _body.CalcHeight(new GUIContent(Director.OutcomeText), w);
+            GUI.Label(new Rect(x, y, w, h), Director.OutcomeText, _body);
+            y += h + Px(30);
+
+            _results.Clear();
+            Director.AppendResults(_results);
+            foreach (var line in _results)
+            {
+                float lh = string.IsNullOrEmpty(line) ? Px(12) : _small.CalcHeight(new GUIContent(line), w);
+                GUI.Label(new Rect(x, y, w, lh), line, _small);
+                y += lh + Px(4);
+            }
+            GUI.Label(new Rect(0f, Screen.height - Px(80), Screen.width, Px(30)), "Press R to play again", _hint);
+        }
+
+        void DrawChant()
+        {
+            var circle = Director != null ? Director.Circle : null;
+            if (circle == null || !circle.Chant.Started || circle.Chant.Complete) return;
+            string text;
+            switch (circle.Status)
+            {
+                case ChantStatus.Paused: text = "The chant falters. Everyone into the circle."; break;
+                case ChantStatus.Reset: text = "Every candle is out. Relight one with your matches."; break;
+                default: text = $"The chant: {Mathf.CeilToInt(circle.Chant.Seconds - circle.Chant.Progress)} s"; break;
+            }
+            float w = Px(360);
+            Shadowed(new Rect(0f, Px(150), Screen.width, Px(30)), text, _center);
+            Bar(new Rect((Screen.width - w) * 0.5f, Px(186), w, Px(8)), circle.Chant.Progress01, new Color(0.95f, 0.75f, 0.4f));
         }
 
         void DrawPanel()

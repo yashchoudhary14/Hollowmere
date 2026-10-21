@@ -96,25 +96,7 @@ namespace Hollowmere.Tests
             foreach (var kind in new[] { PuzzleKind.CodeLock, PuzzleKind.Clock, PuzzleKind.Sequence })
             {
                 var house = d.Houses.First(h => h.Def.Puzzle == kind);
-                var answer = d.Plan.Solutions[house.Index];
-                switch (house.Puzzle)
-                {
-                    case CodeLockPuzzle code:
-                        for (int i = 0; i < 4; i++)
-                            for (int turns = 0; turns < 10 && code.Dials[i] != answer.Code[i]; turns++) code.Turn(i, player);
-                        break;
-                    case ClockPuzzle clock:
-                        Assert.That(player.PickUp(clock.Key), Is.True);
-                        for (int turns = 0; turns < 12 && clock.Hour != answer.ClockHour; turns++) clock.Advance();
-                        clock.Wind(player);
-                        Assert.That(player.Inventory.Has(ItemKind.WindingKey), Is.False, "Winding uses up the key.");
-                        break;
-                    case SequencePuzzle sequence:
-                        sequence.Press((answer.Sequence[0] + 1) % 6, player); // a wrong first press resets harmlessly
-                        Assert.That(sequence.Progress, Is.EqualTo(0));
-                        foreach (var symbol in answer.Sequence) sequence.Press(symbol, player);
-                        break;
-                }
+                SolveWithPlansAnswer(d, house, player);
                 Assert.That(house.Puzzle.Solved, Is.True, $"{kind} in {house.name}");
                 yield return new WaitForSeconds(1f);
                 Assert.That(house.Container.IsOpen, Is.True);
@@ -123,6 +105,121 @@ namespace Hollowmere.Tests
                 Assert.That(player.PickUp(house.Container.Part), Is.True);
                 Assert.That(player.Inventory.RitualPart, Is.EqualTo(house.Index));
                 player.GiveUpPart(out _);
+            }
+        }
+
+        /// <summary>
+        /// A two-player match played by one person to the end: both puzzles, a part in the wrong slot,
+        /// both parts placed, the chant (with every candle out once), the gate, and the walk to the bridge.
+        /// </summary>
+        [UnityTest]
+        public IEnumerator FullMatch_PartsChantAndCrossing_EndInAWin()
+        {
+            yield return StartNightOfTwoPlayerMatch();
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            var player = Object.FindAnyObjectByType<PlayerAgent>();
+            d.Circle.Chant.Seconds = 2f; // the real chant is 60 s
+
+            for (int i = 0; i < d.Plan.PlayerCount; i++)
+            {
+                var house = d.Houses[d.Plan.AllottedHouses[i]];
+                SolveWithPlansAnswer(d, house, player);
+                yield return null;
+                Assert.That(player.PickUp(house.Container.Part), Is.True);
+
+                int right = d.Plan.SlotFor(house.Index);
+                if (i == 0)
+                {
+                    var wrong = d.Altar.Slots[1 - right];
+                    d.Altar.Place(wrong, player);
+                    Assert.That(player.Inventory.HasPart, Is.False, "A wrong slot throws the part back.");
+                    Assert.That(d.Altar.Placed[wrong.Index], Is.EqualTo(-1));
+                    Assert.That(house.Container.Part.gameObject.activeSelf, Is.True);
+                    Assert.That(player.PickUp(house.Container.Part), Is.True);
+                }
+                d.Altar.Place(d.Altar.Slots[right], player);
+                Assert.That(d.Altar.Placed[right], Is.EqualTo(house.Index));
+            }
+            Assert.That(d.Altar.AllPlaced, Is.True);
+            Assert.That(d.Circle.Chant.Started, Is.False, "Nobody is in the circle yet.");
+
+            player.Motor.Teleport(d.Circle.transform.position + new Vector3(0f, 0.1f, -3f), 0f);
+            yield return null;
+            yield return null;
+            Assert.That(d.Circle.Chant.Started, Is.True);
+            Assert.That(d.Circle.LitCount, Is.EqualTo(2));
+
+            d.Circle.SnuffAll();
+            yield return null;
+            Assert.That(d.Circle.Status, Is.EqualTo(ChantStatus.Reset));
+            var candle = d.Circle.Candles[0];
+            Assert.That(candle.CanInteract(player), Is.True, "Relight from inside the circle with a match.");
+            int matches = player.Inventory.Matches;
+            player.Interact(candle, InteractKind.Tap);
+            Assert.That(candle.Lit, Is.True);
+            Assert.That(player.Inventory.Matches, Is.EqualTo(matches - 1));
+
+            yield return new WaitForSeconds(2.5f);
+            Assert.That(d.Circle.Chant.Complete, Is.True);
+            Assert.That(d.Gate.IsOpen, Is.True);
+
+            player.Motor.Teleport(new Vector3(0f, 0.1f, d.Layout.GateLineZ + 5f), 0f);
+            yield return null;
+            Assert.That(player.Motor.WalkOnly, Is.True, "Only walking on the fog road.");
+            player.Motor.Teleport(new Vector3(0f, 0.1f, d.Layout.BridgeZ + 1f), 0f);
+            yield return null;
+            yield return null;
+            Assert.That(player.Condition, Is.EqualTo(PlayerCondition.Escaped));
+            Assert.That(d.Outcome, Is.EqualTo(MatchOutcome.Won));
+        }
+
+        [UnityTest]
+        public IEnumerator LookingBackOnTheFogRoad_GetsYouTaken()
+        {
+            yield return StartNightOfTwoPlayerMatch();
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            var player = Object.FindAnyObjectByType<PlayerAgent>();
+            d.OpenGate();
+            player.Motor.Teleport(new Vector3(0f, 0.1f, d.Layout.GateLineZ + 20f), 0f);
+            yield return null;
+            player.Motor.SetLook(180f, 0f);
+            yield return new WaitForSeconds(0.8f);
+            Assert.That(player.Condition, Is.EqualTo(PlayerCondition.Taken));
+            Assert.That(d.Outcome, Is.EqualTo(MatchOutcome.Lost));
+        }
+
+        static IEnumerator StartNightOfTwoPlayerMatch()
+        {
+            MatchLaunch.Next = new MatchLaunch.Settings { Seed = 2026, Players = 2, ClockSpeed = 1f };
+            SceneManager.LoadScene("Greybox");
+            yield return null;
+            yield return null;
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            Assert.That(d.Plan.PlayerCount, Is.EqualTo(2));
+            for (int i = 0; i < 3; i++) d.SkipToNextPhase(); // day, dusk, night
+            yield return null;
+        }
+
+        static void SolveWithPlansAnswer(MatchDirector d, House house, PlayerAgent player)
+        {
+            var answer = d.Plan.Solutions[house.Index];
+            switch (house.Puzzle)
+            {
+                case CodeLockPuzzle code:
+                    for (int i = 0; i < 4; i++)
+                        for (int turns = 0; turns < 10 && code.Dials[i] != answer.Code[i]; turns++) code.Turn(i, player);
+                    break;
+                case ClockPuzzle clock:
+                    Assert.That(player.PickUp(clock.Key), Is.True);
+                    for (int turns = 0; turns < 12 && clock.Hour != answer.ClockHour; turns++) clock.Advance();
+                    clock.Wind(player);
+                    Assert.That(player.Inventory.Has(ItemKind.WindingKey), Is.False, "Winding uses up the key.");
+                    break;
+                case SequencePuzzle sequence:
+                    sequence.Press((answer.Sequence[0] + 1) % 6, player); // a wrong first press resets harmlessly
+                    Assert.That(sequence.Progress, Is.EqualTo(0));
+                    foreach (var symbol in answer.Sequence) sequence.Press(symbol, player);
+                    break;
             }
         }
     }

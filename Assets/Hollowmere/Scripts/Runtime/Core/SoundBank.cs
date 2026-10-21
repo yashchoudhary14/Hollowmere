@@ -10,7 +10,7 @@ namespace Hollowmere
     {
         const int Rate = 44100;
 
-        static AudioClip s_bell, s_creak, s_step, s_thud, s_gasp, s_chime, s_clunk, s_knock, s_breath;
+        static AudioClip s_bell, s_creak, s_step, s_thud, s_gasp, s_chime, s_clunk, s_knock, s_breath, s_chant;
 
         public static AudioClip Bell => s_bell != null ? s_bell : s_bell = Make("Bell", 5f, 1, FillBell);
         public static AudioClip Creak => s_creak != null ? s_creak : s_creak = Make("Creak", 0.7f, 2, FillCreak);
@@ -21,6 +21,7 @@ namespace Hollowmere
         public static AudioClip Clunk => s_clunk != null ? s_clunk : s_clunk = Make("Clunk", 0.2f, 7, FillClunk);
         public static AudioClip Knock => s_knock != null ? s_knock : s_knock = Make("Knock", 1.0f, 8, FillKnock);
         public static AudioClip Breath => s_breath != null ? s_breath : s_breath = Make("HollowBreath", 2.5f, 9, FillBreath);
+        public static AudioClip Chant => s_chant != null ? s_chant : s_chant = Make("Chant", 4f, 10, FillChant);
 
         /// <summary>Plays a clip once at a point in the world, as a short-lived 3D source.</summary>
         public static void PlayAt(AudioClip clip, Vector3 position, float volume, float maxDistance = 40f, float pitch = 1f)
@@ -149,6 +150,20 @@ namespace Hollowmere
                     v += Sin(105f, u) * Mathf.Exp(-u * 28f) + 0.25f * Noise(rng) * Mathf.Exp(-u * 90f);
                 }
                 d[i] = v * 0.7f;
+            }
+        }
+
+        /// <summary>A low, looping drone of voices for the chant. Partials are whole cycles over 4 s so it loops cleanly.</summary>
+        static void FillChant(float[] d, System.Random rng)
+        {
+            float[] hz = { 110f, 165f, 220f, 277.5f };
+            float[] amp = { 1f, 0.6f, 0.45f, 0.2f };
+            for (int i = 0; i < d.Length; i++)
+            {
+                float t = i / (float)Rate, v = 0f;
+                for (int k = 0; k < hz.Length; k++)
+                    v += amp[k] * (1f + 0.25f * Mathf.Sin(2f * Mathf.PI * 0.25f * (k + 1) * t)) * Sin(hz[k], t);
+                d[i] = v * 0.15f;
             }
         }
 

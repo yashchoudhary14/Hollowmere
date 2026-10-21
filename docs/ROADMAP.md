@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 in progress. Village, player, world objects, match flow and puzzles are done; next are the ritual and escape (altar, chant, gate, Crossing, results), then the Hollow.
+**Status:** M1 in progress. A full solo match can be won end to end; next is the Hollow v1, then the remaining debug keys and tests, then the build and playtest.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -63,10 +63,10 @@ One player can play a complete match, from arrival to results, in a greybox vill
 
 **Ritual and escape** [Escape]
 
-- [ ] Altar slots follow `AltarOrder`. A wrong slot ejects the part, snuffs every candle and makes a loud noise.
-- [ ] Chant: all parts placed and every living player in the circle starts it. It lasts 60 s; candles can be relit with matches; it resets when every candle is out and pauses when someone steps out.
-- [ ] Gate opens, then the Crossing: walking only; looking back more than 120° for 0.5 s means you're taken; reaching the bridge means you've escaped.
-- [ ] Results screen, and restart.
+- [x] Altar slots follow `AltarOrder`. A wrong slot ejects the part, snuffs every candle and makes a loud noise.
+- [x] Chant: all parts placed and every living player in the circle starts it. It lasts 60 s; candles can be relit with matches; it resets when every candle is out and pauses when someone steps out.
+- [x] Gate opens, then the Crossing: walking only; looking back more than 120° for 0.5 s means you're taken; reaching the bridge means you've escaped.
+- [x] Results screen, and restart.
 
 **The Hollow v1** [The monster]
 

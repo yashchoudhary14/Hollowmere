@@ -65,7 +65,7 @@ namespace Hollowmere.EditorTools
             for (int i = 0; i < houses.Length; i++)
                 houses[i] = BuildHouse(houseRoot, i, HousePosition(i));
 
-            var (board, bell) = BuildSquare(village);
+            var (board, bell, altar, circle) = BuildSquare(village);
             var chapelSpawn = BuildChapel(village, out var ritualBook);
             var layout = BuildLayout(chapelSpawn);
 
@@ -84,7 +84,13 @@ namespace Hollowmere.EditorTools
             director.Bell = bell;
             director.Lighting = lighting;
             director.Gate = gate;
+            director.Altar = altar;
+            director.Circle = circle;
             director.gameObject.AddComponent<NoiseAudio>();
+            var crossing = director.gameObject.AddComponent<Crossing>();
+            crossing.Director = director;
+            crossing.Layout = layout;
+            crossing.Lighting = lighting;
 
             var ui = new GameObject("HUD");
             var hud = ui.AddComponent<Hud>();
@@ -558,37 +564,45 @@ namespace Hollowmere.EditorTools
 
         // ------------------------------------------------------------ square and chapel
 
-        static (NoticeBoard board, BellTower bell) BuildSquare(Transform village)
+        static (NoticeBoard board, BellTower bell, Altar altar, RitualCircle circle) BuildSquare(Transform village)
         {
             var square = Node(village, "Square");
             Box(square, "Paving", new Vector3(0f, 0.02f, 117f), new Vector3(70f, 0.04f, 60f), Mat("Paving", new Color(0.42f, 0.40f, 0.37f)));
 
-            // Altar with six numbered slots (docs/DESIGN.md "The Ritual of Passage").
-            var altar = Node(square, "Altar", AltarPos);
+            // Altar with six numbered slots (docs/DESIGN.md "The Ritual of Passage"), read left to right from the south.
+            var altarNode = Node(square, "Altar", AltarPos);
             var altarStone = Mat("AltarStone", new Color(0.30f, 0.29f, 0.28f));
-            Box(Node(altar, "Visual"), "Block", new Vector3(0f, 0.5f, 0f), new Vector3(3.8f, 1.0f, 1.3f), altarStone);
-            string[] numerals = { "I", "II", "III", "IV", "V", "VI" };
+            Box(Node(altarNode, "Visual"), "Block", new Vector3(0f, 0.5f, 0f), new Vector3(3.8f, 1.0f, 1.3f), altarStone);
+            var altar = altarNode.gameObject.AddComponent<Altar>();
+            altar.Slots = new AltarSlot[6];
+            altar.EjectPoint = Node(altarNode, "EjectPoint", new Vector3(0.4f, 0.05f, -1.6f));
             for (int i = 0; i < 6; i++)
             {
                 float x = -1.55f + 0.62f * i;
-                var slot = Node(altar, $"Slot_{i + 1}", new Vector3(x, 1.0f, 0f));
+                var slot = Node(altarNode, $"Slot_{i + 1}", new Vector3(x, 1.0f, 0f));
                 Box(Node(slot, "Visual"), "Plate", new Vector3(0f, 0.02f, 0f), new Vector3(0.5f, 0.04f, 0.5f), Mat("Dark", new Color(0.08f, 0.08f, 0.08f)));
-                Label(altar, $"Numeral_{i + 1}", numerals[i], new Vector3(x, 0.6f, -0.66f), Quaternion.identity, 0.2f, new Color(0.75f, 0.72f, 0.65f));
+                Label(altarNode, $"Numeral_{i + 1}", AltarRules.Numeral(i), new Vector3(x, 0.6f, -0.66f), Quaternion.identity, 0.2f, new Color(0.75f, 0.72f, 0.65f));
+                altar.Slots[i] = slot.gameObject.AddComponent<AltarSlot>();
+                altar.Slots[i].Display = Node(slot, "Display", new Vector3(0f, 0.04f, 0f));
             }
 
-            // Stone circle and its six candles.
-            var circle = Node(square, "StoneCircle", AltarPos);
+            // Stone circle and its six candles, one per possible part.
+            var circleNode = Node(square, "StoneCircle", AltarPos);
             var stone = Mat("Stone", new Color(0.45f, 0.44f, 0.42f));
             for (int k = 0; k < 12; k++)
             {
                 float a = k * 30f * Mathf.Deg2Rad;
                 var p = new Vector3(Mathf.Cos(a), 0f, Mathf.Sin(a)) * CircleRadius;
-                Box(circle, $"Stone_{k:00}", p + Vector3.up * 0.95f, new Vector3(0.8f, 1.9f, 0.5f), stone, true, Quaternion.LookRotation(-p));
+                Box(circleNode, $"Stone_{k:00}", p + Vector3.up * 0.95f, new Vector3(0.8f, 1.9f, 0.5f), stone, true, Quaternion.LookRotation(-p));
             }
+            var circle = circleNode.gameObject.AddComponent<RitualCircle>();
+            circle.Radius = CircleRadius;
+            circle.Candles = new Candle[6];
+            altar.Circle = circle;
             for (int i = 0; i < 6; i++)
             {
                 float a = (15f + 60f * i) * Mathf.Deg2Rad;
-                var candle = Node(circle, $"Candle_{i + 1}", new Vector3(Mathf.Cos(a), 0f, Mathf.Sin(a)) * (CircleRadius - 0.8f));
+                var candle = Node(circleNode, $"Candle_{i + 1}", new Vector3(Mathf.Cos(a), 0f, Mathf.Sin(a)) * (CircleRadius - 0.8f));
                 var visual = Node(candle, "Visual");
                 Box(visual, "Plinth", new Vector3(0f, 0.3f, 0f), new Vector3(0.4f, 0.6f, 0.4f), stone);
                 Cyl(visual, "Wax", new Vector3(0f, 0.75f, 0f), 0.1f, 0.3f, Mat("Candle", new Color(0.92f, 0.9f, 0.8f)));
@@ -596,6 +610,8 @@ namespace Hollowmere.EditorTools
                 Ball(flame, "Glow", Vector3.zero, 0.07f, Mat("Flame", new Color(1f, 0.7f, 0.3f), 0.2f, new Color(3f, 1.8f, 0.6f)), collider: false);
                 PointLight(flame, "Light", new Vector3(0f, 0.1f, 0f), new Color(1f, 0.7f, 0.35f), 4f, 1.2f);
                 flame.gameObject.SetActive(false);
+                circle.Candles[i] = candle.gameObject.AddComponent<Candle>();
+                circle.Candles[i].Flame = flame.gameObject;
             }
 
             // Notice board facing the houses (south), six letter spots.
@@ -632,7 +648,7 @@ namespace Hollowmere.EditorTools
             var bellTower = tower.gameObject.AddComponent<BellTower>();
             bellTower.Bell = bell;
 
-            return (noticeBoard, bellTower);
+            return (noticeBoard, bellTower, altar, circle);
         }
 
         /// <summary>The chapel west of the square, with the chained Ritual Book. Returns the Hollow's night spawn.</summary>

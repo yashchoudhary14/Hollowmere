@@ -34,6 +34,7 @@ namespace Hollowmere
         {
             Solved = true;
             Container.Open();
+            Director.RecordSolve(House.Index);
             // DESIGN.md "Houses and puzzles": some puzzles are loud by nature (the Organist's pump organ).
             float noise = House.Def.LoudPuzzle ? NoiseRadius.LoudPuzzle : NoiseRadius.PuzzleSolved;
             NoiseSystem.Emit(transform.position + Vector3.up, noise, NoiseKind.Puzzle, player.Index);
