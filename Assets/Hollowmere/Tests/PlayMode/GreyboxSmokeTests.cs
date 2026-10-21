@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -71,6 +72,58 @@ namespace Hollowmere.Tests
             yield return null;
             Assert.That(d.Houses, Has.None.Matches<House>(h => h.Powered));
             Assert.That(d.Outcome, Is.EqualTo(MatchOutcome.Lost));
+        }
+
+        /// <summary>docs/DESIGN.md "Houses and puzzles": each puzzle kind opens its chest with the plan's answer, and only at night.</summary>
+        [UnityTest]
+        public IEnumerator EachPuzzleKind_OpensItsChest_WithThePlansAnswer()
+        {
+            SceneManager.LoadScene("Greybox");
+            yield return null;
+            yield return null;
+            var d = Object.FindAnyObjectByType<MatchDirector>();
+            var player = Object.FindAnyObjectByType<PlayerAgent>();
+
+            var codeHouse = d.Houses.First(h => h.Def.Puzzle == PuzzleKind.CodeLock);
+            var codeRig = (CodeLockPuzzle)codeHouse.Puzzle;
+            codeRig.Turn(0, player);
+            Assert.That(codeRig.Dials[0], Is.EqualTo(0), "By day the dials don't turn.");
+
+            for (int i = 0; i < 3; i++) d.SkipToNextPhase(); // day, dusk, night
+            yield return null;
+            Assert.That(d.PuzzlesActive, Is.True);
+
+            foreach (var kind in new[] { PuzzleKind.CodeLock, PuzzleKind.Clock, PuzzleKind.Sequence })
+            {
+                var house = d.Houses.First(h => h.Def.Puzzle == kind);
+                var answer = d.Plan.Solutions[house.Index];
+                switch (house.Puzzle)
+                {
+                    case CodeLockPuzzle code:
+                        for (int i = 0; i < 4; i++)
+                            for (int turns = 0; turns < 10 && code.Dials[i] != answer.Code[i]; turns++) code.Turn(i, player);
+                        break;
+                    case ClockPuzzle clock:
+                        Assert.That(player.PickUp(clock.Key), Is.True);
+                        for (int turns = 0; turns < 12 && clock.Hour != answer.ClockHour; turns++) clock.Advance();
+                        clock.Wind(player);
+                        Assert.That(player.Inventory.Has(ItemKind.WindingKey), Is.False, "Winding uses up the key.");
+                        break;
+                    case SequencePuzzle sequence:
+                        sequence.Press((answer.Sequence[0] + 1) % 6, player); // a wrong first press resets harmlessly
+                        Assert.That(sequence.Progress, Is.EqualTo(0));
+                        foreach (var symbol in answer.Sequence) sequence.Press(symbol, player);
+                        break;
+                }
+                Assert.That(house.Puzzle.Solved, Is.True, $"{kind} in {house.name}");
+                yield return new WaitForSeconds(1f);
+                Assert.That(house.Container.IsOpen, Is.True);
+                Assert.That(house.Container.Part.gameObject.activeSelf, Is.True);
+
+                Assert.That(player.PickUp(house.Container.Part), Is.True);
+                Assert.That(player.Inventory.RitualPart, Is.EqualTo(house.Index));
+                player.GiveUpPart(out _);
+            }
         }
     }
 }

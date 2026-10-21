@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 in progress. Village, player, world objects and match flow are done; next are the puzzles (with house notes and the plan's answers), then the ritual and escape.
+**Status:** M1 in progress. Village, player, world objects, match flow and puzzles are done; next are the ritual and escape (altar, chant, gate, Crossing, results), then the Hollow.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -45,21 +45,21 @@ One player can play a complete match, from arrival to results, in a greybox vill
 **World objects**
 
 - [x] Doors: holding E opens slowly and quietly, a quick open creaks (DESIGN.md "Player systems"). Latching at dusk.
-- [ ] Readables: notes, letters on the notice board, the Ritual Book.
+- [x] Readables: notes, letters on the notice board, the Ritual Book.
 - [x] Fuse box and room lights. Hearth (lit or cold) with a safe zone.
 - [x] Wardrobe hiding with hold-breath (Space, 8 s, then a gasp).
 
 **Match flow** [Core loop, Dusk, Night phase]
 
 - [x] `MatchDirector`: Arrival → Day (12 min) → Dusk (90 s, 12 tolls) → Night acts of 6, 8 and 6 min → dawn loss. Includes the midnight bell, unlatching doors in Act 2, and the minute-17 power cut.
-- [ ] Applies the `MatchPlan`: allotted houses, shrines, hearths, letters, Ritual Book text, puzzle answers.
+- [x] Applies the `MatchPlan`: allotted houses, shrines, hearths, letters, Ritual Book text, puzzle answers.
 - [x] Lighting and fog per phase.
 - [x] Debug: time-scale field, simulated player count (one person plays several houses), seed field.
 
 **Puzzles** [Houses and puzzles]
 
-- [ ] Code lock (4 dials), clock (set the hour, wind with the winding key), sequence (6 symbols, 4 in order). Answers come from `MatchPlan.Solutions`, with hints on the house's notes.
-- [ ] A solved puzzle opens the container and frees the ritual part.
+- [x] Code lock (4 dials), clock (set the hour, wind with the winding key), sequence (6 symbols, 4 in order). Answers come from `MatchPlan.Solutions`, with hints on the house's notes.
+- [x] A solved puzzle opens the container and frees the ritual part.
 
 **Ritual and escape** [Escape]
 

@@ -94,7 +94,10 @@ namespace Hollowmere
             NotifyAll("Your car died at the broken bridge. The only road leads into Hollowmere.");
         }
 
-        /// <summary>Allotted houses, shrines, hearths, letters and the Ritual Book (docs/DESIGN.md "Replayability").</summary>
+        /// <summary>
+        /// Allotted houses, shrines, hearths, notes, puzzle answers, letters and the Ritual Book
+        /// (docs/DESIGN.md "Replayability", randomised every match).
+        /// </summary>
         void ApplyPlan()
         {
             foreach (var h in Houses)
@@ -104,6 +107,15 @@ namespace Hollowmere
                 h.ShrineMarker.SetActive(Plan.IsShrine(h.Index));
                 h.FuseBox.SetPowered(true);
                 h.SetLightsOn(lived);                // hollow houses stand dark
+
+                var notes = HouseNotes.Write(Plan, h.Index);
+                for (int k = 0; k < h.Notes.Length && k < notes.Length; k++)
+                    h.Notes[k].Set(notes[k].Title, notes[k].Text, "Read");
+
+                h.Container.ResetClosed();
+                h.Puzzle.Setup(this, Plan.Solutions[h.Index]);
+                if (h.Puzzle is ClockPuzzle clock)
+                    clock.PlaceKey(h.ItemSpots[Plan.KeySpots[h.Index]].position);
             }
             Board.Post(Plan);
             RitualBook.Set("The Ritual Book", Plan.RitualBookText(), "Read the Ritual Book");

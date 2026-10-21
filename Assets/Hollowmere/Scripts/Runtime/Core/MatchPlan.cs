@@ -30,6 +30,7 @@ namespace Hollowmere
         public string[] PlayerNames;
         public string[] Letters;       // player index -> letter text
         public HollowVariant Variant;
+        public int[] KeySpots;         // house index -> which of its item spots hides the winding key (0..2)
 
         public bool IsAllotted(int house) => Array.IndexOf(AllottedHouses, house) >= 0;
         public int OwnerOf(int house) => Array.IndexOf(AllottedHouses, house);
@@ -107,6 +108,10 @@ namespace Hollowmere
             plan.Variant = forcedVariant >= 0 && forcedVariant <= 3
                 ? (HollowVariant)forcedVariant
                 : (HollowVariant)rng.Next(0, 4);
+
+            // 6. Where each house hides its small item. Rolled last so earlier results stay the same per seed.
+            plan.KeySpots = new int[HouseCatalog.Count];
+            for (int i = 0; i < HouseCatalog.Count; i++) plan.KeySpots[i] = rng.Next(0, HouseNotes.KeySpotCount);
 
             return plan;
         }

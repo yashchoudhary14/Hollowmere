@@ -18,9 +18,9 @@ namespace Hollowmere
         public HidingSpot Wardrobe;
         public GameObject ShrineMarker;
         public Readable[] Notes;           // 3 per house, one per room
-        public Transform[] ItemSpots;      // where small items like the winding key can be hidden
-        public Transform PuzzleAnchor;
-        public Transform ContainerAnchor;
+        public Transform[] ItemSpots;      // where small items like the winding key can be hidden (HouseNotes.KeySpotPhrases order)
+        public PuzzleRig Puzzle;
+        public PartContainer Container;
 
         public HouseDef Def => HouseCatalog.Houses[Index];
         public bool Powered => FuseBox == null || FuseBox.Powered;

@@ -294,10 +294,8 @@ namespace Hollowmere.EditorTools
             BuildPickup(interior, "Matches", new Vector3(-4.1f, 0.76f, 2.8f), ItemKind.Matches, "a box of matches", 5);
             BuildPickup(interior, "Battery", new Vector3(4.85f, 0.76f, 2.85f), ItemKind.Battery, "a battery");
 
-            house.PuzzleAnchor = Node(interior, "PuzzleRig", new Vector3(3f, 0f, -inZ));
-            BuildPuzzleRigVisual(house.PuzzleAnchor, def.Puzzle);
-            house.ContainerAnchor = Node(interior, "PartContainer", new Vector3(4.85f, 0f, -3.55f));
-            BuildContainerVisual(house.ContainerAnchor);
+            house.Container = BuildContainer(Node(interior, "PartContainer", new Vector3(4.85f, 0f, -3.55f)), house);
+            house.Puzzle = BuildPuzzleRig(Node(interior, "PuzzleRig", new Vector3(3f, 0f, -inZ)), interior, house, house.Container);
 
             return house;
         }
@@ -455,64 +453,107 @@ namespace Hollowmere.EditorTools
             return spot;
         }
 
-        static void BuildPuzzleRigVisual(Transform anchor, PuzzleKind kind)
+        /// <summary>The house's puzzle rig against the back wall of the puzzle room (docs/DESIGN.md "Houses and puzzles").</summary>
+        static PuzzleRig BuildPuzzleRig(Transform anchor, Transform interior, House house, PartContainer container)
         {
             var metal = Mat("Metal", new Color(0.22f, 0.23f, 0.25f), 0.5f);
             var wood = Mat("Wood", new Color(0.25f, 0.17f, 0.11f));
             var dark = Mat("Dark", new Color(0.08f, 0.08f, 0.08f));
             var cream = Mat("Cream", new Color(0.90f, 0.87f, 0.78f));
+            // The rig faces into the room (+z), so from the player's side its -x is on the right:
+            // rows run from +x to -x so dials, symbols and lamps read left to right.
             var intoRoom = Quaternion.Euler(0f, 180f, 0f); // labels on the back wall read from inside the room
             var visual = Node(anchor, "Visual");
+            PuzzleRig rig;
 
-            switch (kind)
+            switch (house.Def.Puzzle)
             {
                 case PuzzleKind.CodeLock:
+                {
                     Box(visual, "Stand", new Vector3(0f, 0.45f, 0.18f), new Vector3(1.0f, 0.9f, 0.36f), wood);
                     Box(visual, "Safe", new Vector3(0f, 1.25f, 0.18f), new Vector3(1.0f, 0.7f, 0.36f), metal);
+                    var code = anchor.gameObject.AddComponent<CodeLockPuzzle>();
+                    code.DialParts = new CodeDial[4];
                     for (int i = 0; i < 4; i++)
                     {
-                        var dial = Node(anchor, $"Dial_{i}", new Vector3(-0.33f + 0.22f * i, 1.25f, 0.36f));
+                        var dial = Node(anchor, $"Dial_{i}", new Vector3(0.33f - 0.22f * i, 1.25f, 0.36f));
                         Cyl(Node(dial, "Visual"), "Knob", new Vector3(0f, 0f, 0.025f), 0.17f, 0.05f, dark, true, Quaternion.Euler(90f, 0f, 0f));
-                        Label(dial, "Digit", "0", new Vector3(0f, 0f, 0.055f), intoRoom, 0.1f, Color.white);
+                        var part = dial.gameObject.AddComponent<CodeDial>();
+                        part.Rig = code;
+                        part.Index = i;
+                        part.Digit = Label(dial, "Digit", "0", new Vector3(0f, 0f, 0.055f), intoRoom, 0.1f, Color.white);
+                        code.DialParts[i] = part;
                     }
+                    rig = code;
                     break;
+                }
 
                 case PuzzleKind.Clock:
+                {
                     Box(visual, "Case", new Vector3(0f, 1.1f, 0.23f), new Vector3(0.7f, 2.2f, 0.45f), wood);
                     Box(visual, "PendulumWindow", new Vector3(0f, 0.8f, 0.46f), new Vector3(0.34f, 0.8f, 0.02f), Mat("Window", new Color(0.07f, 0.09f, 0.12f), 0.8f), false);
+                    var clock = anchor.gameObject.AddComponent<ClockPuzzle>();
                     var face = Node(anchor, "Face", new Vector3(0f, 1.75f, 0.45f));
                     Cyl(Node(face, "Visual"), "Dial", new Vector3(0f, 0f, 0.01f), 0.5f, 0.02f, cream, true, Quaternion.Euler(90f, 0f, 0f));
                     var hour = Node(face, "HourHand", new Vector3(0f, 0f, 0.03f));
                     Box(hour, "Hand", new Vector3(0f, 0.07f, 0f), new Vector3(0.035f, 0.14f, 0.01f), dark, false);
                     var minute = Node(face, "MinuteHand", new Vector3(0f, 0f, 0.035f));
                     Box(minute, "Hand", new Vector3(0f, 0.1f, 0f), new Vector3(0.02f, 0.2f, 0.01f), dark, false);
+                    face.gameObject.AddComponent<ClockFace>().Rig = clock;
                     var keyhole = Node(anchor, "Keyhole", new Vector3(0f, 1.38f, 0.46f));
                     Box(Node(keyhole, "Visual"), "Plate", Vector3.zero, new Vector3(0.12f, 0.16f, 0.02f), metal);
+                    keyhole.gameObject.AddComponent<ClockKeyhole>().Rig = clock;
+                    clock.HourHand = hour;
+                    // The winding key; MatchDirector moves it to the item spot the plan picked.
+                    clock.Key = BuildPickup(interior, "WindingKey", interior.InverseTransformPoint(house.ItemSpots[0].position), ItemKind.WindingKey, "the winding key");
+                    rig = clock;
                     break;
+                }
 
-                case PuzzleKind.Sequence:
+                default:
+                {
                     Box(visual, "Panel", new Vector3(0f, 1.35f, 0.04f), new Vector3(1.3f, 0.95f, 0.08f), wood);
+                    var sequence = anchor.gameObject.AddComponent<SequencePuzzle>();
                     for (int i = 0; i < HouseCatalog.SequenceSymbols.Length; i++)
                     {
-                        float x = -0.4f + 0.4f * (i % 3), y = i < 3 ? 1.55f : 1.15f;
+                        float x = 0.4f - 0.4f * (i % 3), y = i < 3 ? 1.55f : 1.15f;
                         var button = Node(anchor, $"Symbol_{HouseCatalog.SequenceSymbols[i]}", new Vector3(x, y, 0.08f));
                         Box(Node(button, "Visual"), "Button", new Vector3(0f, 0f, 0.03f), new Vector3(0.32f, 0.32f, 0.06f), cream);
                         Label(button, "Label", HouseCatalog.SequenceSymbols[i].ToUpperInvariant(), new Vector3(0f, 0f, 0.065f), intoRoom, 0.07f, new Color(0.1f, 0.08f, 0.06f));
+                        var part = button.gameObject.AddComponent<SymbolButton>();
+                        part.Rig = sequence;
+                        part.Symbol = i;
                     }
+                    sequence.LampOff = Mat("LampOff", new Color(0.15f, 0.15f, 0.12f));
+                    sequence.LampOn = Mat("LampOn", new Color(1f, 0.85f, 0.5f), 0.4f, new Color(3f, 2.2f, 1f));
+                    sequence.Lamps = new Renderer[4];
                     for (int i = 0; i < 4; i++)
-                        Ball(Node(anchor, $"Lamp_{i}", new Vector3(-0.3f + 0.2f * i, 1.92f, 0.09f)), "Bulb", Vector3.zero, 0.07f, Mat("LampOff", new Color(0.15f, 0.15f, 0.12f)), collider: false);
+                        sequence.Lamps[i] = Ball(Node(anchor, $"Lamp_{i}", new Vector3(0.3f - 0.2f * i, 1.92f, 0.09f)), "Bulb", Vector3.zero, 0.07f, sequence.LampOff, collider: false).GetComponent<Renderer>();
+                    rig = sequence;
                     break;
+                }
             }
+
+            rig.House = house;
+            rig.Container = container;
+            return rig;
         }
 
-        static void BuildContainerVisual(Transform anchor)
+        /// <summary>The chest that holds the house's ritual part until its puzzle is solved.</summary>
+        static PartContainer BuildContainer(Transform anchor, House house)
         {
             var wood = Mat("ChestWood", new Color(0.30f, 0.20f, 0.12f));
             var visual = Node(anchor, "Visual");
             Box(visual, "Body", new Vector3(0f, 0.25f, 0f), new Vector3(1.0f, 0.5f, 0.6f), wood);
             var lid = Node(anchor, "Lid", new Vector3(0f, 0.5f, -0.3f)); // hinge on the back edge; opens with Euler(-105, 0, 0)
             Box(lid, "Board", new Vector3(0f, 0.04f, 0.31f), new Vector3(1.02f, 0.08f, 0.62f), wood);
-            Node(anchor, "PartSlot", new Vector3(0f, 0.56f, 0f));
+
+            var container = anchor.gameObject.AddComponent<PartContainer>();
+            container.Lid = lid;
+            container.Part = BuildPickup(anchor, "RitualPart", new Vector3(0f, 0.5f, 0f), ItemKind.RitualPart, "the " + house.Def.Part.ToLowerInvariant());
+            container.Part.PartHouse = house.Index;
+            container.Part.gameObject.SetActive(false);
+            return container;
         }
 
         // ------------------------------------------------------------ square and chapel
@@ -820,6 +861,12 @@ namespace Hollowmere.EditorTools
             ShotCamera(root, "Cam_Square", new Vector3(0f, 9f, 86f), new Vector3(0f, 1.5f, 116f));
             ShotCamera(root, "Cam_House", new Vector3(7f, 2.2f, 22f), new Vector3(0f, 2.2f, 9.5f));
             ShotCamera(root, "Cam_Interior", new Vector3(5.2f, 1.7f, 8.9f), new Vector3(-2.5f, 1.1f, 1.5f));
+            // Puzzle rooms: house 7 has the sequence panel, house 1 the code lock, house 0 the clock.
+            foreach (var (name, house) in new[] { ("Cam_PuzzleRoom", 7), ("Cam_CodeLock", 1), ("Cam_Clock", 0) })
+            {
+                var o = HousePosition(house);
+                ShotCamera(root, name, o + new Vector3(1.6f, 1.6f, -0.6f), o + new Vector3(3.2f, 1.3f, -4.2f));
+            }
             ShotCamera(root, "Cam_Road", new Vector3(0f, 1.7f, 160f), new Vector3(0f, 1.5f, 260f));
         }
 
