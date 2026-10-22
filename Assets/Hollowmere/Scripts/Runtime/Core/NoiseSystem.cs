@@ -34,6 +34,7 @@ namespace Hollowmere
         public const float PuzzleSolved = 10f;
         public const float LoudPuzzle = 40f;  // HouseDef.LoudPuzzle, e.g. the Organist's pump organ
         public const float AltarWrongSlot = 40f;
+        public const float Ladder = 5f;       // climbing a ladder or through a hatch: like walking (not in DESIGN.md yet)
     }
 
     /// <summary>

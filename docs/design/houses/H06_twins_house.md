@@ -152,7 +152,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 ### kitW - West kitchen (cold)
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | `Hearth` | BUILD (PropKit) | -6.27 | 0.00 | -1.50 | 90 | 1.8 x 0.7 x 1.4 | floor | hearth cast-iron range; WEST is cold & swept, EAST is THE HEARTH |
+| 1 | `Hearth` | BUILD (PropKit) | -6.27 | 0.00 | -1.50 | 90 | 1.8 x 0.7 x 1.4 | floor | hearth-decor cast-iron range; WEST is cold & swept, EAST is THE HEARTH |
 | 3 | `Dresser` | BUILD (PropKit) | -2.80 | 0.00 | -0.34 | 180 | 1.4 x 0.5 x 2.0 | floor |   |
 | 5 | `KitchenSinkUnit` | BUILD (PropKit) | -5.60 | 0.00 | -3.32 | 0 | 1.0 x 0.6 x 0.9 | floor |   |
 | 7 | `TableWood1` | Poly Haven `WoodenTable_01` (1k) | -4.00 | 0.00 | -2.00 | 0 | 1.4 x 0.8 x 0.76 | floor |   |

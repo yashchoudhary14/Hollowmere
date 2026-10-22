@@ -92,7 +92,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_study | G | hall -> study | W | -3.0 | 0.85 x 2.05 | panel |  |
 | d_music | G | hall -> music | E | 2.6 | 1.1 x 2.05 | double doors |  |
 | d_kit | G | study -> kitchen | S | -2.8 | 0.85 x 2.05 | panel |  |
-| d_bay | G | music -> bay | E | 0.0 | 2.4 x 2.8 | open pointed arch (no leaf) |  |
+| d_bay | G | music -> bay | E | 0.0 | 2.2 x 2.8 | open pointed arch (no leaf) |  |
 | d_b1 | F | landing -> bed1 | E | 2.6 | 0.85 x 2.05 | panel |  |
 | d_b2 | F | landing -> bed2 | W | 2.6 | 0.85 x 2.05 | panel |  |
 | d_bath | F | landing -> bath | W | -3.0 | 0.8 x 2.05 | panel |  |
@@ -125,7 +125,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 ### parlour - Parlour
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
-| 11 | `Hearth` | BUILD (PropKit) | -3.62 | 0.00 | 2.00 | 90 | 1.8 x 0.7 x 1.4 | floor | hearth cast-iron fireplace (decorative); THE HEARTH is the kitchen range |
+| 11 | `Hearth` | BUILD (PropKit) | -3.62 | 0.00 | 2.00 | 90 | 1.8 x 0.7 x 1.4 | floor | hearth-decor cast-iron fireplace (decorative); THE HEARTH is the kitchen range |
 | 12 | `MantelClock` | Poly Haven `mantel_clock_01` (1k) | -3.62 | 1.40 | 2.00 | 90 | 0.3 x 0.14 x 0.32 | on H07.p011 |  stopped at 7:00 |
 | 13 | `SofaPainted` | Poly Haven `painted_wooden_sofa` (2k) | -2.90 | 0.00 | 0.44 | 0 | 1.6 x 0.7 x 0.9 | floor |   |
 | 14 | `SideTable` | Poly Haven `side_table_01` (1k) | -2.60 | 0.00 | 3.22 | 180 | 0.5 x 0.5 x 0.6 | floor |   |

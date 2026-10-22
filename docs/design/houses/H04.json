@@ -335,8 +335,8 @@
    "room_a": "hall",
    "room_b": "ext",
    "side": "S",
-   "at": -1.0,
-   "width": 0.9,
+   "at": -0.55,
+   "width": 0.85,
    "height": 2.05,
    "kind": "cross-passage back door (nearly aligned with the front)",
    "mat": "Door",
@@ -634,9 +634,9 @@
    "room": "hall",
    "rect": [
     -0.45,
-    -2.8,
+    -2.3,
     0.45,
-    0.6
+    0.9
    ],
    "frm": "G",
    "to": "F",
@@ -650,9 +650,9 @@
    "room": "loomshop",
    "rect": [
     -0.45,
-    -2.8,
+    -2.3,
     0.45,
-    0.6
+    0.9
    ],
    "frm": "G",
    "to": "F",
@@ -1359,9 +1359,9 @@
    "n": 31,
    "room": "loomshop",
    "key": "LoomFrame",
-   "x": 0.8,
+   "x": 1.1,
    "y": 0.0,
-   "z": 1.6,
+   "z": 1.75,
    "yaw": 180,
    "role": "",
    "note": "second, broken loom (dressing)",

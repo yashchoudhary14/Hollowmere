@@ -89,7 +89,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_front | G | hall -> ext | N | 0.4 | 0.9 x 2.05 | half-glazed door, sunrise pattern glass (Green) - tiled porch step; garden gate 6 m in front painted 'RAO' | front |
 | d_back | G | back -> ext | E | -2.2 | 0.85 x 2.05 | ledged plank, two bolts - opens to the side path | back |
 | d_front_r | G | hall -> front | W | 3.4 | 0.85 x 2.05 | 4-panel |  |
-| d_din | G | hall -> dining | E | 3.9 | 0.85 x 2.05 | 4-panel |  |
+| d_din | G | hall -> dining | E | 3.55 | 0.85 x 2.05 | 4-panel |  |
 | d_kit | G | hall -> kitchen | S | -0.1 | 0.85 x 2.05 | 4-panel |  |
 | d_backl | G | kitchen -> back | E | -2.2 | 0.85 x 2.05 | ledged |  |
 | d_glass | G | kitchen -> glass | S | -0.6 | 0.8 x 2.05 | glazed door |  |
@@ -113,8 +113,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 ### Stairs, ladders and voids
 | Id | In room | Rect | Goes | Up toward | Type |
 |---|---|---|---|---|---|
-| s1 | hall | (0.4, 0.5, 1.3, 3.8) | G -> F | S | straight - 14 risers, painted balusters, Carpet70s runner |
-| s1u | landing | (0.4, 0.5, 1.3, 3.8) | G -> F | S | void |
+| s1 | hall | (0.4, 0.5, 1.3, 3.6) | G -> F | S | straight - 14 risers, painted balusters, Carpet70s runner |
+| s1u | landing | (0.4, 0.5, 1.3, 3.6) | G -> F | S | void |
 | s2 | back | (1.6, -4.0, 4.4, -3.1) | G -> C | E | steep cellar stair, 11 risers, open treads, handrail rope |
 | s2c | cellar | (1.6, -4.0, 4.4, -3.1) | G -> C | E | arrives in the cellar |
 

@@ -85,14 +85,14 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_liv | G | kitchen -> living | E | 1.2 | 0.85 x 1.85 | ledged, 1.85 m high (duck!) |  |
 | d_bed | G | kitchen -> bedG | W | 0.3 | 0.8 x 1.9 | panel |  |
 | d_bath | G | kitchen -> bathG | W | -1.6 | 0.75 x 1.9 | panel |  |
-| d_scull | G | kitchen -> scull | S | -2.2 | 0.8 x 1.9 | panel |  |
+| d_scull | G | kitchen -> scull | S | -2.3 | 0.8 x 1.9 | panel |  |
 | d_store | F | loft -> store | W | 1.5 | 0.7 x 1.6 | low plank door |  |
 
 ### Windows
 | Window | Room | Wall | Centre at | W x H | Sill | Style | Weak | Curtains / shutters |
 |---|---|---|---|---|---|---|---|---|
 | w_lit | living | N | 3.4 | 1.0 x 0.9 | 0.8 | small casement - THE SINGLE LIT WINDOW (candle on the sill) |  | FabricLinen half-drawn  |
-| w_k | kitchen | N | -1.6 | 0.9 x 0.9 | 0.9 | casement, rotten frame | **WEAK** (break-in point) |   |
+| w_k | kitchen | N | -2.2 | 0.9 x 0.9 | 0.9 | casement, rotten frame | **WEAK** (break-in point) |   |
 | w_liv2 | living | S | 3.4 | 0.9 x 0.9 | 0.9 | casement, cracked pane | **WEAK** (break-in point) |   |
 | w_bed | bedG | N | -4.7 | 0.8 x 0.9 | 0.9 | casement |  | FabricLinen  |
 | w_liv3 | living | E | -1.5 | 0.6 x 0.6 | 1.0 | tiny window beside the chimney breast |  |   |

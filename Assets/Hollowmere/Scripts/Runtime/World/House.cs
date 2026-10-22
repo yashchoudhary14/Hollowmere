@@ -9,7 +9,11 @@ namespace Hollowmere
     public class House : MonoBehaviour
     {
         public int Index;
-        public Bounds Interior;            // world space, everything inside the outer walls
+        public Bounds Interior;            // world space, everything inside the outer walls (for a turned house, the box round it)
+        [Tooltip("v2 houses: each wing's volume in the house's own space; Contains uses these instead of Interior.")]
+        public Bounds[] Volumes;
+        [Tooltip("v2 houses: the front door marker, +z out of the house (the door may be on any wall).")]
+        public Transform Front;
         public Room[] Rooms;
         public Room HearthRoom;
         public Door Door;
@@ -25,7 +29,14 @@ namespace Hollowmere
         public HouseDef Def => HouseCatalog.Houses[Index];
         public bool Powered => FuseBox == null || FuseBox.Powered;
 
-        public bool Contains(Vector3 worldPos) => Interior.Contains(worldPos);
+        public bool Contains(Vector3 worldPos)
+        {
+            if (Volumes == null || Volumes.Length == 0) return Interior.Contains(worldPos);
+            var local = transform.InverseTransformPoint(worldPos);
+            foreach (var v in Volumes)
+                if (v.Contains(local)) return true;
+            return false;
+        }
 
         public Room RoomAt(Vector3 worldPos)
         {

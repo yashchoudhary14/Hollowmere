@@ -62,7 +62,8 @@ namespace Hollowmere.Tests
                 var place = _village.FindHouse(h.Slug);
                 var house = GameObject.Find($"Village/Houses/{h.Slug} {h.Name}");
                 Assert.That(house, Is.Not.Null, h.Slug);
-                Assert.That(Vector3.Distance(house.transform.position, new Vector3(place.Position[0], place.Position[1], place.Position[2])), Is.LessThan(0.01f), h.Slug);
+                float floor = Mathf.Max(HousePlan.MinFloor, place.Position[1]); // HousePlan: floors never below the street
+                Assert.That(Vector3.Distance(house.transform.position, new Vector3(place.Position[0], floor, place.Position[2])), Is.LessThan(0.01f), h.Slug);
                 Assert.That(Mathf.Abs(Mathf.DeltaAngle(house.transform.eulerAngles.y, place.Yaw)), Is.LessThan(0.1f), h.Slug);
             }
             Assert.That(GameObject.Find("Village/Filler").transform.childCount, Is.EqualTo(_village.Filler.Length));

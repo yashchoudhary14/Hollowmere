@@ -81,7 +81,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | Door | Level | From -> to | Wall | Centre at | W x H | Leaf | Role |
 |---|---|---|---|---|---|---|---|
 | d_front | G | hall -> ext | N | -0.5 | 0.95 x 2.05 | boarded red door, cross-passage (Red) | front |
-| d_back | G | hall -> ext | S | -1.0 | 0.9 x 2.05 | cross-passage back door (nearly aligned with the front) | back |
+| d_back | G | hall -> ext | S | -0.55 | 0.85 x 2.05 | cross-passage back door (nearly aligned with the front) | back |
 | d_liv | G | hall -> living | W | 1.4 | 0.85 x 2.05 | panel |  |
 | d_par | G | hall -> parlour | E | 1.4 | 0.85 x 2.05 | panel |  |
 | d_kit | G | living -> kitchen | S | -5.0 | 0.8 x 2.05 | panel |  |
@@ -109,8 +109,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 ### Stairs, ladders and voids
 | Id | In room | Rect | Goes | Up toward | Type |
 |---|---|---|---|---|---|
-| s1 | hall | (-0.45, -2.8, 0.45, 0.6) | G -> F | S | straight stone-and-timber stair in the passage |
-| s1u | loomshop | (-0.45, -2.8, 0.45, 0.6) | G -> F | S | void |
+| s1 | hall | (-0.45, -2.3, 0.45, 0.9) | G -> F | S | straight stone-and-timber stair in the passage |
+| s1u | loomshop | (-0.45, -2.3, 0.45, 0.9) | G -> F | S | void |
 | s2 | bed1 | (-2.4, 0.1, -1.7, 1.0) | F -> A | W | ladder to the garret hatch |
 
 ## 3. Every prop, room by room
@@ -176,7 +176,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
 | 30 | `LoomDobby` | Sketchfab `07ba2b15ffb7425cab23f700828fd7f3` (CC BY, Spiacente) | 3.20 | 0.00 | 0.00 | 180 | 1.6 x 1.5 x 1.6 | floor | puzzle THE LOOM, centre of the room: rethread it to match the hidden pattern (SequencePuzzle 6 symbols = 6 thread colours) |
-| 31 | `LoomFrame` | BUILD (PropKit) | 0.80 | 0.00 | 1.60 | 180 | 1.6 x 1.5 x 1.6 | floor |  second, broken loom (dressing) |
+| 31 | `LoomFrame` | BUILD (PropKit) | 1.10 | 0.00 | 1.75 | 180 | 1.6 x 1.5 x 1.6 | floor |  second, broken loom (dressing) |
 | 32 | `ChestWorn` | owned: Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior) | 6.22 | 0.00 | -1.80 | 270 | 0.9 x 0.5 x 0.55 | floor |  PART CONTAINER: thread chest |
 | 33 | `ShelvesPainted` | Poly Haven `painted_wooden_shelves` (1k) | 5.50 | 0.00 | -2.52 | 0 | 0.9 x 0.3 x 1.6 | floor |  bobbins in pigeon rows |
 | 34 | `Wicker1` | Poly Haven `wicker_basket_01` (1k) | 2.00 | 0.00 | -2.50 | 0 | 0.45 x 0.35 x 0.3 | floor |   |

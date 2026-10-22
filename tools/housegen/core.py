@@ -281,6 +281,11 @@ def validate(h):
         if dr["room_b"] == "ext":
             if not h.edge_is_exterior(ra, dr["side"]):
                 errs.append(f"door {dr['id']} marked exterior on an interior edge")
+            for o in h.neighbours(ra, dr["side"]):
+                a = o.rect
+                o0, o1 = (max(x0, a[0]), min(x1, a[2])) if dr["side"] in "NS" else (max(z0, a[1]), min(z1, a[3]))
+                if min(dr["at"] + dr["width"] / 2, o1) - max(dr["at"] - dr["width"] / 2, o0) > 0.01:
+                    errs.append(f"door {dr['id']} opens onto {o.id}, not outside")
         else:
             rb = h.rooms[dr["room_b"]]
             if rb not in h.neighbours(ra, dr["side"]):
@@ -292,8 +297,29 @@ def validate(h):
                     errs.append(f"door {dr['id']} not within shared span")
                 elif not (max(lo, lo2) + dr["width"] / 2 + INT_T / 2 - 1e-6 <= dr["at"] <= min(hi, hi2) - dr["width"] / 2 - INT_T / 2 + 1e-6):
                     errs.append(f"door {dr['id']} runs into the partition at the end of its wall (clear opening narrower than {dr['width']})")
+    # every door fits between the inner faces of the walls at the ends of its wall, in both its rooms
+    for dr in h.doors:
+        for side_room in (dr["room_a"], dr["room_b"]):
+            if side_room == "ext":
+                continue
+            ix0, iz0, ix1, iz1 = h.rooms[side_room].inner()
+            lo, hi = (ix0, ix1) if dr["side"] in "NS" else (iz0, iz1)
+            if not (lo + dr["width"] / 2 - 1e-6 <= dr["at"] <= hi - dr["width"] / 2 + 1e-6):
+                errs.append(f"door {dr['id']} runs into the wall at the end of its wall in {side_room}")
     # windows
     for wn in h.windows:
+        r = h.rooms[wn["room"]]
+        ix0, iz0, ix1, iz1 = r.inner()
+        lo, hi = (ix0, ix1) if wn["side"] in "NS" else (iz0, iz1)
+        w0, w1 = wn["at"] - wn["width"] / 2, wn["at"] + wn["width"] / 2
+        if not (lo - 1e-6 <= w0 and w1 <= hi + 1e-6):
+            errs.append(f"window {wn['id']} runs into the wall at the end of its wall")
+        x0, z0, x1, z1 = r.rect
+        for o in h.neighbours(r, wn["side"]):
+            a = o.rect
+            o0, o1 = (max(x0, a[0]), min(x1, a[2])) if wn["side"] in "NS" else (max(z0, a[1]), min(z1, a[3]))
+            if min(w1, o1) - max(w0, o0) > 0.01:
+                errs.append(f"window {wn['id']} opens onto {o.id}, not outside")
         r = h.rooms[wn["room"]]
         if not h.edge_is_exterior(r, wn["side"]):
             errs.append(f"window {wn['id']} on interior edge of {r.id}")
@@ -387,6 +413,9 @@ def validate(h):
     for k, label in need.items():
         if not any(t in tags for t in k.split("|")):
             errs.append(f"missing required {label}")
+    hearths = [p["id"] for p in h.props if "hearth" in (p.get("role") or "").split()]
+    if len(hearths) != 1:
+        errs.append(f"{len(hearths)} props with role hearth ({', '.join(hearths)}): need exactly one, THE hearth (others are hearth-decor)")
     hiding = [a for a in h.anchors if a["kind"] == "hiding"]
     if not 4 <= len(hiding) <= 6:
         errs.append(f"hiding spots {len(hiding)} (need 4-6)")

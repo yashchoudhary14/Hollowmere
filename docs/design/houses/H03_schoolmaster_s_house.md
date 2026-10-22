@@ -109,8 +109,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 ### Stairs, ladders and voids
 | Id | In room | Rect | Goes | Up toward | Type |
 |---|---|---|---|---|---|
-| s1 | landing | (-3.4, -2.8, -2.5, 0.8) | G -> F | S | void (balustrade) |
-| s1g | sitting | (-3.4, -2.8, -2.5, 0.8) | G -> F | S | open-string stair along the sitting room W wall - 14 risers, pitch pine |
+| s1 | landing | (-3.0, -2.1, -2.1, 1.1) | G -> F | S | void (balustrade) |
+| s1g | sitting | (-3.0, -2.1, -2.1, 1.1) | G -> F | S | open-string stair along the sitting room W wall - 14 risers, pitch pine |
 | s2 | landing | (-0.6, 3.6, 0.2, 4.8) | F -> A | N | ladder to the attic hatch |
 
 ## 3. Every prop, room by room
@@ -146,9 +146,9 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
 | 18 | `Sofa` | Poly Haven `Sofa_01` (2k) | -0.24 | 0.00 | -0.80 | 270 | 2.0 x 0.9 x 0.85 | floor |   |
-| 19 | `Armchair` | Poly Haven `ArmChair_01` (2k) | -1.60 | 0.00 | 0.40 | 110 | 0.85 x 0.85 x 0.95 | floor |   |
-| 20 | `SideTable` | Poly Haven `side_table_01` (1k) | -2.30 | 0.00 | 1.06 | 180 | 0.5 x 0.5 x 0.6 | floor |   |
-| 21 | `Radio` | Poly Haven `vintage_radio_transceiver` (1k) | -2.30 | 0.60 | 1.06 | 180 | 0.45 x 0.25 x 0.3 | on H03.p020 | radio  |
+| 19 | `Armchair` | Poly Haven `ArmChair_01` (2k) | -1.30 | 0.00 | 0.10 | 110 | 0.85 x 0.85 x 0.95 | floor |   |
+| 20 | `SideTable` | Poly Haven `side_table_01` (1k) | -1.70 | 0.00 | 1.06 | 180 | 0.5 x 0.5 x 0.6 | floor |   |
+| 21 | `Radio` | Poly Haven `vintage_radio_transceiver` (1k) | -1.70 | 0.60 | 1.06 | 180 | 0.45 x 0.25 x 0.3 | on H03.p020 | radio  |
 | 22 | `CoffeeTable` | Poly Haven `CoffeeTable_01` (1k) | -1.00 | 0.00 | -0.90 | 90 | 1.1 x 0.6 x 0.45 | floor |   |
 
 ### kitchen - Kitchen

@@ -113,6 +113,12 @@ namespace Hollowmere.EditorTools
                 if (d.RoomB == Outside)
                 {
                     if (!IsExteriorEdge(h, ra, d.Side)) e.Add($"{h.Slug}: door {d.Id} marked exterior on an interior edge of {ra.Id}");
+                    foreach (var o in Neighbours(h, ra, d.Side))
+                    {
+                        WallSpan(o.Rect, d.Side, out float o0, out float o1);
+                        if (Mathf.Min(d.At + d.Width / 2, Mathf.Min(hi, o1)) - Mathf.Max(d.At - d.Width / 2, Mathf.Max(lo, o0)) > 0.01f)
+                            e.Add($"{h.Slug}: door {d.Id} opens onto {o.Id}, not outside");
+                    }
                     continue;
                 }
                 var rb = h.FindRoom(d.RoomB);
@@ -124,6 +130,15 @@ namespace Hollowmere.EditorTools
                 else if (!Fits(d.At, d.Width + PartitionT, Mathf.Max(lo, lo2), Mathf.Min(hi, hi2)))
                     e.Add($"{h.Slug}: door {d.Id} runs into the partition at the end of its wall (clear opening narrower than {d.Width})");
             }
+            // Every door fits between the inner faces of the walls at the ends of its wall, in both its rooms.
+            foreach (var d in h.Doors)
+                foreach (var sideRoom in new[] { d.RoomA, d.RoomB })
+                {
+                    var r = sideRoom == Outside ? null : h.FindRoom(sideRoom);
+                    if (r == null || r.Inner.Length != 4 || !IsSide(d.Side)) continue;
+                    WallSpan(r.Inner, d.Side, out float lo, out float hi);
+                    if (!Fits(d.At, d.Width, lo, hi)) e.Add($"{h.Slug}: door {d.Id} runs into the wall at the end of its wall in {r.Id}");
+                }
             // core.py: no door opens onto a stair flight or stairwell, only onto its foot (lower floor) or head (upper floor).
             foreach (var st in h.Stairs)
             {
@@ -152,6 +167,17 @@ namespace Hollowmere.EditorTools
                 if (!IsExteriorEdge(h, r, w.Side)) e.Add($"{h.Slug}: window {w.Id} on an interior edge of {r.Id}");
                 WallSpan(r.Rect, w.Side, out float lo, out float hi);
                 if (!Fits(w.At, w.Width, lo, hi)) e.Add($"{h.Slug}: window {w.Id} outside the wall span of {r.Id}");
+                if (r.Inner.Length == 4)
+                {
+                    WallSpan(r.Inner, w.Side, out float ilo, out float ihi);
+                    if (!Fits(w.At, w.Width, ilo, ihi)) e.Add($"{h.Slug}: window {w.Id} runs into the wall at the end of its wall");
+                }
+                float w0 = w.At - w.Width / 2, w1 = w.At + w.Width / 2;
+                foreach (var o in Neighbours(h, r, w.Side))
+                {
+                    WallSpan(o.Rect, w.Side, out float o0, out float o1);
+                    if (Mathf.Min(w1, Mathf.Min(hi, o1)) - Mathf.Max(w0, Mathf.Max(lo, o0)) > 0.01f) e.Add($"{h.Slug}: window {w.Id} opens onto {o.Id}, not outside");
+                }
             }
             foreach (var s in h.Stairs)
             {
@@ -201,6 +227,9 @@ namespace Hollowmere.EditorTools
             }
             foreach (var need in RequiredTags)
                 if (!need.Split('|').Any(tags.Contains)) e.Add($"{h.Slug}: missing required {need.Replace("|", " or ")}");
+
+            var hearths = h.Props.Where(p => (p.Role ?? "").Split(' ').Contains("hearth")).Select(p => p.Id).ToArray();
+            if (hearths.Length != 1) e.Add($"{h.Slug}: {hearths.Length} props with role hearth ({string.Join(", ", hearths)}): need exactly one");
 
             int hiding = AnchorCount(h, "hiding");
             if (hiding < 4 || hiding > 6) e.Add($"{h.Slug}: {hiding} hiding spots (need 4-6)");

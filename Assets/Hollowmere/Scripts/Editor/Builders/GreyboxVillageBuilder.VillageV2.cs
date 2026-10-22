@@ -28,6 +28,11 @@ namespace Hollowmere.EditorTools
         /// <summary>Renders every v2 camera to Logs/claude/v2_*.png (top-down with plan labels and no fog).</summary>
         [MenuItem("Hollowmere/Village v2 Shots (M1.6)")]
         public static void Shots() => GreyboxVillageBuilder.VillageV2Shots();
+
+        /// <summary>Renders each house to Logs/claude/house_Hxx_*.png: front and back three-quarter views (compare with
+        /// docs/design/ref/Hxx_massing_*.png) and a cutaway straight down per level (compare with ref/Hxx_plan.png).</summary>
+        [MenuItem("Hollowmere/Village v2 House Shots (M1.6)")]
+        public static void HouseShots() => GreyboxVillageBuilder.VillageV2HouseShots();
     }
 
     /// <summary>
@@ -46,6 +51,7 @@ namespace Hollowmere.EditorTools
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
 
             var plan = VillagePlan.Make(DesignData.LoadVillage(), DesignData.LoadHouses(), DesignData.LoadCatalog());
+            var housePlans = plan.Houses.Select(h => HousePlan.Make(h, plan.Village.FindHouse(h.Slug), plan.Catalog)).ToArray();
 
             Begin(VillageBuilderV2.BoxMeshPath);
             s_render = RenderSetup.Setup();
@@ -58,14 +64,14 @@ namespace Hollowmere.EditorTools
             s_planLabels.gameObject.SetActive(false);
 
             var village = new GameObject("Village").transform; // the NavMesh bakes from everything under here
-            BuildGroundV2(village, plan);
+            BuildGroundV2(village, plan, GroundHoles(plan, housePlans));
             BuildRingWall(village);
             BuildGate(village);
             BuildRoad(village);
             BuildForest(village);
             BuildStreetsV2(village, plan);
             BuildWaterV2(village, plan);
-            BuildHousesV2(village, plan);
+            BuildHouseShellsV2(village, plan, housePlans);
             BuildFillerV2(village, plan);
             BuildLandmarksV2(village, plan);
             BuildBoundariesV2(village, plan);
@@ -81,7 +87,9 @@ namespace Hollowmere.EditorTools
             BuildShotCamerasV2();
             ApplyRenderSettings();
 
+            SetAgentForHouses();
             AddNavMeshSurface(village);
+            Object.FindAnyObjectByType<Unity.AI.Navigation.NavMeshSurface>().voxelSize = 0.08f; // a third of the agent radius
             BakeNavMesh(VillageBuilderV2.NavMeshPath);
             EditorUtility.SetDirty(s_v2Meshes);
             End();
@@ -141,35 +149,52 @@ namespace Hollowmere.EditorTools
 
         /// <summary>
         /// The ground inside the wall as one mesh with a collider: 8 m tiles, flat tiles as a single quad, tiles near the
-        /// stream or pond as a 1 m grid following VillagePlan.GroundHeight. Outside the wall, the M1 ground continues as boxes.
+        /// stream or pond as a 1 m grid following VillagePlan.GroundHeight. Over cellar stairs the ground has holes: tiles
+        /// touching one split down to 0.25 m and leave out what lies inside it. Outside the wall, the M1 ground continues as boxes.
         /// </summary>
-        static void BuildGroundV2(Transform village, VillagePlan plan)
+        static void BuildGroundV2(Transform village, VillagePlan plan, List<Obb2> holes)
         {
             const float half = 152f, tile = 8f, fine = 1f;
             var verts = new List<Vector3>();
             var uvs = new List<Vector2>();
             var tris = new List<int>();
+            void Quad(float x0, float z0, float x1, float z1, bool flat)
+            {
+                int a = verts.Count;
+                foreach (var (x, z) in new[] { (x0, z0), (x0, z1), (x1, z1), (x1, z0) })
+                {
+                    verts.Add(new Vector3(x, flat ? 0f : plan.GroundHeight(x, z), z));
+                    uvs.Add(new Vector2(x, z));
+                }
+                tris.Add(a); tris.Add(a + 1); tris.Add(a + 2);
+                tris.Add(a); tris.Add(a + 2); tris.Add(a + 3);
+            }
+            void Holed(float x0, float z0, float x1, float z1, bool flat)
+            {
+                var corners = new[] { new Vector2(x0, z0), new Vector2(x0, z1), new Vector2(x1, z1), new Vector2(x1, z0) };
+                var mid = new Vector2((x0 + x1) * 0.5f, (z0 + z1) * 0.5f);
+                if (holes.Any(hole => corners.All(c => hole.Contains(c)))) return;          // all inside: left out
+                bool touches = holes.Any(hole => HoleTouches(hole, x0, z0, x1, z1));
+                if (!touches) { Quad(x0, z0, x1, z1, flat); return; }
+                if (x1 - x0 <= 0.26f) { if (!holes.Any(hole => hole.Contains(mid))) Quad(x0, z0, x1, z1, flat); return; }
+                float xm = (x0 + x1) * 0.5f, zm = (z0 + z1) * 0.5f;
+                Holed(x0, z0, xm, zm, flat); Holed(xm, z0, x1, zm, flat); Holed(x0, zm, xm, z1, flat); Holed(xm, zm, x1, z1, flat);
+            }
             for (float z0 = -half; z0 < half - 0.01f; z0 += tile)
             for (float x0 = -half; x0 < half - 0.01f; x0 += tile)
             {
                 float x1 = Mathf.Min(x0 + tile, half), z1 = Mathf.Min(z0 + tile, half);
                 bool flat = TileFlat(plan, x0 - fine, z0 - fine, x1 + fine, z1 + fine, fine);
-                int nx = flat ? 1 : Mathf.RoundToInt((x1 - x0) / fine), nz = flat ? 1 : Mathf.RoundToInt((z1 - z0) / fine);
-                int start = verts.Count;
-                for (int j = 0; j <= nz; j++)
-                for (int i = 0; i <= nx; i++)
+                bool holed = holes.Any(hole => HoleTouches(hole, x0, z0, x1, z1));
+                if (flat || holed)
                 {
-                    float x = Mathf.Lerp(x0, x1, (float)i / nx), z = Mathf.Lerp(z0, z1, (float)j / nz);
-                    verts.Add(new Vector3(x, flat ? 0f : plan.GroundHeight(x, z), z));
-                    uvs.Add(new Vector2(x, z));
+                    if (holed) Holed(x0, z0, x1, z1, flat);
+                    else Quad(x0, z0, x1, z1, true);
+                    continue;
                 }
-                for (int j = 0; j < nz; j++)
-                for (int i = 0; i < nx; i++)
-                {
-                    int a = start + j * (nx + 1) + i, b = a + nx + 1;
-                    tris.Add(a); tris.Add(b); tris.Add(b + 1);
-                    tris.Add(a); tris.Add(b + 1); tris.Add(a + 1);
-                }
+                for (float z = z0; z < z1 - 0.01f; z += fine)
+                for (float x = x0; x < x1 - 0.01f; x += fine)
+                    Quad(x, z, x + fine, z + fine, false);
             }
             var ground = Mat("Ground", new Color(0.23f, 0.27f, 0.17f));
             MeshObject(village, "Ground", V2Mesh("Ground", verts, tris, uvs), ground, true);
@@ -181,6 +206,48 @@ namespace Hollowmere.EditorTools
             Box(outside, "South", new Vector3(0f, -0.5f, (south - half) * 0.5f), new Vector3(2f * outer, 1f, -half - south), ground);
             Box(outside, "West", new Vector3(-(half + outer) * 0.5f, -0.5f, 0f), new Vector3(outer - half, 1f, 2f * half), ground);
             Box(outside, "East", new Vector3((half + outer) * 0.5f, -0.5f, 0f), new Vector3(outer - half, 1f, 2f * half), ground);
+        }
+
+        static bool HoleTouches(Obb2 hole, float x0, float z0, float x1, float z1)
+        {
+            var c = hole.Corners();
+            return c.Max(p => p.x) > x0 && c.Min(p => p.x) < x1 && c.Max(p => p.y) > z0 && c.Min(p => p.y) < z1;
+        }
+
+        /// <summary>World boxes over every cellar stair, where the village ground must open (HousePlan.GroundHoles).</summary>
+        static List<Obb2> GroundHoles(VillagePlan plan, HousePlan[] housePlans)
+        {
+            var holes = new List<Obb2>();
+            foreach (var hp in housePlans)
+                foreach (var r in hp.GroundHoles)
+                {
+                    var box = VillagePlan.WingBox(hp.Place, hp.House.Slug + ".cellarstair", r);
+                    holes.Add(new Obb2(box.Id, box.Centre, box.Size + new Vector2(0.1f, 0.1f), box.Yaw));
+                }
+            return holes;
+        }
+
+        /// <summary>
+        /// Indoors the doors are 0.7-1.0 m wide (docs/design), so the NavMesh agent (the Humanoid type every surface bakes
+        /// for) gets a 0.25 m radius and climbs 50-degree flights. Stored in ProjectSettings/NavMeshAreas.asset.
+        /// </summary>
+        static void SetAgentForHouses()
+        {
+            var builder = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.AI.NavMeshBuilder");
+            var settings = builder?.GetProperty("navMeshSettingsObject", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)?.GetValue(null) as Object;
+            if (settings == null)
+            {
+                Debug.LogError("[Hollowmere] Couldn't reach the NavMesh agent settings: set Window > AI > Navigation > Agents > Humanoid to radius 0.25, max slope 50.");
+                return;
+            }
+            var so = new SerializedObject(settings);
+            var agents = so.FindProperty("m_Settings");
+            if (agents == null || agents.arraySize == 0) { Debug.LogError("[Hollowmere] NavMesh agent settings not found."); return; }
+            var humanoid = agents.GetArrayElementAtIndex(0);
+            humanoid.FindPropertyRelative("agentRadius").floatValue = 0.25f;
+            humanoid.FindPropertyRelative("agentSlope").floatValue = 50f;
+            so.ApplyModifiedPropertiesWithoutUndo();
+            Debug.Log("[Hollowmere] NavMesh agent (Humanoid): radius 0.25, max slope 50");
         }
 
         static bool TileFlat(VillagePlan plan, float x0, float z0, float x1, float z1, float step)
@@ -263,7 +330,7 @@ namespace Hollowmere.EditorTools
         static void BuildWaterV2(Transform village, VillagePlan plan)
         {
             var root = Node(village, "Water");
-            var water = Mat("Water", new Color(0.09f, 0.12f, 0.12f), 0.92f);
+            var water = Mat("Water", new Color(0.05f, 0.07f, 0.07f), 0.6f); // P2 note: glossier water mirrored the sky white
 
             // Stream surface at the pond's level, a little into the banks.
             float surfaceHalf = plan.Stream.HalfWidth + VillagePlan.StreamBank * (VillagePlan.WaterY - plan.StreamBedY) / -plan.StreamBedY + 0.05f;
@@ -289,9 +356,7 @@ namespace Hollowmere.EditorTools
             MeshObject(root, "Stream", V2Mesh("Stream", verts, tris, uvs), water, false, shadows: false);
 
             // Mill pond (VILLAGE_LAYOUT.md L_POND): surface at -0.8 where the banks reach it.
-            var pond = Prim(PrimitiveType.Cylinder, root, "Pond", new Vector3(plan.Pond.Centre.x, VillagePlan.WaterY, plan.Pond.Centre.y),
-                            new Vector3(plan.Pond.Size.x * 0.92f, 0.005f, plan.Pond.Size.y * 0.92f), water, false, Quaternion.Euler(0f, plan.Pond.Yaw, 0f));
-            NoShadows(pond);
+            Ellipse(root, "Pond", new Vector3(plan.Pond.Centre.x, VillagePlan.WaterY, plan.Pond.Centre.y), plan.Pond.Size * 0.92f, plan.Pond.Yaw, water);
 
             // Invisible barriers along the banks and round the pond: nobody walks into the water, and the NavMesh
             // only crosses at the bridges.
@@ -344,53 +409,19 @@ namespace Hollowmere.EditorTools
             }
         }
 
-        // ------------------------------------------------------------ houses (P2: footprint massing; P3 builds the real shells)
-
-        static void BuildHousesV2(Transform village, VillagePlan plan)
-        {
-            var root = Node(village, "Houses");
-            for (int i = 0; i < plan.Houses.Length; i++)
-            {
-                var h = plan.Houses[i];
-                var place = plan.Village.FindHouse(h.Slug);
-                float floorY = place.Position[1];
-                var house = Node(root, $"{h.Slug} {h.Name}", new Vector3(place.Position[0], floorY, place.Position[2]), Quaternion.Euler(0f, place.Yaw, 0f));
-                var shell = Node(house, "Shell"); // art slot (P3: HouseBuilderV2 replaces it)
-                var ridges = new Dictionary<WingSpec, float>();
-                foreach (var w in h.Wings) ridges[w] = Massing(shell, plan, h, w, floorY);
-                BuildChimneysV2(shell, h, ridges);
-                BuildFrontDoorV2(house, h, floorY);
-                PlanLabel(h.Slug, new Vector3(place.Position[0], 0f, place.Position[2]), 6f);
-            }
-        }
-
-        /// <summary>One wing as a closed box from the street (or its lowest storey) to the eaves, with its roof. Returns the ridge height.</summary>
-        static float Massing(Transform shell, VillagePlan plan, HouseSpec h, WingSpec w, float floorY)
-        {
-            var r = w.Rect;
-            float sx = r[2] - r[0], sz = r[3] - r[1];
-            var c = new Vector3((r[0] + r[2]) * 0.5f, 0f, (r[1] + r[3]) * 0.5f);
-            float bottom = VillagePlan.WingBottom(h, w);
-            if (bottom < 0.01f) bottom = Mathf.Min(0f, -floorY) - 0.05f; // a raised floor still reaches down to the street
-            float eaves = VillagePlan.WingEaves(h, w);
-            Box(shell, $"Wing_{w.Id}", c + Vector3.up * ((bottom + eaves) * 0.5f), new Vector3(sx, eaves - bottom, sz), SurfaceMat(plan.FirstMaterialKey(Stoplisted(w.Walls), "HouseWall")));
-
-            var shape = VillagePlan.ParseRoof(w.Roof, sx, sz);
-            var roofMat = SurfaceMat(plan.FirstMaterialKey(Stoplisted(w.Roof), "Roof"));
-            // A lean-to slopes down away from the house's main (first) wing.
-            var main = h.Wings[0].Rect;
-            var away = new Vector2(c.x - (main[0] + main[2]) * 0.5f, c.z - (main[1] + main[3]) * 0.5f);
-            if (away.sqrMagnitude < 0.01f) away = new Vector2(0f, -1f);
-            return RoofV2(shell, $"Roof_{w.Id}", shape, c, sx, sz, eaves, roofMat, away);
-        }
+        // ------------------------------------------------------------ roofs (houses: GreyboxVillageBuilder.HousesV2.cs)
 
         /// <summary>Words in the house text that name a material key but describe something else ("Ground floor: ...").</summary>
         static string Stoplisted(string text) =>
             System.Text.RegularExpressions.Regex.Replace(text ?? "", @"\b(Ground|Floor|Door)\b", "");
 
-        static float RoofV2(Transform shell, string name, RoofShape shape, Vector3 c, float sx, float sz, float eaves, Material mat, Vector2 away)
+        static float RoofV2(Transform shell, string name, RoofShape shape, Vector3 c, float sx, float sz, float eaves, Material mat, Vector2 away,
+                            bool soffit = false)
         {
             const float overhang = 0.3f;
+            // Closes the underside of the eaves (houses have their top slab there instead).
+            if (soffit && shape.Kind != RoofKind.Flat)
+                Box(shell, name + "_Soffit", c + Vector3.up * (eaves - 0.03f), new Vector3(sx + 2f * overhang, 0.06f, sz + 2f * overhang), SurfaceMat("Planks"), false);
             float tan = Mathf.Tan(shape.Pitch * Mathf.Deg2Rad);
             switch (shape.Kind)
             {
@@ -469,18 +500,6 @@ namespace Hollowmere.EditorTools
             return dx * dx + dz * dz;
         }
 
-        /// <summary>The front door marker (+z out of the wall, on its outer face) with the house's door colour, and steps for a raised floor.</summary>
-        static void BuildFrontDoorV2(Transform house, HouseSpec h, float floorY)
-        {
-            var d = h.Doors.First(x => x.Role == "front" && x.RoomB == DesignChecks.Outside);
-            DesignChecks.TryFrontDoorLocal(h, out var local);
-            var marker = Node(house, "FrontDoor", new Vector3(local.x, 0f, local.y), Quaternion.Euler(0f, VillagePlan.SideYaw(d.Side), 0f));
-            var def = HouseCatalog.Houses[h.Index];
-            Box(marker, "Panel", new Vector3(0f, d.Height * 0.5f, 0.04f), new Vector3(d.Width, d.Height, 0.08f), Mat($"Door_{def.Door}", HouseCatalog.DoorTint(def.Door), 0.3f), false);
-            if (floorY > 0.12f)
-                Box(marker, "Steps", new Vector3(0f, -floorY * 0.5f, 0.5f), new Vector3(d.Width + 0.6f, floorY, 0.9f), Mat("Stone", new Color(0.45f, 0.44f, 0.42f)), false);
-        }
-
         // ------------------------------------------------------------ filler and landmarks
 
         /// <summary>VILLAGE_LAYOUT.md "Filler buildings": locked, boarded shells in three variants (cottage, terrace, outbuilding).</summary>
@@ -504,7 +523,7 @@ namespace Hollowmere.EditorTools
                 Box(node, "Shell", new Vector3(0f, eaves * 0.5f, 0f), new Vector3(w, eaves, d), SurfaceMat(wallKey));
                 if (!ruin)
                     RoofV2(node, "Roof", new RoofShape { Kind = RoofKind.Gable, RidgeAlongX = w >= d, Pitch = outbuilding ? 25f : 40f },
-                           Vector3.zero, w, d, eaves, SurfaceMat(outbuilding ? "CorrugatedRust" : "RoofSlateGrey"), Vector2.zero);
+                           Vector3.zero, w, d, eaves, SurfaceMat(outbuilding ? "CorrugatedRust" : "RoofSlateGrey"), Vector2.zero, true);
 
                 // Boarded door(s) and windows on the front (+z) face.
                 int doors = terrace ? 2 : 1;
@@ -539,7 +558,7 @@ namespace Hollowmere.EditorTools
                         var node = Node(root, l.Name, at, turn);
                         float w = box.Size.x, d = box.Size.y;
                         Box(node, "Shell", new Vector3(0f, 2.5f, 0f), new Vector3(w, 5f, d), SurfaceMat("BrickRed"));
-                        RoofV2(node, "Roof", new RoofShape { Kind = RoofKind.Gable, RidgeAlongX = true, Pitch = 38f }, Vector3.zero, w, d, 5f, SurfaceMat("RoofSlateGrey"), Vector2.zero);
+                        RoofV2(node, "Roof", new RoofShape { Kind = RoofKind.Gable, RidgeAlongX = true, Pitch = 38f }, Vector3.zero, w, d, 5f, SurfaceMat("RoofSlateGrey"), Vector2.zero, true);
                         Box(node, "ShopWindow", new Vector3(-w * 0.2f, 1.5f, d * 0.5f + 0.03f), new Vector3(w * 0.45f, 1.6f, 0.06f), Mat("Window", new Color(0.07f, 0.09f, 0.12f), 0.8f), false);
                         Box(node, "Door", new Vector3(w * 0.25f, 1.05f, d * 0.5f + 0.03f), new Vector3(1.1f, 2.1f, 0.06f), wood, false);
                         Box(node, "SignBoard", new Vector3(0f, 3.3f, d * 0.5f + 0.05f), new Vector3(w * 0.8f, 0.6f, 0.08f), Mat("SignGreen", new Color(0.12f, 0.22f, 0.15f)), false);
@@ -552,7 +571,7 @@ namespace Hollowmere.EditorTools
                         var node = Node(root, l.Name, at, turn);
                         float w = box.Size.x, d = box.Size.y;
                         Box(node, "Shell", new Vector3(0f, 2.75f, 0f), new Vector3(w, 5.5f, d), SurfaceMat("StoneBlock"));
-                        float ridge = RoofV2(node, "Roof", new RoofShape { Kind = RoofKind.Gable, RidgeAlongX = true, Pitch = 45f }, Vector3.zero, w, d, 5.5f, SurfaceMat("RoofSlateGrey"), Vector2.zero);
+                        float ridge = RoofV2(node, "Roof", new RoofShape { Kind = RoofKind.Gable, RidgeAlongX = true, Pitch = 45f }, Vector3.zero, w, d, 5.5f, SurfaceMat("RoofSlateGrey"), Vector2.zero, true);
                         Box(node, "BellCupola", new Vector3(0f, ridge + 0.6f, 0f), new Vector3(1.2f, 1.2f, 1.2f), wood, false);
                         Box(node, "Door", new Vector3(0f, 1.2f, d * 0.5f + 0.03f), new Vector3(1.4f, 2.4f, 0.06f), wood, false);
                         var yard = plan.Schoolyard;
@@ -572,12 +591,12 @@ namespace Hollowmere.EditorTools
                         break;
                     case "L_GREEN":
                     {
-                        var green = Prim(PrimitiveType.Cylinder, root, "Green", at + Vector3.up * 0.012f, new Vector3(box.Size.x, 0.005f, box.Size.y), grass, false, turn);
-                        NoShadows(green);
-                        // The old oak (SmallTree x2.5 in the catalog), clear of the well, the memorial and the loop path.
+                        Ellipse(root, "Green", at + Vector3.up * 0.012f, box.Size, box.Yaw, grass);
+                        // The old oak (SmallTree x2.5 in the catalog), clear of the well, the memorial and the loop path:
+                        // dead like the forest, a thick trunk under the shared dead-limb prefabs (P2 note: no sphere on a pole).
                         var oak = Node(root, "Oak", at + new Vector3(8f, 0f, -6f));
-                        Cyl(oak, "Trunk", new Vector3(0f, 3f, 0f), 1.1f, 6f, Mat("Trunk", new Color(0.24f, 0.18f, 0.13f)));
-                        Ball(oak, "Crown", new Vector3(0f, 7.5f, 0f), 8f, Mat("Foliage", new Color(0.16f, 0.2f, 0.11f)), collider: false);
+                        Cyl(oak, "Trunk", new Vector3(0f, 4.5f, 0f), 1.1f, 9f, Mat("Trunk", new Color(0.24f, 0.18f, 0.13f)));
+                        DeadTree(oak, 7, 9f);
                         foreach (var (pos, yaw) in new[] { (at + new Vector3(-10f, 0f, 9f), 30f), (at + new Vector3(4f, 0f, -11f), 180f) })
                         {
                             var bench = Node(root, "Bench", pos, Quaternion.Euler(0f, yaw, 0f));
@@ -634,8 +653,7 @@ namespace Hollowmere.EditorTools
                     }
                     case "L_PINFOLD":
                     {
-                        var floor = Prim(PrimitiveType.Cylinder, root, "PinfoldFloor", at + Vector3.up * 0.011f, new Vector3(box.Size.x, 0.005f, box.Size.y), SurfaceMat("GroundMud"), false);
-                        NoShadows(floor);
+                        Ellipse(root, "PinfoldFloor", at + Vector3.up * 0.011f, box.Size, box.Yaw, SurfaceMat("GroundMud"));
                         break;
                     }
                     // L_GATE, L_SQUARE, L_ALTAR, L_BELL, L_BOARD, L_CHAPEL: the M1 builders; L_POND: BuildWaterV2.
@@ -858,6 +876,77 @@ namespace Hollowmere.EditorTools
             Debug.Log("[Hollowmere] VILLAGE V2 SHOTS OK: Logs/claude/v2_*.png");
         }
 
+        public static void VillageV2HouseShots()
+        {
+            EditorSceneManager.OpenScene(VillageBuilderV2.ScenePath, OpenSceneMode.Single); // never saved: roofs come off for the cutaways
+            var cam = new GameObject("HouseShotCamera").AddComponent<Camera>();
+            cam.enabled = false;
+            cam.fieldOfView = 50f;
+            cam.backgroundColor = FogDay;
+            LookCamera(cam);
+            int shots = 0;
+            foreach (var h in DesignData.LoadHouses())
+            {
+                var node = GameObject.Find($"Village/Houses/{h.Slug} {h.Name}")?.transform;
+                if (node == null) { Debug.LogError($"[Hollowmere] {h.Slug} not in {VillageBuilderV2.ScenePath}"); continue; }
+                var house = node.GetComponent<House>();
+                float x0 = h.Wings.Min(w => w.Rect[0]), z0 = h.Wings.Min(w => w.Rect[1]), x1 = h.Wings.Max(w => w.Rect[2]), z1 = h.Wings.Max(w => w.Rect[3]);
+
+                // Three-quarter views from 35 degrees left of straight on, front and back.
+                var b = house.Interior;
+                float reach = Mathf.Max(b.extents.x, b.extents.y, b.extents.z);
+                var front = house.Front != null ? house.Front.forward : node.forward;
+                cam.orthographic = false;
+                cam.nearClipPlane = 0.3f;
+                cam.farClipPlane = 400f;
+                foreach (var (label, dir) in new[] { ("front", front), ("back", -front) })
+                {
+                    var look = Quaternion.Euler(0f, -35f, 0f) * dir;
+                    cam.transform.position = b.center + look * (reach * 2.4f + 4f) + Vector3.up * (reach * 0.9f + 2f);
+                    cam.transform.LookAt(b.center);
+                    BatchTools.RenderToPng(cam, $"Logs/claude/house_{h.Slug}_{label}.png");
+                    shots++;
+                }
+
+                // Cutaways: roofs off, straight down from just under each level's ceiling, house +z up the image as in the ref plans.
+                var roofs = node.Find("Shell/Roofs");
+                if (roofs != null) roofs.gameObject.SetActive(false);
+                cam.orthographic = true;
+                cam.orthographicSize = Mathf.Max((z1 - z0) * 0.5f, (x1 - x0) * 0.5f * 900f / 1600f) + 1f;
+                cam.nearClipPlane = 0.01f;
+                foreach (var lv in h.Levels.OrderBy(l => l.Value.Y))
+                {
+                    var eye = new Vector3((x0 + x1) * 0.5f, lv.Value.Y + lv.Value.H - 0.05f, (z0 + z1) * 0.5f);
+                    cam.transform.SetPositionAndRotation(node.TransformPoint(eye), node.rotation * Quaternion.Euler(90f, 0f, 0f));
+                    cam.farClipPlane = lv.Value.H + 1f;
+                    BatchTools.RenderToPng(cam, $"Logs/claude/house_{h.Slug}_plan_{lv.Key}.png");
+                    shots++;
+                }
+                if (roofs != null) roofs.gameObject.SetActive(true);
+            }
+            Object.DestroyImmediate(cam.gameObject);
+            Debug.Log($"[Hollowmere] HOUSE SHOTS OK: {shots} PNGs in Logs/claude/house_*.png");
+        }
+
+        /// <summary>A flat ellipse (size = diameters along local x, z) with UVs in metres, no collider.</summary>
+        static void Ellipse(Transform parent, string name, Vector3 centre, Vector2 size, float yaw, Material mat)
+        {
+            const int segments = 48;
+            var verts = new List<Vector3> { Vector3.zero };
+            var uvs = new List<Vector2> { Vector2.zero };
+            var tris = new List<int>();
+            for (int k = 0; k <= segments; k++)
+            {
+                float a = k * Mathf.PI * 2f / segments;
+                var p = new Vector3(Mathf.Cos(a) * size.x * 0.5f, 0f, Mathf.Sin(a) * size.y * 0.5f);
+                verts.Add(p);
+                uvs.Add(new Vector2(p.x, p.z));
+                // Counterclockwise in x-z seen from above, so each fan triangle is wound (centre, next, this) to face up.
+                if (k > 0) { tris.Add(0); tris.Add(k + 1); tris.Add(k); }
+            }
+            MeshObject(parent, name, V2Mesh(name, verts, tris, uvs), mat, false, centre, Quaternion.Euler(0f, yaw, 0f), shadows: false);
+        }
+
         // ------------------------------------------------------------ roof meshes and placeholder colours
 
         static Mesh s_gable, s_wedge;
@@ -870,7 +959,7 @@ namespace Hollowmere.EditorTools
             var c = new Vector3(0.5f, 0f, 0.5f);   var d = new Vector3(-0.5f, 0f, 0.5f);
             var r0 = new Vector3(-0.5f, 1f, 0f);   var r1 = new Vector3(0.5f, 1f, 0f);
             var faces = new[] { new[] { a, b, r1, r0 }, new[] { c, d, r0, r1 }, new[] { b, c, r1 }, new[] { d, a, r0 } };
-            return s_gable = Solid("GableRoof", faces, new Vector3(0f, 0.33f, 0f));
+            return s_gable = Solid("GableRoof", faces, new Vector3(0f, 0.33f, 0f), true);
         }
 
         /// <summary>Unit lean-to roof: base x, z in [-0.5, 0.5] at y 0, high edge (y 1) along z -0.5, low edge along z +0.5.</summary>
@@ -881,11 +970,14 @@ namespace Hollowmere.EditorTools
             var c = new Vector3(0.5f, 0f, 0.5f);   var d = new Vector3(-0.5f, 0f, 0.5f);
             var e = new Vector3(-0.5f, 1f, -0.5f); var f = new Vector3(0.5f, 1f, -0.5f);
             var faces = new[] { new[] { e, f, c, d }, new[] { a, b, f, e }, new[] { b, c, f }, new[] { d, a, e } };
-            return s_wedge = Solid("LeanToRoof", faces, new Vector3(0f, 0.3f, -0.15f));
+            return s_wedge = Solid("LeanToRoof", faces, new Vector3(0f, 0.3f, -0.15f), true);
         }
 
-        /// <summary>A flat-shaded mesh from convex polygons, each wound so its face points away from the inside point.</summary>
-        static Mesh Solid(string name, Vector3[][] faces, Vector3 inside)
+        /// <summary>
+        /// A flat-shaded mesh from convex polygons, each wound so its face points away from the inside point; double-sided
+        /// adds the inward faces too (a roof seen from the attic and from under the eaves).
+        /// </summary>
+        static Mesh Solid(string name, Vector3[][] faces, Vector3 inside, bool doubleSided = false)
         {
             var verts = new List<Vector3>();
             var uvs = new List<Vector2>();
@@ -909,6 +1001,15 @@ namespace Hollowmere.EditorTools
                 {
                     if (flip) { tris.Add(start); tris.Add(start + k + 1); tris.Add(start + k); }
                     else { tris.Add(start); tris.Add(start + k); tris.Add(start + k + 1); }
+                }
+                if (!doubleSided) continue;
+                // The inward side gets its own vertices, so its normals point inward.
+                int back = verts.Count;
+                for (int k = 0; k < face.Length; k++) { verts.Add(face[k]); uvs.Add(uvs[start + k]); }
+                for (int k = 1; k + 1 < face.Length; k++)
+                {
+                    if (flip) { tris.Add(back); tris.Add(back + k); tris.Add(back + k + 1); }
+                    else { tris.Add(back); tris.Add(back + k + 1); tris.Add(back + k); }
                 }
             }
             return V2Mesh(name, verts, tris, uvs);

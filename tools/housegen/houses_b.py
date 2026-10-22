@@ -200,6 +200,7 @@ def h06():
             out.append(h.wall(room_base + s, side, key, at=a, **kw))
         return out
     hw, he = mir("kit", "W", "Hearth", -1.5, role="hearth", note="cast-iron range; WEST is cold & swept, EAST is THE HEARTH")
+    hw["role"] = "hearth-decor"   # the west range is the identical decoy: the one hearth is the east one
     item(h, he, "east range mantel")
     mir("kit", "N", "Dresser", -2.8)
     mir("kit", "S", "KitchenSinkUnit", -5.6)
@@ -281,7 +282,7 @@ def h07():
     h.door("d_study", G, "hall", "W", -3.0, 0.85, room_b="study")
     h.door("d_music", G, "hall", "E", 2.6, 1.1, room_b="music", kind="double doors")
     h.door("d_kit", G, "study", "S", -2.8, 0.85, room_b="kitchen")
-    h.door("d_bay", G, "music", "E", 0.0, 2.4, height=2.8, room_b="bay", kind="open pointed arch (no leaf)")
+    h.door("d_bay", G, "music", "E", 0.0, 2.2, height=2.8, room_b="bay", kind="open pointed arch (no leaf)")
     h.door("d_b1", F, "landing", "E", 2.6, 0.85, room_b="bed1")
     h.door("d_b2", F, "landing", "W", 2.6, 0.85, room_b="bed2")
     h.door("d_bath", F, "landing", "W", -3.0, 0.8, room_b="bath")
@@ -316,7 +317,7 @@ def h07():
     mt = h.at("music", "TableRound2", 2.2, -1.6)
     h.on(mt, "Candleholders"); item(h, mt, "music-room table")
     # parlour
-    hr = h.wall("parlour", "W", "Hearth", at=2.0, role="hearth", note="cast-iron fireplace (decorative); THE HEARTH is the kitchen range")
+    hr = h.wall("parlour", "W", "Hearth", at=2.0, role="hearth-decor", note="cast-iron fireplace (decorative); THE HEARTH is the kitchen range")
     h.on(hr, "MantelClock", note="stopped at 7:00")
     item(h, hr, "parlour mantel")
     h.wall("parlour", "S", "SofaPainted", at=-2.9)

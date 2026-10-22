@@ -96,6 +96,7 @@ namespace Hollowmere.EditorTools
         public const float SlabT = 0.25f;        // between storeys: level F starts 0.25 above G's ceiling
         public const float Overhang = 0.3f;      // roof overhang, matches GreyboxVillageBuilder.Gable
         public const float FlightClear = 0.6f;   // how far the bottom and top points stand off the flight
+        public const float MinFloor = 0.03f;     // lowest ground-floor height above the street
 
         public HouseSpec House;
         public VillageHouseSpec Place;
@@ -112,7 +113,9 @@ namespace Hollowmere.EditorTools
 
         public static HousePlan Make(HouseSpec h, VillageHouseSpec place, AssetCatalogSpec catalog)
         {
-            var p = new HousePlan { House = h, Place = place, FloorY = Mathf.Max(0f, place.Position[1]) };
+            // Floors below the street (H02, H04, H09) come up to it (the village ground is flat under house pads), and a
+            // floor at street level sits 3 cm up so it never shares a plane with the village ground.
+            var p = new HousePlan { House = h, Place = place, FloorY = Mathf.Max(MinFloor, place.Position[1]) };
             p.MakeFlights();
             p.MakeRooms();
             p.MakeWalls(catalog);
@@ -235,10 +238,19 @@ namespace Hollowmere.EditorTools
             }
         }
 
-        /// <summary>The clear spot nearest the room's middle: 0.4 m off its walls and off any stair flight or hole on its level.</summary>
+        /// <summary>The clear spot nearest the room's middle: 0.4 m off its walls and off any stair flight or hole on its level.
+        /// An open bay is often shallower than that, so its probe may stand in the bay's mouth, up to 0.6 m into its room.</summary>
         Vector3 ProbeFor(RoomSpec r)
         {
-            var inner = r.Inner.Length == 4 ? r.Inner : r.Rect;
+            var inner = (r.Inner.Length == 4 ? r.Inner : r.Rect).ToArray();
+            foreach (var side in Sides)
+            {
+                if (!DesignChecks.Neighbours(House, r, side).Any(o => OpenBay(r, o))) continue;
+                if (side == "N") inner[3] += 0.6f;
+                else if (side == "S") inner[1] -= 0.6f;
+                else if (side == "E") inner[2] += 0.6f;
+                else inner[0] -= 0.6f;
+            }
             var mid = new Vector2((inner[0] + inner[2]) * 0.5f, (inner[1] + inner[3]) * 0.5f);
             var blocked = Flights.Where(f => f.Lower == r.Level || f.Upper == r.Level).Select(f => f.Rect).ToList();
             Vector2 best = mid;
@@ -297,7 +309,7 @@ namespace Hollowmere.EditorTools
                         foreach (var (a, b, o) in covered)
                         {
                             if (string.CompareOrdinal(r.Id, o.Id) > 0 || b - a < 0.01f) continue;
-                            if (IsBay(r) || IsBay(o)) continue; // a bay is open to the room it belongs to
+                            if (OpenBay(r, o)) continue;
                             var ops = new List<PlanOpening>();
                             foreach (var d in House.Doors.Where(d => (d.RoomA == r.Id && d.RoomB == o.Id && d.Side == side) ||
                                                                      (d.RoomA == o.Id && d.RoomB == r.Id && d.Side == Opposite(side))))
@@ -386,6 +398,10 @@ namespace Hollowmere.EditorTools
         }
 
         static bool IsBay(RoomSpec r) => (r.Kind ?? "").EndsWith("-bay");
+
+        /// <summary>A bay with no door to the room it belongs to is open to it: no partition between them.</summary>
+        bool OpenBay(RoomSpec r, RoomSpec o) =>
+            (IsBay(r) || IsBay(o)) && !House.Doors.Any(d => (d.RoomA == r.Id && d.RoomB == o.Id) || (d.RoomA == o.Id && d.RoomB == r.Id));
 
         static string Opposite(string side) => side == "N" ? "S" : side == "S" ? "N" : side == "E" ? "W" : "E";
 
