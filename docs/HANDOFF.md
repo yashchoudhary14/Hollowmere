@@ -6,7 +6,7 @@ Read `docs/WORKFLOW_CLOUD_PC.md` first. Each session edits only its own sections
 Mode:          hybrid          # hybrid = cloud writes code, PC runs Unity | local = the PC session does both halves
 Milestone:     M1.6 Village & houses rebuild (docs/ROADMAP.md)
 Current phase: P1 - Data model, loader and validation
-Phase state:   PC-TODO         # CLOUD-TODO -> PC-TODO -> DONE -> (next phase) CLOUD-TODO
+Phase state:   DONE            # CLOUD-TODO -> PC-TODO -> DONE -> (next phase) CLOUD-TODO
 Cloud branch:  claude/docs-review-cloud-phase-jbbppo
 ```
 
@@ -25,31 +25,38 @@ Cloud branch:  claude/docs-review-cloud-phase-jbbppo
 
 ## PC checklist for this phase (cloud session writes; PC session ticks)
 
-1. [ ] User closes the Unity Editor.
-2. [ ] Merge: `git checkout main && git pull --ff-only origin main && git fetch origin && git merge --no-ff origin/claude/docs-review-cloud-phase-jbbppo -m "Merge M1.6 P1 (cloud): DesignData loader and DesignDataTests"`.
-3. [ ] `tools/unity.ps1 setup`: expect `Adding packages: com.unity.nuget.newtonsoft-json`, then `SETUP OK`. (If it says all packages are already installed, that's fine too.)
-4. [ ] `tools/unity.ps1 check`: 0 compile errors. If it fails with `Newtonsoft` not found: confirm `Packages/manifest.json` now lists `com.unity.nuget.newtonsoft-json` and that `Library/PackageCache/com.unity.nuget.newtonsoft-json*/Runtime/Newtonsoft.Json.dll` exists. Fix and record in the PC report what the cloud got wrong.
-5. [ ] `tools/unity.ps1 test`: EditMode green. Expected: **88** (78 before + 10 `DesignDataTests`). If a `DesignDataTests` check fails on the data, paste its message into the report. Do **not** hand-edit `docs/design/*.json`; the cloud fixes the rule or `tools/housegen`.
-6. [ ] `tools/unity.ps1 test -Platform PlayMode`: 8 green (unchanged).
-7. [ ] `python tools/housegen/run_check.py` (or `py`): exit 0.
-8. [ ] Commit the Unity-generated `.meta` files: `Assets/Hollowmere/Scripts/Editor/Design.meta`, `Design/DesignSpecs.cs.meta`, `Design/DesignData.cs.meta`, `Design/DesignChecks.cs.meta`, `Tests/EditMode/DesignDataTests.cs.meta`, plus `Packages/manifest.json` / `packages-lock.json` from `setup`. Commit message: "M1.6 P1: DesignData loader, Newtonsoft, DesignDataTests (PC verified)".
-9. [ ] No builders, no screenshots, no fingerprint re-record this phase (`LookPassTests` must pass unchanged).
-10. [ ] Tick the P1 PC item in `docs/ROADMAP.md`, fill the PC report below, set `Phase state: DONE`, add a Log line, push `main`, delete the remote branch (`git push origin --delete claude/docs-review-cloud-phase-jbbppo`).
+1. [x] User closes the Unity Editor.
+2. [x] Merge: `git checkout main && git pull --ff-only origin main && git fetch origin && git merge --no-ff origin/claude/docs-review-cloud-phase-jbbppo -m "Merge M1.6 P1 (cloud): DesignData loader and DesignDataTests"`.
+3. [x] `tools/unity.ps1 setup`: expect `Adding packages: com.unity.nuget.newtonsoft-json`, then `SETUP OK`. (If it says all packages are already installed, that's fine too.)
+4. [x] `tools/unity.ps1 check`: 0 compile errors. If it fails with `Newtonsoft` not found: confirm `Packages/manifest.json` now lists `com.unity.nuget.newtonsoft-json` and that `Library/PackageCache/com.unity.nuget.newtonsoft-json*/Runtime/Newtonsoft.Json.dll` exists. Fix and record in the PC report what the cloud got wrong.
+5. [x] `tools/unity.ps1 test`: EditMode green. Expected: **88** (78 before + 10 `DesignDataTests`). If a `DesignDataTests` check fails on the data, paste its message into the report. Do **not** hand-edit `docs/design/*.json`; the cloud fixes the rule or `tools/housegen`.
+6. [x] `tools/unity.ps1 test -Platform PlayMode`: 8 green (unchanged).
+7. [x] `python tools/housegen/run_check.py` (or `py`): exit 0.
+8. [x] Commit the Unity-generated `.meta` files: `Assets/Hollowmere/Scripts/Editor/Design.meta`, `Design/DesignSpecs.cs.meta`, `Design/DesignData.cs.meta`, `Design/DesignChecks.cs.meta`, `Tests/EditMode/DesignDataTests.cs.meta`, plus `Packages/manifest.json` / `packages-lock.json` from `setup`. Commit message: "M1.6 P1: DesignData loader, Newtonsoft, DesignDataTests (PC verified)".
+9. [x] No builders, no screenshots, no fingerprint re-record this phase (`LookPassTests` must pass unchanged).
+10. [x] Tick the P1 PC item in `docs/ROADMAP.md`, fill the PC report below, set `Phase state: DONE`, add a Log line, push `main`, delete the remote branch (`git push origin --delete claude/docs-review-cloud-phase-jbbppo`).
 
 Done when: check is clean, EditMode 88/88 and PlayMode 8/8 pass, and `main` is pushed with the .meta files.
 
 ## PC report (PC session writes)
 
-- Merge: -
-- check: -
-- test (EditMode / PlayMode): -
-- Builders run: -
-- Screenshots (paths): -
-- Compile errors fixed (what the cloud got wrong): -
-- User decisions / approvals: -
-- Notes for the next cloud phase: -
+_P1 PC half done by Cline (Claude Opus 5.5) standing in for the Claude Code PC session._
+
+- Merge: `origin/claude/docs-review-cloud-phase-jbbppo` merged into `main` with `--no-ff` (merge commit `b12e949`), no conflicts. `main` was already up to date with `origin/main` (`31a1f67`).
+- setup: `[Hollowmere] Adding packages: com.unity.nuget.newtonsoft-json` -> `SETUP OK`, exit 0. `Packages/manifest.json` now lists `com.unity.nuget.newtonsoft-json: 3.2.2` (packages-lock: depth 1 -> 0; same version, so nothing new was downloaded).
+- check: `COMPILE OK (Unity 6000.3.27f1)`, exit 0, 0 errors, no `warning CS` in Hollowmere code.
+- test (EditMode / PlayMode): EditMode **88/88** passed (78 + the 10 `DesignDataTests`, all green; `LookPassTests` 4/4 green, layout unchanged). PlayMode **8/8** passed.
+- `python tools/housegen/run_check.py`: exit 0 (15 houses, 0 errors, 14 warnings as before; village problems: 0).
+- Builders run: none (nothing visual in P1).
+- Screenshots (paths): none (nothing visual in P1).
+- Compile errors fixed (what the cloud got wrong): none. The cloud code compiled and passed on the first run. The `overrideReferences` + `precompiledReferences: ["Newtonsoft.Json.dll"]` setup in `Hollowmere.Editor.asmdef` works.
+- Committed: the Unity-generated `.meta` files for `Scripts/Editor/Design/` (folder + 3 scripts) and `Tests/EditMode/DesignDataTests.cs`, plus `Packages/manifest.json` and `Packages/packages-lock.json`.
+- Not committed: `ProjectSettings/ProjectSettings.asset`. The batch run removed `SENTIS_ANALYTICS_ENABLED` from the Standalone scripting defines (it was added in `31a1f67`, most likely by the `com.unity.ai.inference` package when the Editor GUI opened). It flips between GUI and batch runs and doesn't affect our code, so it was left uncommitted for the user to decide.
+- User decisions / approvals: none needed for P1.
+- Notes for the next cloud phase: (1) The harness named your branch `claude/...` instead of `cloud/m1.6-p<N>`. That worked fine; just keep writing the real branch name in `Cloud branch:` and in the merge command, as you did. (2) `DesignData` / `DesignChecks` are verified in Unity, so P2's `VillageBuilderV2` can build on `DesignData.LoadVillage()` and the `DesignChecks` geometry helpers. (3) P2 changes the layout: on the PC, `GreyboxLayout.txt` is re-recorded only after the user approves the screenshots, so list the exact `shot` cameras (top-down + Main Street, the Green, Mill Lane) in the checklist.
 
 ## Log (newest first, one line per phase half)
 
+- 2026-10-22 - P1 PC (via Cline): merged claude/docs-review-cloud-phase-jbbppo; `setup` added Newtonsoft 3.2.2 as a direct dependency; check clean (no fixes needed); EditMode 88/88, PlayMode 8/8; run_check.py exit 0; .meta files + manifest committed. Next: P2 cloud.
 - 2026-10-22 - P1 cloud: Newtonsoft in RequiredPackages + Editor asmdef; `Scripts/Editor/Design/` (DesignSpecs, DesignData, DesignChecks); `DesignDataTests` (10). Branch claude/docs-review-cloud-phase-jbbppo. Next: P1 PC.
 - 2026-10-22 - Design pack added (one-time: PC session copies docs/setup/skills/* into .claude/skills/, commits, pushes): docs/design (15 houses, village v2, assets), workflow, M1.6 in ROADMAP. Next: P1 cloud.
