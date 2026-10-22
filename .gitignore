@@ -117,3 +117,7 @@ InitTestScene*.unity*
 # HS_MP tension music: DESIGN.md allows only in-world music (user decision, M1.5).
 /[Aa]ssets/HS_MP/
 /[Aa]ssets/HS_MP.meta
+
+# Python (tools/housegen)
+__pycache__/
+*.pyc

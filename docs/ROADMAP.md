@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass built and green (78 EditMode, 8 PlayMode tests; Windows build rebuilt), playtest pending: the M1.5 playtest covers both. **Next: M1.6 Village & houses rebuild, phase P1** (hybrid cloud/PC workflow: `docs/WORKFLOW_CLOUD_PC.md`, state in `docs/HANDOFF.md`). The M1.5 playtest can still happen any time; its feedback goes into P2/P3.
+**Status:** M1 built and green (Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass built and green (78 EditMode, 8 PlayMode tests; Windows build rebuilt), playtest pending: the M1.5 playtest covers both. **Now: M1.6 Village & houses rebuild, phase P1, PC half** (cloud half done: `DesignData` loader + `DesignDataTests`; hybrid cloud/PC workflow: `docs/WORKFLOW_CLOUD_PC.md`, state in `docs/HANDOFF.md`). The M1.5 playtest can still happen any time; its feedback goes into P2/P3.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -160,8 +160,8 @@ Rules for the whole milestone:
 
 **P1 — Data model, loader and validation**
 
-- [ ] Cloud: add `com.unity.nuget.newtonsoft-json` to `BatchTools.RequiredPackages`. `DesignData` (editor, `Hollowmere.EditorTools`) loads `docs/design/houses/*.json`, `village.json` and `asset_catalog.json` into plain C# classes (`HouseSpec`, `WingSpec`, `RoomSpec`, `OpeningSpec`, `StairSpec`, `PropSpec`, `VillageSpec`, `RoadSpec`...), path relative to the project root.
-- [ ] Cloud: EditMode tests `DesignDataTests`: all 15 houses load; names/parts/PuzzleKinds/door colours match `HouseCatalog`; every room lies inside a wing; every door joins two rooms on the same level or a room and outside; every asset key exists in the catalog; every house has front + back door, 2 weak windows, 4-6 hiding spots, hearth, fuse box, phone, mirror, family photo, radio/TV; village footprints don't overlap (C# twin of `run_check.py`, using the same numbers).
+- [x] Cloud: add `com.unity.nuget.newtonsoft-json` to `BatchTools.RequiredPackages`. `DesignData` (editor, `Hollowmere.EditorTools`) loads `docs/design/houses/*.json`, `village.json` and `asset_catalog.json` into plain C# classes (`HouseSpec`, `WingSpec`, `RoomSpec`, `OpeningSpec`, `StairSpec`, `PropSpec`, `VillageSpec`, `RoadSpec`...), path relative to the project root.
+- [x] Cloud: EditMode tests `DesignDataTests`: all 15 houses load; names/parts/PuzzleKinds/door colours match `HouseCatalog`; every room lies inside a wing; every door joins two rooms on the same level or a room and outside; every asset key exists in the catalog; every house has front + back door, 2 weak windows, 4-6 hiding spots, hearth, fuse box, phone, mirror, family photo, radio/TV; village footprints don't overlap (C# twin of `run_check.py`, using the same numbers).
 - [ ] PC: `setup` (Newtonsoft), `check`, `test`. Nothing visual yet.
 
 **P2 — Village v2 ground plan (greybox)**
