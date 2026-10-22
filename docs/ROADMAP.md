@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–8 done; next: step 9, verify).
+**Status:** M1 built and green (Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass built and green (78 EditMode, 8 PlayMode tests; Windows build rebuilt), playtest pending: the M1.5 playtest covers both.
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -138,9 +138,9 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **9. Verify**
 
-- [ ] Rebuild the village; `check`, `test` (EditMode and PlayMode) green.
-- [ ] `LookTools` renders day, dusk and night outside plus a house interior under runtime lighting; look at them and iterate.
-- [ ] Screenshots and a short playtest script for the user.
+- [x] Rebuild the village; `check`, `test` (EditMode and PlayMode) green. 78 EditMode and 8 PlayMode tests, including every M1 test; the gameplay layout still matches the M1 snapshot.
+- [x] `LookTools` renders day, dusk and night outside plus a house interior under runtime lighting; look at them and iterate. `LookTools.PhaseShots` renders ten cameras at midday, golden hour, mid-dusk and night (Act 1), plus a night flashlight view, into `Logs/claude/look_*.png`. Iterations: night exposure calibrated against the M1 night shots so it stays as dark but readable; an interior night grade; brighter day and dusk; hearth flames and logs; matte gardens and forest floor.
+- [x] Screenshots and a short playtest script for the user.
 
 **Done when:** the user's playtest says it looks like a place, and every M1 test still passes.
 

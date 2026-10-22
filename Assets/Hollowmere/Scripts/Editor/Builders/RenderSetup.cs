@@ -57,9 +57,9 @@ namespace Hollowmere.EditorTools
                 Golden = GradeProfile("Golden", exposure: 0.45f, contrast: 4f, saturation: 6f, filter: new Color(1f, 0.9f, 0.76f), temperature: 14f),
                 Dusk = GradeProfile("Dusk", exposure: 2.0f, contrast: 12f, saturation: -45f, filter: new Color(0.88f, 0.87f, 0.9f), temperature: -6f, vignette: 0.32f),
                 // Night: cool and drained. The night is lit at a few thousandths in linear terms, deep in ACES's toe, so it
-                // needs +3.4 EV (an eye adjusting to the dark) to keep M1's readable silhouettes against the fog.
-                Night = GradeProfile("Night", exposure: 3.4f, contrast: 4f, saturation: -35f, filter: new Color(0.8f, 0.88f, 1f), temperature: -18f, vignette: 0.36f, grain: 0.42f, bloom: 0.5f),
-                Crossing = GradeProfile("Crossing", exposure: 3.0f, contrast: -12f, saturation: -60f, filter: new Color(0.86f, 0.88f, 0.92f), temperature: -10f, vignette: 0.45f, grain: 0.5f),
+                // needs +3.8 EV (an eye adjusting to the dark) to keep M1's readable silhouettes against the fog.
+                Night = GradeProfile("Night", exposure: 3.8f, contrast: 4f, saturation: -35f, filter: new Color(0.8f, 0.88f, 1f), temperature: -18f, vignette: 0.36f, grain: 0.42f, bloom: 0.5f),
+                Crossing = GradeProfile("Crossing", exposure: 3.4f, contrast: -12f, saturation: -60f, filter: new Color(0.86f, 0.88f, 0.92f), temperature: -10f, vignette: 0.45f, grain: 0.5f),
                 // Inside a lit house at night: the eye adjusts down and the lamplight stays warm.
                 InteriorNight = GradeProfile("InteriorNight", exposure: 1.9f, contrast: 6f, saturation: -8f, filter: new Color(1f, 0.95f, 0.88f), temperature: 6f, vignette: 0.3f, grain: 0.32f, bloom: 0.45f),
                 DayReflections = AssetDatabase.LoadAssetAtPath<Cubemap>(DayHdri),

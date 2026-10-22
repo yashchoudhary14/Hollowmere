@@ -33,10 +33,10 @@ MonoBehaviour:
     MetallicGlossMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
     OcclusionMap: {fileID: 2800000, guid: a763fe2b706d3f74fa0532eb0a6a51de, type: 3}
     MetresPerTile: 3
-    Tint: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+    Tint: {r: 0.5, g: 0.55, b: 0.38, a: 1}
     KeepBuilderColour: 0
     NormalScale: 1
-    Smoothness: 0.85
+    Smoothness: 0.25
     Metallic: -1
     OcclusionStrength: 1
   - Key: LeafLitter
@@ -49,7 +49,7 @@ MonoBehaviour:
     Tint: {r: 0.48, g: 0.4, b: 0.31, a: 1}
     KeepBuilderColour: 0
     NormalScale: 1
-    Smoothness: 0.85
+    Smoothness: 0.4
     Metallic: -1
     OcclusionStrength: 1
   - Key: Road

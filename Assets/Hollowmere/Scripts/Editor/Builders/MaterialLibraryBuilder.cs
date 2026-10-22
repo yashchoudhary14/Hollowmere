@@ -40,8 +40,8 @@ namespace Hollowmere.EditorTools
         {
             // Outdoors
             Set("Ground", "PolyHaven/forrest_ground_01", 4f, Grey(0.9f)),
-            Set("Garden", "AssetStore/TerrainTexturesFree/Grass 06", 3f, Grey(0.7f)),
-            Set("LeafLitter", "AssetStore/TerrainTexturesFree/Leaves 02", 2.5f, new Color(0.48f, 0.4f, 0.31f)), // pale leaves, darkened to sit under the dead trees
+            Set("Garden", "AssetStore/TerrainTexturesFree/Grass 06", 3f, new Color(0.5f, 0.55f, 0.38f), smoothness: 0.25f), // the pack's grass is fairly smooth; grass shouldn't shine
+            Set("LeafLitter", "AssetStore/TerrainTexturesFree/Leaves 02", 2.5f, new Color(0.48f, 0.4f, 0.31f), smoothness: 0.4f), // pale leaves, darkened to sit under the dead trees
             Set("Road", "PolyHaven/brown_mud_leaves_01", 4f),
             Set("Paving", "PolyHaven/mossy_cobblestone", 4f),
             Set("Stone", "PolyHaven/stone_wall", 3f),
