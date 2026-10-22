@@ -5,6 +5,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using static Hollowmere.EditorTools.BuilderKit;
 
 namespace Hollowmere.EditorTools
@@ -42,6 +43,7 @@ namespace Hollowmere.EditorTools
         const float RoofPitch = 45f;
 
         static readonly Color FogDay = new Color(0.72f, 0.75f, 0.78f);
+        static RenderSetup.Assets s_render; // look pass (M1.5): pipeline, grades, sky, textures
 
         [MenuItem("Hollowmere/Build Greybox Village")]
         public static void Build()
@@ -49,6 +51,7 @@ namespace Hollowmere.EditorTools
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
 
             Begin();
+            s_render = RenderSetup.Setup();
             BeginDressing();
             EnsureFolder("Assets/Hollowmere/Scenes");
             EnsureFolder("Assets/Hollowmere/Settings");
@@ -73,6 +76,7 @@ namespace Hollowmere.EditorTools
             var layout = BuildLayout(chapelSpawn);
 
             var lighting = BuildLights();
+            BuildInteriorGrade(lighting, houses);
             var player = BuildPlayer(layout.PlayerSpawn);
             var hollow = BuildHollow(layout.HollowNightSpawn, layout);
             BuildShotCameras();
@@ -245,6 +249,7 @@ namespace Hollowmere.EditorTools
             float hx = HouseW * 0.5f, hz = HouseD * 0.5f;
 
             BuildHouseShell(root, def);
+            InteriorProbe(root);
             house.Interior = WorldBounds(root, new Vector3(0f, HouseH * 0.5f, 0f), new Vector3(HouseW - 2f * WallT, HouseH, HouseD - 2f * WallT));
 
             // Front door: hinge on the west side, swings inwards (+90 about y).
@@ -354,12 +359,12 @@ namespace Hollowmere.EditorTools
 
             // Windows: dark panes through the wall.
             float pane = WallT + 0.04f;
-            Box(shell, "Window_FrontW", new Vector3(-3.5f, 1.7f, hz - WallT * 0.5f), new Vector3(1.3f, 1.1f, pane), window, false);
-            Box(shell, "Window_FrontE", new Vector3(3.5f, 1.7f, hz - WallT * 0.5f), new Vector3(1.3f, 1.1f, pane), window, false);
-            Box(shell, "Window_BackW", new Vector3(-4.6f, 1.7f, -hz + WallT * 0.5f), new Vector3(1.1f, 1.0f, pane), window, false);
-            Box(shell, "Window_BackE", new Vector3(1.4f, 1.7f, -hz + WallT * 0.5f), new Vector3(1.1f, 1.0f, pane), window, false);
-            Box(shell, "Window_West", new Vector3(-hx + WallT * 0.5f, 1.7f, -1.7f), new Vector3(pane, 1.0f, 1.2f), window, false);
-            Box(shell, "Window_East", new Vector3(hx - WallT * 0.5f, 1.7f, 2.7f), new Vector3(pane, 1.0f, 1.2f), window, false);
+            WindowFrame(shell, Box(shell, "Window_FrontW", new Vector3(-3.5f, 1.7f, hz - WallT * 0.5f), new Vector3(1.3f, 1.1f, pane), window, false), alongX: true);
+            WindowFrame(shell, Box(shell, "Window_FrontE", new Vector3(3.5f, 1.7f, hz - WallT * 0.5f), new Vector3(1.3f, 1.1f, pane), window, false), alongX: true);
+            WindowFrame(shell, Box(shell, "Window_BackW", new Vector3(-4.6f, 1.7f, -hz + WallT * 0.5f), new Vector3(1.1f, 1.0f, pane), window, false), alongX: true);
+            WindowFrame(shell, Box(shell, "Window_BackE", new Vector3(1.4f, 1.7f, -hz + WallT * 0.5f), new Vector3(1.1f, 1.0f, pane), window, false), alongX: true);
+            WindowFrame(shell, Box(shell, "Window_West", new Vector3(-hx + WallT * 0.5f, 1.7f, -1.7f), new Vector3(pane, 1.0f, 1.2f), window, false), alongX: false);
+            WindowFrame(shell, Box(shell, "Window_East", new Vector3(hx - WallT * 0.5f, 1.7f, 2.7f), new Vector3(pane, 1.0f, 1.2f), window, false), alongX: false);
         }
 
         /// <summary>Exterior traits a letter can describe: nameplate and stopped clock; plus the hidden shrine marker.</summary>
@@ -398,6 +403,7 @@ namespace Hollowmere.EditorTools
             room.IsHearthRoom = hearthRoom;
             room.Bounds = new Bounds(t.position + Vector3.up * size.y * 0.5f, size);
             room.Light = PointLight(t, "CeilingLight", new Vector3(0f, HouseH - 0.25f, 0f), new Color(1f, 0.82f, 0.6f), 7f, 2.5f);
+            SoftShadows(room.Light, UniversalAdditionalLightData.AdditionalLightsShadowResolutionTierLow); // walls keep the light in
             room.Bulb = Ball(t, "Bulb", new Vector3(0f, HouseH - 0.12f, 0f), 0.14f, Mat("Bulb", new Color(1f, 0.95f, 0.8f), 0.5f, new Color(2f, 1.8f, 1.4f)), collider: false);
             return room;
         }
@@ -411,9 +417,13 @@ namespace Hollowmere.EditorTools
             Box(visual, "Firebox", new Vector3(0f, 0.45f, 0.81f), new Vector3(1.1f, 0.75f, 0.03f), Mat("Soot", new Color(0.04f, 0.035f, 0.03f)), false);
             Box(visual, "Mantel", new Vector3(0f, 1.36f, 0.45f), new Vector3(2.5f, 0.12f, 0.95f), Mat("Wood", new Color(0.25f, 0.17f, 0.11f)));
             Box(visual, "Breast", new Vector3(0f, 2.2f, 0.3f), new Vector3(1.6f, 1.6f, 0.6f), stone);
+            HearthLogs(hearth);
             var fire = Node(hearth, "Fire", new Vector3(0f, 0.3f, 1.0f));
             Ball(fire, "Flames", Vector3.zero, 0.38f, Mat("Fire", new Color(1f, 0.5f, 0.15f), 0.2f, new Color(4f, 1.6f, 0.4f)), collider: false);
-            PointLight(fire, "FireLight", new Vector3(0f, 0.3f, 0.2f), new Color(1f, 0.55f, 0.25f), 6f, 5f);
+            var fireLight = PointLight(fire, "FireLight", new Vector3(0f, 0.3f, 0.2f), new Color(1f, 0.55f, 0.25f), 6f, 5f);
+            SoftShadows(fireLight, UniversalAdditionalLightData.AdditionalLightsShadowResolutionTierMedium);
+            Flicker(fireLight, 0.25f, 8f);
+            FireParticles(fire);
             fire.gameObject.SetActive(false);
 
             var component = hearth.gameObject.AddComponent<Hearth>();
@@ -617,8 +627,9 @@ namespace Hollowmere.EditorTools
                 Box(visual, "Plinth", new Vector3(0f, 0.3f, 0f), new Vector3(0.4f, 0.6f, 0.4f), stone);
                 Cyl(visual, "Wax", new Vector3(0f, 0.75f, 0f), 0.1f, 0.3f, Mat("Candle", new Color(0.92f, 0.9f, 0.8f)));
                 var flame = Node(candle, "Flame", new Vector3(0f, 0.95f, 0f));
-                Ball(flame, "Glow", Vector3.zero, 0.07f, Mat("Flame", new Color(1f, 0.7f, 0.3f), 0.2f, new Color(3f, 1.8f, 0.6f)), collider: false);
-                PointLight(flame, "Light", new Vector3(0f, 0.1f, 0f), new Color(1f, 0.7f, 0.35f), 4f, 2.5f);
+                Ball(flame, "Glow", new Vector3(0f, 0.02f, 0f), 0.07f, Mat("Flame", new Color(1f, 0.7f, 0.3f), 0.2f, new Color(3f, 1.8f, 0.6f)), collider: false)
+                    .transform.localScale = new Vector3(0.035f, 0.085f, 0.035f); // a flame, not a bead
+                Flicker(PointLight(flame, "Light", new Vector3(0f, 0.1f, 0f), new Color(1f, 0.7f, 0.35f), 4f, 2.5f), 0.18f, 9f);
                 flame.gameObject.SetActive(false);
                 circle.Candles[i] = candle.gameObject.AddComponent<Candle>();
                 circle.Candles[i].Flame = flame.gameObject;
@@ -762,6 +773,7 @@ namespace Hollowmere.EditorTools
             var lighting = new GameObject("Lighting").AddComponent<PhaseLighting>();
             lighting.Sun = sun;
             lighting.Moon = moon;
+            BuildGrades(lighting);
             return lighting;
         }
 
@@ -786,8 +798,8 @@ namespace Hollowmere.EditorTools
             cam.nearClipPlane = 0.05f;
             cam.farClipPlane = 500f;
             cam.fieldOfView = 70f;
-            cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = FogDay;
+            LookCamera(cam);
             head.gameObject.AddComponent<AudioListener>();
 
             // Flashlight beam, slightly below and right of the eyes so its shadows read.
@@ -797,6 +809,7 @@ namespace Hollowmere.EditorTools
             beam.innerSpotAngle = 28f;
             beam.color = new Color(1f, 0.95f, 0.85f);
             beam.shadows = LightShadows.Soft;
+            beam.cookie = s_render.FlashlightCookie;
             beam.enabled = false;
 
             var agent = player.AddComponent<PlayerAgent>();
@@ -921,8 +934,8 @@ namespace Hollowmere.EditorTools
             cam.enabled = false;
             cam.fieldOfView = 60f;
             cam.farClipPlane = 800f;
-            cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = FogDay;
+            LookCamera(cam);
         }
 
         static void ApplyRenderSettings()
@@ -933,7 +946,7 @@ namespace Hollowmere.EditorTools
             RenderSettings.fogColor = FogDay;
             RenderSettings.ambientMode = AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.42f, 0.43f, 0.47f);
-            RenderSettings.skybox = null;
+            ApplySky();
 
             // Realtime lighting only: no baked or realtime GI to compute.
             var lighting = AssetDatabase.LoadAssetAtPath<LightingSettings>(LightingPath);

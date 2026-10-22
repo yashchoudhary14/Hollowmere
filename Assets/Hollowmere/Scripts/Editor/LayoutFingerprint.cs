@@ -12,8 +12,8 @@ namespace Hollowmere.EditorTools
     /// <summary>
     /// A text snapshot of everything in the Greybox scene that gameplay touches: every collider (shape, trigger,
     /// enabled), every NavMesh obstacle, and the transform of every Hollowmere component. Art passes (M1.5, M7) must
-    /// leave it unchanged; GreyboxSceneTests compares the scene against the snapshot recorded before the look pass.
-    /// Renderers, meshes, materials and lights are deliberately left out.
+    /// leave it unchanged; LookPassTests compares the scene against the snapshot recorded before the look pass.
+    /// Renderers, meshes, materials, lights and [LookOnly] components (flicker, grading) are deliberately left out.
     /// </summary>
     public static class LayoutFingerprint
     {
@@ -57,7 +57,7 @@ namespace Hollowmere.EditorTools
                     case NavMeshObstacle o:
                         lines.Add($"{Pose(o)}|Obstacle|{o.shape}|{V(o.center)}|{V(o.size)}|{o.carving}|{o.enabled}|{o.gameObject.activeSelf}");
                         break;
-                    case MonoBehaviour mb when mb.GetType().Namespace == "Hollowmere":
+                    case MonoBehaviour mb when mb.GetType().Namespace == "Hollowmere" && !System.Attribute.IsDefined(mb.GetType(), typeof(LookOnlyAttribute)):
                         lines.Add($"{Pose(mb)}|{mb.GetType().Name}|{mb.enabled}|{mb.gameObject.activeSelf}");
                         break;
                 }

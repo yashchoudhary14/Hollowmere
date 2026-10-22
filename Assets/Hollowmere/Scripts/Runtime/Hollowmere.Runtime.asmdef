@@ -2,7 +2,8 @@
     "name": "Hollowmere.Runtime",
     "rootNamespace": "Hollowmere",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Core.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

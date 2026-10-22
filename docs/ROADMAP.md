@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–5 done; next: step 6, lighting and atmosphere).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–6 done; next: step 7, audio).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -121,10 +121,10 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **6. Lighting and atmosphere**
 
-- [ ] `RenderSetup` editor script: Hollowmere's own URP asset and renderer for the PC quality level (Forward+, HDR, soft shadows at high resolution with 4 cascades, additional-light shadows for the flashlight and lamps, SSAO).
-- [ ] Global Volume profile built by script: ACES tonemapping, colour grading, bloom on light sources, vignette, film grain. `PhaseLighting` also drives the post-processing per phase (gold day, draining dusk, dark readable night, thick Crossing fog).
-- [ ] Warm lamp, candle and fire colours with a subtle cosmetic flicker (intensity only; a room light's on/off state, which the Hollow's sight uses, never changes). Flashlight: soft spot with a generated cookie.
-- [ ] HDRIs for the overcast day sky and for reflections; night stays dark.
+- [x] `RenderSetup` editor script: Hollowmere's own URP asset and renderer for the PC quality level (Forward+, HDR, soft shadows at high resolution with 4 cascades, additional-light shadows for the flashlight and lamps, SSAO). `Settings/Rendering/Hollowmere_PC_RPAsset` (copied from the template and tuned: 64-bit HDR, 4x MSAA, 4096 shadow maps to 120 m in 4 cascades, soft shadows on high, shadowed point lights, HDR grading with a 64 LUT, box-projected probe blending) and its renderer (Forward+, SSAO at high quality); set as the default pipeline and the PC quality level's.
+- [x] Global Volume profile built by script: ACES tonemapping, colour grading, bloom on light sources, vignette, film grain. `PhaseLighting` also drives the post-processing per phase (gold day, draining dusk, dark readable night, thick Crossing fog). A Base volume plus Day, Golden, Dusk, Night and Crossing grades that `PhaseLighting` blends by weight; fog densities are unchanged. The night is lit at a few thousandths in linear terms, deep in ACES's toe, so its grade carries +3.4 EV to keep M1's readable silhouettes (measured against the M1 night shots). An `InteriorGrade` fades in a warmer, less exposed night grade while the camera is inside a house (from the houses' bounds, no colliders).
+- [x] Warm lamp, candle and fire colours with a subtle cosmetic flicker (intensity only; a room light's on/off state, which the Hollow's sight uses, never changes). Flashlight: soft spot with a generated cookie. `LightFlicker` on hearth fires and ritual candles; room lights and fires cast soft shadows, so light no longer leaks through walls; window panes don't, so lit rooms spill light outside. Hearth fires burn on logs with additive flame particles; candle glows are flame-shaped. Windows have frames, cross bars and sills. Visual-only components are marked `[LookOnly]` and left out of the layout snapshot.
+- [x] HDRIs for the overcast day sky and for reflections; night stays dark. The overcast HDRI is the day sky and reflection source; `PhaseLighting` fades the sky into the fog through dusk and switches cameras to the fog colour at night, and reflections drop to 10 %. Houses get a box-projected probe with a dim warm cube so interiors no longer reflect the sky. `LookTools.PhaseShots` renders the review set at day, golden hour, dusk and night.
 
 **7. Audio**
 

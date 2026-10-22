@@ -1,15 +1,39 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Hollowmere
 {
     /// <summary>
     /// Sun, moon, fog and ambient light for each phase. Design: docs/DESIGN.md "Audio and atmosphere" (visual style),
     /// "Day phase" (time signals), "Dusk transition", "The village map" (night visibility) and "The Crossing".
+    /// Look pass (M1.5): also the sky, reflections and colour grade. The grade volumes are blended by weight here; the
+    /// fog densities, which set how far anyone can see, are unchanged.
     /// </summary>
     public class PhaseLighting : MonoBehaviour
     {
         public Light Sun;
         public Light Moon;
+
+        [Header("Look pass: grade volumes (built by RenderSetup), day sky")]
+        public Volume DayGrade;
+        public Volume GoldenGrade;
+        public Volume DuskGrade;
+        public Volume NightGrade;
+        public Volume CrossingGrade;
+        [Tooltip("Skybox material for daylight; at night the camera clears to the fog colour instead.")]
+        public Material DaySky;
+        [Tooltip("Reflections from the sky by day, and the faint share left at night.")]
+        public float DayReflections = 1f;
+        public float NightReflections = 0.1f;
+
+        Material _sky; // a copy, so fading the sky never edits the material asset
+        Material Sky => _sky != null ? _sky : DaySky != null ? _sky = new Material(DaySky) : null;
+
+        /// <summary>How much of the sky shows (1 by day, falling to 0 through dusk). Below a sliver the camera clears to fog.</summary>
+        public float SkyAmount { get; private set; } = 1f;
+
+        /// <summary>How far into night the look is (0 by day, 1 at night), for grades that only apply in the dark.</summary>
+        public float NightAmount { get; private set; }
 
         [Header("Colours")]
         public Color DayFog = new Color(0.72f, 0.75f, 0.78f);
@@ -43,8 +67,41 @@ namespace Hollowmere
                 default: Night(now.Act >= 3 || now.Phase == MatchPhase.Dawn ? HuntFogDensity : NightFogDensity); break;
             }
             if (Crossing) RenderSettings.fogDensity = CrossingFogDensity;
+            Weight(CrossingGrade, Crossing ? 1f : 0f);
             var cam = Camera.main;
-            if (cam != null) cam.backgroundColor = RenderSettings.fogColor;
+            if (cam != null) ApplyToCamera(cam);
+        }
+
+        /// <summary>Sky or fog colour behind everything, to match the phase. Shot cameras use this too.</summary>
+        public void ApplyToCamera(Camera cam)
+        {
+            bool sky = DaySky != null && SkyAmount > 0.05f;
+            cam.clearFlags = sky ? CameraClearFlags.Skybox : CameraClearFlags.SolidColor;
+            cam.backgroundColor = RenderSettings.fogColor;
+        }
+
+        /// <summary>The look-pass parts of a phase: grade weights, how much sky shows, how strong reflections are.</summary>
+        void Look(float day, float golden, float dusk, float night, float sky)
+        {
+            Weight(DayGrade, day);
+            Weight(GoldenGrade, golden);
+            Weight(DuskGrade, dusk);
+            Weight(NightGrade, night);
+            SkyAmount = sky;
+            NightAmount = Mathf.Clamp01(night + dusk * 0.5f);
+            if (Sky != null)
+            {
+                RenderSettings.skybox = Sky;
+                Sky.SetFloat("_Exposure", Mathf.Lerp(0.05f, 1f, sky));
+                // Tint the sky towards the fog as it fades, so the horizon meets the fog without a seam.
+                Sky.SetColor("_Tint", Color.Lerp(RenderSettings.fogColor, new Color(0.5f, 0.5f, 0.5f), sky));
+            }
+            RenderSettings.reflectionIntensity = Mathf.Lerp(NightReflections, DayReflections, sky);
+        }
+
+        static void Weight(Volume v, float w)
+        {
+            if (v != null) v.weight = w;
         }
 
         /// <summary>Shadows lengthen and the light turns gold through the day.</summary>
@@ -58,6 +115,7 @@ namespace Hollowmere
             RenderSettings.fogColor = Color.Lerp(DayFog, GoldenFog, t * t);
             RenderSettings.fogDensity = DayFogDensity;
             RenderSettings.ambientLight = DayAmbient;
+            Look(1f - t * t, t * t, 0f, 0f, 1f);
         }
 
         /// <summary>Orange fading to grey over the 90 seconds as colour drains from the world.</summary>
@@ -72,6 +130,9 @@ namespace Hollowmere
             RenderSettings.fogColor = Color.Lerp(GoldenFog, NightFog, t);
             RenderSettings.fogDensity = Mathf.Lerp(DayFogDensity, NightFogDensity, t * t);
             RenderSettings.ambientLight = Color.Lerp(DayAmbient, NightAmbient, t);
+            // Gold drains into the grey dusk grade over the first half, then night takes over.
+            float first = Mathf.Clamp01(t * 2f), second = Mathf.Clamp01(t * 2f - 1f);
+            Look(0f, 1f - first, first - second, second, 1f - Mathf.SmoothStep(0f, 1f, t));
         }
 
         void Night(float density)
@@ -82,6 +143,7 @@ namespace Hollowmere
             RenderSettings.fogColor = NightFog;
             RenderSettings.fogDensity = Mathf.MoveTowards(RenderSettings.fogDensity, density, 0.02f * Time.deltaTime);
             RenderSettings.ambientLight = NightAmbient;
+            Look(0f, 0f, 0f, 1f, 0f);
         }
     }
 }
