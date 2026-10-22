@@ -23,7 +23,7 @@
 | H05 Doctor's House | -62.0 | +0.30 | 48.0 | 90 | Chapel Lane (west side) | (-56.0, 48.0) | 85.0 m |
 | H06 Twins' House | -24.0 | +0.00 | 29.0 | 180 | The Green (north side) | (-25.0, 25.0) | 90.5 m |
 | H07 Organist's House | -42.0 | +0.30 | 82.0 | 270 | Chapel Lane (east side) | (-46.0, 82.0) | 54.9 m |
-| H08 Butcher's House | -7.75 | +0.00 | 66.0 | 90 | Main Street (west side) | (-10.8, 62.0) | 51.1 m |
+| H08 Butcher's House | -7.75 | +0.00 | 66.0 | 90 | Main Street (west side) | (-8.8, 62.0) | 50.8 m |
 | H09 Miller's House | -104.0 | -0.60 | -96.0 | 0 | Mill Lane (end, at the pond) | (-103.5, -92.0) | 228.8 m |
 | H10 Photographer's House | -8.0 | +0.00 | 50.0 | 90 | Main Street (west side) | (-4.0, 50.4) | 61.7 m |
 | H11 Priest's House | -62.0 | +0.40 | 80.0 | 90 | Chapel Lane (west side) | (-58.0, 81.5) | 65.5 m |

@@ -86,13 +86,13 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_frontW | G | hall -> ext | N | -1.0 | 0.9 x 2.05 | yellow 4-panel door '7A', screwed shut from inside (cannot open) (Yellow) | sealed |
 | d_back | G | hall -> ext | S | 0.0 | 0.9 x 2.05 | panel | back |
 | d_parW | G | hall -> parW | W | 2.4 | 0.85 x 2.05 | panel |  |
-| d_kitW | G | hall -> kitW | W | -2.6 | 0.85 x 2.05 | panel |  |
+| d_kitW | G | parW -> kitW | S | -4.3 | 0.85 x 2.05 | panel |  |
 | d_parE | G | hall -> parE | E | 2.4 | 0.85 x 2.05 | panel |  |
-| d_kitE | G | hall -> kitE | E | -2.6 | 0.85 x 2.05 | panel |  |
+| d_kitE | G | parE -> kitE | S | 4.3 | 0.85 x 2.05 | panel |  |
 | d_bedW | F | landing -> bedW | W | 0.75 | 0.8 x 2.05 | panel |  |
 | d_bedE | F | landing -> bedE | E | 0.75 | 0.8 x 2.05 | panel |  |
-| d_nurW | F | landing -> nurW | W | -3.3 | 0.8 x 2.05 | panel |  |
-| d_nurE | F | landing -> nurE | E | -3.3 | 0.8 x 2.05 | panel |  |
+| d_nurW | F | bedW -> nurW | S | -3.2 | 0.8 x 2.05 | panel |  |
+| d_nurE | F | bedE -> nurE | S | 3.2 | 0.8 x 2.05 | panel |  |
 | d_bath | F | landing -> bath | N | 0.0 | 0.8 x 2.05 | panel |  |
 
 ### Windows
@@ -153,7 +153,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | `Hearth` | BUILD (PropKit) | -6.27 | 0.00 | -1.50 | 90 | 1.8 x 0.7 x 1.4 | floor | hearth cast-iron range; WEST is cold & swept, EAST is THE HEARTH |
-| 3 | `Dresser` | BUILD (PropKit) | -4.00 | 0.00 | -0.34 | 180 | 1.4 x 0.5 x 2.0 | floor |   |
+| 3 | `Dresser` | BUILD (PropKit) | -2.80 | 0.00 | -0.34 | 180 | 1.4 x 0.5 x 2.0 | floor |   |
 | 5 | `KitchenSinkUnit` | BUILD (PropKit) | -5.60 | 0.00 | -3.32 | 0 | 1.0 x 0.6 x 0.9 | floor |   |
 | 7 | `TableWood1` | Poly Haven `WoodenTable_01` (1k) | -4.00 | 0.00 | -2.00 | 0 | 1.4 x 0.8 x 0.76 | floor |   |
 
@@ -161,7 +161,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
 | 2 | `Hearth` | BUILD (PropKit) | 6.27 | 0.00 | -1.50 | 270 | 1.8 x 0.7 x 1.4 | floor | hearth cast-iron range; WEST is cold & swept, EAST is THE HEARTH |
-| 4 | `Dresser` | BUILD (PropKit) | 4.00 | 0.00 | -0.34 | 180 | 1.4 x 0.5 x 2.0 | floor |   |
+| 4 | `Dresser` | BUILD (PropKit) | 2.80 | 0.00 | -0.34 | 180 | 1.4 x 0.5 x 2.0 | floor |   |
 | 6 | `KitchenSinkUnit` | BUILD (PropKit) | 5.60 | 0.00 | -3.32 | 0 | 1.0 x 0.6 x 0.9 | floor |   |
 | 8 | `TableWood1` | Poly Haven `WoodenTable_01` (1k) | 4.00 | 0.00 | -2.00 | 0 | 1.4 x 0.8 x 0.76 | floor |   |
 

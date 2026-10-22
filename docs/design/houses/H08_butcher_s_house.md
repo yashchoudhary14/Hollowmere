@@ -10,7 +10,7 @@
 | **M1 puzzle rig (code)** | `PuzzleKind.CodeLock` |
 | **Letter traits (HouseCatalog)** | door **Red**, **2** chimney(s), stopped clock **5:00**, family **Grice** |
 | **World position** | x -7.75, z 66.0, floor level y +0.00, yaw 90 deg - Main Street (west side) |
-| **Front door (world)** | (-10.8, 62.0) - 51.1 m from the altar, 3.5 m from the lane |
+| **Front door (world)** | (-8.8, 62.0) - 50.8 m from the altar, 3.5 m from the lane |
 | **Placement note** | shop on the pavement; slaughter yard behind, opening onto Back Lane |
 
 ## Reference images
@@ -84,14 +84,14 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | Door | Level | From -> to | Wall | Centre at | W x H | Leaf | Role |
 |---|---|---|---|---|---|---|---|
 | d_shop | G | shop -> ext | N | -3.0 | 1.0 x 2.05 | shop door with a bell, 'CLOSED' sign | shop |
-| d_front | G | hall -> ext | E | -3.0 | 0.9 x 2.05 | red side door to the flat, letterbox (Red) | front |
+| d_front | G | hall -> ext | E | -1.0 | 0.9 x 2.05 | red side door to the flat, letterbox (Red) | front |
 | d_back | G | hall -> ext | S | 2.9 | 0.85 x 2.05 | panel - to the slaughter yard | back |
 | d_shopk | G | shop -> kitchen | S | -1.2 | 0.9 x 2.05 | half-glazed door with a meat-hook rail over it |  |
 | d_hallk | G | hall -> kitchen | W | -4.4 | 0.85 x 2.05 | panel |  |
 | d_cold | G | kitchen -> cold | S | -1.8 | 1.0 x 2.05 | insulated cold-room door with a lever latch (heavy, loud) |  |
 | d_liv | F | landing -> living | N | 2.9 | 0.85 x 2.05 | panel |  |
 | d_b1 | F | landing -> bed1 | W | -1.2 | 0.8 x 2.05 | panel |  |
-| d_pass | F | landing -> pass | W | -2.95 | 0.8 x 2.05 | panel |  |
+| d_pass | F | landing -> pass | W | -2.95 | 0.75 x 2.05 | panel |  |
 | d_b2 | F | pass -> bed2 | S | -1.2 | 0.8 x 2.05 | panel |  |
 | d_bath | F | pass -> bath | S | 0.4 | 0.75 x 2.05 | panel |  |
 

@@ -89,12 +89,12 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_front | G | hall -> ext | N | 0.4 | 0.9 x 2.05 | half-glazed door, sunrise pattern glass (Green) - tiled porch step; garden gate 6 m in front painted 'RAO' | front |
 | d_back | G | back -> ext | E | -2.2 | 0.85 x 2.05 | ledged plank, two bolts - opens to the side path | back |
 | d_front_r | G | hall -> front | W | 3.4 | 0.85 x 2.05 | 4-panel |  |
-| d_din | G | hall -> dining | E | 0.9 | 0.85 x 2.05 | 4-panel |  |
+| d_din | G | hall -> dining | E | 3.9 | 0.85 x 2.05 | 4-panel |  |
 | d_kit | G | hall -> kitchen | S | -0.1 | 0.85 x 2.05 | 4-panel |  |
 | d_backl | G | kitchen -> back | E | -2.2 | 0.85 x 2.05 | ledged |  |
 | d_glass | G | kitchen -> glass | S | -0.6 | 0.8 x 2.05 | glazed door |  |
 | d_b1 | F | landing -> bed1 | W | 2.6 | 0.8 x 2.05 | panel |  |
-| d_b2 | F | landing -> bed2 | E | 0.8 | 0.8 x 2.05 | panel |  |
+| d_b2 | F | landing -> bed2 | E | 0.5 | 0.8 x 2.05 | panel |  |
 | d_bath | F | landing -> bath | S | -0.1 | 0.75 x 2.05 | panel |  |
 | d_b3 | F | bed2 -> bed3 | S | 3.6 | 0.75 x 2.05 | connecting door, wallpapered over (visible seam) |  |
 
@@ -115,8 +115,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 |---|---|---|---|---|---|
 | s1 | hall | (0.4, 0.5, 1.3, 3.8) | G -> F | S | straight - 14 risers, painted balusters, Carpet70s runner |
 | s1u | landing | (0.4, 0.5, 1.3, 3.8) | G -> F | S | void |
-| s2 | back | (3.6, -4.0, 4.5, -0.6) | G -> C | S | steep cellar stair, 11 risers, open treads, handrail rope |
-| s2c | cellar | (3.6, -4.0, 4.5, -0.6) | G -> C | S | arrives in the cellar |
+| s2 | back | (1.6, -4.0, 4.4, -3.1) | G -> C | E | steep cellar stair, 11 risers, open treads, handrail rope |
+| s2c | cellar | (1.6, -4.0, 4.4, -3.1) | G -> C | E | arrives in the cellar |
 
 ## 3. Every prop, room by room
 
@@ -225,11 +225,11 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 ### cellar - Cellar
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
-| 57 | `FuseBox` | Poly Haven `power_box_01` (1k) | 2.00 | 1.20 | -3.98 | 0 | 0.45 x 0.15 x 0.6 | wall-hung | fuse-box FUSE BOX - must be reset to light the cellar (DESIGN Rao) |
+| 57 | `FuseBox` | Poly Haven `power_box_01` (1k) | 0.60 | 1.20 | -3.98 | 0 | 0.45 x 0.15 x 0.6 | wall-hung | fuse-box FUSE BOX - must be reset to light the cellar (DESIGN Rao) |
 | 58 | `ToolChest` | Poly Haven `metal_tool_chest` (1k) | -2.00 | 0.00 | 3.79 | 180 | 0.7 x 0.45 x 0.9 | floor | puzzle LOCKBOX: steel box bolted to the bench, 4 code dials (CodeLockPuzzle) |
 | 59 | `SteelShelves` | Poly Haven `steel_frame_shelves_01` (1k) | -4.00 | 0.00 | 0.00 | 90 | 1.2 x 0.45 x 1.9 | floor |  jars of pickled lime, tins |
 | 60 | `BarrelWorn` | owned: His_Med_Storage_Barrel_Wood_Worn_01 (Fab) | -3.80 | 0.00 | -3.60 | 0 | 0.65 x 0.65 x 0.95 | floor |   |
-| 61 | `CellarCrates` | BUILD (PropKit) | 1.20 | 0.00 | -3.50 | 0 | 1.4 x 0.9 x 1.2 | floor |  crates with a crouch gap behind |
+| 61 | `CellarCrates` | BUILD (PropKit) | -2.20 | 0.00 | -3.50 | 0 | 1.4 x 0.9 x 1.2 | floor |  crates with a crouch gap behind |
 | 62 | `TinnedFood` | Poly Haven `russian_food_cans_01` (1k) | -1.00 | 0.00 | -3.80 | 0 | 0.3 x 0.2 x 0.12 | floor |   |
 | 63 | `Chalkboard` | Poly Haven `standing_chalkboard_01` (1k) | 3.97 | 0.00 | 1.50 | 270 | 1.0 x 0.5 x 1.5 | floor |  WRITING ON THE WALL (chalk) explaining the code: which photos count |
 | 64 | `ShelfRustic` | owned: Res_Rur_Furniture_Shelf_Wood_Old_01 (Fab) | 1.50 | 0.00 | 3.87 | 180 | 1.0 x 0.3 x 1.0 | floor |   |
@@ -249,7 +249,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | puzzle | cellar | -2.00 | 0.00 | 3.79 | CodeLockPuzzle: digits = people counted in 4 named family photos AS THEY WERE BY DAY |
 | container | cellar | -2.00 | 0.00 | 3.79 | Lockbox holds the family seal ring |
 | hiding | cellar | -3.80 | 0.00 | -3.60 | behind the barrels -> HidingSpot on H01.p060 (BarrelWorn) - crouched |
-| hiding | cellar | 1.20 | 0.00 | -3.50 | behind the crates -> HidingSpot on H01.p061 (CellarCrates) - crouched |
+| hiding | cellar | -2.20 | 0.00 | -3.50 | behind the crates -> HidingSpot on H01.p061 (CellarCrates) - crouched |
 | note-spot | cellar | 3.97 | 1.50 | 1.50 | chalk writing (note 3/3) |
 | item-spot | cellar | 1.50 | 1.00 | 3.87 | cellar shelf |
 

@@ -109,8 +109,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 ### Stairs, ladders and voids
 | Id | In room | Rect | Goes | Up toward | Type |
 |---|---|---|---|---|---|
-| s1 | hall | (2.55, -0.3, 3.45, 3.2) | G -> F | S | straight - 15 risers 0.193, oak, turned balusters, carpet runner (Carpet70s) held by brass rods; void above in landing |
-| s2 | landing | (2.55, -0.3, 3.45, 3.2) | G -> F | S | stairwell void (balustrade on W side) |
+| s1 | hall | (2.65, -0.3, 3.45, 3.2) | G -> F | S | straight - 15 risers 0.193, oak, turned balusters, carpet runner (Carpet70s) held by brass rods; void above in landing |
+| s2 | landing | (2.65, -0.3, 3.45, 3.2) | G -> F | S | stairwell void (balustrade on W side) |
 | s3 | landing | (1.9, -4.9, 2.7, -3.7) | F -> A | S | folding loft ladder through 0.7x1.0 hatch |
 
 ## 3. Every prop, room by room

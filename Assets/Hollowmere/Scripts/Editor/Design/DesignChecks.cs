@@ -121,6 +121,28 @@ namespace Hollowmere.EditorTools
                 if (!Neighbours(h, ra, d.Side).Contains(rb)) { e.Add($"{h.Slug}: door {d.Id}: {rb.Id} is not across {ra.Id}'s {d.Side} wall"); continue; }
                 WallSpan(rb.Rect, d.Side, out float lo2, out float hi2);
                 if (!Fits(d.At, d.Width, Mathf.Max(lo, lo2), Mathf.Min(hi, hi2))) e.Add($"{h.Slug}: door {d.Id} not within the span {ra.Id} and {rb.Id} share");
+                else if (!Fits(d.At, d.Width + PartitionT, Mathf.Max(lo, lo2), Mathf.Min(hi, hi2)))
+                    e.Add($"{h.Slug}: door {d.Id} runs into the partition at the end of its wall (clear opening narrower than {d.Width})");
+            }
+            // core.py: no door opens onto a stair flight or stairwell, only onto its foot (lower floor) or head (upper floor).
+            foreach (var st in h.Stairs)
+            {
+                var room = h.FindRoom(st.Room);
+                if (room == null || !h.Levels.ContainsKey(st.Frm) || !h.Levels.ContainsKey(st.To) || !IsSide(st.Ascent)) continue;
+                string lower = h.Levels[st.Frm].Y <= h.Levels[st.To].Y ? st.Frm : st.To;
+                var up = VillagePlan.SideNormal(st.Ascent);
+                if (st.Frm != lower) up = -up;
+                var allowed = StairEnd(st.Rect, room.Level == lower ? -up : up);
+                foreach (var d in h.Doors)
+                    foreach (var sideRoom in new[] { d.RoomA, d.RoomB })
+                    {
+                        var r = sideRoom == Outside ? null : h.FindRoom(sideRoom);
+                        if (r == null || r.Level != room.Level) continue;
+                        var zone = DoorZone(h, d, r);
+                        // 0.051: core.py tests > 0.05 in doubles; floats land on either side of an exact 0.05 overlap.
+                        if (RectsOverlap(zone, st.Rect, 0.051f) && !RectInside(Clip(zone, st.Rect), allowed, 0.01f))
+                            e.Add($"{h.Slug}: door {d.Id} opens onto stair {st.Id} in {r.Id}");
+                    }
             }
             foreach (var w in h.Windows)
             {
@@ -291,8 +313,8 @@ namespace Hollowmere.EditorTools
         public static bool RectsOverlap(float[] a, float[] b, float tol = OverlapTol) =>
             Mathf.Min(a[2], b[2]) - Mathf.Max(a[0], b[0]) > tol && Mathf.Min(a[3], b[3]) - Mathf.Max(a[1], b[1]) > tol;
 
-        public static bool RectInside(float[] inner, float[] outer) =>
-            inner[0] >= outer[0] - Edge && inner[1] >= outer[1] - Edge && inner[2] <= outer[2] + Edge && inner[3] <= outer[3] + Edge;
+        public static bool RectInside(float[] inner, float[] outer, float tol = Edge) =>
+            inner[0] >= outer[0] - tol && inner[1] >= outer[1] - tol && inner[2] <= outer[2] + tol && inner[3] <= outer[3] + tol;
 
         /// <summary>Length of b's edge lying along a's given side (0 when b doesn't touch that side).</summary>
         public static float SharedEdge(float[] a, float[] b, string side)
@@ -332,6 +354,37 @@ namespace Hollowmere.EditorTools
         }
 
         static bool Fits(float at, float width, float lo, float hi) => lo + width / 2 - Edge <= at && at <= hi - width / 2 + Edge;
+
+        const float PartitionT = 0.12f; // core.py INT_T
+        const float DoorClear = 0.85f;  // core.py DOOR_CLEAR: free depth in front of every door
+        const float StairEndDepth = 0.6f; // core.py STAIR_END
+
+        /// <summary>The clearance box in front of a door, on the side of the given room (core.py door_zone).</summary>
+        public static float[] DoorZone(HouseSpec h, DoorSpec d, RoomSpec room)
+        {
+            string side = d.RoomA == room.Id ? d.Side : d.Side == "N" ? "S" : d.Side == "S" ? "N" : d.Side == "E" ? "W" : "E";
+            float w = d.Width + 0.2f;
+            var r = room.Rect;
+            switch (side)
+            {
+                case "N": return new[] { d.At - w / 2, r[3] - DoorClear, d.At + w / 2, r[3] };
+                case "S": return new[] { d.At - w / 2, r[1], d.At + w / 2, r[1] + DoorClear };
+                case "E": return new[] { r[2] - DoorClear, d.At - w / 2, r[2], d.At + w / 2 };
+                default: return new[] { r[0], d.At - w / 2, r[0] + DoorClear, d.At + w / 2 };
+            }
+        }
+
+        /// <summary>The strip of a stair rect at the end the unit axis direction d points to (core.py stair_end).</summary>
+        static float[] StairEnd(float[] r, Vector2 d)
+        {
+            if (d.y > 0.5f) return new[] { r[0], r[3] - StairEndDepth, r[2], r[3] };
+            if (d.y < -0.5f) return new[] { r[0], r[1], r[2], r[1] + StairEndDepth };
+            if (d.x > 0.5f) return new[] { r[2] - StairEndDepth, r[1], r[2], r[3] };
+            return new[] { r[0], r[1], r[0] + StairEndDepth, r[3] };
+        }
+
+        static float[] Clip(float[] a, float[] b) =>
+            new[] { Mathf.Max(a[0], b[0]), Mathf.Max(a[1], b[1]), Mathf.Min(a[2], b[2]), Mathf.Min(a[3], b[3]) };
 
         /// <summary>House-local (x, z) of the front door's centre on the outer wall face (village.py build()).</summary>
         public static bool TryFrontDoorLocal(HouseSpec h, out Vector2 local)

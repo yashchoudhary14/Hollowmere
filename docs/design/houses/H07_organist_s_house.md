@@ -115,8 +115,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 |---|---|---|---|---|---|
 | s1 | hall | (0.05, -3.7, 0.95, -0.2) | G -> F | N | straight - stone stair, 17 risers, iron balusters |
 | s1u | landing | (0.05, -3.7, 0.95, -0.2) | G -> F | N | void |
-| s2 | hall | (-1.15, -3.7, -0.3, -1.2) | C -> G | S | cellar steps under a trapdoor in the hall flags (trapdoor stays open) |
-| s2c | cellar | (-1.15, -3.7, -0.3, -1.2) | C -> G | S | arrives |
+| s2 | hall | (-1.15, 0.0, -0.3, 2.5) | C -> G | S | cellar steps under a trapdoor in the hall flags (trapdoor stays open) |
+| s2c | cellar | (-1.15, 0.0, -0.3, 2.5) | C -> G | S | arrives |
 
 ## 3. Every prop, room by room
 

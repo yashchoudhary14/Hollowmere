@@ -341,7 +341,7 @@
    "yaw": 90,
    "street": "Main Street (west side)",
    "front_door": [
-    -10.75,
+    -8.75,
     62.0
    ],
    "plot_poly": [
@@ -362,7 +362,7 @@
      70.3
     ]
    ],
-   "to_altar": 51.1
+   "to_altar": 50.8
   },
   {
    "slug": "H09",

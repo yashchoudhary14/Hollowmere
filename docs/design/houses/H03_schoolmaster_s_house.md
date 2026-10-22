@@ -90,7 +90,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_pan | G | kitchen -> pantry | E | -6.0 | 0.85 x 2.05 | panel |  |
 | d_study2 | G | study -> pantry | S | 0.9 | 0.85 x 2.05 | baize-covered door |  |
 | d_b1 | F | landing -> bed1 | E | 3.6 | 0.85 x 2.05 | panel |  |
-| d_b2 | F | landing -> bed2 | S | -2.6 | 0.8 x 2.05 | panel |  |
+| d_b2 | F | landing -> bed2 | S | -2.0 | 0.8 x 2.05 | panel |  |
 | d_bath | F | landing -> bath | S | -0.5 | 0.75 x 2.05 | panel |  |
 
 ### Windows

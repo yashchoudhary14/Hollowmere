@@ -227,6 +227,26 @@ def _overlap(a, b, tol=0.005):
     return min(a[2], b[2]) - max(a[0], b[0]) > tol and min(a[3], b[3]) - max(a[1], b[1]) > tol
 
 
+STAIR_END = 0.6       # a door may open onto the first/last 0.6 m of a flight (its foot below, its head above)
+
+
+def stair_end(rect, d, depth):
+    """The strip of a stair rect at the end the unit axis direction d points to."""
+    x0, z0, x1, z1 = rect
+    if d == (0, 1): return (x0, z1 - depth, x1, z1)
+    if d == (0, -1): return (x0, z0, x1, z0 + depth)
+    if d == (1, 0): return (x1 - depth, z0, x1, z1)
+    return (x0, z0, x0 + depth, z1)
+
+
+def _clip(a, b):
+    return (max(a[0], b[0]), max(a[1], b[1]), min(a[2], b[2]), min(a[3], b[3]))
+
+
+def _inside(a, b, tol=0.01):
+    return a[0] >= b[0] - tol and a[1] >= b[1] - tol and a[2] <= b[2] + tol and a[3] <= b[3] + tol
+
+
 def door_zone(h, dr, room_id):
     """Clearance box in front of a door, on the side of room_id."""
     r = h.rooms[room_id]
@@ -270,6 +290,8 @@ def validate(h):
                 lo2, hi2 = (a[0], a[2]) if dr["side"] in "NS" else (a[1], a[3])
                 if not (max(lo, lo2) + dr["width"] / 2 - 1e-6 <= dr["at"] <= min(hi, hi2) - dr["width"] / 2 + 1e-6):
                     errs.append(f"door {dr['id']} not within shared span")
+                elif not (max(lo, lo2) + dr["width"] / 2 + INT_T / 2 - 1e-6 <= dr["at"] <= min(hi, hi2) - dr["width"] / 2 - INT_T / 2 + 1e-6):
+                    errs.append(f"door {dr['id']} runs into the partition at the end of its wall (clear opening narrower than {dr['width']})")
     # windows
     for wn in h.windows:
         r = h.rooms[wn["room"]]
@@ -332,6 +354,22 @@ def validate(h):
                 lo, hi = (f[0], f[2]) if wn["side"] in "NS" else (f[1], f[3])
                 if near and min(hi, wn["at"] + wn["width"] / 2) - max(lo, wn["at"] - wn["width"] / 2) > 0.05:
                     warns.append(f"tall prop {p['id']} {p['key']} in front of window {wn['id']}")
+    # no door opens onto a stair flight or a stairwell: only onto its foot (lower floor) or its head (upper floor).
+    # ascent = direction of travel from frm to to.
+    for st in h.stairs:
+        lv = h.rooms[st["room"]].level
+        lower = st["frm"] if h.levels[st["frm"]]["y"] <= h.levels[st["to"]]["y"] else st["to"]
+        dx, dz = {"N": (0, 1), "S": (0, -1), "E": (1, 0), "W": (-1, 0)}[st["ascent"]]
+        if st["frm"] != lower:
+            dx, dz = -dx, -dz                                   # (dx, dz) now points up the flight
+        allowed = stair_end(st["rect"], (-dx, -dz) if lv == lower else (dx, dz), STAIR_END)
+        for dr in h.doors:
+            for side_room in (dr["room_a"], dr["room_b"]):
+                if side_room == "ext" or h.rooms[side_room].level != lv:
+                    continue
+                z = door_zone(h, dr, side_room)
+                if _overlap(z, st["rect"], tol=0.05) and not _inside(_clip(z, st["rect"]), allowed):
+                    errs.append(f"door {dr['id']} opens onto stair {st['id']} ({st['kind'][:20]}) in {side_room}")
     # stair rect inside its room
     for st in h.stairs:
         r = h.rooms[st["room"]]

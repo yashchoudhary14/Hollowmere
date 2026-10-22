@@ -70,8 +70,8 @@ Floor build-up: 0.25 m between floors (joists + boards); ceilings use the room's
 | **gearfloor** Mill: wheel & gear floor (PUZZLE) | G | (3.0, -5.0, 11.0, 5.0) | 7.10 x 9.10 | mill | FloorDirt | Whitewash flaking off stone | CeilingInterior | 2 CagedLight on a separate mill circuit - pit wheel in a slot along the east wall; the main shaft rises through the floor above |
 | **bed1** Thornes' bedroom | F | (-5.0, 0.0, -0.8, 4.0) | 3.79 x 3.59 | bedroom | CarpetWorn | Wallpaper1 | CeilingInterior | pendant |
 | **landing** Landing | F | (-0.8, 0.0, 3.0, 4.0) | 3.68 x 3.59 | landing | FloorOldWood1 | PlasterWorn | CeilingInterior | pendant |
-| **bed2** Spare bedroom | F | (-5.0, -4.0, 0.0, 0.0) | 4.59 x 3.59 | bedroom | FloorOldWood2 | Wallpaper1B | CeilingInterior | pendant |
-| **bath** Bathroom | F | (0.0, -4.0, 3.0, 0.0) | 2.88 x 3.59 | bathroom | FloorBathTile | TileWallWhite | CeilingInterior | pendant |
+| **bed2** Spare bedroom | F | (-5.0, -4.0, 0.4, 0.0) | 4.99 x 3.59 | bedroom | FloorOldWood2 | Wallpaper1B | CeilingInterior | pendant |
+| **bath** Bathroom | F | (0.4, -4.0, 3.0, 0.0) | 2.48 x 3.59 | bathroom | FloorBathTile | TileWallWhite | CeilingInterior | pendant |
 | **stonefloor** Mill: stone floor | F | (3.0, -5.0, 11.0, 5.0) | 7.10 x 9.10 | mill | FloorOldWood2 | RawPlankWall + flour dust everywhere | CeilingInterior | pendant |
 | **binfloor** Mill: bin floor (attic) | A | (3.0, -5.0, 11.0, 5.0) | 7.10 x 9.10 | attic | FloorOldWood2 | RawPlankWall | CeilingInterior | none - flashlight only |
 
@@ -87,7 +87,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_mill | G | kitchen -> gearfloor | E | -2.0 | 0.9 x 2.05 | iron-bound door into the mill (two steps down) |  |
 | d_mill_ext | G | gearfloor -> ext | N | 7.0 | 1.6 x 2.4 | double cart doors (barred inside) | loading |
 | d_b1 | F | landing -> bed1 | W | 2.0 | 0.8 x 2.05 | panel |  |
-| d_b2 | F | landing -> bed2 | S | -0.4 | 0.75 x 2.05 | panel |  |
+| d_b2 | F | landing -> bed2 | S | -0.2 | 0.75 x 2.05 | panel |  |
 | d_bath | F | landing -> bath | S | 1.0 | 0.75 x 2.05 | panel |  |
 | d_hoist | A | binfloor -> ext | N | 7.0 | 1.2 x 1.8 | lucam hoist door (opens onto a 9 m drop) | hoist |
 
@@ -109,8 +109,8 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 |---|---|---|---|---|---|
 | s1 | hall | (2.0, 0.3, 2.9, 3.6) | G -> F | N | straight - steep cottage stair |
 | s1u | landing | (2.0, 0.3, 2.9, 3.6) | G -> F | N | void |
-| s2 | gearfloor | (3.5, -4.6, 4.3, -1.2) | G -> F | S | mill ladder-stair (open treads, handrail) |
-| s2u | stonefloor | (3.5, -4.6, 4.3, -1.2) | G -> F | S | void |
+| s2 | gearfloor | (3.9, -4.6, 4.7, -1.2) | G -> F | S | mill ladder-stair (open treads, handrail) |
+| s2u | stonefloor | (3.9, -4.6, 4.7, -1.2) | G -> F | S | void |
 | s3 | stonefloor | (3.5, 1.2, 4.3, 4.6) | F -> A | N | mill ladder-stair to the bin floor |
 | s3u | binfloor | (3.5, 1.2, 4.3, 4.6) | F -> A | N | void |
 
@@ -183,7 +183,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | 38 | `Bathtub` | Sketchfab `d06c028a89a54c469e4af9cac50606fa` (CC BY, Lady Lion Studios) | 2.59 | 0.00 | -2.40 | 270 | 1.4 x 0.64 x 0.53 | floor |   |
 | 39 | `Sink` | Sketchfab `a278d63585494921906ab3500c421ff7` (CC BY, lagesnpiet) | 2.20 | 0.00 | -0.32 | 180 | 0.55 x 0.45 x 0.85 | floor |   |
 | 40 | `Mirror` | Poly Haven `ornate_mirror_01` (1k) | 2.20 | 1.10 | -0.09 | 180 | 0.6 x 0.05 x 0.9 | wall-hung | mirror  |
-| 41 | `Toilet` | Sketchfab `6ac515a1c4154db18b5b4bd0b46d6405` (CC BY, Allan-Jay Branscombe) | 0.41 | 0.00 | -3.20 | 90 | 0.4 x 0.65 x 0.8 | floor |   |
+| 41 | `Toilet` | Sketchfab `6ac515a1c4154db18b5b4bd0b46d6405` (CC BY, Allan-Jay Branscombe) | 0.81 | 0.00 | -3.20 | 90 | 0.4 x 0.65 x 0.8 | floor |   |
 
 ### stonefloor - Mill: stone floor
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |

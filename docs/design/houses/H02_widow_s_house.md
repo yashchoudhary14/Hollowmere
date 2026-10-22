@@ -42,7 +42,7 @@ Floor build-up: 0.25 m between floors (joists + boards); ceilings use the room's
 |---|---|---|---|---|---|---|
 | main | (-6.0, -3.0) -> (6.0, 3.0) | 12.0 x 6.0 | G, F | Cob (thick, rounded corners) limewashed off-white (RenderCracked), tarred base 0.4 m | 0.6 | Thatch 50 deg, 0.35 m thick, eaves at 2.6 m, ridge 6.3 m with a patterned block-cut ridge (ThatchReed); two eyebrow dormers over the bedrooms; huge external stone stack on the east gable |
 | porch | (-1.6, 3.0) -> (1.6, 4.8) | 3.2 x 1.8 | G | Open timber porch on 4 posts, low wall each side (Stone 0.5 h) | 0.1 | Mono-pitch thatch continuation |
-| scullery | (-6.0, -5.2) -> (-2.0, -3.0) | 4.0 x 2.2 | G | Brick lean-to (BrickPaintedWorn) | 0.25 | CorrugatedRust lean-to roof |
+| scullery | (-6.0, -5.2) -> (-1.6, -3.0) | 4.4 x 2.2 | G | Brick lean-to (BrickPaintedWorn) | 0.25 | CorrugatedRust lean-to roof |
 
 ### Chimneys (count must equal HouseCatalog = 1)
 | x | z | stack w x d | above ridge | pots | serves |
@@ -70,7 +70,7 @@ Floor build-up: 0.25 m between floors (joists + boards); ceilings use the room's
 | **kitchen** Kitchen | G | (-2.8, -3.0, 0.8, 3.0) | 3.48 x 4.80 | kitchen | FloorBrick | Whitewash | CeilingInterior | pendant |
 | **bedG** Downstairs bedroom (the widow's) | G | (-6.0, -0.2, -2.8, 3.0) | 2.54 x 2.54 | bedroom | FloorOldWood1 | Wallpaper1B (faded) | CeilingInterior | pendant |
 | **bathG** Bathroom (converted pantry) | G | (-6.0, -3.0, -2.8, -0.2) | 2.54 x 2.68 | bathroom | FloorBathTile | TileWallWhite | CeilingInterior | pendant |
-| **scull** Scullery | G | (-6.0, -5.2, -2.0, -3.0) | 3.50 x 1.89 | utility | FloorBrick | BrickPaintedWorn | CeilingInterior | pendant |
+| **scull** Scullery | G | (-6.0, -5.2, -1.6, -3.0) | 3.90 x 1.89 | utility | FloorBrick | BrickPaintedWorn | CeilingInterior | pendant |
 | **loft** Loft bedroom (son's, unused) | F | (-3.4, -3.0, 6.0, 3.0) | 8.74 x 4.80 | bedroom | FloorOldWood2 | PlasterWorn on sloping ceiling | CeilingInterior | pendant - usable width shrinks to 3.6 m under the thatch |
 | **store** Loft store (attic) | F | (-6.0, -3.0, -3.4, 3.0) | 1.94 x 4.80 | attic | FloorOldWood2 | RawPlankWall | CeilingInterior | pendant |
 
@@ -85,7 +85,7 @@ Skirting: 0.15 m dark oak in every room except kitchens/sculleries/cellars (none
 | d_liv | G | kitchen -> living | E | 1.2 | 0.85 x 1.85 | ledged, 1.85 m high (duck!) |  |
 | d_bed | G | kitchen -> bedG | W | 0.3 | 0.8 x 1.9 | panel |  |
 | d_bath | G | kitchen -> bathG | W | -1.6 | 0.75 x 1.9 | panel |  |
-| d_scull | G | kitchen -> scull | S | -2.4 | 0.8 x 1.9 | panel |  |
+| d_scull | G | kitchen -> scull | S | -2.2 | 0.8 x 1.9 | panel |  |
 | d_store | F | loft -> store | W | 1.5 | 0.7 x 1.6 | low plank door |  |
 
 ### Windows
@@ -135,7 +135,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | 16 | `BowlWood` | Poly Haven `wooden_bowl_01` (1k) | -1.40 | 0.76 | -0.60 | 90 | 0.25 x 0.25 x 0.1 | on H02.p015 |   |
 | 17 | `Candlestick` | Poly Haven `wooden_candlestick` (1k) | -1.40 | 0.76 | -1.00 | 90 | 0.1 x 0.1 x 0.25 | on H02.p015 |   |
 | 18 | `ChairGallinera` | Poly Haven `gallinera_chair` (1k) | -2.15 | 0.00 | -0.60 | 90 | 0.45 x 0.5 x 0.9 | floor |   |
-| 19 | `KitchenSinkUnit` | BUILD (PropKit) | -1.30 | 0.00 | -2.07 | 0 | 1.0 x 0.6 x 0.9 | floor |   |
+| 19 | `KitchenSinkUnit` | BUILD (PropKit) | -0.90 | 0.00 | -2.07 | 0 | 1.0 x 0.6 x 0.9 | floor |   |
 
 ### bedG - Downstairs bedroom (the widow's)
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
@@ -158,7 +158,7 @@ Position = prop **pivot at the centre of its footprint, on the floor** (or on to
 | # | Asset key | Source | x | y | z | Yaw | Size (w x d x h) | Placement | Role / note |
 |---|---|---|---|---|---|---|---|---|---|
 | 29 | `Copper` | BUILD (PropKit) | -5.20 | 0.00 | -4.52 | 0 | 0.8 x 0.8 x 0.9 | floor |   |
-| 30 | `Mangle` | BUILD (PropKit) | -2.50 | 0.00 | -4.40 | 270 | 0.8 x 0.45 x 1.3 | floor |   |
+| 30 | `Mangle` | BUILD (PropKit) | -2.10 | 0.00 | -4.40 | 270 | 0.8 x 0.45 x 1.3 | floor |   |
 | 31 | `FuseBox` | Poly Haven `power_box_01` (1k) | -5.30 | 1.30 | -3.13 | 180 | 0.45 x 0.15 x 0.6 | wall-hung | fuse-box FUSE BOX (the only electric circuit: kitchen + bedroom) |
 
 ### loft - Loft bedroom (son's, unused)
