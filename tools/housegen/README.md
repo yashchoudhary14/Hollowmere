@@ -16,6 +16,7 @@ Python 3 (only `matplotlib` is needed, for the reference images). These scripts 
 | `render_house.py`, `render_village.py` | Plan, massing and map PNGs in `docs/design/ref/`. |
 | `gen_docs.py` | Writes all of `docs/design/`, and merges `tools/third-party.json` + `tools/sketchfab.json`. |
 | `run_check.py` | Validates all houses and the village; exit code 1 on any error. |
+| (C# twin) | `Assets/Hollowmere/Scripts/Editor/Design/DesignChecks.cs` runs the same rules on the generated JSON in Unity (`DesignDataTests`). Change a rule here, change it there too. `DesignData` loads strictly: a new JSON key needs a matching field in `DesignSpecs.cs`. |
 | `gen_requests.py` | Writes `docs/design/ART_AND_LORE_REQUESTS.md` (images and texts for Gemini/ChatGPT, see `docs/AI_HELPERS.md`). |
 
 From the repo root:

@@ -30,6 +30,7 @@ namespace Hollowmere.EditorTools
             "com.unity.ai.navigation",
             "com.unity.netcode.gameobjects",
             "com.unity.test-framework",
+            "com.unity.nuget.newtonsoft-json", // DesignData reads docs/design/*.json (M1.6)
         };
 
         /// <summary>Packages that must not be installed. This is a URP project; HDRP and Terrain Tools were removed in M1.5.</summary>
