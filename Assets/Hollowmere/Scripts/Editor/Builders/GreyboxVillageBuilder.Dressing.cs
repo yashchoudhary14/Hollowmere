@@ -54,6 +54,9 @@ namespace Hollowmere.EditorTools
             PropKit.Model(hall, "Stool", PropKit.Stool, new Vector3(5.2f, FloorTop, 1.7f), Range(rng, 0f, 360f));
             if (Chance(rng, 0.6f)) PropKit.Model(hall, "FloorLamp", PropKit.FloorLamp, new Vector3(5.3f, FloorTop, 3.85f), Range(rng, 0f, 360f));
             Picture(hall, rng, new Vector3(-1.5f, 1.75f, inZ), 90f);
+            var cloth = Mat("Cloth", new Color(0.45f, 0.3f, 0.25f));
+            Box(hall, "Rug", new Vector3(2.6f, FloorTop + 0.004f, 2.65f), new Vector3(1.7f, 0.008f, 1.1f), cloth, false, Quaternion.Euler(0f, Range(rng, -6f, 6f), 0f));
+            Box(hall, "Tablecloth", new Vector3(4.6f, 0.754f, 2.7f), new Vector3(0.96f, 0.006f, 0.66f), cloth, false); // under the side table's battery
             PropKit.Model(hall, "Horseshoe", PropKit.Horseshoe, new Vector3(0f, 2.36f, inZ - 0.03f), 0f, 1.3f, Quaternion.Euler(90f, 0f, 0f));
             Beams(hall, new[] { -3f, 3f }, innerN, inZ);
             Cobwebs(hall, rng, -inX, inX, innerN, inZ);
@@ -70,6 +73,7 @@ namespace Hollowmere.EditorTools
             var mantel = new Vector3(hearthX, 1.42f, -inZ + 0.45f);
             PropKit.Model(hr, "Candleholders", PropKit.Candleholders, mantel + new Vector3(-0.6f, 0f, 0f), 0f, 0.8f);
             PropKit.Model(hr, "Candlestick", PropKit.Candlestick, mantel + new Vector3(1.12f, 0f, 0.05f), 0f);
+            PropKit.Model(hr, "MantelClock", PropKit.MantelClock, mantel + new Vector3(0.28f, 0f, 0.02f), Range(rng, -8f, 8f)); // clear of the mantel's item spot at +0.75
             Picture(hr, rng, new Vector3(-0.15f, 1.95f, -3.2f), 180f);
             Beams(hr, new[] { -1.6f, -4.3f }, -inZ, innerS);
             Cobwebs(hr, rng, -inX, -0.15f, -inZ, innerS);
@@ -91,6 +95,13 @@ namespace Hollowmere.EditorTools
             Cobwebs(pr, rng, 0.15f, inX, -inZ, innerS);
 
             DressYard(root, house, rng);
+        }
+
+        /// <summary>The chapel: a tall chair behind the lectern, facing the door, clear of the Hollow's night spawn.</summary>
+        static void DressChapel(Transform chapel)
+        {
+            var d = Node(chapel, "Dressing");
+            PropKit.Model(d, "TallChair", PropKit.TallChair, new Vector3(-5.1f, FloorTop, -3.4f), 90f);
         }
 
         /// <summary>A barrel, a crate stack or buckets in a corner.</summary>
@@ -181,6 +192,8 @@ namespace Hollowmere.EditorTools
                 PropKit.Model(yard, "Axe", PropKit.Axe, new Vector3(2.4f, 0f, hz + 0.17f), Range(rng, -20f, 20f), 1f, Quaternion.Euler(-12f, 0f, 0f));
             if (Chance(rng, 0.5f))
                 PropKit.Model(yard, "WateringCan", PropKit.WateringCan, new Vector3(hx + 0.4f, 0f, Range(rng, -3f, 0f)), Range(rng, 0f, 360f));
+            if (Chance(rng, 0.5f))
+                PropKit.Model(yard, "Hammer", PropKit.Hammer, new Vector3(-hx + 1.4f, 0f, hz + 0.7f), Range(rng, 0f, 360f), 1f, Quaternion.Euler(0f, 0f, 90f)); // left lying by the corner
             if (Chance(rng, 0.5f))
                 PropKit.Model(yard, "Bucket", PropKit.WoodenBucket, new Vector3(-1.45f, 0f, hz + 0.4f), Range(rng, 0f, 360f));
 
@@ -337,6 +350,14 @@ namespace Hollowmere.EditorTools
         {
             var rng = new System.Random(DressingSeed + 7);
             var grounds = Node(village, "Dressing");
+
+            // Leaf litter over the ground beyond the wall: four thin sheets whose inner edges hide behind the wall's foot.
+            var litter = Mat("LeafLitter", new Color(0.3f, 0.25f, 0.18f));
+            const float edge0 = Half + 0.6f, outer = 220f, south = -280f, north = 480f;
+            Box(grounds, "LeafLitterNorth", new Vector3(0f, 0.01f, (edge0 + north) * 0.5f), new Vector3(2f * outer, 0.02f, north - edge0), litter, false);
+            Box(grounds, "LeafLitterSouth", new Vector3(0f, 0.01f, (south - edge0) * 0.5f), new Vector3(2f * outer, 0.02f, -edge0 - south), litter, false);
+            Box(grounds, "LeafLitterWest", new Vector3(-(edge0 + outer) * 0.5f, 0.01f, 0f), new Vector3(outer - edge0, 0.02f, 2f * edge0), litter, false);
+            Box(grounds, "LeafLitterEast", new Vector3((edge0 + outer) * 0.5f, 0.01f, 0f), new Vector3(outer - edge0, 0.02f, 2f * edge0), litter, false);
 
             // Forest floor outside the wall (the trees' band).
             var forest = Node(grounds, "ForestFloor");

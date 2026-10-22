@@ -1,10 +1,10 @@
 ﻿{
     "id":  "Grass 06",
     "name":  "Grass 06",
-    "kind":  "asset-store",
+    "kind":  "package",
     "pack":  "Terrain Textures Free (MicroVerse Extras)",
-    "use":  "damp patchy grass for the village ground, overgrown grass for gardens, dead leaves under trees",
+    "use":  "overgrown grass for the back gardens, dead leaves on the forest floor beyond the wall",
     "source":  "Unity Asset Store",
-    "url":  null,
+    "url":  "https://assetstore.unity.com/packages/2d/textures-materials/nature/terrain-textures-free-271990",
     "licence":  "Unity Asset Store EULA (Standard)"
 }

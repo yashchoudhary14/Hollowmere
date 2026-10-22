@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-  Imports only the selected files from the user's Asset Store .unitypackage files (tools/assetstore-imports.json).
+  Imports only the selected files from the user's Asset Store and Fab .unitypackage files (tools/assetstore-imports.json).
 
 .DESCRIPTION
   A .unitypackage is a gzipped tar of <guid>/{asset, asset.meta, pathname}. This reads every item's pathname,
-  extracts only the items the manifest selects, and writes them under Assets/ThirdParty/AssetStore/<pack>/:
+  extracts only the items the manifest selects, and writes them where the manifest says (AssetStore/ or Fab/):
   - FBX meshes and WAV clips are copied as they are.
   - Textures are written as JPGs of at most 2048 px in the ThirdParty naming scheme (diff, nor_gl, arm), so the
     ThirdParty import rules and material builder treat them like the Poly Haven sets:
@@ -181,8 +181,8 @@ foreach ($pack in $Manifest.packs) {
 
     # 4. Credits: one source.json per top-level folder.
     Get-ChildItem (Join-Path $Root $pack.out) -Directory | ForEach-Object {
-        [ordered]@{ id = $_.Name; name = $_.Name; kind = 'asset-store'; pack = $pack.name; use = $pack.use
-                    source = 'Unity Asset Store'; url = $null; licence = $pack.licence } |
+        [ordered]@{ id = $_.Name; name = $_.Name; kind = 'package'; pack = $pack.name; use = $pack.use
+                    source = $pack.source; url = $pack.url; licence = $pack.licence } |
             ConvertTo-Json | Set-Content (Join-Path $_.FullName 'source.json') -Encoding utf8
     }
     Remove-Item $tmp -Recurse -Force

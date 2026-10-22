@@ -3,7 +3,7 @@
     "name":  "Watering Can Metal 01",
     "kind":  "model",
     "key":  "WateringCan",
-    "use":  "set dressing",
+    "use":  "a watering can by the houses",
     "authors":  [
                     "Charles Nderitu"
                 ],

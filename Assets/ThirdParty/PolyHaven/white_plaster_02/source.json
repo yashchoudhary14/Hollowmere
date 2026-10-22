@@ -3,7 +3,7 @@
     "name":  "White Plaster 02",
     "kind":  "texture",
     "key":  "InnerWall",
-    "use":  "stained interior plaster, also ceilings",
+    "use":  "stained interior plaster",
     "authors":  [
                     "Rob Tuytel"
                 ],

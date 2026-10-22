@@ -100,6 +100,33 @@ namespace Hollowmere.Tests
         }
 
         [Test]
+        public void EveryThirdPartyAsset_HasASourceRecord_AndIsCredited()
+        {
+            if (!System.IO.Directory.Exists("Assets/ThirdParty")) Assert.Ignore("No third-party assets yet.");
+            var credits = System.IO.File.Exists("CREDITS.md") ? System.IO.File.ReadAllText("CREDITS.md") : "";
+            Assert.That(credits, Is.Not.Empty, "CREDITS.md is missing: run tools/write-credits.ps1");
+            // Asset folders: PolyHaven/<id>, AmbientCG/<id>, AssetStore/<pack>/<item>, Fab/<pack>/<item>.
+            var folders = new[] { "PolyHaven", "AmbientCG" }
+                .SelectMany(s => System.IO.Directory.GetDirectories("Assets/ThirdParty/" + s))
+                .Concat(new[] { "AssetStore", "Fab" }
+                    .Where(s => System.IO.Directory.Exists("Assets/ThirdParty/" + s))
+                    .SelectMany(s => System.IO.Directory.GetDirectories("Assets/ThirdParty/" + s))
+                    .SelectMany(System.IO.Directory.GetDirectories))
+                .ToArray();
+            Assert.That(folders, Is.Not.Empty);
+            foreach (var f in folders)
+            {
+                var path = System.IO.Path.Combine(f, "source.json");
+                Assert.That(System.IO.File.Exists(path), Is.True, $"{f} has no source.json");
+                var json = System.IO.File.ReadAllText(path);
+                Assert.That(json, Does.Contain("\"licence\""), path);
+                Assert.That(json, Does.Contain("\"url\""), path);
+                var name = System.Text.RegularExpressions.Regex.Match(json, "\"name\":\\s*\"([^\"]+)\"").Groups[1].Value;
+                Assert.That(credits, Does.Contain(name), $"{name} isn't in CREDITS.md: run tools/write-credits.ps1");
+            }
+        }
+
+        [Test]
         public void Audio_IsVorbis_LoopsStream_OneShotsAreMono()
         {
             var paths = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/ThirdParty", AudioImportRules.AudioRoot.TrimEnd('/') })

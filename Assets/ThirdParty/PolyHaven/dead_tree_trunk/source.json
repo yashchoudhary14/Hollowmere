@@ -3,7 +3,7 @@
     "name":  "Dead Tree Trunk",
     "kind":  "model",
     "key":  "DeadTrunk",
-    "use":  "fallen dead trees in the forest",
+    "use":  "fallen trunks in the forest; logs by the hearths",
     "authors":  [
                     "Rob Tuytel"
                 ],

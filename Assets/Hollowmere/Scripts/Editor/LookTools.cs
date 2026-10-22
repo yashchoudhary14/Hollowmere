@@ -41,7 +41,7 @@ namespace Hollowmere.EditorTools
             Debug.Log("[Hollowmere] NIGHT SHOTS OK: Logs/claude/night_*.png");
         }
 
-        static readonly string[] LookCameras = { "Cam_Square", "Cam_House", "Cam_FrontYard", "Cam_Road", "Cam_Forest", "Cam_Hall", "Cam_Fireside", "Cam_Clock" };
+        static readonly string[] LookCameras = { "Cam_Square", "Cam_House", "Cam_FrontYard", "Cam_Garden", "Cam_Road", "Cam_Forest", "Cam_Chapel", "Cam_Hall", "Cam_Fireside", "Cam_Clock" };
 
         /// <summary>
         /// The look pass's review set (M1.5): every look camera at midday, late golden day, mid-dusk and night (Act 1),

@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–7 done; next: step 8, LFS and credits).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–8 done; next: step 9, verify).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -106,7 +106,7 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **3. Manual downloads (`C:\dev\Hollowmere\AssetDownloads`)**
 
-- [x] Import only the Asset Store packs the user picks, and only the files the builders use; everything else stays out of the project. `tools/import-assetstore.ps1` reads `tools/assetstore-imports.json` and extracts just the selected items from each `.unitypackage` into `Assets/ThirdParty/AssetStore/<pack>/`, without the vendor's metas, materials or prefabs: Essential Footsteps (wood, concrete, dirt and leaves walks 1–8 and landings), Terrain Textures Free (Grass 06, Grass 09, Leaves 02; HDRP mask maps converted to arm), and 13 Saloon Interior Megascans props (cart wheel, chest, bucket, barrel, chair, shelf, oil lamp, horseshoe, picture frame, beam, jug, stool, table). Megascans textures are read through their materials: albedo tint and brightness baked into `_diff`, the roughness channel remapped to the material's range in `_arm`, all at most 2K. Their `_ConvexHulls` collision meshes are dropped at import. `AssetDownloads/Mixamo` is empty and there is no Fab folder, so nothing was imported there; the import rules already rig `Assets/ThirdParty/Mixamo` as Humanoid.
+- [x] Import only the Asset Store packs the user picks, and only the files the builders use; everything else stays out of the project. `tools/import-assetstore.ps1` reads `tools/assetstore-imports.json` and extracts just the selected items from each `.unitypackage` into `Assets/ThirdParty/AssetStore/<pack>/` (Fab packs into `Assets/ThirdParty/Fab/<pack>/`), without the vendor's metas, materials or prefabs: Essential Footsteps (wood, concrete, dirt and leaves walks 1–8 and landings), Terrain Textures Free (Grass 06, Grass 09, Leaves 02; HDRP mask maps converted to arm), and 13 Saloon Interior Megascans props (cart wheel, chest, bucket, barrel, chair, shelf, oil lamp, horseshoe, picture frame, beam, jug, stool, table). Megascans textures are read through their materials: albedo tint and brightness baked into `_diff`, the roughness channel remapped to the material's range in `_arm`, all at most 2K. Their `_ConvexHulls` collision meshes are dropped at import. `AssetDownloads/Mixamo` is empty and there is no Fab folder, so nothing was imported there; the import rules already rig `Assets/ThirdParty/Mixamo` as Humanoid.
 - [x] Sonniss: copy only the clips SoundBank needs plus ambience (wind, night forest, rain, house creaks, distant dogs and crows) into `Assets/Hollowmere/Audio`, never whole libraries. `tools/prepare-audio.ps1` cuts 29 clips listed in `tools/audio-sources.json` (bell strikes, ambience loops with crossfaded seams, creaks, knocks, thuds, chimes, gasp, Hollow breathing, chant drone): 57 MB of 48 kHz WAV. ffmpeg isn't installed, so the sources stay WAV and `AudioImportRules` compresses every clip to Vorbis on import (ambience streamed, one-shots mono). The sampler has no crows.
 
 **4. Materials**
@@ -133,8 +133,8 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **8. Repo hygiene**
 
-- [ ] Git LFS for every binary (already set up by `.gitattributes`); nothing above 2K committed; `AssetDownloads` and raw packs never committed.
-- [ ] `CREDITS.md` generated from `tools/third-party.json` plus the imported packs: every asset, its source URL and licence (CC0, Fab Standard, Mixamo, Sonniss, Unity Asset Store EULA).
+- [x] Git LFS for every binary (already set up by `.gitattributes`); nothing above 2K committed; `AssetDownloads` and raw packs never committed. Checked: all 330 tracked images, models, audio and cubemaps are LFS objects; the largest of 222 tracked images is 2048 px; no `.unitypackage`, `AssetDownloads` or `HS_MP` file is tracked. Assets the builders didn't use were removed rather than committed (night HDRI, castle door, both low tables, Grass 09, the distant-bells clip).
+- [x] `CREDITS.md` generated from `tools/third-party.json` plus the imported packs: every asset, its source URL and licence (CC0, Fab Standard, Mixamo, Sonniss, Unity Asset Store EULA). `tools/write-credits.ps1` builds it from each asset's `source.json`, `tools/audio-sources.json` and the files present; a test fails if a third-party folder lacks a record or is missing from the credits. The Saloon Interior props turned out to be a Fab (Quixel Megascans) pack, so they moved to `Assets/ThirdParty/Fab/` under the Fab Standard License. The footstep pack's store page was identified by its package ID (303117) from a third-party listing; worth confirming.
 
 **9. Verify**
 

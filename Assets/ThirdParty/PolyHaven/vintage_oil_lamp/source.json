@@ -3,7 +3,7 @@
     "name":  "Vintage Oil Lamp",
     "kind":  "model",
     "key":  "OilLamp",
-    "use":  "set dressing",
+    "use":  "an oil lamp on each hearth-room table",
     "authors":  [
                     "Monsta3D"
                 ],

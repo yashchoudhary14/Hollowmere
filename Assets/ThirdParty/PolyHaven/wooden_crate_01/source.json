@@ -3,7 +3,7 @@
     "name":  "Wooden Crate 01",
     "kind":  "model",
     "key":  "Crate",
-    "use":  "street and house dressing",
+    "use":  "crates in the houses and yards",
     "authors":  [
                     "James Ray Cock"
                 ],

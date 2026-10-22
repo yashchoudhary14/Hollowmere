@@ -15,11 +15,12 @@ namespace Hollowmere.EditorTools
     static class PropKit
     {
         const string PH = "Assets/ThirdParty/PolyHaven/";
-        const string SI = "Assets/ThirdParty/AssetStore/SaloonInterior/";
+        const string SI = "Assets/ThirdParty/Fab/SaloonInterior/";
 
         // Poly Haven models face +z; Megascans (Saloon) models are noted where they differ.
         public const string Wardrobe = PH + "GothicCabinet_01/GothicCabinet_01_2k.fbx";
         public const string Bed = PH + "GothicBed_01/GothicBed_01_2k.fbx";
+        public const string TallChair = PH + "WoodenChair_01/WoodenChair_01_2k.fbx"; // a 2.3 m high-backed chair
         public const string RockingChair = PH + "Rockingchair_01/Rockingchair_01_2k.fbx";
         public const string Bookshelf = PH + "wooden_bookshelf_worn/wooden_bookshelf_worn_2k.fbx";
         public const string GrandfatherClock = PH + "vintage_grandfather_clock_01/vintage_grandfather_clock_01_2k.fbx";
@@ -46,7 +47,6 @@ namespace Hollowmere.EditorTools
         public const string FloorLamp = SI + "His_Sal_Furniture_Lamp_Wood_Old_02/SM_His_Sal_Furniture_Lamp_Wood_Old_02_A.fbx";
         public const string CartWheel = SI + "His_Wil_Cart_Wheel_Wood_Old_01/SM_His_Wil_Cart_Wheel_Wood_Old_01.fbx"; // lies flat
         public const string Horseshoe = SI + "His_Wil_Equipment_Horseshoe_Metal_Rusted_01/SM_His_Wil_Equipment_Horseshoe_Metal_Rusted_01.fbx"; // lies flat
-        public const string LowTable = SI + "His_Wil_Furniture_Table_Wood_Worn_01/SM_His_Wil_Furniture_Table_Wood_Worn_01.fbx";
         public const string Beam = SI + "Ind_Sup_Beam_Wood_Old_04/SM_Ind_Sup_Beam_Wood_Old_04.fbx"; // 4 m along z
         public const string Chair = SI + "Res_Fur_Chair_Wood_Old_03/SM_Res_Fur_Chair_Wood_Old_03.fbx";
         public const string Stool = SI + "Res_Fur_Stool_Wood_Armless_01/SM_Res_Fur_Stool_Wood_Armless_01.fbx";

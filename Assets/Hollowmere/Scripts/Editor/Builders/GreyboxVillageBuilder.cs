@@ -719,6 +719,7 @@ namespace Hollowmere.EditorTools
             ritualBook = lectern.gameObject.AddComponent<Readable>();
             ritualBook.Set("The Ritual Book", "", "Read the Ritual Book");
 
+            DressChapel(chapel);
             return Node(chapel, "HollowSpawn", new Vector3(-4.6f, 0f, 5f));
         }
 
@@ -931,6 +932,7 @@ namespace Hollowmere.EditorTools
             ShotCamera(root, "Cam_FrontYard", h7 + new Vector3(3.8f, 1.7f, 9.5f), h7 + new Vector3(0f, 1.4f, 4.5f));
             ShotCamera(root, "Cam_Garden", h7 + new Vector3(13f, 2.6f, -17f), h7 + new Vector3(0f, 0.8f, -7f));
             ShotCamera(root, "Cam_Forest", new Vector3(20f, 1.7f, -158f), new Vector3(36f, 2.5f, -176f));
+            ShotCamera(root, "Cam_Chapel", new Vector3(-55.5f, 1.7f, 113f), new Vector3(-65f, 1.0f, 109.5f));
             ShotCamera(root, "Cam_Fireside", h7 + new Vector3(-1.2f, 1.3f, -0.6f), h7 + new Vector3(-4.6f, 0.6f, -2.4f));
         }
 

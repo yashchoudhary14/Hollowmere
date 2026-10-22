@@ -40,9 +40,8 @@ namespace Hollowmere.EditorTools
         {
             // Outdoors
             Set("Ground", "PolyHaven/forrest_ground_01", 4f, Grey(0.9f)),
-            Set("Grass", "AssetStore/TerrainTexturesFree/Grass 09", 3f),
             Set("Garden", "AssetStore/TerrainTexturesFree/Grass 06", 3f, Grey(0.7f)),
-            Set("LeafLitter", "AssetStore/TerrainTexturesFree/Leaves 02", 2f, Grey(0.8f)),
+            Set("LeafLitter", "AssetStore/TerrainTexturesFree/Leaves 02", 2.5f, new Color(0.48f, 0.4f, 0.31f)), // pale leaves, darkened to sit under the dead trees
             Set("Road", "PolyHaven/brown_mud_leaves_01", 4f),
             Set("Paving", "PolyHaven/mossy_cobblestone", 4f),
             Set("Stone", "PolyHaven/stone_wall", 3f),
@@ -89,6 +88,8 @@ namespace Hollowmere.EditorTools
                 AssetDatabase.CreateAsset(lib, LibraryPath);
             }
 
+            // Auto entries the table no longer has are dropped; hand-kept ones (Auto off) stay.
+            lib.Entries.RemoveAll(e => e == null || (e.Auto && !Defaults.Any(d => d.Key == e.Key)));
             foreach (var d in Defaults)
             {
                 var e = lib.Entries.FirstOrDefault(x => x != null && x.Key == d.Key);

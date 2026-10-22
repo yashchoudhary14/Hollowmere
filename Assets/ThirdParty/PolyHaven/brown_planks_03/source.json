@@ -3,7 +3,7 @@
     "name":  "Brown Planks 03",
     "kind":  "texture",
     "key":  "Planks",
-    "use":  "old timber planks: gate, bridge, chests, fences, notice board",
+    "use":  "old timber planks: gate, bridge, fences, ceilings",
     "authors":  [
                     "Rob Tuytel"
                 ],

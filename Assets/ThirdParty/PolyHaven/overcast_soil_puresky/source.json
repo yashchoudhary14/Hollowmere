@@ -3,7 +3,7 @@
     "name":  "Overcast Soil (Pure Sky)",
     "kind":  "hdri",
     "key":  "SkyOvercast",
-    "use":  "heavy grey sky for day and dusk",
+    "use":  "heavy grey sky for day and dusk, and the reflections",
     "authors":  [
                     "Jarod Guest",
                     "Sergej Majboroda"

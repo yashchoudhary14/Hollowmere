@@ -3,7 +3,7 @@
     "name":  "Boulder 01",
     "kind":  "model",
     "key":  "Boulder",
-    "use":  "the forest edge",
+    "use":  "boulders in the forest and along the wall",
     "authors":  [
                     "Rico Cilliers"
                 ],

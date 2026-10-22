@@ -3,7 +3,7 @@
     "name":  "Wooden Axe 02",
     "kind":  "model",
     "key":  "Axe",
-    "use":  "set dressing",
+    "use":  "an axe by the front doors",
     "authors":  [
                     "Ulan Cabanilla"
                 ],

@@ -3,7 +3,7 @@
     "name":  "Wooden Candlestick",
     "kind":  "model",
     "key":  "Candlestick",
-    "use":  "the ritual circle\u0027s candles",
+    "use":  "a candlestick on each mantel",
     "authors":  [
                     "Josh Dean"
                 ],
