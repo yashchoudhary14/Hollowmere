@@ -1011,12 +1011,12 @@ namespace Hollowmere.EditorTools
         /// so doorways bake open; their carving NavMeshObstacles close them again while the doors are shut.
         /// Note that the obstacles carve as soon as the data loads, in edit mode too.
         /// </summary>
-        static void BakeNavMesh()
+        static void BakeNavMesh(string assetPath = NavMeshPath)
         {
             var surface = Object.FindAnyObjectByType<NavMeshSurface>();
             surface.BuildNavMesh();
-            AssetDatabase.DeleteAsset(NavMeshPath);
-            AssetDatabase.CreateAsset(surface.navMeshData, NavMeshPath);
+            AssetDatabase.DeleteAsset(assetPath);
+            AssetDatabase.CreateAsset(surface.navMeshData, assetPath);
             Debug.Log("[Hollowmere] NAVMESH BAKED");
         }
     }
