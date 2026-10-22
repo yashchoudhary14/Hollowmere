@@ -34,7 +34,7 @@ namespace Hollowmere
             }
             else
             {
-                SoundBank.PlayAt(SoundBank.Creak, transform.position + Vector3.up * 2f, 1f, 80f, 0.55f);
+                SoundBank.PlayAt(SoundBank.GateGroan, transform.position + Vector3.up * 2f, 1f, 80f, SoundBank.GatePitch);
             }
         }
 

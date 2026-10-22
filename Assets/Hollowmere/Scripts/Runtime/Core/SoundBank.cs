@@ -2,26 +2,172 @@ using UnityEngine;
 
 namespace Hollowmere
 {
+    /// <summary>What a footstep lands on, for choosing its sound.</summary>
+    public enum Surface { Wood, Stone, Dirt, Leaves }
+
     /// <summary>
-    /// Placeholder sounds synthesised at runtime, so the greybox needs no audio assets.
-    /// Milestone 7's audio pass replaces these clips. Generated once and kept for the session.
+    /// The game's sounds. Recorded clips come from the scene's <see cref="SoundLibrary"/> (set by AmbienceDirector);
+    /// anything the library lacks falls back to a clip synthesised at runtime, so nothing ever goes silent.
+    /// Variations play in turn. Synthesised clips are generated once and kept for the session.
     /// </summary>
     public static class SoundBank
     {
         const int Rate = 44100;
 
-        static AudioClip s_bell, s_creak, s_step, s_thud, s_gasp, s_chime, s_clunk, s_knock, s_breath, s_chant;
+        /// <summary>The recorded sounds, or null for synthesised placeholders only.</summary>
+        public static SoundLibrary Library;
 
-        public static AudioClip Bell => s_bell != null ? s_bell : s_bell = Make("Bell", 5f, 1, FillBell);
-        public static AudioClip Creak => s_creak != null ? s_creak : s_creak = Make("Creak", 0.7f, 2, FillCreak);
-        public static AudioClip Step => s_step != null ? s_step : s_step = Make("Step", 0.15f, 3, FillStep);
-        public static AudioClip Thud => s_thud != null ? s_thud : s_thud = Make("Thud", 0.35f, 4, FillThud);
-        public static AudioClip Gasp => s_gasp != null ? s_gasp : s_gasp = Make("Gasp", 0.8f, 5, FillGasp);
-        public static AudioClip Chime => s_chime != null ? s_chime : s_chime = Make("Chime", 1.6f, 6, FillChime);
-        public static AudioClip Clunk => s_clunk != null ? s_clunk : s_clunk = Make("Clunk", 0.2f, 7, FillClunk);
-        public static AudioClip Knock => s_knock != null ? s_knock : s_knock = Make("Knock", 1.0f, 8, FillKnock);
-        public static AudioClip Breath => s_breath != null ? s_breath : s_breath = Make("HollowBreath", 2.5f, 9, FillBreath);
-        public static AudioClip Chant => s_chant != null ? s_chant : s_chant = Make("Chant", 4f, 10, FillChant);
+        static AudioClip s_bell, s_creak, s_step, s_thud, s_gasp, s_chime, s_clunk, s_knock, s_breath, s_chant;
+        static AudioClip s_knocking;
+        static AudioClip s_knockingSource;
+        static int s_turn;
+
+        // Clips and the library are per session; clear them when play starts without a domain reload.
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetStatics()
+        {
+            Library = null;
+            s_knocking = s_knockingSource = null;
+            s_turn = 0;
+        }
+
+        static AudioClip SynthBell => s_bell != null ? s_bell : s_bell = Make("Bell", 5f, 1, FillBell);
+        static AudioClip SynthCreak => s_creak != null ? s_creak : s_creak = Make("Creak", 0.7f, 2, FillCreak);
+        static AudioClip SynthStep => s_step != null ? s_step : s_step = Make("Step", 0.15f, 3, FillStep);
+        static AudioClip SynthThud => s_thud != null ? s_thud : s_thud = Make("Thud", 0.35f, 4, FillThud);
+        static AudioClip SynthGasp => s_gasp != null ? s_gasp : s_gasp = Make("Gasp", 0.8f, 5, FillGasp);
+        static AudioClip SynthChime => s_chime != null ? s_chime : s_chime = Make("Chime", 1.6f, 6, FillChime);
+        static AudioClip SynthClunk => s_clunk != null ? s_clunk : s_clunk = Make("Clunk", 0.2f, 7, FillClunk);
+        static AudioClip SynthKnock => s_knock != null ? s_knock : s_knock = Make("Knock", 1.0f, 8, FillKnock);
+        static AudioClip SynthBreath => s_breath != null ? s_breath : s_breath = Make("HollowBreath", 2.5f, 9, FillBreath);
+        static AudioClip SynthChant => s_chant != null ? s_chant : s_chant = Make("Chant", 4f, 10, FillChant);
+
+        /// <summary>The bell's ring (synthesised; a recorded strike is layered on top, see <see cref="BellStrike"/>).</summary>
+        public static AudioClip Bell => SynthBell;
+        /// <summary>The recorded strike of a toll, or null.</summary>
+        public static AudioClip BellStrike => Next(Library != null ? Library.BellStrike : null);
+        public static AudioClip Creak => Next(Library != null ? Library.DoorCreak : null) ?? SynthCreak;
+        public static AudioClip Step => Footstep(Surface.Dirt);
+        public static AudioClip Thud => Next(Library != null ? Library.Thud : null) ?? SynthThud;
+        public static AudioClip HeavyThud => Next(Library != null ? Library.HeavyThud : null) ?? SynthThud;
+        public static AudioClip Gasp => Next(Library != null ? Library.Gasp : null) ?? SynthGasp;
+        public static AudioClip Chime => Next(Library != null ? Library.Chime : null) ?? SynthChime;
+        public static AudioClip Clunk => Next(Library != null ? Library.Clunk : null) ?? SynthClunk;
+        public static AudioClip Breath => Next(Library != null ? Library.HollowBreath : null) ?? SynthBreath;
+        /// <summary>The Hollow's exhale as it starts a hunt.</summary>
+        public static AudioClip Exhale => Next(Library != null ? Library.HollowExhale : null) ?? Breath;
+        public static AudioClip Chant => Library != null && Library.Chant != null ? Library.Chant : SynthChant;
+
+        /// <summary>The village gate swinging, and the pitch to play it at (the synthesised creak is pitched down).</summary>
+        public static AudioClip GateGroan => Next(Library != null ? Library.GateGroan : null) ?? SynthCreak;
+        public static float GatePitch => Library != null && Library.GateGroan != null && Library.GateGroan.Length > 0 ? 1f : 0.55f;
+
+        /// <summary>Knocking at a door: a recorded knock repeated three times, or the synthesised knocking.</summary>
+        public static AudioClip Knock
+        {
+            get
+            {
+                var single = Next(Library != null ? Library.Knock : null);
+                if (single == null) return SynthKnock;
+                if (s_knocking == null || s_knockingSource != single)
+                {
+                    s_knocking = Repeat(single, 3, 0.32f) ?? single;
+                    s_knockingSource = single;
+                }
+                return s_knocking;
+            }
+        }
+
+        /// <summary>A footstep on the given surface (any surface's steps if that one has none; synthesised last).</summary>
+        public static AudioClip Footstep(Surface surface)
+        {
+            var lib = Library;
+            if (lib == null) return SynthStep;
+            AudioClip[] clips;
+            switch (surface)
+            {
+                case Surface.Wood: clips = lib.StepWood; break;
+                case Surface.Stone: clips = lib.StepStone; break;
+                case Surface.Leaves: clips = lib.StepLeaves; break;
+                default: clips = lib.StepDirt; break;
+            }
+            return Next(clips) ?? Next(lib.StepDirt) ?? SynthStep;
+        }
+
+        /// <summary>Landing from a jump on the given surface (falls back to a footstep).</summary>
+        public static AudioClip Landing(Surface surface)
+        {
+            var lib = Library;
+            if (lib == null) return SynthStep;
+            AudioClip[] clips;
+            switch (surface)
+            {
+                case Surface.Wood: clips = lib.LandWood; break;
+                case Surface.Stone: clips = lib.LandStone; break;
+                case Surface.Leaves: clips = lib.LandLeaves; break;
+                default: clips = lib.LandDirt; break;
+            }
+            return Next(clips) ?? Footstep(surface);
+        }
+
+        /// <summary>The surface under a point: the renderer of whatever collider is just below it.</summary>
+        public static Surface SurfaceAt(Vector3 position)
+        {
+            if (Physics.Raycast(position + Vector3.up * 0.5f, Vector3.down, out var hit, 2f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            {
+                var r = hit.collider.GetComponent<Renderer>();
+                if (r != null && r.sharedMaterial != null) return SurfaceFor(r.sharedMaterial.name, hit.point);
+            }
+            return SurfaceFor("", position);
+        }
+
+        /// <summary>
+        /// Footstep surface from a builder material name (BuilderKit.Mat names): floorboards and planks are wood,
+        /// paving and stone are stone, ground is dirt in the village and leaves in the forest beyond the wall.
+        /// </summary>
+        public static Surface SurfaceFor(string materialName, Vector3 position)
+        {
+            var n = materialName ?? "";
+            if (n.Contains("Floor") || n.Contains("Wood") || n.Contains("Plank") || n.Contains("Ceiling")) return Surface.Wood;
+            if (n.Contains("Paving") || n.Contains("Stone") || n.Contains("Chimney")) return Surface.Stone;
+            if (n.Contains("Leaf") || n.Contains("Leaves")) return Surface.Leaves;
+            bool beyondWall = Mathf.Abs(position.x) > 150f || Mathf.Abs(position.z) > 150f;
+            bool onRoad = n.Contains("Road");
+            return beyondWall && !onRoad ? Surface.Leaves : Surface.Dirt;
+        }
+
+        /// <summary>The next of a set of variations, in turn; null if there are none.</summary>
+        static AudioClip Next(AudioClip[] clips)
+        {
+            if (clips == null || clips.Length == 0) return null;
+            s_turn++;
+            for (int i = 0; i < clips.Length; i++)
+            {
+                var c = clips[(s_turn + i) % clips.Length];
+                if (c != null) return c;
+            }
+            return null;
+        }
+
+        /// <summary>A clip played `times` times, `gap` seconds apart, as one clip (needs a clip loaded into memory).</summary>
+        public static AudioClip Repeat(AudioClip clip, int times, float gap)
+        {
+            if (clip.loadType == AudioClipLoadType.Streaming) return null;
+            if (clip.loadState != AudioDataLoadState.Loaded && !clip.LoadAudioData()) return null;
+            int channels = clip.channels, rate = clip.frequency;
+            var src = new float[clip.samples * channels];
+            if (!clip.GetData(src, 0)) return null;
+            int step = Mathf.RoundToInt(gap * rate) * channels;
+            var dst = new float[step * (times - 1) + src.Length];
+            for (int k = 0; k < times; k++)
+            {
+                float gain = 1f - 0.12f * k; // each knock a little softer
+                for (int i = 0; i < src.Length; i++) dst[k * step + i] += src[i] * gain;
+            }
+            var result = AudioClip.Create(clip.name + "_x" + times, dst.Length / channels, channels, rate, false);
+            result.SetData(dst, 0);
+            return result;
+        }
 
         /// <summary>Plays a clip once at a point in the world, as a short-lived 3D source.</summary>
         public static void PlayAt(AudioClip clip, Vector3 position, float volume, float maxDistance = 40f, float pitch = 1f)

@@ -31,6 +31,30 @@ namespace Hollowmere.Tests
             Assert.That(player.IsAlive, Is.True);
         }
 
+        /// <summary>M1.5 audio: the recorded library is in use and the day ambience fades in; footsteps have a surface.</summary>
+        [UnityTest]
+        public IEnumerator Ambience_Starts_WithTheRecordedLibrary()
+        {
+            SceneManager.LoadScene("Greybox");
+            yield return null;
+            yield return null;
+
+            var ambience = Object.FindAnyObjectByType<AmbienceDirector>();
+            Assert.That(ambience, Is.Not.Null, "No AmbienceDirector in the scene.");
+            Assert.That(SoundBank.Library, Is.EqualTo(ambience.Library));
+            Assert.That(ambience.Library, Is.Not.Null);
+
+            float until = Time.time + 2f;
+            while (Time.time < until) yield return null;
+            var day = ambience.GetComponentsInChildren<AudioSource>().FirstOrDefault(s => s.clip == ambience.Library.DayOutdoors);
+            Assert.That(day, Is.Not.Null);
+            Assert.That(day.isPlaying, Is.True);
+            Assert.That(day.volume, Is.GreaterThan(0.05f), "Birds by day (the player starts outdoors).");
+
+            var player = Object.FindAnyObjectByType<PlayerAgent>();
+            Assert.That(SoundBank.SurfaceAt(player.transform.position), Is.EqualTo(Surface.Dirt), "The guests arrive on the mud of the road.");
+        }
+
         /// <summary>docs/DESIGN.md "Dusk transition" and "Night phase": latch at night, unlatch at midnight, power cut, dawn loss.</summary>
         [UnityTest]
         public IEnumerator Director_RunsTheMatch_FromArrivalToDawn()

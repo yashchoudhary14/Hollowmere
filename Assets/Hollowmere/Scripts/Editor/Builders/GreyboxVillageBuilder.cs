@@ -44,6 +44,7 @@ namespace Hollowmere.EditorTools
 
         static readonly Color FogDay = new Color(0.72f, 0.75f, 0.78f);
         static RenderSetup.Assets s_render; // look pass (M1.5): pipeline, grades, sky, textures
+        static SoundLibrary s_sounds; // look pass (M1.5): recorded sounds
 
         [MenuItem("Hollowmere/Build Greybox Village")]
         public static void Build()
@@ -52,6 +53,7 @@ namespace Hollowmere.EditorTools
 
             Begin();
             s_render = RenderSetup.Setup();
+            s_sounds = SoundLibraryBuilder.Ensure();
             BeginDressing();
             EnsureFolder("Assets/Hollowmere/Scenes");
             EnsureFolder("Assets/Hollowmere/Settings");
@@ -99,6 +101,10 @@ namespace Hollowmere.EditorTools
             crossing.Layout = layout;
             crossing.Lighting = lighting;
             hollow.Director = director;
+            var ambience = new GameObject("Ambience").AddComponent<AmbienceDirector>();
+            ambience.Library = s_sounds;
+            ambience.Director = director;
+            ambience.Houses = houses;
 
             var ui = new GameObject("HUD");
             var hud = ui.AddComponent<Hud>();
@@ -424,6 +430,7 @@ namespace Hollowmere.EditorTools
             SoftShadows(fireLight, UniversalAdditionalLightData.AdditionalLightsShadowResolutionTierMedium);
             Flicker(fireLight, 0.25f, 8f);
             FireParticles(fire);
+            FireSound(fire);
             fire.gameObject.SetActive(false);
 
             var component = hearth.gameObject.AddComponent<Hearth>();

@@ -7,7 +7,6 @@
   "clips": [
     { "out": "Bells/BellToll_A.wav",       "pack": "Ivo Vicic - Church Bells", "file": "04 Church Bells, Near Distance, In Church Tower-3 Different Bell 02.wav", "onset": 1, "length": 1.25, "mono": true, "fadeOut": 0.45, "use": "the strike of a chapel-bell toll (the synthesised bell rings on under it)" },
     { "out": "Bells/BellToll_B.wav",       "pack": "Ivo Vicic - Church Bells", "file": "04 Church Bells, Near Distance, In Church Tower-3 Different Bell 02.wav", "onset": 2, "length": 1.25, "mono": true, "fadeOut": 0.45, "use": "a second strike variation" },
-    { "out": "Ambience/BellsDistant.wav",  "pack": "Ivo Vicic - Church Bells", "file": "25 Church Bells, Far Distance, Rural Soundscape Distant, Hills Ridge, Spring 02.wav", "start": 5, "length": 40, "loop": 3, "use": "dusk: far bells over the hills" },
 
     { "out": "Doors/Creak_A.wav",          "pack": "Epic Stock Media - HD Game Materials", "file": "ICEFric_Dry Ice High Metal Squeal Groan Bright Squeak Dissonant Short 13_ESM_HDGM.wav", "start": 0, "length": 2.2, "mono": true, "fadeOut": 0.3, "use": "a door swung open fast" },
     { "out": "Doors/Creak_B.wav",          "pack": "Epic Stock Media - HD Game Materials", "file": "ICEFric_Dry Ice Squeak Metal Animal Mouse Imitation Short 07_ESM_HDGM.wav", "start": 0, "length": 0.55, "mono": true, "fadeOut": 0.15, "use": "door creak variation: one hinge chirp" },

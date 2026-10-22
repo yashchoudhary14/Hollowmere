@@ -1,6 +1,6 @@
 # Hollowmere roadmap
 
-**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–6 done; next: step 7, audio).
+**Status:** M1 built and green (64 EditMode, 7 PlayMode tests; Windows build in `Builds/Windows/`), playtest pending. M1.5 look pass approved and in progress (steps 1–7 done; next: step 8, LFS and credits).
 
 Each milestone ends with a Windows build and a playtest by the user. Design rules and numbers come from `docs/DESIGN.md`. Sections named in brackets point there.
 
@@ -128,8 +128,8 @@ Replace greybox art with real free assets so playtests read as a damp, abandoned
 
 **7. Audio**
 
-- [ ] `SoundLibrary` ScriptableObject; `SoundBank` uses its clips and falls back to the synthesised ones for anything missing.
-- [ ] Looping ambience per phase and for indoors versus outdoors; footsteps per surface (wood, stone, dirt) chosen from what's under the step; door and creak variations. Every sound the Hollow can hear still goes through `NoiseSystem.Emit`.
+- [x] `SoundLibrary` ScriptableObject; `SoundBank` uses its clips and falls back to the synthesised ones for anything missing. Built by `SoundLibraryBuilder` (`Audio/SoundLibrary.asset`); variations play in turn; a recorded knock is repeated into a three-knock knocking; the recorded bell strike is layered over the synthesised ring; the gate has its own groan and the Hollow an exhale when a hunt starts. The distant-bells clip was dropped (DESIGN: the bell is the only sting).
+- [x] Looping ambience per phase and for indoors versus outdoors; footsteps per surface (wood, stone, dirt) chosen from what's under the step; door and creak variations. Every sound the Hollow can hear still goes through `NoiseSystem.Emit`. `AmbienceDirector` follows DESIGN's "Audio and atmosphere" and "Day phase": birds until minute 10, then wind rising through dusk and night; indoors room tone and clock ticks, wind in the chimney at night; outdoor beds muffled indoors; distant dogs by day, a house settling now and then at night; rain in Act 3 behind a switch (question added to DESIGN.md). Footsteps and landings use the surface under them (wood, stone, dirt, and leaves beyond the wall), for players and the Hollow. Hearth fires crackle. None of the ambience is audible to the Hollow.
 
 **8. Repo hygiene**
 

@@ -702,3 +702,4 @@ Your checklist answers and the design conversation are now built into the sectio
 - [x] **The Crossing:** does looking back kill you, or drag you back to the gate with heavy sanity loss? *Decided: it kills you (you're taken).*
 - [x] **Starting the ritual:** any time once all parts are placed, or only during Act 3? *Decided: any time.*
 - [ ] **Day phase:** keep the full 12-minute day, or shorten it now that each player only needs to find one house?
+- [ ] **Rain in Act 3:** the M1.5 look pass plays rain outside and on the windows from Act 3, as the fog thickens (you asked for rain ambience; DESIGN.md doesn't place it). Keep it and add visible rain later, move it, or drop it? It's one switch: `AmbienceDirector.RainInAct3`.

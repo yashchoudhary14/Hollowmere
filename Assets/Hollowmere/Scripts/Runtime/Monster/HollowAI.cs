@@ -460,7 +460,7 @@ namespace Hollowmere
             if (State == HollowState.Hunt && Target == p) return;
             SetState(HollowState.Hunt, HuntSpeed);
             Target = p;
-            SoundBank.PlayAt(SoundBank.Breath, Eyes.position, 1f, 35f, 0.8f);
+            SoundBank.PlayAt(SoundBank.Exhale, Eyes.position, 1f, 35f, 0.8f);
         }
 
         void UpdateHunt()
@@ -630,7 +630,7 @@ namespace Hollowmere
             float speed = _agent.velocity.magnitude;
             if (speed > 0.3f && Time.time >= _nextStep)
             {
-                SoundBank.PlayAt(SoundBank.Step, transform.position, State == HollowState.Hunt ? 1f : 0.6f, 25f, 0.55f);
+                SoundBank.PlayAt(SoundBank.Footstep(SoundBank.SurfaceAt(transform.position)), transform.position, State == HollowState.Hunt ? 1f : 0.6f, 25f, 0.55f);
                 _nextStep = Time.time + Mathf.Clamp(1.1f / speed, 0.25f, 0.9f);
             }
             if (Time.time >= _nextBreath)

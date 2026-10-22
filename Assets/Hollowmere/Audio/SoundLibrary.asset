@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ce3b7aeae2dac4589cedeef749050c, type: 3}
+  m_Name: SoundLibrary
+  m_EditorClassIdentifier: Hollowmere.Runtime::Hollowmere.SoundLibrary
+  BellStrike:
+  - {fileID: 8300000, guid: c65e90070df06ec44a992bc48e8788d3, type: 3}
+  - {fileID: 8300000, guid: 451821812b9a4d64ebc327ceb68e4594, type: 3}
+  DoorCreak:
+  - {fileID: 8300000, guid: ef1b1004ea57b4342ba7d658d98455b4, type: 3}
+  - {fileID: 8300000, guid: f22b1edb10d555b4daa71ce6e687bef3, type: 3}
+  GateGroan:
+  - {fileID: 8300000, guid: da4469259f1fc344a9d9682b72b73f56, type: 3}
+  Knock:
+  - {fileID: 8300000, guid: 55bb775cd9291a44f99945cf8edd54fd, type: 3}
+  - {fileID: 8300000, guid: cf0409cffe5f8b243b88e9ac44b9992a, type: 3}
+  Thud:
+  - {fileID: 8300000, guid: 811a010a2899c5b46a78546e6e41e206, type: 3}
+  - {fileID: 8300000, guid: 1de4d08e3644c314d8bd6fbae5a6fbf1, type: 3}
+  HeavyThud:
+  - {fileID: 8300000, guid: d269c74764cd7ef46b7493019dc8b733, type: 3}
+  Gasp:
+  - {fileID: 8300000, guid: 79684d91843838f46a58b007625461d2, type: 3}
+  Chime:
+  - {fileID: 8300000, guid: f843984cb90b00645be909c0adbfcac6, type: 3}
+  - {fileID: 8300000, guid: 81b8aa345c23d65458b89c757fc95fe6, type: 3}
+  Clunk:
+  - {fileID: 8300000, guid: bdc5a95f69f143440841bba6b1c87210, type: 3}
+  HollowBreath:
+  - {fileID: 8300000, guid: e8edfffff2c415840a134643ae10d68d, type: 3}
+  - {fileID: 8300000, guid: e3ec5b920adc85c47a418b2d8815bbde, type: 3}
+  HollowExhale:
+  - {fileID: 8300000, guid: 75404e3794eca8a40a5d29a97a81c2db, type: 3}
+  Chant: {fileID: 8300000, guid: 1a4ddb3cfe9f12a49b9a6f8ac3600daa, type: 3}
+  StepWood:
+  - {fileID: 8300000, guid: 6f05b07cebdd0f4489569093a83bc8fe, type: 3}
+  - {fileID: 8300000, guid: afdf5fdeb741b05458995300f42d2bf5, type: 3}
+  - {fileID: 8300000, guid: 94ae83fc20826594b96fb63b0fa597a7, type: 3}
+  - {fileID: 8300000, guid: edf7a859d8976f646bef2b6510fb4185, type: 3}
+  - {fileID: 8300000, guid: 5679a74e24894c34dbf26ad1fbcbdf04, type: 3}
+  - {fileID: 8300000, guid: 91e1c60cac705f64ba57b70141a69dc0, type: 3}
+  - {fileID: 8300000, guid: 2a17fde9357495843934bc18165e3ac2, type: 3}
+  - {fileID: 8300000, guid: eb3f58e98b99fc541a18f20dedb2cbbc, type: 3}
+  StepStone:
+  - {fileID: 8300000, guid: 493322baaa9dd8d4989638e90b758513, type: 3}
+  - {fileID: 8300000, guid: e385a7b613bdfd34da57a87b13719b2a, type: 3}
+  - {fileID: 8300000, guid: 1e446bda3483154469e805d08221dfcb, type: 3}
+  - {fileID: 8300000, guid: ca7040e2b88d9664baaa46b2bb3a785d, type: 3}
+  - {fileID: 8300000, guid: 5e369a52461223244a521a51088de912, type: 3}
+  - {fileID: 8300000, guid: 4819ae1723e91244cba5fbb9117ce698, type: 3}
+  - {fileID: 8300000, guid: cc8e55f951249f247a2cd3d39a46927e, type: 3}
+  - {fileID: 8300000, guid: 0452aa7533247554e9c4dd1309a8b7e4, type: 3}
+  StepDirt:
+  - {fileID: 8300000, guid: 1b8268d509730174cb2433f92859b0bc, type: 3}
+  - {fileID: 8300000, guid: 155237ba68005c84c97fd08d1ff4d7c8, type: 3}
+  - {fileID: 8300000, guid: 6d4627c53517ac24ea589e06d138c364, type: 3}
+  - {fileID: 8300000, guid: 1e1737751f62f2d4ea9a9c30fb097ba2, type: 3}
+  - {fileID: 8300000, guid: a12a3ff5a130f9c448863f83e5310843, type: 3}
+  - {fileID: 8300000, guid: 15ac362ac171a034fb0c475984a26539, type: 3}
+  - {fileID: 8300000, guid: c355bf051e72d784db00fcc2a5ffb1cc, type: 3}
+  - {fileID: 8300000, guid: 40e1e794f1927c0438f6449f10bf650d, type: 3}
+  StepLeaves:
+  - {fileID: 8300000, guid: 38ba36737c30f734ebbca3af051deb5e, type: 3}
+  - {fileID: 8300000, guid: a8f0f684a64902a4fb8e110f39104d89, type: 3}
+  - {fileID: 8300000, guid: bb8957bcd5e80ec489c3f098865cf924, type: 3}
+  - {fileID: 8300000, guid: 656aaa497d96d9743bfa1ef0fe05ecf7, type: 3}
+  - {fileID: 8300000, guid: 489c6ff5fdbb666478e8449985514ee8, type: 3}
+  - {fileID: 8300000, guid: aec21e91ed6445e42b5a8d7527d32cae, type: 3}
+  - {fileID: 8300000, guid: 8442046b76cfb4447b7cb9ef75081442, type: 3}
+  - {fileID: 8300000, guid: 1ad8ce217ca45d141aa0685ff0273940, type: 3}
+  LandWood:
+  - {fileID: 8300000, guid: c628bcd97ea983d4f974040ce6353b3c, type: 3}
+  - {fileID: 8300000, guid: ef1b1f2af8169b4499e71eecbee05960, type: 3}
+  LandStone:
+  - {fileID: 8300000, guid: 9fbf3f5323536aa44a3d22f2849b0679, type: 3}
+  - {fileID: 8300000, guid: 0958b2cd3f65e9b42ab34c2786deb8aa, type: 3}
+  LandDirt:
+  - {fileID: 8300000, guid: cc3835ba47854644ab675f4914cb2490, type: 3}
+  - {fileID: 8300000, guid: 35bc2ef4c78f6fc48808d4ed342e83b8, type: 3}
+  LandLeaves:
+  - {fileID: 8300000, guid: 91d6a3263f592604fb7051068832b6fe, type: 3}
+  - {fileID: 8300000, guid: 9a7c790b0a1f1544a9d2b8955026dec9, type: 3}
+  DayOutdoors: {fileID: 8300000, guid: 5cdcdf3d187e3c9438f8d89a3d3a1543, type: 3}
+  NightWind: {fileID: 8300000, guid: e771b315bdfd6bc43a7beffe1682581a, type: 3}
+  RainOutdoors: {fileID: 8300000, guid: 77e5aed60e89e0f4bab39285990c9f6f, type: 3}
+  RoomTone: {fileID: 8300000, guid: 8c1ea151ac011e24cb8768257a9545fa, type: 3}
+  ClockTicks: {fileID: 8300000, guid: 75da153ccf2e6824e8f9b31ebda518df, type: 3}
+  ChimneyWind: {fileID: 8300000, guid: d0dc1fb84be13614b81b0c6f60d466b2, type: 3}
+  RainWindow: {fileID: 8300000, guid: 7154073b66b0c5a41934be8ef6c0eb03, type: 3}
+  HearthFire: {fileID: 8300000, guid: 62a8a152ecbde924e800c8de3431dcca, type: 3}
+  DistantDogs:
+  - {fileID: 8300000, guid: 40f701b094b66b94b9a1a6e20bd74bf6, type: 3}
+  HouseCreaks:
+  - {fileID: 8300000, guid: cb4a4e717db480248bfda5ac33348955, type: 3}

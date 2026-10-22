@@ -38,7 +38,10 @@ namespace Hollowmere
         void Update()
         {
             if (_queue.Count == 0 || Time.time < _next) return;
-            _source.PlayOneShot(SoundBank.Bell, _queue.Dequeue());
+            float volume = _queue.Dequeue();
+            _source.PlayOneShot(SoundBank.Bell, volume);
+            var strike = SoundBank.BellStrike; // the recorded strike over the synthesised ring, when there is one
+            if (strike != null) _source.PlayOneShot(strike, volume);
             _next = Time.time + Spacing;
         }
     }

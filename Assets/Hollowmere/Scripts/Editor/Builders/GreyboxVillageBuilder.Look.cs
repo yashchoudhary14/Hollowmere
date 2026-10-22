@@ -118,6 +118,21 @@ namespace Hollowmere.EditorTools
             f.Speed = speed;
         }
 
+        /// <summary>The fire's crackle, playing whenever the fire object is active. Atmosphere only: not a NoiseSystem sound.</summary>
+        static void FireSound(Transform fire)
+        {
+            if (s_sounds == null || s_sounds.HearthFire == null) return;
+            var s = fire.gameObject.AddComponent<AudioSource>();
+            s.clip = s_sounds.HearthFire;
+            s.loop = true;
+            s.playOnAwake = true;
+            s.volume = 0.55f;
+            s.spatialBlend = 1f;
+            s.rolloffMode = AudioRolloffMode.Logarithmic;
+            s.minDistance = 1f;
+            s.maxDistance = 12f;
+        }
+
         /// <summary>Additive flame particles over the hearth's ember glow. They run whenever the fire object is active.</summary>
         static void FireParticles(Transform fire)
         {
