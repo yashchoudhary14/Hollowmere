@@ -6,7 +6,7 @@ Read `docs/WORKFLOW_CLOUD_PC.md` first. Each session edits only its own sections
 Mode:          hybrid          # hybrid = cloud writes code, PC runs Unity | local = the PC session does both halves
 Milestone:     M1.6 Village & houses rebuild (docs/ROADMAP.md)
 Current phase: P2 - Village v2 ground plan (greybox)
-Phase state:   PC-TODO         # CLOUD-TODO -> PC-TODO -> DONE -> (next phase) CLOUD-TODO
+Phase state:   DONE            # CLOUD-TODO -> PC-TODO -> DONE -> (next phase) CLOUD-TODO
 Cloud branch:  claude/docs-review-cloud-phase-jbbppo
 ```
 
@@ -58,23 +58,23 @@ Cloud branch:  claude/docs-review-cloud-phase-jbbppo
 
 ## PC checklist for this phase (cloud session writes; PC session ticks)
 
-1. [ ] User closes the Unity Editor.
-2. [ ] Merge: `git checkout main && git pull --ff-only origin main && git fetch origin && git merge --no-ff origin/claude/docs-review-cloud-phase-jbbppo -m "Merge M1.6 P2 (cloud): village v2 ground plan"`.
-3. [ ] `tools/unity.ps1 check`: 0 compile errors. Fix anything and record what the cloud got wrong below.
-4. [ ] `tools/unity.ps1 test`: expect **97 passed, 6 ignored** (88 + 9 `VillagePlanTests`; the 6 `VillageV2SceneTests` are ignored until the scene exists). If a `VillagePlanTests` case fails, paste its message.
-5. [ ] `tools/unity.ps1 run -Method Hollowmere.EditorTools.VillageBuilderV2.Build`: the log ends with `VILLAGE V2 BUILT: Assets/Hollowmere/Scenes/Village.unity (15 houses, 16 filler, ...)` and `NAVMESH BAKED`. Note how long it took.
-6. [ ] `tools/unity.ps1 run -Method Hollowmere.EditorTools.VillageBuilderV2.Shots`: writes 12 PNGs to `Logs/claude/v2_*.png`. If any is black or empty, say so instead of guessing.
-7. [ ] Compare `Logs/claude/v2_TopDown.png` (north up, white slug labels) with `docs/design/ref/village_map_v2.png`. Check that:
+1. [x] User closes the Unity Editor.
+2. [x] Merge: `git checkout main && git pull --ff-only origin main && git fetch origin && git merge --no-ff origin/claude/docs-review-cloud-phase-jbbppo -m "Merge M1.6 P2 (cloud): village v2 ground plan"`.
+3. [x] `tools/unity.ps1 check`: 0 compile errors. Fix anything and record what the cloud got wrong below.
+4. [x] `tools/unity.ps1 test`: expect **97 passed, 6 ignored** (88 + 9 `VillagePlanTests`; the 6 `VillageV2SceneTests` are ignored until the scene exists). If a `VillagePlanTests` case fails, paste its message.
+5. [x] `tools/unity.ps1 run -Method Hollowmere.EditorTools.VillageBuilderV2.Build`: the log ends with `VILLAGE V2 BUILT: Assets/Hollowmere/Scenes/Village.unity (15 houses, 16 filler, ...)` and `NAVMESH BAKED`. Note how long it took.
+6. [x] `tools/unity.ps1 run -Method Hollowmere.EditorTools.VillageBuilderV2.Shots`: writes 12 PNGs to `Logs/claude/v2_*.png`. If any is black or empty, say so instead of guessing.
+7. [x] Compare `Logs/claude/v2_TopDown.png` (north up, white slug labels) with `docs/design/ref/village_map_v2.png`. Check that:
    - every house H00-H14 and filler F01-F16 sits where the map has it, turned the same way
    - the roads match the map, and the stream and pond with both bridges are there
    - the graveyard wall, schoolyard, fields and forest belt are there
    - the square, gate and chapel are where M1 had them
-8. [ ] Look at the street shots: `v2_MainStreet`, `v2_MainStreetNorth`, `v2_Green`, `v2_MillLane` (required by the roadmap), plus `v2_Aerial`, `v2_ChapelLane`, `v2_SchoolLane`, `v2_EastRoad`, `v2_MillPond`, `v2_StreamBridge`, `v2_Fields`. Check that roads, kerbs and boundaries don't float or z-fight badly, house massing and roofs look sane, chimneys show, and no camera starts inside a wall.
-9. [ ] **User approves the layout** from these shots (show them the top-down image and the four street shots). Record their changes, if any, as notes for the cloud. Don't change the data or `VillagePlan` by hand; the cloud does that.
-10. [ ] `tools/unity.ps1 test`: now **103 passed** (the 6 `VillageV2SceneTests` run). If a route test fails, record the house slug and the blocker from the message.
-11. [ ] `tools/unity.ps1 test -Platform PlayMode`: 8 passed (Greybox unchanged).
-12. [ ] Do **not** re-record `GreyboxLayout.txt`: `LookPassTests` must pass as it is, because Greybox didn't change.
-13. [ ] Commit and push to `main`:
+8. [x] Look at the street shots: `v2_MainStreet`, `v2_MainStreetNorth`, `v2_Green`, `v2_MillLane` (required by the roadmap), plus `v2_Aerial`, `v2_ChapelLane`, `v2_SchoolLane`, `v2_EastRoad`, `v2_MillPond`, `v2_StreamBridge`, `v2_Fields`. Check that roads, kerbs and boundaries don't float or z-fight badly, house massing and roofs look sane, chimneys show, and no camera starts inside a wall.
+9. [x] **User approves the layout** from these shots (show them the top-down image and the four street shots). Record their changes, if any, as notes for the cloud. Don't change the data or `VillagePlan` by hand; the cloud does that.
+10. [x] `tools/unity.ps1 test`: now **103 passed** (the 6 `VillageV2SceneTests` run). If a route test fails, record the house slug and the blocker from the message.
+11. [x] `tools/unity.ps1 test -Platform PlayMode`: 8 passed (Greybox unchanged).
+12. [x] Do **not** re-record `GreyboxLayout.txt`: `LookPassTests` must pass as it is, because Greybox didn't change.
+13. [x] Commit and push to `main`:
     - the scene `Assets/Hollowmere/Scenes/Village.unity` and `Village_NavMesh.asset`
     - `Assets/Hollowmere/Art/Meshes/VillageV2Meshes.asset` and `VillageV2BuilderMeshes.asset`
     - the new materials in `Assets/Hollowmere/Materials/Greybox/`
@@ -82,23 +82,50 @@ Cloud branch:  claude/docs-review-cloud-phase-jbbppo
     - the `.meta` files for the 4 new scripts and all of the above
 
     Note the scene's size in the report (Greybox.unity is about 20 MB). Commit message: "M1.6 P2: village v2 ground plan built, layout approved (PC verified)".
-14. [ ] Tick the P2 PC item in `docs/ROADMAP.md`, fill the PC report below, set `Phase state: DONE`, add a Log line, push `main`, delete the remote branch (`git push origin --delete claude/docs-review-cloud-phase-jbbppo`).
+14. [x] Tick the P2 PC item in `docs/ROADMAP.md`, fill the PC report below, set `Phase state: DONE`, add a Log line, push `main`, delete the remote branch (`git push origin --delete claude/docs-review-cloud-phase-jbbppo`).
 
 Done when: check is clean, EditMode 103/103 and PlayMode 8/8 pass, the user has approved the layout (or listed changes), and `main` is pushed with the scene and assets.
 
 ## PC report (PC session writes)
 
-- Merge: -
-- check: -
-- test (EditMode / PlayMode): -
-- Builders run (and how long): -
-- Screenshots (paths): -
-- Compile errors fixed (what the cloud got wrong): -
-- User decisions / approvals: -
-- Notes for the next cloud phase: -
+- Merge: `origin/claude/docs-review-cloud-phase-jbbppo` merged into `main` with `--no-ff` (07dfe74), no conflicts. Done via Cline.
+- check: clean, `COMPILE OK (Unity 6000.3.27f1)`, no warnings to fix.
+- test (EditMode / PlayMode):
+  - Before the build: EditMode 97 passed, 6 skipped (the `VillageV2SceneTests`, as expected).
+  - After the build: **EditMode 103/103** (all 9 `VillagePlanTests` and all 6 `VillageV2SceneTests` pass, including every route-with-blocker case). `LookPassTests` pass against the unchanged `GreyboxLayout.txt`, which was not re-recorded.
+  - **PlayMode 8/8.**
+- Builders run (and how long): `VillageBuilderV2.Build`, 31-76 s.
+  - Result: `VILLAGE V2 BUILT ... (15 houses, 16 filler, 95 boundary runs, 516 belt trees, 58 roam points)` and `NAVMESH BAKED`.
+  - Re-running gives an identical NavMesh and box-mesh cache. The scene YAML differs slightly between runs, but the geometry doesn't.
+  - `VillageBuilderV2.Shots`: 21 s, 12 PNGs.
+  - Sizes: `Village.unity` 13.4 MB (Greybox.unity is 20.1 MB), `Village_NavMesh.asset` 1.1 MB, `VillageV2Meshes.asset` 2.4 MB, `VillageV2BuilderMeshes.asset` 2.5 MB.
+- Screenshots (paths): `Logs/claude/v2_{TopDown,Aerial,MainStreet,MainStreetNorth,Green,MillLane,ChapelLane,SchoolLane,EastRoad,MillPond,StreamBridge,Fields}.png`, 1600x900, none black. Not committed (Logs/ is ignored).
+  - The top-down shot matches `docs/design/ref/village_map_v2.png`:
+    - H00-H14 and F01-F16 in place and orientation
+    - all roads, the stream, the pond and both bridges
+    - graveyard, schoolyard, fields, forest belt
+    - square, gate and chapel where M1 had them
+  - No camera starts inside a wall.
+- Compile errors fixed (what the cloud got wrong): none. The cloud code compiled and every test passed first time.
+- User decisions / approvals:
+  - The user approved the layout from the top-down image, the four street shots and their own look at `Village.unity` in the Editor.
+  - The user asked for no layout changes.
+- Notes for the next cloud phase (visual only, none block gameplay):
+  1. A thin white or light line shows under most gable roofs along the eaves (a gap or overhang between the wall box and the roof mesh). Visible in `v2_MainStreet` and `v2_MainStreetNorth`.
+  2. The grass on the green is drawn far too big: the blades look metres long in `v2_Green`. Tile it in metres like the other ground.
+  3. The pond reads as nearly white from low angles (`v2_MillPond`). The `Water` placeholder needs a darker colour or less smoothness.
+  4. The green's oak is still a sphere on a pole.
+  5. `v2_StreamBridge`: a dark strip runs along the stream bank left of the B2 bridge. Probably a hedge or bank boundary; check its height and material.
+  6. `v2_Fields` couldn't be viewed through Cline's image reader (the file is fine: 1600x900, not blank). The user looked at the scene directly.
+  7. Asset hygiene for a later PC phase (not committed here):
+     - `Assets/ThirdParty/Sketchfab/**/*.glb` are untracked, and `.gitattributes` has no LFS rule for `*.glb`/`*.gltf`; one file is 24 MB. Add an LFS rule before committing them.
+     - The 17 `docs/design/ref/*_mood.png` (~10 MB each, LFS by rule) are untracked.
+     - `docs/AI_HELPERS.md` has the user's uncommitted edits.
+     - Unity re-serialised `Cobweb.mat` (`_Color` alpha 0.75 -> 1) and `FireParticles.mat` (`_EMISSION` keyword). These were left out of the P2 commit. `ProjectSettings.asset` flip-flops on `SENTIS_ANALYTICS_ENABLED` between runs; it is clean right now.
 
 ## Log (newest first, one line per phase half)
 
+- 2026-10-22 - P2 PC (via Cline): merged claude/docs-review-cloud-phase-jbbppo; check clean (no fixes needed); `VillageBuilderV2.Build` (31 s) + `Shots` (12 PNGs); top-down matches `village_map_v2.png`; user approved the layout (no changes); EditMode 103/103, PlayMode 8/8; GreyboxLayout.txt not re-recorded; `Village.unity` (13.4 MB), NavMesh, mesh assets, Greybox materials, DeadLimbs prefabs and .meta files committed; visual + asset-hygiene notes for the cloud in the PC report. Next: P3 cloud.
 - 2026-10-22 - P2 cloud: village v2 ground plan in its own scene (`Village.unity`): `VillagePlan` (pure plan), `GreyboxVillageBuilder.VillageV2.cs` (+ `VillageBuilderV2.Build/Shots`), `VillagePlanTests` (9, passed offline) + `VillageV2SceneTests` (6); BuilderKit mesh cache per scene; Greybox untouched. Branch claude/docs-review-cloud-phase-jbbppo. Next: P2 PC.
 - 2026-10-22 - P1 PC (via Cline): merged claude/docs-review-cloud-phase-jbbppo; `setup` added Newtonsoft 3.2.2 as a direct dependency; check clean (no fixes needed); EditMode 88/88, PlayMode 8/8; run_check.py exit 0; .meta files + manifest committed. Next: P2 cloud.
 - 2026-10-22 - P1 cloud: Newtonsoft in RequiredPackages + Editor asmdef; `Scripts/Editor/Design/` (DesignSpecs, DesignData, DesignChecks); `DesignDataTests` (10). Branch claude/docs-review-cloud-phase-jbbppo. Next: P1 PC.
