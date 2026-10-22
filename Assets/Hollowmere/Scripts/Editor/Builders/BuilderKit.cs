@@ -25,12 +25,17 @@ namespace Hollowmere.EditorTools
         static readonly Dictionary<string, float> s_meanLuminance = new Dictionary<string, float>();
         static MaterialLibrary s_library;
         static Mesh s_meshAsset;
+        static string s_meshAssetPath = MeshAssetPath;
         static Font s_font;
         static Material s_textMaterial;
 
-        /// <summary>Call once at the start of a build.</summary>
-        public static void Begin()
+        /// <summary>
+        /// Call once at the start of a build. Each scene builder keeps its own cache of metric meshes (End prunes the
+        /// ones its build didn't use), so building one scene never removes meshes another scene still uses.
+        /// </summary>
+        public static void Begin(string meshAssetPath = MeshAssetPath)
         {
+            s_meshAssetPath = meshAssetPath;
             s_materials.Clear();
             s_textMaterial = null;
             s_font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
@@ -240,14 +245,14 @@ namespace Hollowmere.EditorTools
         {
             s_meshes.Clear();
             s_usedMeshes.Clear();
-            s_meshAsset = AssetDatabase.LoadAssetAtPath<Mesh>(MeshAssetPath);
+            s_meshAsset = AssetDatabase.LoadAssetAtPath<Mesh>(s_meshAssetPath);
             if (s_meshAsset == null)
             {
-                EnsureFolder(Path.GetDirectoryName(MeshAssetPath).Replace('\\', '/'));
+                EnsureFolder(Path.GetDirectoryName(s_meshAssetPath).Replace('\\', '/'));
                 s_meshAsset = new Mesh { name = "BuilderMeshes" }; // an empty main object holding the cached meshes
-                AssetDatabase.CreateAsset(s_meshAsset, MeshAssetPath);
+                AssetDatabase.CreateAsset(s_meshAsset, s_meshAssetPath);
             }
-            foreach (var m in AssetDatabase.LoadAllAssetsAtPath(MeshAssetPath).OfType<Mesh>())
+            foreach (var m in AssetDatabase.LoadAllAssetsAtPath(s_meshAssetPath).OfType<Mesh>())
                 if (m != s_meshAsset) s_meshes[m.name] = m;
         }
 
