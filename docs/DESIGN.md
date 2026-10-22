@@ -82,6 +82,8 @@ Hollowmere is about 300 × 300 m inside its wall, with the town square and the g
 | Houses (15) | The pool of houses to be allotted | One per player, 3–4 shrine houses, the rest hollow |
 | Fog road (beyond the gate) | Unseen; the gate is shut | The Crossing, about 200 m to the old bridge |
 
+**Layout (v2, 2026-10-22):** the village is an English-style nucleated village grown along roads, not a grid: Main Street runs south from the square to the Green at the village centre, with shop-houses on both sides; Chapel Lane curves from the chapel down the west side to the Green; School Lane runs east off Main Street; from the Green, Main Street south runs to the stream bridge, Mill Lane winds south-west to the mill and pond, and East Road runs out to the farm and fields. A back lane, a field track and footpaths link them. Houses face their street at different setbacks behind gardens, walls and hedges, with sheds, outbuildings and 16 filler buildings between them. The exact layout, every coordinate and the night blockers are in `docs/design/VILLAGE_LAYOUT.md` (data: `village.json`).
+
 **House pool:** 15 houses are built. Each match allots one house per player at random, so a 4-player match uses 4 houses. Separately, 3–4 random houses are shrine houses. Because the allotted houses change, so do the routes to the square.
 
 **How the village changes at night:**
@@ -472,6 +474,8 @@ Every item helps with one problem and creates another. There are no weapons, onl
 ## Houses and puzzles
 
 Hollowmere has 15 houses, and each hides one ritual part behind its own puzzle. They are all built from one shared template, then dressed differently. Puzzles change every match so players can't simply memorise the answers.
+
+**Each house is its own building (v2):** the 15 houses no longer share one plan. Each has its own archetype, footprint, storeys, room plan, stairs, roof and materials, and its puzzle is built into rooms that suit it (the miller's gears in the mill, the photographer's darkroom in the cellar). What stays shared is the list below, as **requirements every house meets**, not a common floor plan; a house may have 8-14 rooms, one or two upper floors, and a cellar and/or attic. Full per-house specs: `docs/design/HOUSES.md`.
 
 **Shared template:**
 

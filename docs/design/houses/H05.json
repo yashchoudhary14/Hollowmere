@@ -1,0 +1,2508 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H05",
+ "index": 5,
+ "name": "Doctor's House",
+ "family": "Crane",
+ "part": "Glass eye",
+ "puzzle_kind_m1": "CodeLock",
+ "door_colour": "White",
+ "chimneys": 1,
+ "clock_hour": 4,
+ "loud_puzzle": false,
+ "archetype": "White stucco Edwardian villa with a single-storey surgery wing",
+ "silhouette": "Square, white and prim: hipped red-slate roof with ONE central-west chimney, a columned porch over the white door, a flat-roofed surgery wing on the east with its own door and a brass plate 'DR. A. CRANE  M.B.', iron railings, a monkey-puzzle tree in the front garden.",
+ "world": {
+  "position": [
+   -62.0,
+   0.3,
+   48.0
+  ],
+  "yaw": 90,
+  "street": "Chapel Lane (west side)",
+  "plot_poly": [
+   [
+    -76.5,
+    57.0
+   ],
+   [
+    -76.5,
+    34.0
+   ],
+   [
+    -52.0,
+    34.0
+   ],
+   [
+    -52.0,
+    57.0
+   ]
+  ],
+  "note": "gravel drive to the surgery door"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "C": {
+   "y": -2.4,
+   "h": 2.2,
+   "label": "Cellar"
+  },
+  "G": {
+   "y": 0.0,
+   "h": 3.0,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 3.25,
+   "h": 2.8,
+   "label": "First floor"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -5.0,
+    -4.5,
+    5.0,
+    4.5
+   ],
+   "levels": [
+    "C",
+    "G",
+    "F"
+   ],
+   "walls": "StuccoWhite (smooth, grimy streaks under sills), BrickDark plinth 0.6 m, painted stone quoins (pale grey)",
+   "t": 0.35,
+   "roof": "Hipped roof 30 deg, RoofRedSlate, deep bracketed eaves 0.5 m; chimney on the spine wall at (-3.1, 0)",
+   "note": ""
+  },
+  {
+   "id": "surgery",
+   "rect": [
+    5.0,
+    -3.0,
+    10.0,
+    3.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "StuccoWhite, same plinth",
+   "t": 0.35,
+   "roof": "Flat roof hidden behind a 0.6 m parapet with stone coping; roof lantern (skylight) 1.2 x 1.2 over the consulting room",
+   "note": ""
+  },
+  {
+   "id": "porch",
+   "rect": [
+    -1.4,
+    4.5,
+    1.4,
+    6.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Two Doric columns + pilasters, stone steps (3)",
+   "t": 0.2,
+   "roof": "Flat lead porch roof",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "porch",
+   "name": "Porch",
+   "level": "G",
+   "rect": [
+    -1.4,
+    4.5,
+    1.4,
+    6.0
+   ],
+   "inner": [
+    -1.2,
+    4.56,
+    1.2,
+    5.8
+   ],
+   "kind": "porch",
+   "floor": "FloorCheckTile",
+   "walls": "open",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Hall",
+   "level": "G",
+   "rect": [
+    -1.2,
+    -4.5,
+    1.2,
+    4.5
+   ],
+   "inner": [
+    -1.14,
+    -4.15,
+    1.14,
+    4.44
+   ],
+   "kind": "hall",
+   "floor": "FloorCheckTile",
+   "walls": "Wallpaper2 above PanelDark dado",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "sitting",
+   "name": "Drawing room",
+   "level": "G",
+   "rect": [
+    -5.0,
+    0.0,
+    -1.2,
+    4.5
+   ],
+   "inner": [
+    -4.65,
+    0.06,
+    -1.26,
+    4.15
+   ],
+   "kind": "living",
+   "floor": "FloorParquet",
+   "walls": "Wallpaper2C (green damask)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "level": "G",
+   "rect": [
+    -5.0,
+    -4.5,
+    -1.2,
+    0.0
+   ],
+   "inner": [
+    -4.65,
+    -4.15,
+    -1.26,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "TileWallWhite to 1.5 m",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "waiting",
+   "name": "Waiting room",
+   "level": "G",
+   "rect": [
+    1.2,
+    0.0,
+    5.0,
+    4.5
+   ],
+   "inner": [
+    1.26,
+    0.06,
+    4.65,
+    4.15
+   ],
+   "kind": "waiting",
+   "floor": "FloorWornTile",
+   "walls": "PlasterWorn painted institutional cream",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "disp",
+   "name": "Dispensary (PUZZLE)",
+   "level": "G",
+   "rect": [
+    1.2,
+    -4.5,
+    5.0,
+    0.0
+   ],
+   "inner": [
+    1.26,
+    -4.15,
+    4.65,
+    -0.06
+   ],
+   "kind": "dispensary",
+   "floor": "FloorWornTile",
+   "walls": "TileWallWhite to 2.0 m",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "consult",
+   "name": "Consulting room",
+   "level": "G",
+   "rect": [
+    5.0,
+    -3.0,
+    10.0,
+    3.0
+   ],
+   "inner": [
+    5.06,
+    -2.65,
+    9.65,
+    2.65
+   ],
+   "kind": "surgery",
+   "floor": "FloorParquet",
+   "walls": "PanelDark to 1.2 m, PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "roof lantern + 2 pendants",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Doctor's bedroom",
+   "level": "F",
+   "rect": [
+    -5.0,
+    0.0,
+    -1.2,
+    4.5
+   ],
+   "inner": [
+    -4.65,
+    0.06,
+    -1.26,
+    4.15
+   ],
+   "kind": "bedroom",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -1.2,
+    -4.5,
+    1.2,
+    4.5
+   ],
+   "inner": [
+    -1.14,
+    -4.15,
+    1.14,
+    4.15
+   ],
+   "kind": "landing",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Guest bedroom",
+   "level": "F",
+   "rect": [
+    1.2,
+    0.0,
+    5.0,
+    4.5
+   ],
+   "inner": [
+    1.26,
+    0.06,
+    4.65,
+    4.15
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -5.0,
+    -4.5,
+    -1.2,
+    0.0
+   ],
+   "inner": [
+    -4.65,
+    -4.15,
+    -1.26,
+    -0.06
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite, radiator",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed3",
+   "name": "The boy's room (locked by day)",
+   "level": "F",
+   "rect": [
+    1.2,
+    -4.5,
+    5.0,
+    0.0
+   ],
+   "inner": [
+    1.26,
+    -4.15,
+    4.65,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "Wallpaper1B with a height chart pencilled on the door frame",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "cellar",
+   "name": "Cellar",
+   "level": "C",
+   "rect": [
+    -5.0,
+    -4.5,
+    1.2,
+    4.5
+   ],
+   "inner": [
+    -4.65,
+    -4.15,
+    0.85,
+    4.15
+   ],
+   "kind": "cellar",
+   "floor": "FloorConcrete",
+   "walls": "Whitewash",
+   "ceiling": "joists",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_porch",
+   "level": "G",
+   "room_a": "porch",
+   "room_b": "ext",
+   "side": "N",
+   "at": 0.0,
+   "width": 1.2,
+   "height": 2.05,
+   "kind": "porch opening",
+   "mat": "Door",
+   "colour": "White",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "porch",
+   "room_b": "hall",
+   "side": "S",
+   "at": 0.0,
+   "width": 1.0,
+   "height": 2.3,
+   "kind": "white 4-panel door, brass knocker, coloured-glass fanlight",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": 0.5,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "half-glazed garden door",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_sit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "sitting",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitchen",
+   "side": "W",
+   "at": -3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_wait",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "waiting",
+   "side": "E",
+   "at": 2.6,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_disp",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "disp",
+   "side": "E",
+   "at": -3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "door with a frosted 'PRIVATE' panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_cons1",
+   "level": "G",
+   "room_a": "waiting",
+   "room_b": "consult",
+   "side": "E",
+   "at": 1.5,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "baize-lined door",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_cons2",
+   "level": "G",
+   "room_a": "disp",
+   "room_b": "consult",
+   "side": "E",
+   "at": -1.5,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_surg",
+   "level": "G",
+   "room_a": "consult",
+   "room_b": "ext",
+   "side": "N",
+   "at": 7.5,
+   "width": 0.95,
+   "height": 2.05,
+   "kind": "patients' entrance, brass plate, bell pull",
+   "mat": "Door",
+   "colour": null,
+   "role": "surgery",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "E",
+   "at": 2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "W",
+   "at": -3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b3",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed3",
+   "side": "E",
+   "at": -3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "4-panel, key in the lock on the landing side",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_sit",
+   "room": "sitting",
+   "side": "N",
+   "at": -3.1,
+   "width": 1.5,
+   "height": 1.9,
+   "sill": 0.6,
+   "style": "tall sash 2-over-2",
+   "weak": false,
+   "curtains": "FabricVelvet (bottle green)",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_wait",
+   "room": "waiting",
+   "side": "N",
+   "at": 3.1,
+   "width": 1.5,
+   "height": 1.9,
+   "sill": 0.6,
+   "style": "tall sash",
+   "weak": false,
+   "curtains": "net only",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "S",
+   "at": -3.6,
+   "width": 1.1,
+   "height": 1.3,
+   "sill": 0.9,
+   "style": "sash, cracked",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_disp",
+   "room": "disp",
+   "side": "S",
+   "at": 3.1,
+   "width": 1.0,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "sash with an iron grille (one bar missing)",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_cons",
+   "room": "consult",
+   "side": "S",
+   "at": 7.5,
+   "width": 1.4,
+   "height": 1.6,
+   "sill": 0.8,
+   "style": "sash, frosted lower half",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -3.1,
+   "width": 1.3,
+   "height": 1.6,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": "FabricLinen",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "N",
+   "at": 3.1,
+   "width": 1.3,
+   "height": 1.6,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "S",
+   "at": -3.1,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.3,
+   "style": "frosted",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b3",
+   "room": "bed3",
+   "side": "S",
+   "at": 3.1,
+   "width": 1.1,
+   "height": 1.4,
+   "sill": 0.9,
+   "style": "sash - the boy's window, with paper stars stuck on it",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_land",
+   "room": "landing",
+   "side": "N",
+   "at": 0.0,
+   "width": 1.0,
+   "height": 1.0,
+   "sill": 1.2,
+   "style": "round-headed stair window over the porch",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    -1.1,
+    -1.5,
+    -0.2,
+    2.0
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "18 risers 0.17, mahogany handrail, brass stair rods, Carpet70sB runner"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    -1.1,
+    -1.5,
+    -0.2,
+    2.0
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "kitchen",
+   "rect": [
+    -4.6,
+    -4.1,
+    -3.7,
+    -0.6
+   ],
+   "frm": "C",
+   "to": "G",
+   "ascent": "N",
+   "kind": "cellar stair behind a ledged door",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2c",
+   "room": "cellar",
+   "rect": [
+    -4.6,
+    -4.1,
+    -3.7,
+    -0.6
+   ],
+   "frm": "C",
+   "to": "G",
+   "ascent": "N",
+   "kind": "arrives",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -3.1,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "drawing-room fire = THE HEARTH, back-to-back with the kitchen range",
+   "pots": 4
+  }
+ ],
+ "props": [
+  {
+   "id": "H05.p001",
+   "n": 1,
+   "room": "sitting",
+   "key": "Hearth",
+   "x": -3.1,
+   "y": 0.0,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "hearth",
+   "note": "white marble fire surround, brass fender, coal scuttle",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H05.p002",
+   "n": 2,
+   "room": "sitting",
+   "key": "MantelClock",
+   "x": -3.1,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "",
+   "note": "stopped at 4:00",
+   "on": "H05.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H05.p003",
+   "n": 3,
+   "room": "sitting",
+   "key": "FrameStanding1",
+   "x": -3.8,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "family-photo",
+   "note": "Dr Crane, wife, the boy (age 8)",
+   "on": "H05.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ]
+  },
+  {
+   "id": "H05.p004",
+   "n": 4,
+   "room": "sitting",
+   "key": "VaseAntique",
+   "x": -2.4,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H05.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "antique_ceramic_vase_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.25,
+    0.45
+   ]
+  },
+  {
+   "id": "H05.p005",
+   "n": 5,
+   "room": "sitting",
+   "key": "Sofa",
+   "x": -4.17,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Sofa_01",
+   "source": "polyhaven",
+   "dims": [
+    2.0,
+    0.9,
+    0.85
+   ]
+  },
+  {
+   "id": "H05.p006",
+   "n": 6,
+   "room": "sitting",
+   "key": "ArmchairGreen",
+   "x": -2.4,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GreenChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.75,
+    0.8,
+    0.95
+   ]
+  },
+  {
+   "id": "H05.p007",
+   "n": 7,
+   "room": "sitting",
+   "key": "CoffeeTable",
+   "x": -3.1,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "CoffeeTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.6,
+    0.45
+   ]
+  },
+  {
+   "id": "H05.p008",
+   "n": 8,
+   "room": "sitting",
+   "key": "Rug",
+   "x": -3.4,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H05.p009",
+   "n": 9,
+   "room": "sitting",
+   "key": "SideTable",
+   "x": -1.8,
+   "y": 0.0,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p010",
+   "n": 10,
+   "room": "sitting",
+   "key": "RotaryPhone",
+   "x": -1.8,
+   "y": 0.6,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "phone",
+   "note": "cream bakelite phone, number card 'HOLLOWMERE 14'",
+   "on": "H05.p009",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H05.p011",
+   "n": 11,
+   "room": "sitting",
+   "key": "Radio",
+   "x": -1.95,
+   "y": 0.6,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "radio",
+   "note": "walnut radio",
+   "on": "H05.p009",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H05.p012",
+   "n": 12,
+   "room": "sitting",
+   "key": "Radiator",
+   "x": -1.39,
+   "y": 0.0,
+   "z": 0.9,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cast-iron column radiator (only Doctor, Priest)",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.2,
+    0.7
+   ]
+  },
+  {
+   "id": "H05.p013",
+   "n": 13,
+   "room": "sitting",
+   "key": "FrameFancy1",
+   "x": -4.625,
+   "y": 1.425,
+   "z": 0.8,
+   "yaw": 90,
+   "role": "",
+   "note": "oil painting of the chapel",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "fancy_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.75
+   ]
+  },
+  {
+   "id": "H05.p014",
+   "n": 14,
+   "room": "sitting",
+   "key": "TableSmall",
+   "x": -4.2,
+   "y": 0.0,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "",
+   "note": "card table with a chess set",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H05.p015",
+   "n": 15,
+   "room": "kitchen",
+   "key": "Range",
+   "x": -3.1,
+   "y": 0.0,
+   "z": -0.365,
+   "yaw": 180,
+   "role": "",
+   "note": "cream enamel range in the back-to-back flue",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cast-iron range 1.0 wide set into the hearth opening, MetalPlate black",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.55,
+    0.85
+   ]
+  },
+  {
+   "id": "H05.p016",
+   "n": 16,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -2.3,
+   "y": 0.0,
+   "z": -3.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H05.p017",
+   "n": 17,
+   "room": "kitchen",
+   "key": "Fridge",
+   "x": -1.6,
+   "y": 0.0,
+   "z": -1.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "68d173f205344455933f861042b99fe3",
+   "source": "sketchfab",
+   "dims": [
+    0.6,
+    0.62,
+    1.45
+   ]
+  },
+  {
+   "id": "H05.p018",
+   "n": 18,
+   "room": "kitchen",
+   "key": "TableWood1",
+   "x": -2.5,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.8,
+    0.76
+   ]
+  },
+  {
+   "id": "H05.p019",
+   "n": 19,
+   "room": "kitchen",
+   "key": "TeaSet",
+   "x": -2.5,
+   "y": 0.76,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H05.p018",
+   "mat": null,
+   "scale": null,
+   "asset": "tea_set_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.3,
+    0.2
+   ]
+  },
+  {
+   "id": "H05.p020",
+   "n": 20,
+   "room": "kitchen",
+   "key": "ChairDining",
+   "x": -3.15,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H05.p021",
+   "n": 21,
+   "room": "hall",
+   "key": "HallConsole",
+   "x": 0.91,
+   "y": 0.0,
+   "z": 0.8,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicConsole_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.4,
+    0.82
+   ]
+  },
+  {
+   "id": "H05.p022",
+   "n": 22,
+   "room": "hall",
+   "key": "Mirror",
+   "x": 1.115,
+   "y": 1.25,
+   "z": 0.8,
+   "yaw": 270,
+   "role": "",
+   "note": "hall mirror",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H05.p023",
+   "n": 23,
+   "room": "hall",
+   "key": "FuseBox",
+   "x": -0.6,
+   "y": 1.4,
+   "z": -4.075,
+   "yaw": 0,
+   "role": "fuse-box",
+   "note": "FUSE BOX + a 1930s meter",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p024",
+   "n": 24,
+   "room": "hall",
+   "key": "CoatHooks",
+   "x": 0.985,
+   "y": 0.0,
+   "z": -1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wall rail with 5 hooks + 2 coats + 1 hat (cloth)",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.25,
+    1.7
+   ]
+  },
+  {
+   "id": "H05.p025",
+   "n": 25,
+   "room": "waiting",
+   "key": "BenchPainted",
+   "x": 3.6,
+   "y": 0.0,
+   "z": 3.92,
+   "yaw": 180,
+   "role": "",
+   "note": "waiting bench under the window (low)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_bench",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "H05.p026",
+   "n": 26,
+   "room": "waiting",
+   "key": "BenchPainted",
+   "x": 3.1,
+   "y": 0.0,
+   "z": 0.29,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_bench",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "H05.p027",
+   "n": 27,
+   "room": "waiting",
+   "key": "TableSmall",
+   "x": 1.54,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "magazines from 1974",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H05.p028",
+   "n": 28,
+   "room": "waiting",
+   "key": "WallClock",
+   "x": 1.29,
+   "y": 1.925,
+   "z": 3.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H05.p029",
+   "n": 29,
+   "room": "waiting",
+   "key": "PottedPlant2",
+   "x": 4.445,
+   "y": 0.0,
+   "z": 2.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "potted_plant_02",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.35,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p030",
+   "n": 30,
+   "room": "disp",
+   "key": "MedicineCabinet",
+   "x": 3.4,
+   "y": 0.9,
+   "z": -0.21,
+   "yaw": 180,
+   "role": "puzzle container",
+   "note": "GLASS-FRONTED MEDICINE CABINET with a 4-dial padlock - the PART CONTAINER",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "glass-fronted wall cabinet 0.9x0.3x1.2, 4 shelves, padlock hasp",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.3,
+    1.2
+   ]
+  },
+  {
+   "id": "H05.p031",
+   "n": 31,
+   "room": "disp",
+   "key": "Counter",
+   "x": 3.6,
+   "y": 0.0,
+   "z": -3.94,
+   "yaw": 0,
+   "role": "",
+   "note": "dispensing bench 1.44 m",
+   "on": null,
+   "mat": null,
+   "scale": 0.6,
+   "asset": "shop counter, panelled front, glass top optional",
+   "source": "procedural",
+   "dims": [
+    2.4,
+    0.6,
+    0.95
+   ]
+  },
+  {
+   "id": "H05.p032",
+   "n": 32,
+   "room": "disp",
+   "key": "MedicineBottles",
+   "x": 3.6,
+   "y": 0.57,
+   "z": -3.94,
+   "yaw": 0,
+   "role": "",
+   "note": "12 bottles, labels data-driven",
+   "on": "H05.p031",
+   "mat": null,
+   "scale": null,
+   "asset": "set of 12 brown/blue/clear bottles with paper labels (labels data-driven)",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.15,
+    0.2
+   ]
+  },
+  {
+   "id": "H05.p033",
+   "n": 33,
+   "room": "disp",
+   "key": "BunsenBurner",
+   "x": 4.1,
+   "y": 0.57,
+   "z": -3.94,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H05.p031",
+   "mat": null,
+   "scale": null,
+   "asset": "bunsen_burner",
+   "source": "polyhaven",
+   "dims": [
+    0.12,
+    0.12,
+    0.2
+   ]
+  },
+  {
+   "id": "H05.p034",
+   "n": 34,
+   "room": "disp",
+   "key": "DrawerCabinet",
+   "x": 1.515,
+   "y": 0.0,
+   "z": -1.6,
+   "yaw": 90,
+   "role": "",
+   "note": "PATIENT RECORDS index drawers (4 cards = clues)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "drawer_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.45,
+    1.1
+   ]
+  },
+  {
+   "id": "H05.p035",
+   "n": 35,
+   "room": "disp",
+   "key": "SteelShelves2",
+   "x": 1.8,
+   "y": 0.0,
+   "z": -0.29,
+   "yaw": 180,
+   "role": "",
+   "note": "shelves of brown bottles and pill boxes",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_02",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H05.p036",
+   "n": 36,
+   "room": "consult",
+   "key": "ExamCouch",
+   "x": 9.27,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "leather examination couch with step",
+   "source": "procedural",
+   "dims": [
+    1.9,
+    0.7,
+    0.75
+   ]
+  },
+  {
+   "id": "H05.p037",
+   "n": 37,
+   "room": "consult",
+   "key": "OfficeDesk",
+   "x": 8.5,
+   "y": 0.0,
+   "z": -2.245,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "metal_office_desk",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.75,
+    0.76
+   ]
+  },
+  {
+   "id": "H05.p038",
+   "n": 38,
+   "room": "consult",
+   "key": "Microscope",
+   "x": 8.9,
+   "y": 0.76,
+   "z": -2.245,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H05.p037",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_microscope",
+   "source": "polyhaven",
+   "dims": [
+    0.2,
+    0.25,
+    0.35
+   ]
+  },
+  {
+   "id": "H05.p039",
+   "n": 39,
+   "room": "consult",
+   "key": "Typewriter",
+   "x": 8.2,
+   "y": 0.76,
+   "z": -2.245,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H05.p037",
+   "mat": null,
+   "scale": null,
+   "asset": "1d6009449fe84fd79454c4081eb743bf",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.35,
+    0.2
+   ]
+  },
+  {
+   "id": "H05.p040",
+   "n": 40,
+   "room": "consult",
+   "key": "Chair",
+   "x": 8.5,
+   "y": 0.0,
+   "z": -1.5,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H05.p041",
+   "n": 41,
+   "room": "consult",
+   "key": "CabinetVintage",
+   "x": 6.0,
+   "y": 0.0,
+   "z": -2.395,
+   "yaw": 0,
+   "role": "",
+   "note": "specimen cabinet: jars, a glass eye chart",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_cabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.45,
+    1.8
+   ]
+  },
+  {
+   "id": "H05.p042",
+   "n": 42,
+   "room": "consult",
+   "key": "WashStand",
+   "x": 9.2,
+   "y": 0.0,
+   "z": 2.395,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "marble-top wash stand with jug & basin",
+   "source": "procedural",
+   "dims": [
+    0.8,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H05.p043",
+   "n": 43,
+   "room": "consult",
+   "key": "Crutches",
+   "x": 5.165,
+   "y": 0.0,
+   "z": 2.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_crutches_01",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.15,
+    1.3
+   ]
+  },
+  {
+   "id": "H05.p044",
+   "n": 44,
+   "room": "cellar",
+   "key": "SteelShelves",
+   "x": 0.595,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "wine racks + preserving jars",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    1.9
+   ]
+  },
+  {
+   "id": "H05.p045",
+   "n": 45,
+   "room": "cellar",
+   "key": "CellarCrates",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H05.p046",
+   "n": 46,
+   "room": "cellar",
+   "key": "BarrelWorn",
+   "x": -0.5,
+   "y": 0.0,
+   "z": -3.795,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "His_Med_Storage_Barrel_Wood_Worn_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    0.65,
+    0.65,
+    0.95
+   ]
+  },
+  {
+   "id": "H05.p047",
+   "n": 47,
+   "room": "cellar",
+   "key": "CardboardBox",
+   "x": 0.62,
+   "y": 0.0,
+   "z": -2.5,
+   "yaw": 270,
+   "role": "",
+   "note": "boxes of old surgery files",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cardboard_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H05.p048",
+   "n": 48,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -3.57,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H05.p049",
+   "n": 49,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -4.42,
+   "y": 0.0,
+   "z": 1.1,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p050",
+   "n": 50,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -4.42,
+   "y": 0.0,
+   "z": 3.3,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p051",
+   "n": 51,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H05.p052",
+   "n": 52,
+   "room": "bed1",
+   "key": "Commode",
+   "x": -1.9,
+   "y": 0.0,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCommode_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.5,
+    0.9
+   ]
+  },
+  {
+   "id": "H05.p053",
+   "n": 53,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": 3.62,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H05.p054",
+   "n": 54,
+   "room": "bed2",
+   "key": "Nightstand",
+   "x": 4.42,
+   "y": 0.0,
+   "z": 1.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p055",
+   "n": 55,
+   "room": "bed2",
+   "key": "ChestOfDrawers",
+   "x": 3.6,
+   "y": 0.0,
+   "z": 0.33,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H05.p056",
+   "n": 56,
+   "room": "bath",
+   "key": "BathtubPhoto",
+   "x": -4.23,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ba60ba7d0a4a4b6899021741f450395b",
+   "source": "sketchfab",
+   "dims": [
+    1.7,
+    0.78,
+    0.65
+   ]
+  },
+  {
+   "id": "H05.p057",
+   "n": 57,
+   "room": "bath",
+   "key": "BathCurtainRail",
+   "x": -4.0,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 90,
+   "role": "allow-overlap",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "rail + plastic curtain around bath (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.7,
+    0.8,
+    2.0
+   ]
+  },
+  {
+   "id": "H05.p058",
+   "n": 58,
+   "room": "bath",
+   "key": "Sink",
+   "x": -2.6,
+   "y": 0.0,
+   "z": -0.315,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H05.p059",
+   "n": 59,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -2.6,
+   "y": 1.1,
+   "z": -0.085,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H05.p060",
+   "n": 60,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -3.2,
+   "y": 0.0,
+   "z": -3.795,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H05.p061",
+   "n": 61,
+   "room": "bath",
+   "key": "Radiator",
+   "x": -1.39,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cast-iron column radiator (only Doctor, Priest)",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.2,
+    0.7
+   ]
+  },
+  {
+   "id": "H05.p062",
+   "n": 62,
+   "room": "bed3",
+   "key": "BedIron",
+   "x": 3.62,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H05.p063",
+   "n": 63,
+   "room": "bed3",
+   "key": "NightstandPainted",
+   "x": 4.43,
+   "y": 0.0,
+   "z": -1.425,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H05.p064",
+   "n": 64,
+   "room": "bed3",
+   "key": "RockingHorse",
+   "x": 2.4,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "5168ce9d45a3401ea6fe4d92f17bb332",
+   "source": "sketchfab",
+   "dims": [
+    0.9,
+    0.35,
+    0.7
+   ]
+  },
+  {
+   "id": "H05.p065",
+   "n": 65,
+   "room": "bed3",
+   "key": "Globe",
+   "x": 1.49,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "8bb166a68f70426390eb113ff0fd72a0",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.4,
+    0.55
+   ]
+  },
+  {
+   "id": "H05.p066",
+   "n": 66,
+   "room": "bed3",
+   "key": "Wicker2",
+   "x": 1.8,
+   "y": 0.0,
+   "z": -3.92,
+   "yaw": 0,
+   "role": "",
+   "note": "toy basket",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wicker_basket_02",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H05.p067",
+   "n": 67,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 1.015,
+   "y": 0.9,
+   "z": -0.8,
+   "yaw": 270,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "sitting",
+   "x": -3.1,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "note": "drawing-room mantel"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitchen",
+   "x": -2.5,
+   "y": 0.76,
+   "z": -2.1,
+   "yaw": 90,
+   "note": "housekeeper's note about the boy's medicine (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "hall",
+   "x": 0.91,
+   "y": 0.82,
+   "z": 0.8,
+   "yaw": 270,
+   "note": "hall console"
+  },
+  {
+   "kind": "puzzle",
+   "room": "disp",
+   "x": 3.4,
+   "y": 0.9,
+   "z": -0.21,
+   "yaw": 180,
+   "note": "CodeLockPuzzle: match the 12 medicine bottles to the 4 patient record cards; each card's bottle number gives one digit"
+  },
+  {
+   "kind": "container",
+   "room": "disp",
+   "x": 3.4,
+   "y": 0.9,
+   "z": -0.21,
+   "yaw": 180,
+   "note": "Glass eye in a velvet box on the middle shelf"
+  },
+  {
+   "kind": "note-spot",
+   "room": "disp",
+   "x": 1.515,
+   "y": 1.1,
+   "z": -1.6,
+   "yaw": 90,
+   "note": "patient record cards (note 2/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "disp",
+   "x": 3.1,
+   "y": 0.57,
+   "z": -3.94,
+   "yaw": 0,
+   "note": "dispensing bench"
+  },
+  {
+   "kind": "note-spot",
+   "room": "consult",
+   "x": 8.4,
+   "y": 0.76,
+   "z": -2.245,
+   "yaw": 0,
+   "note": "Dr Crane's case notes on 'the boy' (note 3/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "cellar",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 3.67,
+   "yaw": 180,
+   "note": "behind the crates (cellar) -> HidingSpot on H05.p045 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -3.57,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "note": "under the doctor's bed -> HidingSpot on H05.p048 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H05.p051 (Wardrobe)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -4.23,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 90,
+   "note": "behind the bath curtain -> HidingSpot on H05.p056 (BathtubPhoto)"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 1.015,
+   "y": 0.0,
+   "z": -0.8,
+   "yaw": 270,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "columned porch (2 Doric columns) with a flat lead roof; 3 stone steps",
+  "brass plate by the SURGERY door: 'DR. A. CRANE  M.B.  SURGERY 9-11'",
+  "bell pull at the surgery door",
+  "monkey-puzzle tree in the front garden (use a FirTree, trimmed, as stand-in)",
+  "railings + gate; gravel drive to the surgery door"
+ ],
+ "plot": [
+  "Front: 8 m garden, gravel drive, lawn gone to hay, monkey-puzzle tree",
+  "Back: walled garden, a greenhouse frame (empty), a stone bench, a child's swing hanging from one rope"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the glass medicine cabinet - you can SEE the glass eye in its velvet box through the glass.",
+  "4 patient record cards (index drawers, note 2/3) each name a symptom; 12 bottles on the bench name cures.",
+  "Match each card to its bottle; each bottle's shelf number is a digit; card order = dial order.",
+  "Wrong code: a bottle falls and smashes (breaking glass noise radius).",
+  "Part: Glass eye."
+ ],
+ "night_changes": [
+  "the examination couch has a body-shaped dent and the sheet is warm",
+  "the boy's room door (locked by day) is open",
+  "every bottle label now reads the same name"
+ ],
+ "audio": [
+  "typewriter (consulting room types by itself)",
+  "locks",
+  "fridgehum: dispensary fridge"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Edwardian_architecture",
+  "https://en.wikipedia.org/wiki/Stucco"
+ ],
+ "image_prompt": "white stucco Edwardian doctor's villa, hipped red slate roof with one chimney, a two-column porch over a white door, a flat-roofed single-storey surgery wing with a brass plate, iron railings, grimy streaks under the windows, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

@@ -1,0 +1,1903 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H11",
+ "index": 11,
+ "name": "Priest's House",
+ "family": "Ambrose",
+ "part": "Altar cloth",
+ "puzzle_kind_m1": "CodeLock",
+ "door_colour": "White",
+ "chimneys": 3,
+ "clock_hour": 1,
+ "loud_puzzle": false,
+ "archetype": "Stone presbytery with a private oratory wing projecting toward the lane",
+ "silhouette": "Grey stone, two storeys, THREE chimneys (west gable, a big external stack on the back wall, and the front stack of the study); an oratory wing to the east with a steep roof, a tiny bell-cote and a pointed window; white door under a stone canopy; a Calvary cross in the garden.",
+ "world": {
+  "position": [
+   -62.0,
+   0.4,
+   80.0
+  ],
+  "yaw": 90,
+  "street": "Chapel Lane (west side)",
+  "plot_poly": [
+   [
+    -72.0,
+    88.0
+   ],
+   [
+    -72.0,
+    72.0
+   ],
+   [
+    -52.0,
+    72.0
+   ],
+   [
+    -52.0,
+    88.0
+   ]
+  ],
+  "note": "oratory wing (local +x) points south; Calvary in the front garden; graveyard behind to the north-west"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.9,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 3.15,
+   "h": 2.6,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 6.0,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -6.0,
+    -4.0,
+    2.0,
+    4.0
+   ],
+   "levels": [
+    "G",
+    "F",
+    "A"
+   ],
+   "walls": "StoneBlock with SandstoneBlocks quoins; lime-pointed",
+   "t": 0.5,
+   "roof": "Gable roof 45 deg, ridge along x at 8.9 m, RoofSlateGrey",
+   "note": ""
+  },
+  {
+   "id": "oratory",
+   "rect": [
+    2.0,
+    -1.0,
+    6.0,
+    6.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "StoneBlock, buttresses at the corners",
+   "t": 0.5,
+   "roof": "Steep 55 deg gable roof, ridge along z at 7.2 m, RoofSlateGrey; bell-cote (Bell scaled 0.35) at the north gable apex",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "sitting",
+   "name": "Sitting room",
+   "level": "G",
+   "rect": [
+    -6.0,
+    0.0,
+    -2.5,
+    4.0
+   ],
+   "inner": [
+    -5.5,
+    0.06,
+    -2.56,
+    3.5
+   ],
+   "kind": "living",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper2C (sage)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Hall",
+   "level": "G",
+   "rect": [
+    -2.5,
+    -4.0,
+    -0.5,
+    4.0
+   ],
+   "inner": [
+    -2.44,
+    -3.5,
+    -0.56,
+    3.5
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "study",
+   "name": "Study",
+   "level": "G",
+   "rect": [
+    -0.5,
+    0.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -0.44,
+    0.06,
+    1.94,
+    3.5
+   ],
+   "kind": "study",
+   "floor": "FloorParquet",
+   "walls": "PanelDark",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen (housekeeper's)",
+   "level": "G",
+   "rect": [
+    -6.0,
+    -4.0,
+    -2.5,
+    0.0
+   ],
+   "inner": [
+    -5.5,
+    -3.5,
+    -2.56,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "scull",
+   "name": "Scullery & lavatory",
+   "level": "G",
+   "rect": [
+    -0.5,
+    -4.0,
+    2.0,
+    0.0
+   ],
+   "inner": [
+    -0.44,
+    -3.5,
+    1.5,
+    -0.06
+   ],
+   "kind": "utility",
+   "floor": "FloorBrick",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "oratory",
+   "name": "Oratory (PUZZLE)",
+   "level": "G",
+   "rect": [
+    2.0,
+    -1.0,
+    6.0,
+    6.0
+   ],
+   "inner": [
+    2.5,
+    -0.5,
+    5.5,
+    5.5
+   ],
+   "kind": "chapel",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash, stations of the cross",
+   "ceiling": "open timber roof to 6 m",
+   "light": "2 hanging lamps (WoodenLantern) + candles",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Father Ambrose's bedroom",
+   "level": "F",
+   "rect": [
+    -6.0,
+    0.0,
+    -2.5,
+    4.0
+   ],
+   "inner": [
+    -5.5,
+    0.06,
+    -2.56,
+    3.5
+   ],
+   "kind": "bedroom",
+   "floor": "FloorDarkPlanks",
+   "walls": "Whitewash, crucifix",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -2.5,
+    -4.0,
+    -0.5,
+    4.0
+   ],
+   "inner": [
+    -2.44,
+    -3.5,
+    -0.56,
+    3.5
+   ],
+   "kind": "landing",
+   "floor": "FloorDarkPlanks",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Housekeeper's room",
+   "level": "F",
+   "rect": [
+    -0.5,
+    0.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -0.44,
+    0.06,
+    1.5,
+    3.5
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -6.0,
+    -4.0,
+    -2.5,
+    0.0
+   ],
+   "inner": [
+    -5.5,
+    -3.5,
+    -2.56,
+    -0.06
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "box",
+   "name": "Box room (vestments)",
+   "level": "F",
+   "rect": [
+    -0.5,
+    -4.0,
+    2.0,
+    0.0
+   ],
+   "inner": [
+    -0.44,
+    -3.5,
+    1.5,
+    -0.06
+   ],
+   "kind": "storage",
+   "floor": "FloorOldWood2",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "attic",
+   "name": "Attic",
+   "level": "A",
+   "rect": [
+    -6.0,
+    -4.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -5.5,
+    -3.5,
+    1.5,
+    3.5
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": -1.5,
+   "width": 1.0,
+   "height": 2.05,
+   "kind": "white boarded door with a stone canopy over it",
+   "mat": "Door",
+   "colour": "White",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": -1.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_sit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "sitting",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitchen",
+   "side": "W",
+   "at": -2.8,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_study",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "study",
+   "side": "E",
+   "at": 2.5,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_scull",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "scull",
+   "side": "E",
+   "at": -2.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_orat",
+   "level": "G",
+   "room_a": "study",
+   "room_b": "oratory",
+   "side": "E",
+   "at": 2.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "pointed oak door with a holy-water stoup beside it",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_orat_ext",
+   "level": "G",
+   "room_a": "oratory",
+   "room_b": "ext",
+   "side": "N",
+   "at": 4.0,
+   "width": 1.0,
+   "height": 2.05,
+   "kind": "oratory west door to the lane (locked by day)",
+   "mat": "Door",
+   "colour": null,
+   "role": "side",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "E",
+   "at": 2.5,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "W",
+   "at": -2.8,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_box",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "box",
+   "side": "E",
+   "at": -2.0,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_sit",
+   "room": "sitting",
+   "side": "N",
+   "at": -4.2,
+   "width": 1.2,
+   "height": 1.5,
+   "sill": 0.9,
+   "style": "sash with stone mullion",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_study",
+   "room": "study",
+   "side": "N",
+   "at": 0.75,
+   "width": 0.9,
+   "height": 1.4,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "W",
+   "at": -2.0,
+   "width": 1.0,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash, rotten sill",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_sc",
+   "room": "scull",
+   "side": "S",
+   "at": 0.75,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 0.9,
+   "style": "small casement",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_or1",
+   "room": "oratory",
+   "side": "E",
+   "at": 2.5,
+   "width": 0.9,
+   "height": 2.4,
+   "sill": 1.0,
+   "style": "pointed lancet with plain coloured glass (red/blue)",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_or2",
+   "room": "oratory",
+   "side": "S",
+   "at": 4.0,
+   "width": 0.7,
+   "height": 1.6,
+   "sill": 1.2,
+   "style": "small lancet behind the altar",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -4.2,
+   "width": 1.0,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "N",
+   "at": 0.75,
+   "width": 0.8,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.7,
+   "height": 0.8,
+   "sill": 1.3,
+   "style": "frosted",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    -2.4,
+    -1.5,
+    -1.5,
+    2.0
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "stone-and-oak stair, 15 risers"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    -2.4,
+    -1.5,
+    -1.5,
+    2.0
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "landing",
+   "rect": [
+    -1.3,
+    -3.4,
+    -0.6,
+    -2.6
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "W",
+   "kind": "loft ladder",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -6.0,
+   "z": 2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "sitting-room fire",
+   "pots": 1
+  },
+  {
+   "x": -4.4,
+   "z": -4.0,
+   "w": 1.2,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "kitchen range = THE HEARTH (external stack on the back wall)",
+   "pots": 2
+  },
+  {
+   "x": 0.75,
+   "z": 4.0,
+   "w": 0.9,
+   "d": 0.6,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "study fire (external front stack)",
+   "pots": 1
+  }
+ ],
+ "props": [
+  {
+   "id": "H11.p001",
+   "n": 1,
+   "room": "oratory",
+   "key": "SmallAltar",
+   "x": 4.0,
+   "y": 0.0,
+   "z": -0.12,
+   "yaw": 0,
+   "role": "",
+   "note": "altar with candlesticks; the frontal hides the cupboard",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "oratory altar 1.6x0.7x1.0, oak, with the altar frontal (ALTAR CLOTH is the part)",
+   "source": "procedural",
+   "dims": [
+    1.6,
+    0.7,
+    1.0
+   ]
+  },
+  {
+   "id": "H11.p002",
+   "n": 2,
+   "room": "oratory",
+   "key": "Candleholders",
+   "x": 3.5,
+   "y": 1.0,
+   "z": -0.12,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H11.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "brass_candleholders",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.12,
+    0.3
+   ]
+  },
+  {
+   "id": "H11.p003",
+   "n": 3,
+   "room": "oratory",
+   "key": "Candleholders",
+   "x": 4.5,
+   "y": 1.0,
+   "z": -0.12,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H11.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "brass_candleholders",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.12,
+    0.3
+   ]
+  },
+  {
+   "id": "H11.p004",
+   "n": 4,
+   "room": "oratory",
+   "key": "HymnBoard",
+   "x": 2.525,
+   "y": 1.35,
+   "z": 4.6,
+   "yaw": 90,
+   "role": "puzzle",
+   "note": "HYMN BOARD: 3 rows of number cards",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "dark oak hymn board, 3 rows of slide-in number cards",
+   "source": "procedural",
+   "dims": [
+    0.5,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H11.p005",
+   "n": 5,
+   "room": "oratory",
+   "key": "CabinetVintage",
+   "x": 5.245,
+   "y": 0.0,
+   "z": 0.2,
+   "yaw": 270,
+   "role": "",
+   "note": "VESTMENT CUPBOARD with a 4-dial lock = PART CONTAINER",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_cabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.45,
+    1.8
+   ]
+  },
+  {
+   "id": "H11.p006",
+   "n": 6,
+   "room": "oratory",
+   "key": "ChurchPew",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.75,
+   "asset": "9c2934828dfa4dc2b64102defa3969e7",
+   "source": "sketchfab",
+   "dims": [
+    3.0,
+    0.6,
+    0.95
+   ]
+  },
+  {
+   "id": "H11.p007",
+   "n": 7,
+   "room": "oratory",
+   "key": "ChurchPew",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 3.2,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.75,
+   "asset": "9c2934828dfa4dc2b64102defa3969e7",
+   "source": "sketchfab",
+   "dims": [
+    3.0,
+    0.6,
+    0.95
+   ]
+  },
+  {
+   "id": "H11.p008",
+   "n": 8,
+   "room": "oratory",
+   "key": "Lectern",
+   "x": 2.8,
+   "y": 0.0,
+   "z": 0.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "oak lectern",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.5,
+    1.15
+   ]
+  },
+  {
+   "id": "H11.p009",
+   "n": 9,
+   "room": "oratory",
+   "key": "GothicStatue",
+   "x": 2.74,
+   "y": 0.0,
+   "z": 5.2,
+   "yaw": 90,
+   "role": "",
+   "note": "statue of the village saint, face worn smooth",
+   "on": null,
+   "mat": null,
+   "scale": 0.7,
+   "asset": "gothic_statue",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    1.8
+   ]
+  },
+  {
+   "id": "H11.p010",
+   "n": 10,
+   "room": "study",
+   "key": "OfficeDesk",
+   "x": 0.75,
+   "y": 0.0,
+   "z": 0.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.8,
+   "asset": "metal_office_desk",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.75,
+    0.76
+   ]
+  },
+  {
+   "id": "H11.p011",
+   "n": 11,
+   "room": "study",
+   "key": "BooksDeco",
+   "x": 0.45,
+   "y": 0.608,
+   "z": 0.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H11.p010",
+   "mat": null,
+   "scale": null,
+   "asset": "decorative_book_set_01",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.2,
+    0.25
+   ]
+  },
+  {
+   "id": "H11.p012",
+   "n": 12,
+   "room": "study",
+   "key": "DeskLamp",
+   "x": 1.05,
+   "y": 0.608,
+   "z": 0.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H11.p010",
+   "mat": null,
+   "scale": null,
+   "asset": "desk_lamp_arm_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "id": "H11.p013",
+   "n": 13,
+   "room": "study",
+   "key": "Chair",
+   "x": 0.75,
+   "y": 0.0,
+   "z": 1.3,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H11.p014",
+   "n": 14,
+   "room": "study",
+   "key": "Shelf",
+   "x": 0.75,
+   "y": 0.0,
+   "z": 3.295,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_bookshelf_worn",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.35,
+    1.9
+   ]
+  },
+  {
+   "id": "H11.p015",
+   "n": 15,
+   "room": "study",
+   "key": "WallClock",
+   "x": -0.41,
+   "y": 1.825,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H11.p016",
+   "n": 16,
+   "room": "sitting",
+   "key": "Hearth",
+   "x": -5.12,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "hearth-decor",
+   "note": "stone fireplace",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H11.p017",
+   "n": 17,
+   "room": "sitting",
+   "key": "MantelClock",
+   "x": -5.12,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 1:00",
+   "on": "H11.p016",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H11.p018",
+   "n": 18,
+   "room": "sitting",
+   "key": "FrameStanding1",
+   "x": -5.12,
+   "y": 1.4,
+   "z": 2.6,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "Fr Ambrose's ordination, 1949",
+   "on": "H11.p016",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ]
+  },
+  {
+   "id": "H11.p019",
+   "n": 19,
+   "room": "sitting",
+   "key": "Sofa3",
+   "x": -4.2,
+   "y": 0.0,
+   "z": 0.515,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_03",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.85,
+    0.8
+   ]
+  },
+  {
+   "id": "H11.p020",
+   "n": 20,
+   "room": "sitting",
+   "key": "Armchair",
+   "x": -4.2,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 200,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ArmChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ]
+  },
+  {
+   "id": "H11.p021",
+   "n": 21,
+   "room": "sitting",
+   "key": "SideTable",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 1.4,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H11.p022",
+   "n": 22,
+   "room": "sitting",
+   "key": "RotaryPhone",
+   "x": -3.0,
+   "y": 0.6,
+   "z": 1.4,
+   "yaw": 0,
+   "role": "phone",
+   "note": "",
+   "on": "H11.p021",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H11.p023",
+   "n": 23,
+   "room": "sitting",
+   "key": "Radio",
+   "x": -2.85,
+   "y": 0.6,
+   "z": 1.4,
+   "yaw": 0,
+   "role": "radio",
+   "note": "",
+   "on": "H11.p021",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H11.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "Hearth",
+   "x": -4.4,
+   "y": 0.0,
+   "z": -3.12,
+   "yaw": 0,
+   "role": "hearth",
+   "note": "range in the big back-wall stack = THE HEARTH",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H11.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "Dresser",
+   "x": -4.2,
+   "y": 0.0,
+   "z": -0.34,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H11.p026",
+   "n": 26,
+   "room": "kitchen",
+   "key": "TableWood2",
+   "x": -4.2,
+   "y": 0.0,
+   "z": -1.8,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_02",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    0.85,
+    0.76
+   ]
+  },
+  {
+   "id": "H11.p027",
+   "n": 27,
+   "room": "kitchen",
+   "key": "ChairDining",
+   "x": -4.2,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H11.p028",
+   "n": 28,
+   "room": "scull",
+   "key": "Copper",
+   "x": 0.9,
+   "y": 0.0,
+   "z": -3.07,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "brick copper boiler in scullery corner",
+   "source": "procedural",
+   "dims": [
+    0.8,
+    0.8,
+    0.9
+   ]
+  },
+  {
+   "id": "H11.p029",
+   "n": 29,
+   "room": "scull",
+   "key": "KitchenSinkUnit",
+   "x": 0.3,
+   "y": 0.0,
+   "z": -0.39,
+   "yaw": 180,
+   "role": "",
+   "note": "stone sink",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H11.p030",
+   "n": 30,
+   "room": "scull",
+   "key": "Toilet",
+   "x": 1.145,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H11.p031",
+   "n": 31,
+   "room": "scull",
+   "key": "FuseBox",
+   "x": 1.425,
+   "y": 1.4,
+   "z": -2.6,
+   "yaw": 270,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H11.p032",
+   "n": 32,
+   "room": "bed1",
+   "key": "BedIron",
+   "x": -4.47,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H11.p033",
+   "n": 33,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -5.27,
+   "y": 0.0,
+   "z": 2.8,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H11.p034",
+   "n": 34,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -4.2,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H11.p035",
+   "n": 35,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": 1.0,
+   "y": 0.0,
+   "z": 1.09,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H11.p036",
+   "n": 36,
+   "room": "bath",
+   "key": "BathtubPhoto",
+   "x": -4.4,
+   "y": 0.0,
+   "z": -3.08,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ba60ba7d0a4a4b6899021741f450395b",
+   "source": "sketchfab",
+   "dims": [
+    1.7,
+    0.78,
+    0.65
+   ]
+  },
+  {
+   "id": "H11.p037",
+   "n": 37,
+   "room": "bath",
+   "key": "Sink",
+   "x": -4.6,
+   "y": 0.0,
+   "z": -0.315,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H11.p038",
+   "n": 38,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -4.6,
+   "y": 1.1,
+   "z": -0.085,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H11.p039",
+   "n": 39,
+   "room": "box",
+   "key": "CabinetPainted",
+   "x": 0.75,
+   "y": 0.0,
+   "z": -3.22,
+   "yaw": 0,
+   "role": "",
+   "note": "cassocks on hooks",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.5,
+    1.9
+   ]
+  },
+  {
+   "id": "H11.p040",
+   "n": 40,
+   "room": "box",
+   "key": "TableSmall",
+   "x": 0.9,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H11.p041",
+   "n": 41,
+   "room": "attic",
+   "key": "ChestWorn",
+   "x": -5.22,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H11.p042",
+   "n": 42,
+   "room": "attic",
+   "key": "Suitcase",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 3.37,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_suitcase",
+   "source": "polyhaven",
+   "dims": [
+    0.65,
+    0.2,
+    0.45
+   ]
+  },
+  {
+   "id": "H11.p043",
+   "n": 43,
+   "room": "oratory",
+   "key": "ShrineNiche",
+   "x": 5.375,
+   "y": 0.9,
+   "z": 4.8,
+   "yaw": 270,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "oratory",
+   "x": 4.0,
+   "y": 1.0,
+   "z": -0.12,
+   "yaw": 0,
+   "note": "altar (between the candlesticks)"
+  },
+  {
+   "kind": "puzzle",
+   "room": "oratory",
+   "x": 2.525,
+   "y": 1.35,
+   "z": 4.6,
+   "yaw": 90,
+   "note": "CodeLockPuzzle reskinned: the hymn board shows 3 hymn numbers; the hymn book index (study) turns each hymn into a page number; first digit of each + the psalm number on the altar card = 4-digit vestment-cupboard code"
+  },
+  {
+   "kind": "container",
+   "room": "oratory",
+   "x": 5.245,
+   "y": 0.0,
+   "z": 0.2,
+   "yaw": 270,
+   "note": "Altar cloth, folded, red embroidered"
+  },
+  {
+   "kind": "hiding",
+   "room": "oratory",
+   "x": 5.2,
+   "y": 0.0,
+   "z": 5.0,
+   "yaw": 0,
+   "note": "behind the curtain of the confessional corner (NE)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "study",
+   "x": 0.65,
+   "y": 0.608,
+   "z": 0.6,
+   "yaw": 0,
+   "note": "HYMN BOOK INDEX page, torn out (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "sitting",
+   "x": -5.12,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "sitting-room mantel"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -4.4,
+   "y": 1.4,
+   "z": -3.12,
+   "yaw": 0,
+   "note": "range shelf"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitchen",
+   "x": -4.3,
+   "y": 0.76,
+   "z": -1.8,
+   "yaw": 0,
+   "note": "housekeeper's list: 'Sunday: 23, 104, 7' (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -4.47,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "under the narrow iron bed -> HidingSpot on H11.p032 (BedIron) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -4.2,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H11.p034 (Wardrobe)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -4.4,
+   "y": 0.0,
+   "z": -3.08,
+   "yaw": 0,
+   "note": "behind the bath curtain -> HidingSpot on H11.p036 (BathtubPhoto)"
+  },
+  {
+   "kind": "hiding",
+   "room": "box",
+   "x": 0.75,
+   "y": 0.0,
+   "z": -3.22,
+   "yaw": 0,
+   "note": "vestment cupboard (walk-in) -> HidingSpot on H11.p039 (CabinetPainted)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "box",
+   "x": 0.8,
+   "y": 0.72,
+   "z": -1.0,
+   "yaw": 0,
+   "note": "parish newsletter (note 3/3)"
+  },
+  {
+   "kind": "shrine",
+   "room": "oratory",
+   "x": 5.375,
+   "y": 0.0,
+   "z": 4.8,
+   "yaw": 270,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "white boarded door under a stone canopy; a small brass crucifix above it",
+  "oratory wing: steep roof, tiny bell-cote (no bell rope), a pointed lancet with red/blue glass",
+  "three chimneys (DESIGN): west gable, big external stack on the back wall, front stack of the study",
+  "a Calvary (stone cross) in the front garden, lichen-covered"
+ ],
+ "plot": [
+  "Front: box-hedged garden with gravel paths in a cross pattern, the Calvary in the middle",
+  "Back: vegetable plot gone wild, a gate onto the graveyard path"
+ ],
+ "puzzle": [
+  "LOCK FIRST: entering the oratory, the hymn board is lit by the lancet and the vestment cupboard's dials glint.",
+  "The board shows 3 hymn numbers (randomised); the hymn-book index (study, note 1/3) gives each hymn's page.",
+  "The housekeeper's list (note 2/3) is a decoy from LAST Sunday (false-clue flavour).",
+  "Code = first digit of each page number + the psalm number on the altar card.",
+  "Wrong: the bell-cote bell rings once (no rope!) - noise. Part: Altar cloth."
+ ],
+ "night_changes": [
+  "the hymn numbers have changed to the players' count",
+  "the oratory statue now faces the door",
+  "candles on the altar are lit"
+ ],
+ "audio": [
+  "bells: one small bell",
+  "books",
+  "ghostly: Latin murmuring from the box room"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Clergy_house"
+ ],
+ "image_prompt": "grey stone two-storey presbytery with three chimneys, a white boarded door under a stone canopy, a small attached private chapel wing with a steep roof, a tiny bell-cote and a pointed stained-glass window, a stone Calvary cross in a box-hedged front garden, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

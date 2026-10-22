@@ -1,0 +1,317 @@
+{
+  "comment": "CC BY 4.0 models from Sketchfab. tools/fetch-sketchfab.ps1 downloads the GLB with the user's Sketchfab API token (%USERPROFILE%/.hollowmere/sketchfab_token.txt or SKETCHFAB_TOKEN, never committed) into Assets/ThirdParty/Sketchfab/<key>/ and writes source.json for CREDITS.md. If a download is refused, the user downloads the .glb by hand into AssetDownloads/Sketchfab/<key>.glb (or <uid>.glb) and the script copies it.",
+  "models": [
+    {
+      "key": "RotaryPhone",
+      "uid": "812e8f59f9e749fab483eabf4800dec2",
+      "author": "sara El-sisi",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/812e8f59f9e749fab483eabf4800dec2",
+      "target_size": [
+        0.22,
+        0.25,
+        0.14
+      ],
+      "note": "'Rotary Phone', 22.6k faces. Every house has one (living room)."
+    },
+    {
+      "key": "Typewriter",
+      "uid": "1d6009449fe84fd79454c4081eb743bf",
+      "author": "Kuba 'Volant' W\u00f3jcik",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/1d6009449fe84fd79454c4081eb743bf",
+      "target_size": [
+        0.4,
+        0.35,
+        0.2
+      ],
+      "note": "'1930s style typewriter - w/o branding', 22k faces"
+    },
+    {
+      "key": "SewingMachine",
+      "uid": "db6aead9ecf947bcbde1f78d3e095fbe",
+      "author": "Giravolt / MEMGA",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/db6aead9ecf947bcbde1f78d3e095fbe",
+      "target_size": [
+        0.45,
+        0.25,
+        0.32
+      ],
+      "note": "Singer c.1905 scan, 249k faces - decimate to ~25k on import"
+    },
+    {
+      "key": "Bathtub",
+      "uid": "d06c028a89a54c469e4af9cac50606fa",
+      "author": "Lady Lion Studios",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/d06c028a89a54c469e4af9cac50606fa",
+      "target_size": [
+        1.65,
+        0.75,
+        0.62
+      ],
+      "note": "'Vintage Metal Bathtub FREE Low Poly', 4.1k faces"
+    },
+    {
+      "key": "BathtubPhoto",
+      "uid": "ba60ba7d0a4a4b6899021741f450395b",
+      "author": "Igrium",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/ba60ba7d0a4a4b6899021741f450395b",
+      "target_size": [
+        1.7,
+        0.78,
+        0.65
+      ],
+      "note": "'Photorealistic Bathtub', 19.7k faces - hero bath for Doctor/Priest/Twins"
+    },
+    {
+      "key": "Toilet",
+      "uid": "6ac515a1c4154db18b5b4bd0b46d6405",
+      "author": "Allan-Jay Branscombe",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/6ac515a1c4154db18b5b4bd0b46d6405",
+      "target_size": [
+        0.4,
+        0.65,
+        0.8
+      ],
+      "note": "'Game Ready - Dirty Old Toilet', 7.6k faces"
+    },
+    {
+      "key": "Sink",
+      "uid": "a278d63585494921906ab3500c421ff7",
+      "author": "lagesnpiet",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/a278d63585494921906ab3500c421ff7",
+      "target_size": [
+        0.55,
+        0.45,
+        0.85
+      ],
+      "note": "'Sink', 4.1k faces - check it reads as a pedestal basin; else build"
+    },
+    {
+      "key": "Fridge",
+      "uid": "68d173f205344455933f861042b99fe3",
+      "author": "dylanheyes",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/68d173f205344455933f861042b99fe3",
+      "target_size": [
+        0.6,
+        0.62,
+        1.45
+      ],
+      "note": "'Old Fridge', 32.6k faces"
+    },
+    {
+      "key": "FridgeSmall",
+      "uid": "7d12f05773a6403c9ca259ed43604c69",
+      "author": "Chernorot Bogdan",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/7d12f05773a6403c9ca259ed43604c69",
+      "target_size": [
+        0.55,
+        0.58,
+        1.2
+      ],
+      "note": "'USSR Old refrigerator', 9.4k faces"
+    },
+    {
+      "key": "DollPorcelain",
+      "uid": "9ce09a8a6b1b45ce90c4479b54b4e003",
+      "author": "alicean",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/9ce09a8a6b1b45ce90c4479b54b4e003",
+      "target_size": [
+        0.2,
+        0.12,
+        0.45
+      ],
+      "note": "'A porcelain doll', 23k faces"
+    },
+    {
+      "key": "DollAntique",
+      "uid": "a0a494a8c3db4cc4ad10cb433125fe78",
+      "author": "nektar.green",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/a0a494a8c3db4cc4ad10cb433125fe78",
+      "target_size": [
+        0.18,
+        0.12,
+        0.4
+      ],
+      "note": "'3D Antique Doll', 29.9k faces"
+    },
+    {
+      "key": "DollPolly",
+      "uid": "9ef34eb03f0a42978b3a9d20f0f8f389",
+      "author": "archmage40",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/9ef34eb03f0a42978b3a9d20f0f8f389",
+      "target_size": [
+        0.18,
+        0.12,
+        0.35
+      ],
+      "note": "'Porcelain Polly', 20k faces"
+    },
+    {
+      "key": "Enlarger",
+      "uid": "3174dc4d4f9d4b3e969ce9135ec6d423",
+      "author": "MarcoFromIADE",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/3174dc4d4f9d4b3e969ce9135ec6d423",
+      "target_size": [
+        0.45,
+        0.55,
+        1.1
+      ],
+      "note": "'Axomat 5a Photo Enlarger', 77k faces"
+    },
+    {
+      "key": "LoomDobby",
+      "uid": "07ba2b15ffb7425cab23f700828fd7f3",
+      "author": "Spiacente",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/07ba2b15ffb7425cab23f700828fd7f3",
+      "target_size": [
+        1.6,
+        1.5,
+        1.6
+      ],
+      "note": "'Dobby Loom', 128k faces - decimate to ~30k; fallback: build LoomFrame"
+    },
+    {
+      "key": "Scarecrow",
+      "uid": "38b41b2deeb24b1d877c2551526d5654",
+      "author": "Mehdi Shahsavan",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/38b41b2deeb24b1d877c2551526d5654",
+      "target_size": [
+        1.2,
+        0.4,
+        2.0
+      ],
+      "note": "'Scarecrow', 32.6k faces (alt: dd66376c24f246f28b10a67f047b8d6a by Baardus, 880 faces)"
+    },
+    {
+      "key": "HayBales",
+      "uid": "6b775049e57e4d9da87977905493ebfb",
+      "author": "FrodoUndead",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/6b775049e57e4d9da87977905493ebfb",
+      "target_size": [
+        1.2,
+        0.5,
+        0.45
+      ],
+      "note": "'Hay Bales', 3.3k faces"
+    },
+    {
+      "key": "Wheelbarrow",
+      "uid": "48314bafaffc4593ba1d7a5af31810c6",
+      "author": "Peter Nox",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/48314bafaffc4593ba1d7a5af31810c6",
+      "target_size": [
+        1.4,
+        0.6,
+        0.6
+      ],
+      "note": "'Wooden Wheelbarrow', 1.5k faces"
+    },
+    {
+      "key": "ChurchPew",
+      "uid": "9c2934828dfa4dc2b64102defa3969e7",
+      "author": "Sam Constance",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/9c2934828dfa4dc2b64102defa3969e7",
+      "target_size": [
+        3.0,
+        0.6,
+        0.95
+      ],
+      "note": "'old church pew', 948 faces (hero alt: 0fdeca01a1214150aeae21f46cfe98d5 awramos 40.8k)"
+    },
+    {
+      "key": "RockingHorse",
+      "uid": "5168ce9d45a3401ea6fe4d92f17bb332",
+      "author": "Alex Petuhov",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/5168ce9d45a3401ea6fe4d92f17bb332",
+      "target_size": [
+        0.9,
+        0.35,
+        0.7
+      ],
+      "note": "'Rocking Toy', 16.8k faces"
+    },
+    {
+      "key": "BabyCrib",
+      "uid": "b945651a5fa841b7aef4ea4da81fcc39",
+      "author": "Rukas",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/b945651a5fa841b7aef4ea4da81fcc39",
+      "target_size": [
+        1.2,
+        0.65,
+        1.0
+      ],
+      "note": "'Old Baby Crib', 4.2k faces"
+    },
+    {
+      "key": "Globe",
+      "uid": "8bb166a68f70426390eb113ff0fd72a0",
+      "author": "Allan-Jay Branscombe",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/8bb166a68f70426390eb113ff0fd72a0",
+      "target_size": [
+        0.4,
+        0.4,
+        0.55
+      ],
+      "note": "'Game Ready - Old World Globe', 26.8k faces"
+    },
+    {
+      "key": "Cleaver",
+      "uid": "6c3fc11e570b4d3ca4d8a862f3b6a916",
+      "author": "Barend19",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/6c3fc11e570b4d3ca4d8a862f3b6a916",
+      "target_size": [
+        0.32,
+        0.03,
+        0.12
+      ],
+      "note": "'Meat clever', 3.2k faces"
+    },
+    {
+      "key": "Bell",
+      "uid": "b2e02b7b964d4ee0b0e7292ed102270d",
+      "author": "LukeModels75",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/b2e02b7b964d4ee0b0e7292ed102270d",
+      "target_size": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "note": "'Classic Bell 3D Model', 32.6k faces - bell tower + school cupola (scaled)"
+    },
+    {
+      "key": "AngelStatues",
+      "uid": "8ac9f760bc7e4931a491d56a57986199",
+      "author": "That's Cool Jack",
+      "licence": "CC BY 4.0",
+      "url": "https://sketchfab.com/3d-models/8ac9f760bc7e4931a491d56a57986199",
+      "target_size": [
+        0.8,
+        0.6,
+        1.6
+      ],
+      "note": "'Scanned Angel Statue Collection', 7.6k faces - graveyard"
+    }
+  ]
+}

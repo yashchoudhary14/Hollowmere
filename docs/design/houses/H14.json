@@ -1,0 +1,1814 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H14",
+ "index": 14,
+ "name": "Dollmaker's House",
+ "family": "Quill",
+ "part": "Porcelain hand",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Blue",
+ "chimneys": 1,
+ "clock_hour": 9,
+ "loud_puzzle": false,
+ "archetype": "Crooked 16th-century timber-framed house, the oldest in the village, with a jettied upper floor",
+ "silhouette": "Black oak frame with ochre infill panels, the upper floor OVERHANGS the street by 0.6 m, the whole house leans ~2 deg to the east, steep mossy clay-tile roof with a single massive CENTRAL brick chimney, a bow shop window full of dolls staring out, a small blue door beside the chimney.",
+ "world": {
+  "position": [
+   -29.0,
+   0.0,
+   -4.0
+  ],
+  "yaw": 90,
+  "street": "The Green (west side)",
+  "plot_poly": [
+   [
+    -39.0,
+    1.4999999999999991
+   ],
+   [
+    -39.0,
+    -9.5
+   ],
+   [
+    -24.1,
+    -9.5
+   ],
+   [
+    -24.1,
+    1.5
+   ]
+  ],
+  "note": "oldest house; jetty overhangs the green path; leans 2 deg east"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.5,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 2.75,
+   "h": 2.4,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 5.4,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "ground",
+   "rect": [
+    -4.5,
+    -4.0,
+    4.5,
+    4.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Oak frame (TimberBeam, black) with RenderOchre infill; BrickMixed plinth 0.4",
+   "t": 0.25,
+   "roof": "-",
+   "note": ""
+  },
+  {
+   "id": "upper",
+   "rect": [
+    -4.5,
+    -4.0,
+    4.5,
+    4.6
+   ],
+   "levels": [
+    "F",
+    "A"
+   ],
+   "walls": "Jettied: oak frame + RenderOchre infill; carved bressumer along the jetty; whole frame leans 2 deg east",
+   "t": 0.25,
+   "roof": "Gable roof 55 deg, ridge along x at 9.0 m, RoofClay3 (mossy, sagging 0.15 m mid-ridge); central brick stack 1.6 x 2.0",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "lobby",
+   "name": "Lobby entry",
+   "level": "G",
+   "rect": [
+    -1.0,
+    1.5,
+    1.0,
+    4.0
+   ],
+   "inner": [
+    -0.94,
+    1.75,
+    0.94,
+    3.75
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "workshop",
+   "name": "Doll workshop & shop (PUZZLE)",
+   "level": "G",
+   "rect": [
+    -4.5,
+    -1.0,
+    -1.0,
+    4.0
+   ],
+   "inner": [
+    -4.25,
+    -0.94,
+    -1.25,
+    3.75
+   ],
+   "kind": "workshop",
+   "floor": "FloorOldWood2",
+   "walls": "PlasterWorn between black studs",
+   "ceiling": "CeilingInterior",
+   "light": "2 pendants + DeskLamp",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parlour",
+   "name": "Hall-parlour",
+   "level": "G",
+   "rect": [
+    1.0,
+    -1.0,
+    4.5,
+    4.0
+   ],
+   "inner": [
+    1.25,
+    -0.94,
+    4.25,
+    3.75
+   ],
+   "kind": "living",
+   "floor": "FloorDarkPlanks",
+   "walls": "PlasterWorn between black studs",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "level": "G",
+   "rect": [
+    -4.5,
+    -4.0,
+    0.5,
+    -1.0
+   ],
+   "inner": [
+    -4.25,
+    -3.75,
+    0.44,
+    -1.25
+   ],
+   "kind": "kitchen",
+   "floor": "FloorBrick",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "stairhall",
+   "name": "Stair hall",
+   "level": "G",
+   "rect": [
+    0.5,
+    -4.0,
+    4.5,
+    -1.0
+   ],
+   "inner": [
+    0.56,
+    -3.75,
+    4.25,
+    -1.25
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Miss Quill's chamber",
+   "level": "F",
+   "rect": [
+    -4.5,
+    -1.0,
+    -1.0,
+    4.6
+   ],
+   "inner": [
+    -4.25,
+    -0.94,
+    -1.25,
+    4.35
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1 (peeling)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "closet",
+   "name": "Closet over the lobby",
+   "level": "F",
+   "rect": [
+    -1.0,
+    1.5,
+    1.0,
+    4.6
+   ],
+   "inner": [
+    -0.94,
+    1.75,
+    0.94,
+    4.35
+   ],
+   "kind": "closet",
+   "floor": "FloorOldWood1",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Guest chamber",
+   "level": "F",
+   "rect": [
+    1.0,
+    -1.0,
+    4.5,
+    4.6
+   ],
+   "inner": [
+    1.25,
+    -0.94,
+    4.25,
+    4.35
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -4.5,
+    -4.0,
+    0.5,
+    -1.0
+   ],
+   "inner": [
+    -4.25,
+    -3.75,
+    0.44,
+    -1.25
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    0.5,
+    -4.0,
+    4.5,
+    -1.0
+   ],
+   "inner": [
+    0.56,
+    -3.75,
+    4.25,
+    -1.25
+   ],
+   "kind": "landing",
+   "floor": "FloorOldWood2",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "attic",
+   "name": "Attic (the doll store)",
+   "level": "A",
+   "rect": [
+    -4.5,
+    -4.0,
+    4.5,
+    4.6
+   ],
+   "inner": [
+    -4.25,
+    -3.75,
+    4.25,
+    4.35
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "none",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "lobby",
+   "room_b": "ext",
+   "side": "N",
+   "at": 0.0,
+   "width": 0.85,
+   "height": 1.95,
+   "kind": "low blue plank door with a doll-hand knocker",
+   "mat": "Door",
+   "colour": "Blue",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "ext",
+   "side": "S",
+   "at": -2.0,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_ws",
+   "level": "G",
+   "room_a": "lobby",
+   "room_b": "workshop",
+   "side": "W",
+   "at": 2.75,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_par",
+   "level": "G",
+   "room_a": "lobby",
+   "room_b": "parlour",
+   "side": "E",
+   "at": 2.75,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "workshop",
+   "room_b": "kitchen",
+   "side": "S",
+   "at": -2.5,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_sh",
+   "level": "G",
+   "room_a": "parlour",
+   "room_b": "stairhall",
+   "side": "S",
+   "at": 3.5,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_ksh",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "stairhall",
+   "side": "E",
+   "at": -2.5,
+   "width": 0.8,
+   "height": 1.9,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "N",
+   "at": 3.5,
+   "width": 0.8,
+   "height": 1.85,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_cl",
+   "level": "F",
+   "room_a": "bed2",
+   "room_b": "closet",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.75,
+   "height": 1.85,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "closet",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.75,
+   "height": 1.85,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.75,
+   "height": 1.85,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_shop",
+   "room": "workshop",
+   "side": "N",
+   "at": -2.75,
+   "width": 2.2,
+   "height": 1.4,
+   "sill": 0.7,
+   "style": "bow shop window, small leaded panes, DOLLS STANDING IN IT facing the street",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_par",
+   "room": "parlour",
+   "side": "N",
+   "at": 2.75,
+   "width": 1.2,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "leaded casement",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "S",
+   "at": -3.6,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 0.9,
+   "style": "casement, crooked frame",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_sh",
+   "room": "stairhall",
+   "side": "E",
+   "at": -2.5,
+   "width": 0.7,
+   "height": 0.9,
+   "sill": 0.9,
+   "style": "casement, glass cracked",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -2.75,
+   "width": 1.4,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "oriel window on the jetty",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "N",
+   "at": 2.75,
+   "width": 1.2,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "casement on the jetty",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_cl",
+   "room": "closet",
+   "side": "N",
+   "at": 0.0,
+   "width": 0.5,
+   "height": 0.6,
+   "sill": 1.1,
+   "style": "tiny window",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "W",
+   "at": -2.5,
+   "width": 0.6,
+   "height": 0.7,
+   "sill": 1.2,
+   "style": "frosted",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_att",
+   "room": "attic",
+   "side": "W",
+   "at": 0.0,
+   "width": 0.6,
+   "height": 0.6,
+   "sill": 1.0,
+   "style": "gable light",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "stairhall",
+   "rect": [
+    1.4,
+    -3.7,
+    4.2,
+    -2.8
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "E",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "steep winder stair, 13 risers, 3 winders at the top, every tread creaks"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    1.4,
+    -3.7,
+    4.2,
+    -2.8
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "E",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "landing",
+   "rect": [
+    3.5,
+    -2.6,
+    4.2,
+    -1.9
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "N",
+   "kind": "loft ladder",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": 0.0,
+   "z": 0.25,
+   "w": 2.0,
+   "d": 2.5,
+   "above_ridge": 1.2,
+   "mat": "BrickMixed",
+   "serves": "central stack: parlour fire = THE HEARTH, workshop fire, kitchen range",
+   "pots": 3
+  }
+ ],
+ "props": [
+  {
+   "id": "H14.p001",
+   "n": 1,
+   "room": "parlour",
+   "key": "Hearth",
+   "x": 1.63,
+   "y": 0.0,
+   "z": 0.25,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "wide open hearth in the central stack, dogs and a spit",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H14.p002",
+   "n": 2,
+   "room": "parlour",
+   "key": "MantelClock",
+   "x": 1.63,
+   "y": 1.4,
+   "z": 0.25,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 9:00",
+   "on": "H14.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H14.p003",
+   "n": 3,
+   "room": "parlour",
+   "key": "FrameStanding2",
+   "x": 1.63,
+   "y": 1.4,
+   "z": -0.35,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "Miss Quill as a girl with a doll identical to her",
+   "on": "H14.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.22,
+    0.08,
+    0.18
+   ]
+  },
+  {
+   "id": "H14.p004",
+   "n": 4,
+   "room": "parlour",
+   "key": "RockingChair",
+   "x": 3.2,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Rockingchair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.95,
+    1.05
+   ]
+  },
+  {
+   "id": "H14.p005",
+   "n": 5,
+   "room": "parlour",
+   "key": "SideTable",
+   "x": 3.97,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H14.p006",
+   "n": 6,
+   "room": "parlour",
+   "key": "RotaryPhone",
+   "x": 3.97,
+   "y": 0.6,
+   "z": 1.0,
+   "yaw": 270,
+   "role": "phone",
+   "note": "",
+   "on": "H14.p005",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H14.p007",
+   "n": 7,
+   "room": "parlour",
+   "key": "Radio",
+   "x": 3.97,
+   "y": 0.6,
+   "z": 1.15,
+   "yaw": 270,
+   "role": "radio",
+   "note": "radio that plays a music box tune at night",
+   "on": "H14.p005",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H14.p008",
+   "n": 8,
+   "room": "parlour",
+   "key": "Rug",
+   "x": 2.8,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H14.p009",
+   "n": 9,
+   "room": "workshop",
+   "key": "Dollhouse",
+   "x": -2.75,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 0,
+   "role": "puzzle",
+   "note": "THE DOLLHOUSE: an exact 1:12 replica of THIS house (generated from H14's own room data), front opens",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "1:12 replica of H14 generated from houses/H14 json (shell + rooms + 12 tiny doll slots)",
+   "source": "procedural",
+   "dims": [
+    0.75,
+    0.55,
+    0.8
+   ]
+  },
+  {
+   "id": "H14.p010",
+   "n": 10,
+   "room": "workshop",
+   "key": "TableWood3",
+   "x": -3.86,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 90,
+   "role": "",
+   "note": "dollmaker's bench",
+   "on": null,
+   "mat": null,
+   "scale": 0.8,
+   "asset": "WoodenTable_03",
+   "source": "polyhaven",
+   "dims": [
+    2.0,
+    0.9,
+    0.78
+   ]
+  },
+  {
+   "id": "H14.p011",
+   "n": 11,
+   "room": "workshop",
+   "key": "DollParts",
+   "x": -3.86,
+   "y": 0.624,
+   "z": 1.8,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H14.p010",
+   "mat": null,
+   "scale": null,
+   "asset": "workbench bins of porcelain heads, hands and glass eyes (data: 40 small meshes)",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.4,
+    0.25
+   ]
+  },
+  {
+   "id": "H14.p012",
+   "n": 12,
+   "room": "workshop",
+   "key": "DeskLamp",
+   "x": -3.86,
+   "y": 0.624,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H14.p010",
+   "mat": null,
+   "scale": null,
+   "asset": "desk_lamp_arm_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "id": "H14.p013",
+   "n": 13,
+   "room": "workshop",
+   "key": "DollPorcelain",
+   "x": -3.86,
+   "y": 0.624,
+   "z": 1.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H14.p010",
+   "mat": null,
+   "scale": null,
+   "asset": "9ce09a8a6b1b45ce90c4479b54b4e003",
+   "source": "sketchfab",
+   "dims": [
+    0.2,
+    0.12,
+    0.45
+   ]
+  },
+  {
+   "id": "H14.p014",
+   "n": 14,
+   "room": "workshop",
+   "key": "DollCabinet",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -0.71,
+   "yaw": 0,
+   "role": "",
+   "note": "glass cabinet of dolls = PART CONTAINER (unlocks)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "glass-fronted display cabinet 1.2x0.4x1.9 with 18 dolls on 4 shelves",
+   "source": "procedural",
+   "dims": [
+    1.2,
+    0.4,
+    1.9
+   ]
+  },
+  {
+   "id": "H14.p015",
+   "n": 15,
+   "room": "workshop",
+   "key": "SewingMachine",
+   "x": -4.095,
+   "y": 0.0,
+   "z": 0.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "db6aead9ecf947bcbde1f78d3e095fbe",
+   "source": "sketchfab",
+   "dims": [
+    0.45,
+    0.25,
+    0.32
+   ]
+  },
+  {
+   "id": "H14.p016",
+   "n": 16,
+   "room": "workshop",
+   "key": "StoolWood1",
+   "x": -2.75,
+   "y": 0.0,
+   "z": 2.6,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_stool_01",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ]
+  },
+  {
+   "id": "H14.p017",
+   "n": 17,
+   "room": "workshop",
+   "key": "FrameHanging2",
+   "x": -1.265,
+   "y": 1.4,
+   "z": 3.0,
+   "yaw": 270,
+   "role": "",
+   "note": "framed doll patterns",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.03,
+    0.4
+   ]
+  },
+  {
+   "id": "H14.p018",
+   "n": 18,
+   "room": "workshop",
+   "key": "DollPolly",
+   "x": -3.9,
+   "y": 0.75,
+   "z": 3.55,
+   "yaw": 0,
+   "role": "allow-overlap",
+   "note": "doll in the shop window",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "9ef34eb03f0a42978b3a9d20f0f8f389",
+   "source": "sketchfab",
+   "dims": [
+    0.18,
+    0.12,
+    0.35
+   ]
+  },
+  {
+   "id": "H14.p019",
+   "n": 19,
+   "room": "workshop",
+   "key": "DollAntique",
+   "x": -1.6,
+   "y": 0.75,
+   "z": 3.55,
+   "yaw": 0,
+   "role": "allow-overlap",
+   "note": "doll in the shop window",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a0a494a8c3db4cc4ad10cb433125fe78",
+   "source": "sketchfab",
+   "dims": [
+    0.18,
+    0.12,
+    0.4
+   ]
+  },
+  {
+   "id": "H14.p020",
+   "n": 20,
+   "room": "kitchen",
+   "key": "Range",
+   "x": -0.25,
+   "y": 0.0,
+   "z": -1.555,
+   "yaw": 180,
+   "role": "",
+   "note": "range on the back face of the central stack",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cast-iron range 1.0 wide set into the hearth opening, MetalPlate black",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.55,
+    0.85
+   ]
+  },
+  {
+   "id": "H14.p021",
+   "n": 21,
+   "room": "kitchen",
+   "key": "Dresser",
+   "x": -3.97,
+   "y": 0.0,
+   "z": -2.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H14.p022",
+   "n": 22,
+   "room": "kitchen",
+   "key": "TableRound2",
+   "x": -2.3,
+   "y": 0.0,
+   "z": -2.5,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "round_wooden_table_02",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.9,
+    0.75
+   ]
+  },
+  {
+   "id": "H14.p023",
+   "n": 23,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -0.6,
+   "y": 0.0,
+   "z": -3.42,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H14.p024",
+   "n": 24,
+   "room": "stairhall",
+   "key": "FuseBox",
+   "x": 1.4,
+   "y": 1.4,
+   "z": -1.325,
+   "yaw": 180,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H14.p025",
+   "n": 25,
+   "room": "stairhall",
+   "key": "Mirror",
+   "x": 2.6,
+   "y": 1.15,
+   "z": -1.275,
+   "yaw": 180,
+   "role": "",
+   "note": "old foxed mirror",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H14.p026",
+   "n": 26,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -3.17,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H14.p027",
+   "n": 27,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -4.02,
+   "y": 0.0,
+   "z": 0.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H14.p028",
+   "n": 28,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -4.02,
+   "y": 0.0,
+   "z": 2.7,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H14.p029",
+   "n": 29,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -0.61,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H14.p030",
+   "n": 30,
+   "room": "bed1",
+   "key": "DollAntique",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 4.0,
+   "yaw": 180,
+   "role": "allow-overlap",
+   "note": "a doll on the floor by the window, facing the bed",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a0a494a8c3db4cc4ad10cb433125fe78",
+   "source": "sketchfab",
+   "dims": [
+    0.18,
+    0.12,
+    0.4
+   ]
+  },
+  {
+   "id": "H14.p031",
+   "n": 31,
+   "room": "closet",
+   "key": "TableSmall",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 2.1,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.7,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H14.p032",
+   "n": 32,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": 3.22,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H14.p033",
+   "n": 33,
+   "room": "bed2",
+   "key": "NightstandPainted",
+   "x": 4.03,
+   "y": 0.0,
+   "z": 2.375,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H14.p034",
+   "n": 34,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": -3.0,
+   "y": 0.0,
+   "z": -3.401,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.85,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H14.p035",
+   "n": 35,
+   "room": "bath",
+   "key": "Sink",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -1.505,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H14.p036",
+   "n": 36,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -3.6,
+   "y": 1.1,
+   "z": -1.275,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H14.p037",
+   "n": 37,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -1.0,
+   "y": 0.0,
+   "z": -3.395,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H14.p038",
+   "n": 38,
+   "room": "attic",
+   "key": "DisplayShelves",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 4.12,
+   "yaw": 180,
+   "role": "",
+   "note": "shelves of unfinished dolls",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_display_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H14.p039",
+   "n": 39,
+   "room": "attic",
+   "key": "DisplayShelves",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 4.12,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_display_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H14.p040",
+   "n": 40,
+   "room": "attic",
+   "key": "CellarCrates",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H14.p041",
+   "n": 41,
+   "room": "attic",
+   "key": "ChestWorn",
+   "x": -3.97,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H14.p042",
+   "n": 42,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 1.0,
+   "y": 0.9,
+   "z": -3.625,
+   "yaw": 0,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "parlour",
+   "x": 1.63,
+   "y": 1.4,
+   "z": 0.25,
+   "yaw": 90,
+   "note": "parlour mantel beam"
+  },
+  {
+   "kind": "puzzle",
+   "room": "workshop",
+   "x": -2.75,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 0,
+   "note": "SequencePuzzle reskinned: 6 tiny dolls must stand in the dollhouse rooms where the people in the photograph on the workbench are standing in the REAL house tonight (moving figures/mannequins placed per match); place them room by room; wrong placement makes every doll in the shop window turn its head"
+  },
+  {
+   "kind": "note-spot",
+   "room": "workshop",
+   "x": -3.86,
+   "y": 0.624,
+   "z": 1.6,
+   "yaw": 90,
+   "note": "the photograph of 'who stands where' (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "workshop",
+   "x": -3.86,
+   "y": 0.624,
+   "z": 2.1,
+   "yaw": 90,
+   "note": "dollmaker's bench"
+  },
+  {
+   "kind": "container",
+   "room": "workshop",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -0.71,
+   "yaw": 0,
+   "note": "Porcelain hand, in a velvet glove"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -2.3,
+   "y": 0.75,
+   "z": -2.5,
+   "yaw": 0,
+   "note": "kitchen table"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -3.17,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 90,
+   "note": "under the four-poster-ish bed -> HidingSpot on H14.p026 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -0.61,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H14.p029 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "closet",
+   "x": -0.1,
+   "y": 0.504,
+   "z": 2.1,
+   "yaw": 0,
+   "note": "Miss Quill's letter: 'they are all of us' (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed2",
+   "x": 3.22,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "note": "under the guest bed -> HidingSpot on H14.p032 (BedIron) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "attic",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "note": "among the doll crates -> HidingSpot on H14.p040 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "attic",
+   "x": -3.97,
+   "y": 0.55,
+   "z": -1.9,
+   "yaw": 90,
+   "note": "list of names with a doll for each villager (note 3/3)"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 1.0,
+   "y": 0.0,
+   "z": -3.625,
+   "yaw": 0,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "JETTIED upper floor overhanging 0.6 m on carved brackets; carved bressumer beam",
+  "black oak frame with ochre infill; whole house leans ~2 deg east (apply to the shell root, NOT gameplay colliders)",
+  "BOW SHOP WINDOW full of dolls facing the street (night: some face inward)",
+  "massive central brick chimney with 3 pots",
+  "a doll-hand knocker on the small blue door"
+ ],
+ "plot": [
+  "Front: pavement under the jetty",
+  "Back: tiny walled garden, a well with a wooden lid, a doll-sized grave with a cross"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the dollhouse on the workshop floor - a perfect miniature of THIS house, front hinged open.",
+  "A photograph on the bench (note 1/3) shows people standing in rooms - per match, mannequin figures stand in the REAL house's rooms in those spots tonight (MatchPlan).",
+  "Place 6 tiny dolls in the dollhouse rooms matching the real figures (SequencePuzzle: rooms = symbols).",
+  "Wrong: every doll in the shop window turns its head toward the player (sanity hit, no noise).",
+  "Part: Porcelain hand (doll cabinet unlocks)."
+ ],
+ "night_changes": [
+  "the dollhouse contains a tiny doll for each PLAYER, in the rooms where they actually are",
+  "the doll on bed1's floor is now in the bed",
+  "the shop-window dolls face inward"
+ ],
+ "audio": [
+  "musicbox",
+  "ghostly: tiny footsteps on the attic boards",
+  "house creaks (HouseCreak) louder than other houses"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Jettying",
+  "https://en.wikipedia.org/wiki/Timber_framing",
+  "https://en.wikipedia.org/wiki/Dollhouse"
+ ],
+ "image_prompt": "crooked sixteenth-century timber-framed house with black oak beams and ochre plaster infill, upper floor overhanging the street, steep mossy clay tile roof with a massive central brick chimney, a bow shop window full of antique porcelain dolls staring out, a small blue door, leaning slightly, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

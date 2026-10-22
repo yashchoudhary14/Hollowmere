@@ -1,0 +1,1983 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H12",
+ "index": 12,
+ "name": "Postmaster's House",
+ "family": "Dunn",
+ "part": "Sealed letter",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Green",
+ "chimneys": 2,
+ "clock_hour": 3,
+ "loud_puzzle": false,
+ "archetype": "1920s Arts-and-Crafts brick house with a twin-gabled front and a flat-roofed sorting room",
+ "silhouette": "Two identical front gables side by side (an 'M' roof), red brick ground floor with clay TILE-HUNG upper floor, a green door in a little gabled porch, one chimney per gable end, and a flat-roofed sorting room on the east with a red pillar box and an enamel 'POST OFFICE' sign.",
+ "world": {
+  "position": [
+   10.8,
+   0.1,
+   78.0
+  ],
+  "yaw": 270,
+  "street": "Main Street (east side, by the square)",
+  "plot_poly": [
+   [
+    20.800000000000004,
+    72.5
+   ],
+   [
+    20.799999999999997,
+    87.5
+   ],
+   [
+    5.099999999999999,
+    87.5
+   ],
+   [
+    5.100000000000001,
+    72.5
+   ]
+  ],
+  "note": "IS the village post office: public counter in the sorting wing, which points north onto the square"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.8,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 3.05,
+   "h": 2.6,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 5.9,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -5.0,
+    -4.0,
+    5.0,
+    4.0
+   ],
+   "levels": [
+    "G",
+    "F",
+    "A"
+   ],
+   "walls": "Ground floor BrickRed; first floor tile-hung (RoofClay2 used as vertical hanging tiles, with a band of fish-scale tiles)",
+   "t": 0.35,
+   "roof": "M-roof: two parallel gables with ridges along z at x=-2.5 and x=+2.5, 50 deg, RoofClay2, central valley gutter",
+   "note": ""
+  },
+  {
+   "id": "sorting",
+   "rect": [
+    5.0,
+    -4.0,
+    9.0,
+    1.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "BrickRed, enamel sign",
+   "t": 0.25,
+   "roof": "Flat felt roof with a timber fascia",
+   "note": ""
+  },
+  {
+   "id": "porch",
+   "rect": [
+    -1.2,
+    4.0,
+    0.8,
+    5.2
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Timber porch on a brick plinth",
+   "t": 0.1,
+   "roof": "Small gabled porch roof, RoofClay2",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "porch",
+   "name": "Porch",
+   "level": "G",
+   "rect": [
+    -1.2,
+    4.0,
+    0.8,
+    5.2
+   ],
+   "inner": [
+    -1.1,
+    4.06,
+    0.7,
+    5.1
+   ],
+   "kind": "porch",
+   "floor": "FloorWornTile",
+   "walls": "open",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "front",
+   "name": "Front room",
+   "level": "G",
+   "rect": [
+    -5.0,
+    0.0,
+    -1.0,
+    4.0
+   ],
+   "inner": [
+    -4.65,
+    0.06,
+    -1.06,
+    3.65
+   ],
+   "kind": "living",
+   "floor": "Carpet70s",
+   "walls": "WallpaperJacquard (tinted green)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Hall",
+   "level": "G",
+   "rect": [
+    -1.0,
+    -4.0,
+    1.0,
+    4.0
+   ],
+   "inner": [
+    -0.94,
+    -3.65,
+    0.94,
+    3.65
+   ],
+   "kind": "hall",
+   "floor": "FloorWornTile",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "dining",
+   "name": "Dining room",
+   "level": "G",
+   "rect": [
+    1.0,
+    0.0,
+    5.0,
+    4.0
+   ],
+   "inner": [
+    1.06,
+    0.06,
+    4.65,
+    3.65
+   ],
+   "kind": "dining",
+   "floor": "FloorParquet",
+   "walls": "Wallpaper2C",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "level": "G",
+   "rect": [
+    -5.0,
+    -4.0,
+    -1.0,
+    0.0
+   ],
+   "inner": [
+    -4.65,
+    -3.65,
+    -1.06,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "TileWallWhite to 1.2 m",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "office",
+   "name": "Postmaster's office",
+   "level": "G",
+   "rect": [
+    1.0,
+    -4.0,
+    5.0,
+    0.0
+   ],
+   "inner": [
+    1.06,
+    -3.65,
+    4.94,
+    -0.06
+   ],
+   "kind": "study",
+   "floor": "FloorOldWood1",
+   "walls": "PanelDark",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "sorting",
+   "name": "Sorting room (PUZZLE)",
+   "level": "G",
+   "rect": [
+    5.0,
+    -4.0,
+    9.0,
+    1.0
+   ],
+   "inner": [
+    5.06,
+    -3.75,
+    8.75,
+    0.75
+   ],
+   "kind": "sorting",
+   "floor": "FloorConcrete",
+   "walls": "painted GPO cream/green",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bedW",
+   "name": "Dunns' bedroom",
+   "level": "F",
+   "rect": [
+    -5.0,
+    0.0,
+    -1.0,
+    4.0
+   ],
+   "inner": [
+    -4.65,
+    0.06,
+    -1.06,
+    3.65
+   ],
+   "kind": "bedroom",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -1.0,
+    -4.0,
+    1.0,
+    4.0
+   ],
+   "inner": [
+    -0.94,
+    -3.65,
+    0.94,
+    3.65
+   ],
+   "kind": "landing",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bedE",
+   "name": "Spare bedroom",
+   "level": "F",
+   "rect": [
+    1.0,
+    0.0,
+    5.0,
+    4.0
+   ],
+   "inner": [
+    1.06,
+    0.06,
+    4.65,
+    3.65
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -5.0,
+    -4.0,
+    -1.0,
+    0.0
+   ],
+   "inner": [
+    -4.65,
+    -3.65,
+    -1.06,
+    -0.06
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite (pink border)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed3",
+   "name": "Sewing room",
+   "level": "F",
+   "rect": [
+    1.0,
+    -4.0,
+    5.0,
+    0.0
+   ],
+   "inner": [
+    1.06,
+    -3.65,
+    4.65,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "attic",
+   "name": "Attic (dead-letter store)",
+   "level": "A",
+   "rect": [
+    -5.0,
+    -4.0,
+    5.0,
+    4.0
+   ],
+   "inner": [
+    -4.65,
+    -3.65,
+    4.65,
+    3.65
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_porch",
+   "level": "G",
+   "room_a": "porch",
+   "room_b": "ext",
+   "side": "N",
+   "at": -0.2,
+   "width": 1.0,
+   "height": 2.05,
+   "kind": "porch opening",
+   "mat": "Door",
+   "colour": "Green",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "porch",
+   "room_b": "hall",
+   "side": "S",
+   "at": -0.4,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "green door with a brass letter flap and a bell push",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": -0.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_fr",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "front",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_din",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "dining",
+   "side": "E",
+   "at": 3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitchen",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_off",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "office",
+   "side": "E",
+   "at": -3.2,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_sort",
+   "level": "G",
+   "room_a": "office",
+   "room_b": "sorting",
+   "side": "E",
+   "at": -2.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "door with a brass 'STAFF ONLY' plate",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_post",
+   "level": "G",
+   "room_a": "sorting",
+   "room_b": "ext",
+   "side": "N",
+   "at": 7.0,
+   "width": 1.0,
+   "height": 2.05,
+   "kind": "public counter door (glazed) under the 'POST OFFICE' sign",
+   "mat": "Door",
+   "colour": null,
+   "role": "post",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bW",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bedW",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bE",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bedE",
+   "side": "E",
+   "at": 3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b3",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed3",
+   "side": "E",
+   "at": -3.2,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_fr",
+   "room": "front",
+   "side": "N",
+   "at": -3.0,
+   "width": 1.6,
+   "height": 1.4,
+   "sill": 0.9,
+   "style": "leaded casement, 3 lights",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_din",
+   "room": "dining",
+   "side": "N",
+   "at": 3.0,
+   "width": 1.6,
+   "height": 1.4,
+   "sill": 0.9,
+   "style": "leaded casement, 3 lights",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "S",
+   "at": -3.0,
+   "width": 1.1,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "casement, cracked",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_off",
+   "room": "office",
+   "side": "S",
+   "at": 3.0,
+   "width": 1.0,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "casement",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_sort",
+   "room": "sorting",
+   "side": "E",
+   "at": -1.5,
+   "width": 1.4,
+   "height": 1.0,
+   "sill": 1.2,
+   "style": "high sorting-room window with wired glass",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bW",
+   "room": "bedW",
+   "side": "N",
+   "at": -3.0,
+   "width": 1.2,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "casement in the tile-hung gable",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bE",
+   "room": "bedE",
+   "side": "N",
+   "at": 3.0,
+   "width": 1.2,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "casement in the tile-hung gable",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "S",
+   "at": -3.0,
+   "width": 0.7,
+   "height": 0.8,
+   "sill": 1.3,
+   "style": "frosted",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_att",
+   "room": "attic",
+   "side": "N",
+   "at": -2.5,
+   "width": 0.5,
+   "height": 0.5,
+   "sill": 1.0,
+   "style": "small vent window in the west gable apex",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    0.0,
+    -2.4,
+    0.9,
+    1.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "14 risers, oak"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    0.0,
+    -2.4,
+    0.9,
+    1.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "landing",
+   "rect": [
+    -0.9,
+    -3.6,
+    -0.2,
+    -2.8
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "N",
+   "kind": "loft ladder",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -5.0,
+   "z": -2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "kitchen range = THE HEARTH / front room",
+   "pots": 2
+  },
+  {
+   "x": 5.0,
+   "z": 2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "dining-room fire",
+   "pots": 2
+  }
+ ],
+ "props": [
+  {
+   "id": "H12.p001",
+   "n": 1,
+   "room": "sorting",
+   "key": "Pigeonholes",
+   "x": 8.545,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 270,
+   "role": "puzzle",
+   "note": "SORTING FRAME: 6 x 5 pigeonholes; 6 labelled with symbols for the village streets",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sorting frame 6 cols x 5 rows, 0.18 cells, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.2,
+    0.35,
+    1.9
+   ]
+  },
+  {
+   "id": "H12.p002",
+   "n": 2,
+   "room": "sorting",
+   "key": "SortingTable",
+   "x": 6.6,
+   "y": 0.0,
+   "z": -1.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "post sorting table 2.0x0.9x0.9 with a raised rim",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    0.9,
+    0.9
+   ]
+  },
+  {
+   "id": "H12.p003",
+   "n": 3,
+   "room": "sorting",
+   "key": "LetterScale",
+   "x": 6.6,
+   "y": 0.9,
+   "z": -1.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H12.p002",
+   "mat": null,
+   "scale": null,
+   "asset": "brass letter scale",
+   "source": "procedural",
+   "dims": [
+    0.25,
+    0.15,
+    0.2
+   ]
+  },
+  {
+   "id": "H12.p004",
+   "n": 4,
+   "room": "sorting",
+   "key": "Stapler",
+   "x": 6.6,
+   "y": 0.9,
+   "z": -1.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H12.p002",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_stapler",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.05,
+    0.08
+   ]
+  },
+  {
+   "id": "H12.p005",
+   "n": 5,
+   "room": "sorting",
+   "key": "MailSacks",
+   "x": 8.0,
+   "y": 0.0,
+   "z": -3.37,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "3 canvas GPO mail sacks (FabricHessian, red stencil)",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.7,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p006",
+   "n": 6,
+   "room": "sorting",
+   "key": "IronSafe",
+   "x": 5.39,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "DEAD LETTERS box (iron, slot on top) = PART CONTAINER",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "black cast-iron safe 0.6x0.6x0.8, brass handle, 4 code dials (CodeLockPuzzle dial slots)",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.6,
+    0.8
+   ]
+  },
+  {
+   "id": "H12.p007",
+   "n": 7,
+   "room": "office",
+   "key": "OfficeDesk",
+   "x": 3.2,
+   "y": 0.0,
+   "z": -0.409,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.85,
+   "asset": "metal_office_desk",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.75,
+    0.76
+   ]
+  },
+  {
+   "id": "H12.p008",
+   "n": 8,
+   "room": "office",
+   "key": "Typewriter",
+   "x": 3.4,
+   "y": 0.646,
+   "z": -0.409,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": "H12.p007",
+   "mat": null,
+   "scale": null,
+   "asset": "1d6009449fe84fd79454c4081eb743bf",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.35,
+    0.2
+   ]
+  },
+  {
+   "id": "H12.p009",
+   "n": 9,
+   "room": "office",
+   "key": "RotaryPhone",
+   "x": 2.85,
+   "y": 0.646,
+   "z": -0.409,
+   "yaw": 180,
+   "role": "phone",
+   "note": "the house/post-office phone - also the VILLAGE EXCHANGE board extension",
+   "on": "H12.p007",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H12.p010",
+   "n": 10,
+   "room": "office",
+   "key": "FrameHanging3",
+   "x": 4.925,
+   "y": 1.375,
+   "z": -1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "DELIVERY ROUND card in a frame (puzzle order)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_03",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.03,
+    0.45
+   ]
+  },
+  {
+   "id": "H12.p011",
+   "n": 11,
+   "room": "office",
+   "key": "DrawerCabinet",
+   "x": 1.315,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "drawer_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.45,
+    1.1
+   ]
+  },
+  {
+   "id": "H12.p012",
+   "n": 12,
+   "room": "front",
+   "key": "Hearth",
+   "x": -4.27,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "hearth-decor",
+   "note": "brick fireplace",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H12.p013",
+   "n": 13,
+   "room": "front",
+   "key": "FrameStanding2",
+   "x": -4.27,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "Mr Dunn in GPO uniform, 1953",
+   "on": "H12.p012",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.22,
+    0.08,
+    0.18
+   ]
+  },
+  {
+   "id": "H12.p014",
+   "n": 14,
+   "room": "front",
+   "key": "MantelClock",
+   "x": -4.27,
+   "y": 1.4,
+   "z": 1.5,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 3:00",
+   "on": "H12.p012",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H12.p015",
+   "n": 15,
+   "room": "front",
+   "key": "Sofa2",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 0.54,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_02",
+   "source": "polyhaven",
+   "dims": [
+    1.9,
+    0.9,
+    0.85
+   ]
+  },
+  {
+   "id": "H12.p016",
+   "n": 16,
+   "room": "front",
+   "key": "Armchair",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 200,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ArmChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ]
+  },
+  {
+   "id": "H12.p017",
+   "n": 17,
+   "room": "front",
+   "key": "Cabinet70s",
+   "x": -1.315,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "modern_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    0.8
+   ]
+  },
+  {
+   "id": "H12.p018",
+   "n": 18,
+   "room": "front",
+   "key": "TV",
+   "x": -1.315,
+   "y": 0.8,
+   "z": 1.2,
+   "yaw": 270,
+   "role": "tv",
+   "note": "",
+   "on": "H12.p017",
+   "mat": null,
+   "scale": null,
+   "asset": "Television_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H12.p019",
+   "n": 19,
+   "room": "dining",
+   "key": "DiningTable",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_table",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.9,
+    0.76
+   ]
+  },
+  {
+   "id": "H12.p020",
+   "n": 20,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 2.5,
+   "y": 0.0,
+   "z": 1.25,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H12.p021",
+   "n": 21,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 2.5,
+   "y": 0.0,
+   "z": 2.75,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H12.p022",
+   "n": 22,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 3.5,
+   "y": 0.0,
+   "z": 1.25,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H12.p023",
+   "n": 23,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 3.5,
+   "y": 0.0,
+   "z": 2.75,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H12.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "Hearth",
+   "x": -4.27,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "cream Rayburn-style range = THE HEARTH",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H12.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -3.2,
+   "y": 0.0,
+   "z": -0.39,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H12.p026",
+   "n": 26,
+   "room": "kitchen",
+   "key": "Fridge",
+   "x": -1.9,
+   "y": 0.0,
+   "z": -0.4,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "68d173f205344455933f861042b99fe3",
+   "source": "sketchfab",
+   "dims": [
+    0.6,
+    0.62,
+    1.45
+   ]
+  },
+  {
+   "id": "H12.p027",
+   "n": 27,
+   "room": "kitchen",
+   "key": "TablePainted",
+   "x": -2.8,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_table",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.7,
+    0.76
+   ]
+  },
+  {
+   "id": "H12.p028",
+   "n": 28,
+   "room": "kitchen",
+   "key": "ChairPainted2",
+   "x": -2.8,
+   "y": 0.0,
+   "z": -2.95,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.48,
+    0.9
+   ]
+  },
+  {
+   "id": "H12.p029",
+   "n": 29,
+   "room": "kitchen",
+   "key": "FuseBox",
+   "x": -1.135,
+   "y": 1.4,
+   "z": -0.8,
+   "yaw": 270,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p030",
+   "n": 30,
+   "room": "bedW",
+   "key": "Bed",
+   "x": -3.57,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H12.p031",
+   "n": 31,
+   "room": "bedW",
+   "key": "Nightstand",
+   "x": -4.42,
+   "y": 0.0,
+   "z": 0.9,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p032",
+   "n": 32,
+   "room": "bedW",
+   "key": "Nightstand",
+   "x": -4.42,
+   "y": 0.0,
+   "z": 3.1,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p033",
+   "n": 33,
+   "room": "bedW",
+   "key": "Wardrobe",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H12.p034",
+   "n": 34,
+   "room": "bedE",
+   "key": "BedIron",
+   "x": 3.62,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H12.p035",
+   "n": 35,
+   "room": "bedE",
+   "key": "Nightstand",
+   "x": 4.42,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p036",
+   "n": 36,
+   "room": "bed3",
+   "key": "SewingMachine",
+   "x": 3.0,
+   "y": 0.0,
+   "z": -3.495,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "db6aead9ecf947bcbde1f78d3e095fbe",
+   "source": "sketchfab",
+   "dims": [
+    0.45,
+    0.25,
+    0.32
+   ]
+  },
+  {
+   "id": "H12.p037",
+   "n": 37,
+   "room": "bed3",
+   "key": "DayBed",
+   "x": 3.0,
+   "y": 0.0,
+   "z": -1.065,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_day_bed",
+   "source": "polyhaven",
+   "dims": [
+    0.95,
+    1.95,
+    0.85
+   ]
+  },
+  {
+   "id": "H12.p038",
+   "n": 38,
+   "room": "bed3",
+   "key": "TableSmall",
+   "x": 4.37,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H12.p039",
+   "n": 39,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": -4.245,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H12.p040",
+   "n": 40,
+   "room": "bath",
+   "key": "Sink",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -0.315,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H12.p041",
+   "n": 41,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -2.0,
+   "y": 1.1,
+   "z": -0.085,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H12.p042",
+   "n": 42,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -1.6,
+   "y": 0.0,
+   "z": -3.295,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H12.p043",
+   "n": 43,
+   "room": "attic",
+   "key": "MailSacks",
+   "x": -4.27,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "3 canvas GPO mail sacks (FabricHessian, red stencil)",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.7,
+    0.6
+   ]
+  },
+  {
+   "id": "H12.p044",
+   "n": 44,
+   "room": "attic",
+   "key": "CardboardBox",
+   "x": 4.42,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cardboard_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H12.p045",
+   "n": 45,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 0.4,
+   "y": 0.9,
+   "z": 3.525,
+   "yaw": 180,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "puzzle",
+   "room": "sorting",
+   "x": 8.545,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 270,
+   "note": "SequencePuzzle reskinned: 6 undelivered letters lie on the sorting table; each address is a riddle (street + house trait). Slot them in delivery-round order (round card on the office wall); the sealed letter drops from the 'DEAD LETTERS' box"
+  },
+  {
+   "kind": "note-spot",
+   "room": "sorting",
+   "x": 6.6,
+   "y": 0.9,
+   "z": -1.1,
+   "yaw": 90,
+   "note": "undelivered letters bundle (note 1/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "sorting",
+   "x": 8.0,
+   "y": 0.0,
+   "z": -3.37,
+   "yaw": 0,
+   "note": "behind the mail sacks -> HidingSpot on H12.p005 (MailSacks) - crouched"
+  },
+  {
+   "kind": "container",
+   "room": "sorting",
+   "x": 5.39,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "note": "The sealed letter (addressed to one of the players, in their own handwriting)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "office",
+   "x": 3.2,
+   "y": 0.646,
+   "z": -0.409,
+   "yaw": 180,
+   "note": "office desk"
+  },
+  {
+   "kind": "item-spot",
+   "room": "front",
+   "x": -4.27,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "front-room mantel"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -4.27,
+   "y": 1.4,
+   "z": -2.0,
+   "yaw": 90,
+   "note": "range rail"
+  },
+  {
+   "kind": "hiding",
+   "room": "bedW",
+   "x": -3.57,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "under the double bed -> HidingSpot on H12.p030 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bedW",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H12.p033 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed3",
+   "x": 4.37,
+   "y": 0.72,
+   "z": -2.1,
+   "yaw": 270,
+   "note": "Mrs Dunn's note about 'the letter that came back' (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -4.245,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "note": "behind the bath curtain -> HidingSpot on H12.p039 (Bathtub)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "attic",
+   "x": 4.42,
+   "y": 0.4,
+   "z": -0.1,
+   "yaw": 270,
+   "note": "dead letter addressed to 'the guests' (note 3/3)"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 0.4,
+   "y": 0.0,
+   "z": 3.525,
+   "yaw": 180,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "twin front gables ('M' roof), tile-hung upper floor with a band of fish-scale tiles",
+  "small gabled timber porch over a GREEN door with a brass letter flap",
+  "red PILLAR BOX at the front gate; enamel 'POST OFFICE' sign over the sorting-room door",
+  "a telegraph pole with wires to the eaves (the village exchange line)"
+ ],
+ "plot": [
+  "Front: low brick wall, the pillar box, a bicycle with a postbag on the handlebars",
+  "Back: tidy lawn gone wild, a pigeon loft (empty, door swinging)"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the DEAD LETTERS box on the sorting-room wall has a slot and a padlock with 6 symbols.",
+  "6 letters on the sorting table; each address is a riddle about a real village house (street + door colour/chimneys).",
+  "The delivery round card (office) gives the street order; slot letters into the 6 street pigeonholes in round order.",
+  "Wrong slot: the letter is 'returned' (falls out, paper noise). Part: the sealed letter."
+ ],
+ "night_changes": [
+  "one pigeonhole holds a letter addressed to a player, in their handwriting",
+  "the exchange board in the office lights up a house number that is ringing",
+  "the pillar box door is open and full of black feathers"
+ ],
+ "audio": [
+  "telephone: exchange buzz, rings",
+  "paper",
+  "typewriter"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Arts_and_Crafts_movement",
+  "https://en.wikipedia.org/wiki/Roof_tiles"
+ ],
+ "image_prompt": "1920s Arts and Crafts brick house with two identical front gables side by side, clay tile-hung upper floor, a small timber porch with a green door, a red pillar box at the gate and an enamel POST OFFICE sign on a flat-roofed side wing, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

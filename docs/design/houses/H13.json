@@ -1,0 +1,1942 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H13",
+ "index": 13,
+ "name": "Farmer's House",
+ "family": "Barrow",
+ "part": "Straw heart",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Green",
+ "chimneys": 3,
+ "clock_hour": 6,
+ "loud_puzzle": false,
+ "archetype": "Stone longhouse farmhouse with the barn under the same long roof and a dairy outshut",
+ "silhouette": "Very long (18 m) and low: farmhouse at the west end with a green door straight into the kitchen, a huge barn at the east end with tall cart doors and a hayloft door, one continuous moss-covered roof, THREE chimneys (west gable, mid, dairy), a muck heap and a rusty tractor in the yard.",
+ "world": {
+  "position": [
+   86.0,
+   0.2,
+   -34.0
+  ],
+  "yaw": 0,
+  "street": "East Road (south side)",
+  "plot_poly": [
+   [
+    76.0,
+    -49.0
+   ],
+   [
+    102.0,
+    -49.0
+   ],
+   [
+    102.0,
+    -24.0
+   ],
+   [
+    76.0,
+    -24.0
+   ]
+  ],
+  "note": "farmyard in front of the barn; fields to the south and east"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.7,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 2.95,
+   "h": 2.4,
+   "label": "First floor"
+  }
+ },
+ "wings": [
+  {
+   "id": "house",
+   "rect": [
+    -6.0,
+    -4.0,
+    2.0,
+    4.0
+   ],
+   "levels": [
+    "G",
+    "F"
+   ],
+   "walls": "Rubble stone (Stone), whitewash patches, SandstoneBlocks lintels",
+   "t": 0.55,
+   "roof": "Continuous gable roof 40 deg over house AND barn, ridge along x at 7.2 m, RoofRedSlate (house) / CorrugatedRust (barn end)",
+   "note": ""
+  },
+  {
+   "id": "barn",
+   "rect": [
+    2.0,
+    -4.0,
+    12.0,
+    4.0
+   ],
+   "levels": [
+    "G",
+    "F"
+   ],
+   "walls": "Rubble stone + RawPlankWall gable cladding, ventilation slits",
+   "t": 0.45,
+   "roof": "Same roof; cart doors 3.0 x 3.2 north, hayloft door above",
+   "note": ""
+  },
+  {
+   "id": "dairy",
+   "rect": [
+    -6.0,
+    -7.0,
+    -1.0,
+    -4.0
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Rubble, whitewashed",
+   "t": 0.35,
+   "roof": "Catslide continuation of the main roof",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "kitchen",
+   "name": "Farm kitchen",
+   "level": "G",
+   "rect": [
+    -6.0,
+    -4.0,
+    -1.5,
+    4.0
+   ],
+   "inner": [
+    -5.45,
+    -3.94,
+    -1.56,
+    3.45
+   ],
+   "kind": "kitchen",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash, hams on hooks",
+   "ceiling": "CeilingInterior",
+   "light": "pendant + oil lamp",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parlour",
+   "name": "Front parlour",
+   "level": "G",
+   "rect": [
+    -1.5,
+    0.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -1.44,
+    0.06,
+    1.94,
+    3.45
+   ],
+   "kind": "living",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper2C",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Back hall & stair",
+   "level": "G",
+   "rect": [
+    -1.5,
+    -4.0,
+    2.0,
+    0.0
+   ],
+   "inner": [
+    -1.44,
+    -3.45,
+    1.94,
+    -0.06
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "dairy",
+   "name": "Dairy",
+   "level": "G",
+   "rect": [
+    -6.0,
+    -7.0,
+    -1.0,
+    -4.0
+   ],
+   "inner": [
+    -5.65,
+    -6.65,
+    -1.35,
+    -4.06
+   ],
+   "kind": "utility",
+   "floor": "FloorBrick",
+   "walls": "TileWallWhite (cracked), slate shelves",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "barn",
+   "name": "Barn (PUZZLE)",
+   "level": "G",
+   "rect": [
+    2.0,
+    -4.0,
+    12.0,
+    4.0
+   ],
+   "inner": [
+    2.06,
+    -3.55,
+    11.55,
+    3.55
+   ],
+   "kind": "barn",
+   "floor": "FloorDirt",
+   "walls": "rubble + RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "2 CagedLight on chains",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Barrows' bedroom",
+   "level": "F",
+   "rect": [
+    -6.0,
+    0.0,
+    -1.5,
+    4.0
+   ],
+   "inner": [
+    -5.45,
+    0.06,
+    -1.56,
+    3.45
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Lads' bedroom",
+   "level": "F",
+   "rect": [
+    -6.0,
+    -4.0,
+    -3.0,
+    0.0
+   ],
+   "inner": [
+    -5.45,
+    -3.45,
+    -3.06,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -3.0,
+    -4.0,
+    2.0,
+    0.0
+   ],
+   "inner": [
+    -2.94,
+    -3.45,
+    1.94,
+    -0.06
+   ],
+   "kind": "landing",
+   "floor": "FloorOldWood1",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -1.5,
+    0.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -1.44,
+    0.06,
+    1.94,
+    3.45
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hayloft",
+   "name": "Hayloft (attic of the barn)",
+   "level": "F",
+   "rect": [
+    2.0,
+    -4.0,
+    12.0,
+    4.0
+   ],
+   "inner": [
+    2.06,
+    -3.55,
+    11.55,
+    3.55
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall, hay",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "ext",
+   "side": "N",
+   "at": -3.5,
+   "width": 0.95,
+   "height": 2.05,
+   "kind": "green stable door (top half open by day)",
+   "mat": "Door",
+   "colour": "Green",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": 0.5,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "to the yard",
+   "swing": "in"
+  },
+  {
+   "id": "d_dairy",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "dairy",
+   "side": "S",
+   "at": -3.5,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_hall",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "hall",
+   "side": "E",
+   "at": -2.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_par",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parlour",
+   "side": "N",
+   "at": -0.5,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_barn",
+   "level": "G",
+   "room_a": "parlour",
+   "room_b": "barn",
+   "side": "E",
+   "at": 2.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "plank door into the barn (two steps down)",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_cart",
+   "level": "G",
+   "room_a": "barn",
+   "room_b": "ext",
+   "side": "N",
+   "at": 7.0,
+   "width": 3.0,
+   "height": 3.2,
+   "kind": "tall cart doors (barred on the inside)",
+   "mat": "Door",
+   "colour": null,
+   "role": "cart",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "N",
+   "at": -2.25,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "N",
+   "at": 0.5,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_hay",
+   "level": "F",
+   "room_a": "hayloft",
+   "room_b": "ext",
+   "side": "N",
+   "at": 9.5,
+   "width": 1.4,
+   "height": 1.6,
+   "kind": "hayloft pitching door with a hay hoist beam",
+   "mat": "Door",
+   "colour": null,
+   "role": "pitching",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_k1",
+   "room": "kitchen",
+   "side": "N",
+   "at": -5.0,
+   "width": 0.9,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "deep-set sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k2",
+   "room": "kitchen",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.9,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "deep-set sash, rotten",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_par",
+   "room": "parlour",
+   "side": "N",
+   "at": 0.5,
+   "width": 1.1,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_dairy",
+   "room": "dairy",
+   "side": "S",
+   "at": -3.5,
+   "width": 0.8,
+   "height": 0.5,
+   "sill": 1.5,
+   "style": "slatted dairy vent (wooden louvres, loose)",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_barn",
+   "room": "barn",
+   "side": "S",
+   "at": 7.0,
+   "width": 0.3,
+   "height": 1.2,
+   "sill": 1.0,
+   "style": "ventilation slit (x3 along the south wall)",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -3.8,
+   "width": 0.9,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 0.9,
+   "style": "small sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "N",
+   "at": 0.8,
+   "width": 0.6,
+   "height": 0.7,
+   "sill": 1.3,
+   "style": "frosted",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    1.0,
+    -3.4,
+    1.9,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "boxed stair, 12 risers"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    1.0,
+    -3.4,
+    1.9,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "barn",
+   "rect": [
+    11.0,
+    -3.5,
+    11.6,
+    -2.3
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "fixed ladder to the hayloft",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2u",
+   "room": "hayloft",
+   "rect": [
+    11.0,
+    -3.5,
+    11.6,
+    -2.3
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "hatch",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -6.0,
+   "z": 0.0,
+   "w": 1.4,
+   "d": 1.2,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "kitchen range = THE HEARTH (inglenook)",
+   "pots": 2
+  },
+  {
+   "x": -1.5,
+   "z": 2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "parlour fire (on the kitchen partition)",
+   "pots": 1
+  },
+  {
+   "x": -3.5,
+   "z": -7.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "dairy copper",
+   "pots": 1
+  }
+ ],
+ "props": [
+  {
+   "id": "H13.p001",
+   "n": 1,
+   "room": "kitchen",
+   "key": "Hearth",
+   "x": -5.07,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "big inglenook range, bacon rack over, settle beside",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H13.p002",
+   "n": 2,
+   "room": "kitchen",
+   "key": "MantelClock",
+   "x": -5.07,
+   "y": 1.4,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 6:00",
+   "on": "H13.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H13.p003",
+   "n": 3,
+   "room": "kitchen",
+   "key": "FrameStanding1",
+   "x": -5.07,
+   "y": 1.4,
+   "z": -0.6,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "the Barrows at harvest supper",
+   "on": "H13.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ]
+  },
+  {
+   "id": "H13.p004",
+   "n": 4,
+   "room": "kitchen",
+   "key": "TableWood3",
+   "x": -3.6,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_03",
+   "source": "polyhaven",
+   "dims": [
+    2.0,
+    0.9,
+    0.78
+   ]
+  },
+  {
+   "id": "H13.p005",
+   "n": 5,
+   "room": "kitchen",
+   "key": "BowlWood2",
+   "x": -3.6,
+   "y": 0.78,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H13.p004",
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_bowl_02",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.3,
+    0.12
+   ]
+  },
+  {
+   "id": "H13.p006",
+   "n": 6,
+   "room": "kitchen",
+   "key": "OilLamp",
+   "x": -3.6,
+   "y": 0.78,
+   "z": -0.3,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H13.p004",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_oil_lamp",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.18,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p007",
+   "n": 7,
+   "room": "kitchen",
+   "key": "BenchPainted",
+   "x": -4.25,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_bench",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p008",
+   "n": 8,
+   "room": "kitchen",
+   "key": "BenchPainted",
+   "x": -2.95,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_bench",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p009",
+   "n": 9,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -4.9,
+   "y": 0.0,
+   "z": -3.61,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p010",
+   "n": 10,
+   "room": "kitchen",
+   "key": "Dresser",
+   "x": -1.84,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H13.p011",
+   "n": 11,
+   "room": "kitchen",
+   "key": "WallClock",
+   "x": -1.59,
+   "y": 1.825,
+   "z": -0.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H13.p012",
+   "n": 12,
+   "room": "kitchen",
+   "key": "SideTable",
+   "x": -2.1,
+   "y": 0.0,
+   "z": 3.17,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H13.p013",
+   "n": 13,
+   "room": "kitchen",
+   "key": "RotaryPhone",
+   "x": -2.1,
+   "y": 0.6,
+   "z": 3.17,
+   "yaw": 180,
+   "role": "phone",
+   "note": "",
+   "on": "H13.p012",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H13.p014",
+   "n": 14,
+   "room": "kitchen",
+   "key": "Radio",
+   "x": -2.25,
+   "y": 0.6,
+   "z": 3.17,
+   "yaw": 180,
+   "role": "radio",
+   "note": "farming programme by day",
+   "on": "H13.p012",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H13.p015",
+   "n": 15,
+   "room": "parlour",
+   "key": "Armchair",
+   "x": 0.5,
+   "y": 0.0,
+   "z": 1.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ArmChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ]
+  },
+  {
+   "id": "H13.p016",
+   "n": 16,
+   "room": "parlour",
+   "key": "Commode",
+   "x": -1.16,
+   "y": 0.0,
+   "z": 2.8,
+   "yaw": 90,
+   "role": "",
+   "note": "best-china cabinet",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCommode_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.5,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p017",
+   "n": 17,
+   "room": "parlour",
+   "key": "Rug",
+   "x": 0.3,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H13.p018",
+   "n": 18,
+   "room": "hall",
+   "key": "FuseBox",
+   "x": -1.365,
+   "y": 1.4,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H13.p019",
+   "n": 19,
+   "room": "hall",
+   "key": "Mirror",
+   "x": -0.8,
+   "y": 1.15,
+   "z": -3.425,
+   "yaw": 0,
+   "role": "",
+   "note": "small mirror by the back door",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p020",
+   "n": 20,
+   "room": "hall",
+   "key": "RubberBoots",
+   "x": -1.26,
+   "y": 0.0,
+   "z": -3.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "rubber_boots",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.3,
+    0.4
+   ]
+  },
+  {
+   "id": "H13.p021",
+   "n": 21,
+   "room": "dairy",
+   "key": "MilkChurns",
+   "x": -5.42,
+   "y": 0.0,
+   "z": -5.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "3 steel milk churns",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.4,
+    0.7
+   ]
+  },
+  {
+   "id": "H13.p022",
+   "n": 22,
+   "room": "dairy",
+   "key": "CheesePress",
+   "x": -1.63,
+   "y": 0.0,
+   "z": -5.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cast-iron cheese press",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.5,
+    1.4
+   ]
+  },
+  {
+   "id": "H13.p023",
+   "n": 23,
+   "room": "dairy",
+   "key": "Copper",
+   "x": -4.4,
+   "y": 0.0,
+   "z": -6.22,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "brick copper boiler in scullery corner",
+   "source": "procedural",
+   "dims": [
+    0.8,
+    0.8,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p024",
+   "n": 24,
+   "room": "barn",
+   "key": "ScarecrowBoard",
+   "x": 2.11,
+   "y": 0.9,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "puzzle",
+   "note": "SCARECROW BOARD: a painted field map with 6 peg holes",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "barn wall board 1.6x1.2: painted map of the fields with 6 peg holes and 6 symbol pegs",
+   "source": "procedural",
+   "dims": [
+    1.6,
+    0.1,
+    1.2
+   ]
+  },
+  {
+   "id": "H13.p025",
+   "n": 25,
+   "room": "barn",
+   "key": "ChestWorn",
+   "x": 3.2,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "role": "",
+   "note": "CORN CHEST = PART CONTAINER",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H13.p026",
+   "n": 26,
+   "room": "barn",
+   "key": "HayBales",
+   "x": 11.27,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6b775049e57e4d9da87977905493ebfb",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p027",
+   "n": 27,
+   "room": "barn",
+   "key": "HayBales",
+   "x": 11.27,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6b775049e57e4d9da87977905493ebfb",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p028",
+   "n": 28,
+   "room": "barn",
+   "key": "Wheelbarrow",
+   "x": 6.0,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "48314bafaffc4593ba1d7a5af31810c6",
+   "source": "sketchfab",
+   "dims": [
+    1.4,
+    0.6,
+    0.6
+   ]
+  },
+  {
+   "id": "H13.p029",
+   "n": 29,
+   "room": "barn",
+   "key": "CartWheel",
+   "x": 5.5,
+   "y": 0.0,
+   "z": -3.46,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "His_Wil_Cart_Wheel_Wood_Old_01 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    1.1,
+    0.12,
+    1.1
+   ]
+  },
+  {
+   "id": "H13.p030",
+   "n": 30,
+   "room": "barn",
+   "key": "ToolChest",
+   "x": 8.0,
+   "y": 0.0,
+   "z": -3.295,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "metal_tool_chest",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.45,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p031",
+   "n": 31,
+   "room": "barn",
+   "key": "Scarecrow",
+   "x": 9.5,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 200,
+   "role": "",
+   "note": "a 7th scarecrow propped in the barn, facing the door",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "38b41b2deeb24b1d877c2551526d5654",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.4,
+    2.0
+   ]
+  },
+  {
+   "id": "H13.p032",
+   "n": 32,
+   "room": "barn",
+   "key": "Spade",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 3.48,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "rusted_spade_01",
+   "source": "polyhaven",
+   "dims": [
+    0.2,
+    0.08,
+    1.1
+   ]
+  },
+  {
+   "id": "H13.p033",
+   "n": 33,
+   "room": "hayloft",
+   "key": "HayBales",
+   "x": 6.0,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6b775049e57e4d9da87977905493ebfb",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p034",
+   "n": 34,
+   "room": "hayloft",
+   "key": "HayBales",
+   "x": 5.0,
+   "y": 0.0,
+   "z": 3.27,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6b775049e57e4d9da87977905493ebfb",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "H13.p035",
+   "n": 35,
+   "room": "hayloft",
+   "key": "CardboardBox",
+   "x": 2.29,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cardboard_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H13.p036",
+   "n": 36,
+   "room": "hayloft",
+   "key": "Wicker2",
+   "x": 9.0,
+   "y": 0.0,
+   "z": -3.32,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wicker_basket_02",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H13.p037",
+   "n": 37,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -4.37,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H13.p038",
+   "n": 38,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -5.22,
+   "y": 0.0,
+   "z": 0.9,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H13.p039",
+   "n": 39,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -5.22,
+   "y": 0.0,
+   "z": 3.1,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H13.p040",
+   "n": 40,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -1.89,
+   "y": 0.0,
+   "z": 2.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H13.p041",
+   "n": 41,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": -4.6,
+   "y": 0.0,
+   "z": -2.42,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H13.p042",
+   "n": 42,
+   "room": "bed2",
+   "key": "ChestOfDrawers",
+   "x": -4.6,
+   "y": 0.0,
+   "z": -0.33,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H13.p043",
+   "n": 43,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": 1.535,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H13.p044",
+   "n": 44,
+   "room": "bath",
+   "key": "Sink",
+   "x": -1.185,
+   "y": 0.0,
+   "z": 2.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H13.p045",
+   "n": 45,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -1.415,
+   "y": 1.1,
+   "z": 2.6,
+   "yaw": 90,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H13.p046",
+   "n": 46,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -1.085,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H13.p047",
+   "n": 47,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": -1.0,
+   "y": 0.9,
+   "z": -3.325,
+   "yaw": 0,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -5.07,
+   "y": 1.4,
+   "z": 0.0,
+   "yaw": 90,
+   "note": "inglenook shelf"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitchen",
+   "x": -3.6,
+   "y": 0.78,
+   "z": 0.1,
+   "yaw": 90,
+   "note": "farm diary: 'moved the guardians again' (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -1.84,
+   "y": 2.0,
+   "z": 1.6,
+   "yaw": 270,
+   "note": "kitchen dresser"
+  },
+  {
+   "kind": "puzzle",
+   "room": "barn",
+   "x": 2.11,
+   "y": 0.9,
+   "z": -2.0,
+   "yaw": 90,
+   "note": "SequencePuzzle reskinned: the hayloft drawing shows where each of the 6 scarecrows stood the day the boy vanished; compare with where they stand NOW in the fields; press the pegs of the ones that moved, in the order of the drawing's numbers"
+  },
+  {
+   "kind": "container",
+   "room": "barn",
+   "x": 3.2,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "note": "Straw heart (a corn dolly), tied with red thread"
+  },
+  {
+   "kind": "hiding",
+   "room": "barn",
+   "x": 11.27,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 270,
+   "note": "behind the hay bales -> HidingSpot on H13.p026 (HayBales) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "hayloft",
+   "x": 6.0,
+   "y": 0.0,
+   "z": -3.27,
+   "yaw": 0,
+   "note": "in the hay, hayloft -> HidingSpot on H13.p033 (HayBales) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "hayloft",
+   "x": 2.29,
+   "y": 0.4,
+   "z": -1.9,
+   "yaw": 90,
+   "note": "THE BARN DRAWING: child's crayon picture of the fields with numbered scarecrows (note 2/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "hayloft",
+   "x": 9.0,
+   "y": 0.4,
+   "z": -3.32,
+   "yaw": 0,
+   "note": "basket in the hayloft"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -4.37,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "under the double bed -> HidingSpot on H13.p037 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -1.89,
+   "y": 0.0,
+   "z": 2.4,
+   "yaw": 270,
+   "note": "wardrobe -> HidingSpot on H13.p040 (Wardrobe)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed2",
+   "x": -4.6,
+   "y": 0.0,
+   "z": -2.42,
+   "yaw": 0,
+   "note": "under the lads' bed -> HidingSpot on H13.p041 (BedIron) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed2",
+   "x": -4.5,
+   "y": 1.0,
+   "z": -0.33,
+   "yaw": 180,
+   "note": "the lad's school essay 'Our scarecrows' (note 3/3)"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": -1.0,
+   "y": 0.0,
+   "z": -3.325,
+   "yaw": 0,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "green STABLE door (top half open by day) straight into the kitchen",
+  "barn cart doors 3.0 x 3.2, barred",
+  "hayloft pitching door with a hoist beam",
+  "rusty tractor in the yard (CoveredCar as a tarp-covered stand-in)",
+  "muck heap; milk churn stand by the lane"
+ ],
+ "plot": [
+  "Farmyard 20 x 14 m north of the barn: mud (GroundMud), puddles, a water trough, a muck heap, the covered tractor",
+  "FIELDS beyond (village 'Fields and scarecrows' zone): 6 SCARECROWS used by the puzzle stand there"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the scarecrow board on the barn wall - a painted field map with 6 empty peg holes.",
+  "The hayloft drawing (note 2/3) shows the 6 scarecrows numbered where they stood 'the day he went'.",
+  "In the fields NOW 2-4 scarecrows have moved (MatchPlan). Players go out (exposed) to compare.",
+  "Press the pegs of the moved scarecrows in the drawing's number order (SequencePuzzle).",
+  "Wrong: every scarecrow in the field turns to face the farm (DESIGN night behaviour). Part: Straw heart."
+ ],
+ "night_changes": [
+  "scarecrows turn to face the nearest player between acts (DESIGN)",
+  "the 7th scarecrow in the barn is gone",
+  "milk churns are full of warm milk"
+ ],
+ "audio": [
+  "norway/rural: wind over fields, crows",
+  "barn: hay rustle, beam creaks"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Devon_longhouse",
+  "https://en.wikipedia.org/wiki/Scarecrow"
+ ],
+ "image_prompt": "long low stone farmhouse longhouse with an attached barn under one continuous mossy roof, a green stable door, tall barred cart doors, a hayloft door with a hoist beam, a muddy farmyard with a tarp-covered tractor, fields with scarecrows beyond, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

@@ -1,0 +1,1893 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H04",
+ "index": 4,
+ "name": "Weaver's House",
+ "family": "Ashdown",
+ "part": "Spool of red thread",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Red",
+ "chimneys": 1,
+ "clock_hour": 11,
+ "loud_puzzle": false,
+ "archetype": "Weaver's cottage: long stone house whose whole top floor is a loom shop lit by a continuous band of windows",
+ "silhouette": "Long and low (14 m) with a RIBBON of 8 small windows across the upper floor front, stone-slate roof, one chimney at the WEST end, an outside stone stair to a loading door at the east gable.",
+ "world": {
+  "position": [
+   -53.8,
+   -0.2,
+   -32.2
+  ],
+  "yaw": 135,
+  "street": "Mill Lane (north-west side)",
+  "plot_poly": [
+   [
+    -58.46690475583121,
+    -14.805173182810933
+   ],
+   [
+    -71.19482681718907,
+    -27.53309524416879
+   ],
+   [
+    -57.194112549695426,
+    -41.53380951166243
+   ],
+   [
+    -44.466190488337574,
+    -28.805887450304574
+   ]
+  ],
+  "note": "long axis runs along the lane; drying green behind"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.7,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 2.95,
+   "h": 2.6,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 5.800000000000001,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -7.0,
+    -3.2,
+    7.0,
+    3.2
+   ],
+   "levels": [
+    "G",
+    "F",
+    "A"
+   ],
+   "walls": "PlasterStone (half-rendered rubble, render falling off), SandstoneBlocks quoins + long stone mullions in the upper window band",
+   "t": 0.5,
+   "roof": "Gable roof 35 deg, ridge along x at 7.9 m, RoofRedSlate (heavy stone slates, graded courses), moss",
+   "note": ""
+  },
+  {
+   "id": "outshut",
+   "rect": [
+    -7.0,
+    -5.6,
+    -1.0,
+    -3.2
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Rubble",
+   "t": 0.45,
+   "roof": "Catslide continuation of the main roof down to 2.2 m",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "living",
+   "name": "House-place (living)",
+   "level": "G",
+   "rect": [
+    -7.0,
+    -3.2,
+    -1.5,
+    3.2
+   ],
+   "inner": [
+    -6.5,
+    -3.14,
+    -1.56,
+    2.7
+   ],
+   "kind": "living",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant + oil lamp",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Cross passage",
+   "level": "G",
+   "rect": [
+    -1.5,
+    -3.2,
+    0.5,
+    3.2
+   ],
+   "inner": [
+    -1.44,
+    -2.7,
+    0.44,
+    2.7
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parlour",
+   "name": "Parlour / dye room",
+   "level": "G",
+   "rect": [
+    0.5,
+    -3.2,
+    7.0,
+    3.2
+   ],
+   "inner": [
+    0.56,
+    -2.7,
+    6.5,
+    2.7
+   ],
+   "kind": "utility",
+   "floor": "FloorBrick",
+   "walls": "PlasterWorn with dye splashes",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Back kitchen (outshut)",
+   "level": "G",
+   "rect": [
+    -7.0,
+    -5.6,
+    -3.6,
+    -3.2
+   ],
+   "inner": [
+    -6.55,
+    -5.15,
+    -3.66,
+    -3.26
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom (outshut)",
+   "level": "G",
+   "rect": [
+    -3.6,
+    -5.6,
+    -1.0,
+    -3.2
+   ],
+   "inner": [
+    -3.54,
+    -5.15,
+    -1.45,
+    -3.26
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "garret",
+   "name": "Garret (attic over the bedrooms)",
+   "level": "A",
+   "rect": [
+    -7.0,
+    -3.2,
+    -1.5,
+    3.2
+   ],
+   "inner": [
+    -6.5,
+    -2.7,
+    -2.0,
+    2.7
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": "reached by a ladder from bed1; 1.9 m headroom at the ridge only"
+  },
+  {
+   "id": "loomshop",
+   "name": "LOOM SHOP (PUZZLE)",
+   "level": "F",
+   "rect": [
+    -1.5,
+    -3.2,
+    7.0,
+    3.2
+   ],
+   "inner": [
+    -1.44,
+    -2.7,
+    6.5,
+    2.7
+   ],
+   "kind": "workshop",
+   "floor": "FloorOldWood2",
+   "walls": "Whitewash, warp threads strung on pegs",
+   "ceiling": "CeilingInterior",
+   "light": "daylight band; 2 CagedLight at night",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Bedroom (Ashdowns)",
+   "level": "F",
+   "rect": [
+    -7.0,
+    0.0,
+    -1.5,
+    3.2
+   ],
+   "inner": [
+    -6.5,
+    0.06,
+    -1.56,
+    2.7
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Bedroom (apprentice)",
+   "level": "F",
+   "rect": [
+    -7.0,
+    -3.2,
+    -1.5,
+    0.0
+   ],
+   "inner": [
+    -6.5,
+    -2.7,
+    -1.56,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": -0.5,
+   "width": 0.95,
+   "height": 2.05,
+   "kind": "boarded red door, cross-passage",
+   "mat": "Door",
+   "colour": "Red",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": -1.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "cross-passage back door (nearly aligned with the front)",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_liv",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "living",
+   "side": "W",
+   "at": 1.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_par",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parlour",
+   "side": "E",
+   "at": 1.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "living",
+   "room_b": "kitchen",
+   "side": "S",
+   "at": -5.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "bath",
+   "side": "E",
+   "at": -3.9,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_loading",
+   "level": "F",
+   "room_a": "loomshop",
+   "room_b": "ext",
+   "side": "E",
+   "at": 1.0,
+   "width": 1.1,
+   "height": 2.05,
+   "kind": "loading door 1.1 x 1.8 on the gable, reached by the outside stone stair",
+   "mat": "Door",
+   "colour": null,
+   "role": "loading",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "loomshop",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 1.6,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "loomshop",
+   "room_b": "bed2",
+   "side": "W",
+   "at": -0.6,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_band0",
+   "room": "loomshop",
+   "side": "N",
+   "at": -0.6,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band1",
+   "room": "loomshop",
+   "side": "N",
+   "at": 0.6,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band2",
+   "room": "loomshop",
+   "side": "N",
+   "at": 1.8,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band3",
+   "room": "loomshop",
+   "side": "N",
+   "at": 3.0,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band4",
+   "room": "loomshop",
+   "side": "N",
+   "at": 4.2,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band5",
+   "room": "loomshop",
+   "side": "N",
+   "at": 5.4,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "weaver's light (one of the window band), stone mullions 0.15",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_band_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -4.2,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.0,
+   "style": "window band continues",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_liv",
+   "room": "living",
+   "side": "N",
+   "at": -4.2,
+   "width": 1.1,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "casement, sagging",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_par",
+   "room": "parlour",
+   "side": "N",
+   "at": 3.8,
+   "width": 1.1,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "casement",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_par2",
+   "room": "parlour",
+   "side": "S",
+   "at": 3.8,
+   "width": 1.0,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "casement",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "W",
+   "at": -4.4,
+   "width": 0.8,
+   "height": 0.8,
+   "sill": 0.9,
+   "style": "small",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_garret",
+   "room": "garret",
+   "side": "W",
+   "at": 0.0,
+   "width": 0.5,
+   "height": 0.5,
+   "sill": 0.9,
+   "style": "tiny gable light",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    -0.45,
+    -2.8,
+    0.45,
+    0.6
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight stone-and-timber stair in the passage",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s1u",
+   "room": "loomshop",
+   "rect": [
+    -0.45,
+    -2.8,
+    0.45,
+    0.6
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "bed1",
+   "rect": [
+    -2.4,
+    0.1,
+    -1.7,
+    1.0
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "W",
+   "kind": "ladder to the garret hatch",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -7.0,
+   "z": 0.0,
+   "w": 1.2,
+   "d": 1.0,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "living fire = THE HEARTH",
+   "pots": 1
+  }
+ ],
+ "props": [
+  {
+   "id": "H04.p001",
+   "n": 1,
+   "room": "living",
+   "key": "Hearth",
+   "x": -6.12,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "open fire with a crane and kettle, stone surround",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H04.p002",
+   "n": 2,
+   "room": "living",
+   "key": "MantelClock",
+   "x": -6.12,
+   "y": 1.4,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 11:00",
+   "on": "H04.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H04.p003",
+   "n": 3,
+   "room": "living",
+   "key": "FrameStanding1",
+   "x": -6.12,
+   "y": 1.4,
+   "z": -0.6,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "",
+   "on": "H04.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ]
+  },
+  {
+   "id": "H04.p004",
+   "n": 4,
+   "room": "living",
+   "key": "RockingChair",
+   "x": -5.0,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 240,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Rockingchair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.95,
+    1.05
+   ]
+  },
+  {
+   "id": "H04.p005",
+   "n": 5,
+   "room": "living",
+   "key": "SofaPainted",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 2.32,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_sofa",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    0.7,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p006",
+   "n": 6,
+   "room": "living",
+   "key": "TableGallinera",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "gallinera_table",
+   "source": "polyhaven",
+   "dims": [
+    1.5,
+    0.8,
+    0.76
+   ]
+  },
+  {
+   "id": "H04.p007",
+   "n": 7,
+   "room": "living",
+   "key": "OilLamp",
+   "x": -3.6,
+   "y": 0.76,
+   "z": -1.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H04.p006",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_oil_lamp",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.18,
+    0.45
+   ]
+  },
+  {
+   "id": "H04.p008",
+   "n": 8,
+   "room": "living",
+   "key": "ChairGallinera",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -1.75,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "gallinera_chair",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p009",
+   "n": 9,
+   "room": "living",
+   "key": "SideTable",
+   "x": -2.4,
+   "y": 0.0,
+   "z": -2.86,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H04.p010",
+   "n": 10,
+   "room": "living",
+   "key": "RotaryPhone",
+   "x": -2.4,
+   "y": 0.6,
+   "z": -2.86,
+   "yaw": 0,
+   "role": "phone",
+   "note": "",
+   "on": "H04.p009",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H04.p011",
+   "n": 11,
+   "room": "living",
+   "key": "Radio",
+   "x": -2.2,
+   "y": 0.6,
+   "z": -2.86,
+   "yaw": 0,
+   "role": "radio",
+   "note": "",
+   "on": "H04.p009",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H04.p012",
+   "n": 12,
+   "room": "living",
+   "key": "Dresser",
+   "x": -3.6,
+   "y": 0.0,
+   "z": -2.86,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H04.p013",
+   "n": 13,
+   "room": "living",
+   "key": "SpinningWheel",
+   "x": -6.0,
+   "y": 0.0,
+   "z": -2.1,
+   "yaw": 45,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "spinning_wheel_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H04.p014",
+   "n": 14,
+   "room": "hall",
+   "key": "Mirror",
+   "x": 0.415,
+   "y": 1.15,
+   "z": 2.6,
+   "yaw": 270,
+   "role": "",
+   "note": "small mirror",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p015",
+   "n": 15,
+   "room": "hall",
+   "key": "FuseBox",
+   "x": -1.365,
+   "y": 1.4,
+   "z": -2.6,
+   "yaw": 90,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H04.p016",
+   "n": 16,
+   "room": "parlour",
+   "key": "Barrel2",
+   "x": 1.6,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 0,
+   "role": "",
+   "note": "dye vat (red stain)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Barrel_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p017",
+   "n": 17,
+   "room": "parlour",
+   "key": "Barrel2",
+   "x": 3.0,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 0,
+   "role": "",
+   "note": "dye vat (red stain)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Barrel_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p018",
+   "n": 18,
+   "room": "parlour",
+   "key": "SteelShelves",
+   "x": 6.245,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "",
+   "note": "dye jars, mordant tins",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    1.9
+   ]
+  },
+  {
+   "id": "H04.p019",
+   "n": 19,
+   "room": "parlour",
+   "key": "Wicker2",
+   "x": 1.4,
+   "y": 0.0,
+   "z": 2.47,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wicker_basket_02",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H04.p020",
+   "n": 20,
+   "room": "parlour",
+   "key": "Wicker1",
+   "x": 5.6,
+   "y": 0.0,
+   "z": 2.495,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wicker_basket_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.35,
+    0.3
+   ]
+  },
+  {
+   "id": "H04.p021",
+   "n": 21,
+   "room": "parlour",
+   "key": "WashingLine",
+   "x": 3.8,
+   "y": 0.6,
+   "z": 0.4,
+   "yaw": 0,
+   "role": "allow-overlap",
+   "note": "indoor drying lines with red skeins at 2.0 m",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "2 posts + line + 3-6 cloth quads that move in wind",
+   "source": "procedural",
+   "dims": [
+    6.0,
+    0.3,
+    2.0
+   ]
+  },
+  {
+   "id": "H04.p022",
+   "n": 22,
+   "room": "parlour",
+   "key": "BarrelWorn",
+   "x": 5.9,
+   "y": 0.0,
+   "z": -2.345,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "His_Med_Storage_Barrel_Wood_Worn_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    0.65,
+    0.65,
+    0.95
+   ]
+  },
+  {
+   "id": "H04.p023",
+   "n": 23,
+   "room": "kitchen",
+   "key": "Cooker",
+   "x": -6.1,
+   "y": 0.0,
+   "z": -4.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "electric_stove",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -4.8,
+   "y": 0.0,
+   "z": -4.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "Jug",
+   "x": -4.5,
+   "y": 0.9,
+   "z": -4.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H04.p024",
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Flask_Ceramic_Worn_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    0.18,
+    0.18,
+    0.3
+   ]
+  },
+  {
+   "id": "H04.p026",
+   "n": 26,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": -2.5,
+   "y": 0.0,
+   "z": -4.801,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.85,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H04.p027",
+   "n": 27,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -1.805,
+   "y": 0.0,
+   "z": -4.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H04.p028",
+   "n": 28,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -1.9,
+   "y": 1.1,
+   "z": -3.285,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p029",
+   "n": 29,
+   "room": "bath",
+   "key": "Sink",
+   "x": -1.9,
+   "y": 0.0,
+   "z": -3.515,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H04.p030",
+   "n": 30,
+   "room": "loomshop",
+   "key": "LoomDobby",
+   "x": 3.2,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 180,
+   "role": "puzzle",
+   "note": "THE LOOM, centre of the room: rethread it to match the hidden pattern (SequencePuzzle 6 symbols = 6 thread colours)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "07ba2b15ffb7425cab23f700828fd7f3",
+   "source": "sketchfab",
+   "dims": [
+    1.6,
+    1.5,
+    1.6
+   ]
+  },
+  {
+   "id": "H04.p031",
+   "n": 31,
+   "room": "loomshop",
+   "key": "LoomFrame",
+   "x": 0.8,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 180,
+   "role": "",
+   "note": "second, broken loom (dressing)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "fallback floor loom: 4 posts, warp beam, 8 harness frames, bench",
+   "source": "procedural",
+   "dims": [
+    1.6,
+    1.5,
+    1.6
+   ]
+  },
+  {
+   "id": "H04.p032",
+   "n": 32,
+   "room": "loomshop",
+   "key": "ChestWorn",
+   "x": 6.22,
+   "y": 0.0,
+   "z": -1.8,
+   "yaw": 270,
+   "role": "",
+   "note": "PART CONTAINER: thread chest",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H04.p033",
+   "n": 33,
+   "room": "loomshop",
+   "key": "ShelvesPainted",
+   "x": 5.5,
+   "y": 0.0,
+   "z": -2.52,
+   "yaw": 0,
+   "role": "",
+   "note": "bobbins in pigeon rows",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_shelves",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.3,
+    1.6
+   ]
+  },
+  {
+   "id": "H04.p034",
+   "n": 34,
+   "room": "loomshop",
+   "key": "Wicker1",
+   "x": 2.0,
+   "y": 0.0,
+   "z": -2.495,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wicker_basket_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.35,
+    0.3
+   ]
+  },
+  {
+   "id": "H04.p035",
+   "n": 35,
+   "room": "loomshop",
+   "key": "TableSmall",
+   "x": 4.2,
+   "y": 0.0,
+   "z": -2.42,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H04.p036",
+   "n": 36,
+   "room": "loomshop",
+   "key": "Sacks",
+   "x": 1.0,
+   "y": 0.0,
+   "z": -2.37,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of 4 hessian flour sacks (FabricHessian)",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.7
+   ]
+  },
+  {
+   "id": "H04.p037",
+   "n": 37,
+   "room": "loomshop",
+   "key": "ShrineNiche",
+   "x": 6.3,
+   "y": 0.9,
+   "z": -2.575,
+   "yaw": 0,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  },
+  {
+   "id": "H04.p038",
+   "n": 38,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -5.4,
+   "y": 0.0,
+   "z": 1.14,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H04.p039",
+   "n": 39,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -4.3,
+   "y": 0.0,
+   "z": 0.29,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H04.p040",
+   "n": 40,
+   "room": "bed1",
+   "key": "ChestOfDrawers",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 2.43,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H04.p041",
+   "n": 41,
+   "room": "bed1",
+   "key": "FrameHanging2",
+   "x": -2.6,
+   "y": 1.4,
+   "z": 2.685,
+   "yaw": 180,
+   "role": "family-photo",
+   "note": "embroidered sampler: pattern piece 1",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.03,
+    0.4
+   ]
+  },
+  {
+   "id": "H04.p042",
+   "n": 42,
+   "room": "bed2",
+   "key": "Wardrobe",
+   "x": -5.6,
+   "y": 0.0,
+   "z": -2.37,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H04.p043",
+   "n": 43,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": -5.47,
+   "y": 0.0,
+   "z": -1.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H04.p044",
+   "n": 44,
+   "room": "bed2",
+   "key": "TableSmall",
+   "x": -1.84,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H04.p045",
+   "n": 45,
+   "room": "loomshop",
+   "key": "CardboardBox",
+   "x": 3.2,
+   "y": 0.0,
+   "z": -2.47,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cardboard_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H04.p046",
+   "n": 46,
+   "room": "garret",
+   "key": "CellarCrates",
+   "x": -6.02,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H04.p047",
+   "n": 47,
+   "room": "garret",
+   "key": "Suitcase",
+   "x": -4.0,
+   "y": 0.0,
+   "z": 2.57,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_suitcase",
+   "source": "polyhaven",
+   "dims": [
+    0.65,
+    0.2,
+    0.45
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "living",
+   "x": -6.12,
+   "y": 1.4,
+   "z": 0.0,
+   "yaw": 90,
+   "note": "mantel"
+  },
+  {
+   "kind": "note-spot",
+   "room": "living",
+   "x": -3.7,
+   "y": 0.76,
+   "z": -1.0,
+   "yaw": 0,
+   "note": "pattern draft (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "living",
+   "x": -3.6,
+   "y": 2.0,
+   "z": -2.86,
+   "yaw": 0,
+   "note": "dresser"
+  },
+  {
+   "kind": "hiding",
+   "room": "parlour",
+   "x": 5.9,
+   "y": 0.0,
+   "z": -2.345,
+   "yaw": 0,
+   "note": "inside the empty dye barrel -> HidingSpot on H04.p022 (BarrelWorn) - crouched"
+  },
+  {
+   "kind": "puzzle",
+   "room": "loomshop",
+   "x": 3.2,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 180,
+   "note": "Rethread the loom: pattern pieces hidden in 3 places (bed1 sampler, parlour dye book, living mantel photo)"
+  },
+  {
+   "kind": "container",
+   "room": "loomshop",
+   "x": 6.22,
+   "y": 0.0,
+   "z": -1.8,
+   "yaw": 270,
+   "note": "Spool of red thread"
+  },
+  {
+   "kind": "item-spot",
+   "room": "loomshop",
+   "x": 4.2,
+   "y": 0.72,
+   "z": -2.42,
+   "yaw": 0,
+   "note": "winding table"
+  },
+  {
+   "kind": "hiding",
+   "room": "loomshop",
+   "x": 1.0,
+   "y": 0.0,
+   "z": -2.37,
+   "yaw": 0,
+   "note": "behind the wool sacks -> HidingSpot on H04.p036 (Sacks) - crouched"
+  },
+  {
+   "kind": "shrine",
+   "room": "loomshop",
+   "x": 6.3,
+   "y": 0.0,
+   "z": -2.575,
+   "yaw": 0,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -5.4,
+   "y": 0.0,
+   "z": 1.14,
+   "yaw": 0,
+   "note": "under the bed -> HidingSpot on H04.p038 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed2",
+   "x": -5.6,
+   "y": 0.0,
+   "z": -2.37,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H04.p042 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed2",
+   "x": -1.84,
+   "y": 0.72,
+   "z": -2.3,
+   "yaw": 270,
+   "note": "apprentice's notebook (note 2/3)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "loomshop",
+   "x": 3.1,
+   "y": 0.4,
+   "z": -2.47,
+   "yaw": 0,
+   "note": "order book (note 3/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "garret",
+   "x": -6.02,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "note": "behind the trunks in the garret -> HidingSpot on H04.p046 (CellarCrates) - crouched"
+  }
+ ],
+ "exterior": [
+  "upper-floor WEAVER'S WINDOW BAND: 7 lights with stone mullions running almost the full front",
+  "outside stone stair (8 steps, no rail) up the east gable to the loading door",
+  "red door in the middle of the front (cross-passage plan)",
+  "heavy stone-slate roof with graded courses, moss, a sagging ridge",
+  "red dye stains running down the wall under the parlour window"
+ ],
+ "plot": [
+  "Front: no garden; a 1 m flagged strip",
+  "Back: DRYING GREEN 10 x 8 m with 3 washing lines of RED skeins; 2 dye barrels; a well-house cover; a broken spinning wheel"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the loom, centre of the loom shop, half-threaded; the thread chest beside it is locked to the loom's beam.",
+  "Pattern pieces (3): the embroidered sampler (bed1), the dye book (parlour), the mantel photo of the finished cloth.",
+  "Rethread: 6 thread colours (= the 6 SequenceSymbols) - press them on the loom heddles in the pattern order (4 of 6).",
+  "Wrong: the shuttle flies off the loom (thud + noise) and the threads reset.",
+  "Part: Spool of red thread."
+ ],
+ "night_changes": [
+  "the loom is weaving by itself, slowly, and stops when you enter",
+  "the red skeins on the drying lines are now hanging inside the parlour",
+  "a pattern on the floor in red thread spells a house name"
+ ],
+ "audio": [
+  "washing: thread/basket foley",
+  "the loom: wooden clacks (Antique Small Metals + wood knocks)"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Weavers%27_cottage"
+ ],
+ "image_prompt": "long low stone weaver's cottage with a continuous band of small mullioned windows across the whole upper floor, heavy stone-slate roof, an outside stone stair to a loading door on the gable, a red front door, red dyed wool hanging on washing lines behind, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

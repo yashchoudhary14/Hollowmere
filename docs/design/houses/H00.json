@@ -1,0 +1,2551 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H00",
+ "index": 0,
+ "name": "Blue Door House",
+ "family": "Hale",
+ "part": "Iron gate key",
+ "puzzle_kind_m1": "Clock",
+ "door_colour": "Blue",
+ "chimneys": 2,
+ "clock_hour": 3,
+ "loud_puzzle": false,
+ "archetype": "Clockmaker's narrow Georgian brick town house, shop on the ground floor",
+ "silhouette": "Tall and narrow (7.6 m front, 3 storeys to the ridge), two chimney stacks side by side on the WEST gable, a big clock face in the front dormer, a shop window with a hanging clock sign.",
+ "world": {
+  "position": [
+   10.6,
+   0.45,
+   52.0
+  ],
+  "yaw": 270,
+  "street": "Main Street (east side)",
+  "plot_poly": [
+   [
+    25.1,
+    47.900000000000006
+   ],
+   [
+    25.1,
+    56.1
+   ],
+   [
+    5.099999999999999,
+    56.1
+   ],
+   [
+    5.1000000000000005,
+    47.9
+   ]
+  ],
+  "note": "pavement-line town house; floor +0.45 so 3 steps up to the blue door"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.9,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 3.15,
+   "h": 2.7,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 6.1,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -3.8,
+    -5.5,
+    3.8,
+    4.5
+   ],
+   "levels": [
+    "G",
+    "F",
+    "A"
+   ],
+   "walls": "BrickRed front (Flemish bond, dark headers), BrickMixed sides/back; SandstoneBlocks sills, lintels and a 0.3 m plinth course",
+   "t": 0.35,
+   "roof": "Gable roof, ridge along x at 9.6 m, 42 deg, RoofSlateGrey with lead ridge; front flat-roofed dormer 2.2 w x 1.6 h holding a 0.9 m clock face (stopped at 3:00, same as the street clock) with a small window below it; 0.25 m eaves overhang; cast-iron gutters (GreenRust)",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "shop",
+   "name": "Clock shop",
+   "level": "G",
+   "rect": [
+    -3.8,
+    0,
+    1.8,
+    4.5
+   ],
+   "inner": [
+    -3.45,
+    0.06,
+    1.74,
+    4.15
+   ],
+   "kind": "shop",
+   "floor": "FloorDarkPlanks",
+   "walls": "PanelDark to 1.0 m, Wallpaper2C above",
+   "ceiling": "CeilingInterior",
+   "light": "2 brass pendants",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Hall & stair",
+   "level": "G",
+   "rect": [
+    1.8,
+    -5.5,
+    3.8,
+    4.5
+   ],
+   "inner": [
+    1.86,
+    -5.15,
+    3.45,
+    4.15
+   ],
+   "kind": "hall",
+   "floor": "FloorWornTile",
+   "walls": "Wallpaper2 above PanelDark dado",
+   "ceiling": "CeilingInterior",
+   "light": "1 pendant + fanlight",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "level": "G",
+   "rect": [
+    -3.8,
+    -5.5,
+    -0.6,
+    0
+   ],
+   "inner": [
+    -3.45,
+    -5.15,
+    -0.66,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "1 pull-chain bulb (PullChainSocket)",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parlour",
+   "name": "Back parlour",
+   "level": "G",
+   "rect": [
+    -0.6,
+    -5.5,
+    1.8,
+    0
+   ],
+   "inner": [
+    -0.54,
+    -5.15,
+    1.74,
+    -0.06
+   ],
+   "kind": "living",
+   "floor": "Carpet70sB",
+   "walls": "WallpaperJacquard (tinted mustard)",
+   "ceiling": "CeilingInterior",
+   "light": "FloorLampOld + pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Front bedroom (the Hales')",
+   "level": "F",
+   "rect": [
+    -3.8,
+    0,
+    1.8,
+    4.5
+   ],
+   "inner": [
+    -3.45,
+    0.06,
+    1.74,
+    4.15
+   ],
+   "kind": "bedroom",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    1.8,
+    -5.5,
+    3.8,
+    4.5
+   ],
+   "inner": [
+    1.86,
+    -5.15,
+    3.45,
+    4.15
+   ],
+   "kind": "landing",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Child's bedroom",
+   "level": "F",
+   "rect": [
+    -3.8,
+    -5.5,
+    -0.6,
+    0
+   ],
+   "inner": [
+    -3.45,
+    -5.15,
+    -0.66,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "Wallpaper1B (faded blue)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "lobby",
+   "name": "Back lobby",
+   "level": "F",
+   "rect": [
+    -0.6,
+    -2.2,
+    1.8,
+    0
+   ],
+   "inner": [
+    -0.54,
+    -2.14,
+    1.74,
+    -0.06
+   ],
+   "kind": "lobby",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -0.6,
+    -5.5,
+    1.8,
+    -2.2
+   ],
+   "inner": [
+    -0.54,
+    -5.15,
+    1.74,
+    -2.26
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite to 1.4 m, PlasterWorn above",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "workshop",
+   "name": "Clock workshop (attic)",
+   "level": "A",
+   "rect": [
+    -3.8,
+    -5.5,
+    3.8,
+    4.5
+   ],
+   "inner": [
+    -3.45,
+    -5.15,
+    3.45,
+    4.15
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall (rafters exposed), knee walls 1.1 m at z=+-3.4",
+   "ceiling": "exposed rafters + CeilingBeam",
+   "light": "2 CagedLight + DeskLamp on bench",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": 2.35,
+   "width": 0.95,
+   "height": 2.15,
+   "kind": "6-panel door + fanlight",
+   "mat": "Door",
+   "colour": "Blue",
+   "role": "front",
+   "note": "brass knocker, letterbox, 3 stone steps up (house floor +0.45 above street), black iron railings each side",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": 2.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "ledged plank (WoodRoughPine)",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "to the back yard",
+   "swing": "in"
+  },
+  {
+   "id": "d_shop",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "shop",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "glazed half-door with shop bell",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_parl",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parlour",
+   "side": "W",
+   "at": -1.8,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "4-panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "parlour",
+   "room_b": "kitchen",
+   "side": "W",
+   "at": -4.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "ledged plank",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bed1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_lobby",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "lobby",
+   "side": "W",
+   "at": -1.1,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "4-panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bed2",
+   "level": "F",
+   "room_a": "lobby",
+   "room_b": "bed2",
+   "side": "W",
+   "at": -1.1,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "4-panel, painted pale blue",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "lobby",
+   "room_b": "bath",
+   "side": "S",
+   "at": 0.6,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "4-panel, bolt inside",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_shop",
+   "room": "shop",
+   "side": "N",
+   "at": -1.0,
+   "width": 2.6,
+   "height": 1.7,
+   "sill": 0.55,
+   "style": "shop window, 6 panes, gilt lettering 'E. HALE - CLOCKS & WATCHES'",
+   "weak": false,
+   "curtains": "none",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "S",
+   "at": -2.6,
+   "width": 1.0,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash, cracked lower pane, rotten frame",
+   "weak": true,
+   "curtains": "FabricGingham cafe curtain",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_p",
+   "room": "parlour",
+   "side": "S",
+   "at": 0.6,
+   "width": 1.0,
+   "height": 1.3,
+   "sill": 0.9,
+   "style": "sash, loose putty",
+   "weak": true,
+   "curtains": "FabricVelvet (ochre)",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": -1.0,
+   "width": 1.2,
+   "height": 1.45,
+   "sill": 0.9,
+   "style": "sash 6-over-6",
+   "weak": false,
+   "curtains": "FabricTerlenka (orange/brown 1970s)",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_l",
+   "room": "landing",
+   "side": "N",
+   "at": 2.8,
+   "width": 0.7,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "narrow sash over the front door",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "S",
+   "at": -2.2,
+   "width": 1.0,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": "FabricLinen",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "S",
+   "at": 0.6,
+   "width": 0.7,
+   "height": 0.8,
+   "sill": 1.3,
+   "style": "frosted top-hung",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_dorm",
+   "room": "workshop",
+   "side": "N",
+   "at": -1.0,
+   "width": 0.9,
+   "height": 0.7,
+   "sill": 0.9,
+   "style": "small window under the dormer clock face",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_gable",
+   "room": "workshop",
+   "side": "E",
+   "at": 0.0,
+   "width": 0.6,
+   "height": 0.6,
+   "sill": 1.2,
+   "style": "round gable window (oculus)",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    2.55,
+    -0.3,
+    3.45,
+    3.2
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "15 risers 0.193, oak, turned balusters, carpet runner (Carpet70s) held by brass rods; void above in landing"
+  },
+  {
+   "id": "s2",
+   "room": "landing",
+   "rect": [
+    2.55,
+    -0.3,
+    3.45,
+    3.2
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "stairwell void (balustrade on W side)",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s3",
+   "room": "landing",
+   "rect": [
+    1.9,
+    -4.9,
+    2.7,
+    -3.7
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "S",
+   "kind": "folding loft ladder through 0.7x1.0 hatch",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -3.8,
+   "z": 2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "shop fireplace (bricked up) / bed1",
+   "pots": 2
+  },
+  {
+   "x": -3.8,
+   "z": -2.6,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "kitchen range = THE HEARTH / bed2",
+   "pots": 2
+  }
+ ],
+ "props": [
+  {
+   "id": "H00.p001",
+   "n": 1,
+   "room": "shop",
+   "key": "Counter",
+   "x": -1.2,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "mahogany shop counter, glass top showing 6 pocket watches",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "shop counter, panelled front, glass top optional",
+   "source": "procedural",
+   "dims": [
+    2.4,
+    0.6,
+    0.95
+   ]
+  },
+  {
+   "id": "H00.p002",
+   "n": 2,
+   "room": "shop",
+   "key": "PocketWatch",
+   "x": -1.7,
+   "y": 0.95,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H00.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "pocket_watch",
+   "source": "polyhaven",
+   "dims": [
+    0.06,
+    0.02,
+    0.08
+   ]
+  },
+  {
+   "id": "H00.p003",
+   "n": 3,
+   "room": "shop",
+   "key": "PocketWatch",
+   "x": -1.4,
+   "y": 0.95,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H00.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "pocket_watch",
+   "source": "polyhaven",
+   "dims": [
+    0.06,
+    0.02,
+    0.08
+   ]
+  },
+  {
+   "id": "H00.p004",
+   "n": 4,
+   "room": "shop",
+   "key": "Magnifier",
+   "x": -0.9,
+   "y": 0.95,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H00.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "magnifying_glass_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.1,
+    0.03
+   ]
+  },
+  {
+   "id": "H00.p005",
+   "n": 5,
+   "room": "shop",
+   "key": "Lighter",
+   "x": -0.5,
+   "y": 0.95,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "brass desk bell substitute",
+   "on": "H00.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_lighter",
+   "source": "polyhaven",
+   "dims": [
+    0.04,
+    0.02,
+    0.06
+   ]
+  },
+  {
+   "id": "H00.p006",
+   "n": 6,
+   "room": "shop",
+   "key": "WallClock",
+   "x": -3.42,
+   "y": 1.725,
+   "z": 0.9,
+   "yaw": 90,
+   "role": "",
+   "note": "wall clock 1, each stopped at a different time",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H00.p007",
+   "n": 7,
+   "room": "shop",
+   "key": "WallClock",
+   "x": -3.42,
+   "y": 1.725,
+   "z": 2.1,
+   "yaw": 90,
+   "role": "",
+   "note": "wall clock 2, each stopped at a different time",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H00.p008",
+   "n": 8,
+   "room": "shop",
+   "key": "WallClock",
+   "x": -3.42,
+   "y": 1.725,
+   "z": 3.3,
+   "yaw": 90,
+   "role": "",
+   "note": "wall clock 3, each stopped at a different time",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H00.p009",
+   "n": 9,
+   "room": "shop",
+   "key": "GrandfatherClock",
+   "x": -3.26,
+   "y": 0.0,
+   "z": 2.7,
+   "yaw": 90,
+   "role": "",
+   "note": "display longcase clock (not the puzzle one), pendulum still",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_grandfather_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.55,
+    0.32,
+    2.05
+   ]
+  },
+  {
+   "id": "H00.p010",
+   "n": 10,
+   "room": "shop",
+   "key": "DisplayShelves",
+   "x": -3.22,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "shelves of mantel clocks and alarm clocks",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_display_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H00.p011",
+   "n": 11,
+   "room": "shop",
+   "key": "MantelClock",
+   "x": -3.0,
+   "y": 1.2,
+   "z": 0.9,
+   "yaw": 90,
+   "role": "",
+   "note": "on shelf",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H00.p012",
+   "n": 12,
+   "room": "shop",
+   "key": "AlarmClock",
+   "x": -3.0,
+   "y": 0.75,
+   "z": 1.2,
+   "yaw": 90,
+   "role": "",
+   "note": "on shelf",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "alarm_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.14,
+    0.08,
+    0.16
+   ]
+  },
+  {
+   "id": "H00.p013",
+   "n": 13,
+   "room": "shop",
+   "key": "TableSmall",
+   "x": -1.0,
+   "y": 0.0,
+   "z": 2.6,
+   "yaw": 0,
+   "role": "",
+   "note": "window display table",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H00.p014",
+   "n": 14,
+   "room": "shop",
+   "key": "MantelClock",
+   "x": -1.0,
+   "y": 0.72,
+   "z": 2.6,
+   "yaw": 0,
+   "role": "",
+   "note": "display clock on the table",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H00.p015",
+   "n": 15,
+   "room": "shop",
+   "key": "Rug",
+   "x": -1.0,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "worn runner, Cloth",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H00.p016",
+   "n": 16,
+   "room": "shop",
+   "key": "PictureFrame",
+   "x": 0.9,
+   "y": 1.475,
+   "z": 0.075,
+   "yaw": 0,
+   "role": "family-photo",
+   "note": "FAMILY PHOTO: Edwin Hale, wife, small girl in front of this shop (count of people changes at night)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "Urb_Dec_PictureFrame_Wood_Worn_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    0.35,
+    0.03,
+    0.45
+   ]
+  },
+  {
+   "id": "H00.p017",
+   "n": 17,
+   "room": "hall",
+   "key": "Mirror",
+   "x": 1.885,
+   "y": 1.15,
+   "z": 3.6,
+   "yaw": 90,
+   "role": "",
+   "note": "hall mirror over coat hooks (late mirror event candidate)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H00.p018",
+   "n": 18,
+   "room": "hall",
+   "key": "CoatHooks",
+   "x": 2.015,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wall rail with 5 hooks + 2 coats + 1 hat (cloth)",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.25,
+    1.7
+   ]
+  },
+  {
+   "id": "H00.p019",
+   "n": 19,
+   "room": "hall",
+   "key": "HallConsole",
+   "x": 2.09,
+   "y": 0.0,
+   "z": -3.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicConsole_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.4,
+    0.82
+   ]
+  },
+  {
+   "id": "H00.p020",
+   "n": 20,
+   "room": "hall",
+   "key": "RotaryPhone",
+   "x": 2.09,
+   "y": 0.82,
+   "z": -3.4,
+   "yaw": 90,
+   "role": "phone",
+   "note": "the house phone (DESIGN 'The phone')",
+   "on": "H00.p019",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H00.p021",
+   "n": 21,
+   "room": "hall",
+   "key": "FuseBox",
+   "x": 3.2,
+   "y": 1.3,
+   "z": -5.075,
+   "yaw": 0,
+   "role": "fuse-box",
+   "note": "FUSE BOX by the back door",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H00.p022",
+   "n": 22,
+   "room": "hall",
+   "key": "UnderStairCupboard",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 0.45,
+   "yaw": 270,
+   "role": "allow-overlap",
+   "note": "under-stair cupboard (on the stair footprint, below the flight)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "door + void under a stair (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.9,
+    1.6
+   ]
+  },
+  {
+   "id": "H00.p023",
+   "n": 23,
+   "room": "kitchen",
+   "key": "Hearth",
+   "x": -3.07,
+   "y": 0.0,
+   "z": -2.6,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "black-leaded RANGE set in a 1.8 m brick opening; mantel shelf with tea caddies",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H00.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "MantelClock",
+   "x": -3.07,
+   "y": 1.4,
+   "z": -3.0,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 3:00",
+   "on": "H00.p023",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H00.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "Candlestick",
+   "x": -3.07,
+   "y": 1.4,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H00.p023",
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_candlestick",
+   "source": "polyhaven",
+   "dims": [
+    0.1,
+    0.1,
+    0.25
+   ]
+  },
+  {
+   "id": "H00.p026",
+   "n": 26,
+   "room": "kitchen",
+   "key": "Dresser",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -0.34,
+   "yaw": 180,
+   "role": "",
+   "note": "Welsh dresser with willow-pattern plates",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H00.p027",
+   "n": 27,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -2.6,
+   "y": 0.0,
+   "z": -4.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H00.p028",
+   "n": 28,
+   "room": "kitchen",
+   "key": "Kettle",
+   "x": -2.3,
+   "y": 0.9,
+   "z": -4.82,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H00.p027",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_electric_kettle",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.18,
+    0.25
+   ]
+  },
+  {
+   "id": "H00.p029",
+   "n": 29,
+   "room": "kitchen",
+   "key": "TableWood1",
+   "x": -1.6,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.8,
+    0.76
+   ]
+  },
+  {
+   "id": "H00.p030",
+   "n": 30,
+   "room": "kitchen",
+   "key": "TeaSet",
+   "x": -1.6,
+   "y": 0.76,
+   "z": -2.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H00.p029",
+   "mat": null,
+   "scale": null,
+   "asset": "tea_set_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.3,
+    0.2
+   ]
+  },
+  {
+   "id": "H00.p031",
+   "n": 31,
+   "room": "kitchen",
+   "key": "OilLamp",
+   "x": -1.6,
+   "y": 0.76,
+   "z": -2.7,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": "H00.p029",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_oil_lamp",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.18,
+    0.45
+   ]
+  },
+  {
+   "id": "H00.p032",
+   "n": 32,
+   "room": "kitchen",
+   "key": "ChairDining",
+   "x": -2.3,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H00.p033",
+   "n": 33,
+   "room": "kitchen",
+   "key": "ChairDining",
+   "x": -0.9,
+   "y": 0.0,
+   "z": -2.9,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H00.p034",
+   "n": 34,
+   "room": "kitchen",
+   "key": "FridgeSmall",
+   "x": -0.98,
+   "y": 0.0,
+   "z": -0.365,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "7d12f05773a6403c9ca259ed43604c69",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.58,
+    1.2
+   ]
+  },
+  {
+   "id": "H00.p035",
+   "n": 35,
+   "room": "kitchen",
+   "key": "Broom",
+   "x": -0.85,
+   "y": 0.0,
+   "z": -5.05,
+   "yaw": 0,
+   "role": "allow-overlap",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_broom",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.1,
+    1.3
+   ]
+  },
+  {
+   "id": "H00.p036",
+   "n": 36,
+   "room": "parlour",
+   "key": "Armchair",
+   "x": 1.285,
+   "y": 0.0,
+   "z": -4.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ArmChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ]
+  },
+  {
+   "id": "H00.p037",
+   "n": 37,
+   "room": "parlour",
+   "key": "Sofa3",
+   "x": 0.6,
+   "y": 0.0,
+   "z": -0.515,
+   "yaw": 180,
+   "role": "",
+   "note": "facing the TV",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_03",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.85,
+    0.8
+   ]
+  },
+  {
+   "id": "H00.p038",
+   "n": 38,
+   "room": "parlour",
+   "key": "TV2",
+   "x": 0.6,
+   "y": 0.0,
+   "z": -4.895,
+   "yaw": 0,
+   "role": "tv",
+   "note": "TV with rabbit-ear aerial on the floor-standing cabinet",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "television_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "H00.p039",
+   "n": 39,
+   "room": "parlour",
+   "key": "CoffeeTableRound",
+   "x": 0.5,
+   "y": 0.0,
+   "z": -2.8,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "coffee_table_round_01",
+   "source": "polyhaven",
+   "dims": [
+    0.8,
+    0.8,
+    0.45
+   ]
+  },
+  {
+   "id": "H00.p040",
+   "n": 40,
+   "room": "parlour",
+   "key": "SideTableTall",
+   "x": 1.485,
+   "y": 0.0,
+   "z": -3.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_tall_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H00.p041",
+   "n": 41,
+   "room": "parlour",
+   "key": "Radio",
+   "x": 1.485,
+   "y": 0.85,
+   "z": -3.0,
+   "yaw": 270,
+   "role": "radio",
+   "note": "radio: static rises when the Hollow is near",
+   "on": "H00.p040",
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_radio_transceiver",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ]
+  },
+  {
+   "id": "H00.p042",
+   "n": 42,
+   "room": "parlour",
+   "key": "FrameHanging1",
+   "x": -0.525,
+   "y": 1.35,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "wedding photograph",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.03,
+    0.5
+   ]
+  },
+  {
+   "id": "H00.p043",
+   "n": 43,
+   "room": "parlour",
+   "key": "WallClock",
+   "x": 0.6,
+   "y": 1.925,
+   "z": -0.09,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H00.p044",
+   "n": 44,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -2.37,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H00.p045",
+   "n": 45,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -3.22,
+   "y": 0.0,
+   "z": 1.1,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H00.p046",
+   "n": 46,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -3.22,
+   "y": 0.0,
+   "z": 3.3,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H00.p047",
+   "n": 47,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -0.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H00.p048",
+   "n": 48,
+   "room": "bed1",
+   "key": "ChestOfDrawers",
+   "x": 1.47,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H00.p049",
+   "n": 49,
+   "room": "bed1",
+   "key": "Rug",
+   "x": -1.0,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H00.p050",
+   "n": 50,
+   "room": "bed1",
+   "key": "FrameHanging2",
+   "x": 1.725,
+   "y": 1.4,
+   "z": 3.3,
+   "yaw": 270,
+   "role": "family-photo",
+   "note": "the daughter's school photo",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.03,
+    0.4
+   ]
+  },
+  {
+   "id": "H00.p051",
+   "n": 51,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": -2.42,
+   "y": 0.0,
+   "z": -3.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H00.p052",
+   "n": 52,
+   "room": "bed2",
+   "key": "NightstandPainted",
+   "x": -3.23,
+   "y": 0.0,
+   "z": -3.775,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H00.p053",
+   "n": 53,
+   "room": "bed2",
+   "key": "NightstandPainted",
+   "x": -3.23,
+   "y": 0.0,
+   "z": -2.225,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H00.p054",
+   "n": 54,
+   "room": "bed2",
+   "key": "RockingHorse",
+   "x": -2.97,
+   "y": 0.0,
+   "z": -0.265,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "5168ce9d45a3401ea6fe4d92f17bb332",
+   "source": "sketchfab",
+   "dims": [
+    0.9,
+    0.35,
+    0.7
+   ]
+  },
+  {
+   "id": "H00.p055",
+   "n": 55,
+   "room": "bed2",
+   "key": "ChestOfDrawers",
+   "x": -3.18,
+   "y": 0.0,
+   "z": -1.5,
+   "yaw": 90,
+   "role": "",
+   "note": "drawers lined with newspaper from 1971",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H00.p056",
+   "n": 56,
+   "room": "bed2",
+   "key": "TableSmall",
+   "x": -1.6,
+   "y": 0.0,
+   "z": -4.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H00.p057",
+   "n": 57,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": 1.335,
+   "y": 0.0,
+   "z": -4.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H00.p058",
+   "n": 58,
+   "room": "bath",
+   "key": "BathCurtainRail",
+   "x": 1.3,
+   "y": 0.0,
+   "z": -4.2,
+   "yaw": 270,
+   "role": "allow-overlap",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "rail + plastic curtain around bath (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.7,
+    0.8,
+    2.0
+   ]
+  },
+  {
+   "id": "H00.p059",
+   "n": 59,
+   "room": "bath",
+   "key": "Sink",
+   "x": -0.285,
+   "y": 0.0,
+   "z": -4.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H00.p060",
+   "n": 60,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -0.515,
+   "y": 1.1,
+   "z": -4.6,
+   "yaw": 90,
+   "role": "mirror",
+   "note": "BATHROOM MIRROR (mirror events)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H00.p061",
+   "n": 61,
+   "room": "bath",
+   "key": "Toilet",
+   "x": 0.35,
+   "y": 0.0,
+   "z": -4.795,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H00.p062",
+   "n": 62,
+   "room": "bath",
+   "key": "MedicalBox",
+   "x": -0.4,
+   "y": 1.4,
+   "z": -3.4,
+   "yaw": 90,
+   "role": "allow-overlap",
+   "note": "wall cabinet: bandage spawn",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "medical_box",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.2,
+    0.25
+   ]
+  },
+  {
+   "id": "H00.p063",
+   "n": 63,
+   "room": "lobby",
+   "key": "FrameHanging3",
+   "x": 0.6,
+   "y": 1.375,
+   "z": -0.075,
+   "yaw": 180,
+   "role": "",
+   "note": "framed clock advert",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_03",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.03,
+    0.45
+   ]
+  },
+  {
+   "id": "H00.p064",
+   "n": 64,
+   "room": "workshop",
+   "key": "GrandfatherClock",
+   "x": 0.0,
+   "y": 0.0,
+   "z": -4.96,
+   "yaw": 0,
+   "role": "puzzle",
+   "note": "THE PUZZLE CLOCK (existing ClockPuzzle rig): case 0.55x0.32x2.05; winding keyhole 1.38 m; part chest is INSIDE the trunk door",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_grandfather_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.55,
+    0.32,
+    2.05
+   ]
+  },
+  {
+   "id": "H00.p065",
+   "n": 65,
+   "room": "workshop",
+   "key": "TableWood3",
+   "x": -1.0,
+   "y": 0.0,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "clockmaker's bench under the dormer, 2.0 m",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_03",
+   "source": "polyhaven",
+   "dims": [
+    2.0,
+    0.9,
+    0.78
+   ]
+  },
+  {
+   "id": "H00.p066",
+   "n": 66,
+   "room": "workshop",
+   "key": "DeskLamp",
+   "x": -1.8,
+   "y": 0.78,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": "H00.p065",
+   "mat": null,
+   "scale": null,
+   "asset": "desk_lamp_arm_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "id": "H00.p067",
+   "n": 67,
+   "room": "workshop",
+   "key": "Magnifier",
+   "x": -0.8,
+   "y": 0.78,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": "H00.p065",
+   "mat": null,
+   "scale": null,
+   "asset": "magnifying_glass_01",
+   "source": "polyhaven",
+   "dims": [
+    0.25,
+    0.1,
+    0.03
+   ]
+  },
+  {
+   "id": "H00.p068",
+   "n": 68,
+   "room": "workshop",
+   "key": "Pliers",
+   "x": -1.3,
+   "y": 0.78,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": "H00.p065",
+   "mat": null,
+   "scale": null,
+   "asset": "pliers",
+   "source": "polyhaven",
+   "dims": [
+    0.2,
+    0.05,
+    0.02
+   ]
+  },
+  {
+   "id": "H00.p069",
+   "n": 69,
+   "room": "workshop",
+   "key": "BenchVice",
+   "x": -0.2,
+   "y": 0.78,
+   "z": 3.67,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": "H00.p065",
+   "mat": null,
+   "scale": null,
+   "asset": "bench_vice_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.2,
+    0.2
+   ]
+  },
+  {
+   "id": "H00.p070",
+   "n": 70,
+   "room": "workshop",
+   "key": "StoolWood1",
+   "x": -1.0,
+   "y": 0.0,
+   "z": 2.8,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_stool_01",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ]
+  },
+  {
+   "id": "H00.p071",
+   "n": 71,
+   "room": "workshop",
+   "key": "GrandfatherClock",
+   "x": -3.26,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "unfinished longcase case, no movement",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_grandfather_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.55,
+    0.32,
+    2.05
+   ]
+  },
+  {
+   "id": "H00.p072",
+   "n": 72,
+   "room": "workshop",
+   "key": "GrandfatherClock",
+   "x": -3.26,
+   "y": 0.0,
+   "z": -1.3,
+   "yaw": 90,
+   "role": "",
+   "note": "unfinished longcase case, no movement",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_grandfather_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.55,
+    0.32,
+    2.05
+   ]
+  },
+  {
+   "id": "H00.p073",
+   "n": 73,
+   "room": "workshop",
+   "key": "ChestWorn",
+   "x": 3.17,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "PART CONTAINER skin: brass-bound clockmaker's chest",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H00.p074",
+   "n": 74,
+   "room": "workshop",
+   "key": "WallClock",
+   "x": -3.42,
+   "y": 1.325,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H00.p075",
+   "n": 75,
+   "room": "workshop",
+   "key": "MetalRack",
+   "x": 3.22,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 270,
+   "role": "",
+   "note": "spare clock parts in trays",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "worn_metal_rack",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    1.7
+   ]
+  },
+  {
+   "id": "H00.p076",
+   "n": 76,
+   "room": "workshop",
+   "key": "CellarCrates",
+   "x": 2.97,
+   "y": 0.0,
+   "z": -4.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H00.p077",
+   "n": 77,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 3.325,
+   "y": 0.9,
+   "z": -4.2,
+   "yaw": 270,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "note-spot",
+   "room": "shop",
+   "x": -1.3,
+   "y": 0.95,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "price ledger page (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "hall",
+   "x": 2.09,
+   "y": 0.82,
+   "z": -3.6,
+   "yaw": 90,
+   "note": "hall table (beside the phone)"
+  },
+  {
+   "kind": "hiding",
+   "room": "hall",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 0.3,
+   "yaw": 0,
+   "note": "UnderStairCupboard: door at x=2.55 facing W, void under the top of the stair"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -3.07,
+   "y": 1.4,
+   "z": -2.6,
+   "yaw": 90,
+   "note": "kitchen mantel"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitchen",
+   "x": -1.6,
+   "y": 0.76,
+   "z": -2.3,
+   "yaw": 90,
+   "note": "Mrs Hale's shopping list (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -2.37,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "note": "under the big bed -> HidingSpot on H00.p044 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -0.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H00.p047 (Wardrobe)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed2",
+   "x": -2.42,
+   "y": 0.0,
+   "z": -3.0,
+   "yaw": 90,
+   "note": "under the iron child's bed -> HidingSpot on H00.p051 (BedIron) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed2",
+   "x": -1.7,
+   "y": 0.72,
+   "z": -4.6,
+   "yaw": 0,
+   "note": "CHILD'S DRAWING: blue door, clock showing the puzzle time (note 3/3, drives the Clock puzzle)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": 1.335,
+   "y": 0.0,
+   "z": -4.2,
+   "yaw": 270,
+   "note": "behind the bath curtain -> HidingSpot on H00.p057 (Bathtub)"
+  },
+  {
+   "kind": "puzzle",
+   "room": "workshop",
+   "x": 0.0,
+   "y": 0.0,
+   "z": -4.96,
+   "yaw": 0,
+   "note": "ClockPuzzle: wind with the WindingKey (spawns on one ItemSpot), set the hour shown in the child's drawing"
+  },
+  {
+   "kind": "item-spot",
+   "room": "workshop",
+   "x": -1.2,
+   "y": 0.78,
+   "z": 3.67,
+   "yaw": 180,
+   "note": "workbench (between the tools)"
+  },
+  {
+   "kind": "container",
+   "room": "workshop",
+   "x": 3.17,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "note": "PartContainer -> Iron gate key (or inside the clock trunk door: Claude Code picks the chest for M1 compatibility)"
+  },
+  {
+   "kind": "hiding",
+   "room": "workshop",
+   "x": 2.97,
+   "y": 0.0,
+   "z": -4.4,
+   "yaw": 270,
+   "note": "behind the crate stack under the eaves -> HidingSpot on H00.p076 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 3.325,
+   "y": 0.0,
+   "z": -4.2,
+   "yaw": 270,
+   "note": "shrine niche on the landing wall"
+  }
+ ],
+ "exterior": [
+  "3 stone steps up to the door; black iron railings with spear finials both sides",
+  "fanlight over the door (semicircular, radial glazing bars)",
+  "hanging bracket sign: a gilt clock silhouette 0.6 m, creaks in wind",
+  "the street clock (existing StoppedClock) on the wall right of the door, stopped at 3:00",
+  "dormer clock face 0.9 m dia (cream with black numerals) - also stopped at 3:00",
+  "cast-iron downpipes at both front corners; one has come away at the top and drips",
+  "nameplate 'HALE' (existing Nameplate) left of the door"
+ ],
+ "plot": [
+  "Front: no garden - house sits on the pavement line; 1 m strip of cobbles (Paving) with a boot scraper",
+  "Back: walled yard 7.6 x 8 m (DryStoneWall 1.8 high), outside WC shed (BrickMixed, CorrugatedRust roof), dustbin (TrashCan), washing line with 3 grey sheets, a broken bicycle wheel (WheelRim), a gate to Back Lane"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the attic clock is the first thing you see when your head comes up through the hatch - lit by the dormer window.",
+  "Find the WINDING KEY: MatchPlan picks one of the 3 item spots (hall table, kitchen mantel, workbench).",
+  "Read the CHILD'S DRAWING (bed2, note 3/3): a blue door and a clock showing the match's hour (MatchPlan solution).",
+  "Insert key at the keyhole (1.38 m); each turn of the hour hand = ClockFace interact; a wrong hour + 'try' = clunk (NoiseRadius.PuzzleClunk).",
+  "Correct hour: the trunk door swings open; the clock CHIMES 12 TIMES (DESIGN twist) - NoiseRadius.LoudPuzzle; barricade first.",
+  "Part: Iron gate key, hung on a hook inside the trunk."
+ ],
+ "night_changes": [
+  "all 21 shop clocks stop at the same minute, then start ticking backwards one by one",
+  "the rocking horse in bed2 is rocking when you enter",
+  "a second, identical grandfather clock appears on the landing (gone when you look back)"
+ ],
+ "audio": [
+  "clocks (344 Audio - Antique Clocks): 3D ticking from every clock, slightly out of sync; silence when the Hollow is within 15 m",
+  "locks: winding-key ratchet; trunk-door latch",
+  "bells: the 12 chimes use clocks/chime samples pitched down 2 semitones"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Georgian_architecture",
+  "https://en.wikipedia.org/wiki/Longcase_clock"
+ ],
+ "image_prompt": "narrow three-storey red brick Georgian town house on a village street, a shop window with gilt lettering 'E. HALE - CLOCKS & WATCHES', a bright BLUE six-panel front door up three stone steps with black iron railings, a flat-roofed dormer holding a large stopped clock face, two chimney stacks side by side on the left gable, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

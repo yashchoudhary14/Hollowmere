@@ -1,0 +1,17 @@
+# Cline rules for Hollowmere
+
+You are standing in for the Claude Code PC session. Before anything else read, in this order:
+1. CLAUDE.md (environment, tools/unity.ps1, conventions - all of it applies to you)
+2. docs/WORKFLOW_CLOUD_PC.md and docs/HANDOFF.md (which phase, whose turn, the PC checklist)
+3. docs/ROADMAP.md (the Status line and the current milestone)
+4. .claude/skills/pc-phase/SKILL.md (the exact steps; .claude/skills/unity-cli for Unity commands)
+
+Rules:
+- Never work while a Claude Code session is working on this project. The Unity Editor must be closed for batch commands.
+- Run Unity only through tools/unity.ps1 (powershell -NoProfile -ExecutionPolicy Bypass -File tools/unity.ps1 <command>). Commands take minutes; wait.
+- `check` after every code change, `test` before calling anything done. Fix compile errors yourself.
+- Never hand-edit .unity/.prefab/.asset YAML or .meta files; scenes and assets come from builders.
+- Never hand-edit docs/design/houses/*.json or village.json: change tools/housegen/*.py, run `python tools/housegen/run_check.py`, then `python tools/housegen/gen_docs.py . tools/third-party.json` and `python tools/housegen/gen_requests.py .`
+- Re-record Tests/EditMode/GreyboxLayout.txt only after the user approves screenshots of a layout change.
+- Fill the PC report and Log in docs/HANDOFF.md, tick ROADMAP.md, commit with a clear message ending in "(via Cline)".
+- One phase half per task. If stuck after two attempts, stop and summarise what is blocking.

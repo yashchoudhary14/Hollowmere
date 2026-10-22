@@ -1,0 +1,7599 @@
+{
+ "materials": [
+  {
+   "key": "HouseWall",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "grey_plaster",
+   "res": "2k",
+   "use": "weathered exterior render",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "InnerWall",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "white_plaster_02",
+   "res": "2k",
+   "use": "plain interior plaster",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Door",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "wood_peeling_paint_weathered",
+   "res": "2k",
+   "use": "painted doors, tinted per house",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Planks",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "brown_planks_03",
+   "res": "2k",
+   "use": "old planks: fences, sheds",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Floor",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "WoodFloor043",
+   "res": "2K",
+   "use": "worn knotted floorboards",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Roof",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "ceramic_roof_01",
+   "res": "2k",
+   "use": "mossy clay pantiles",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "ChapelRoof",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "roof_slates_03",
+   "res": "2k",
+   "use": "dark slate",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Stone",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "stone_wall",
+   "res": "2k",
+   "use": "dry-stone / rubble walls",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "ChapelWall",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "castle_wall_slates",
+   "res": "2k",
+   "use": "coursed slate-stone walls",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "StandingStone",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Rock034",
+   "res": "2K",
+   "use": "mossy rock",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Ground",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "forrest_ground_01",
+   "res": "2k",
+   "use": "dry grass/twig ground",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Road",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "brown_mud_leaves_01",
+   "res": "2k",
+   "use": "muddy lane",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Paving",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "mossy_cobblestone",
+   "res": "2k",
+   "use": "square cobbles",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Metal",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rusty_metal_04",
+   "res": "2k",
+   "use": "rusty metal",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "HearthStone",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "stone_brick_wall_001",
+   "res": "2k",
+   "use": "hearth stone",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Chimney",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "castle_brick_02_red",
+   "res": "2k",
+   "use": "old brick chimneys",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "BookLeather",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "brown_leather",
+   "res": "2k",
+   "use": "leather",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Cloth",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "fabric_pattern_05",
+   "res": "2k",
+   "use": "old patterned cloth",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Bark",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "bark_brown_02",
+   "res": "2k",
+   "use": "bark",
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RenderCream",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "beige_wall_001",
+   "res": "2k",
+   "use": "cream lime render (Blue Door, Twins, Postmaster)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RenderOchre",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "yellow_plaster_02",
+   "res": "2k",
+   "use": "ochre render (Dollmaker upper floor)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RenderMossy",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "worn_mossy_plasterwall",
+   "res": "2k",
+   "use": "damp mossy render, base of walls",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RenderCracked",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "worn_cracked_plaster",
+   "res": "2k",
+   "use": "cracked render (Widow's House)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Pebbledash",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rough_plaster_03",
+   "res": "2k",
+   "use": "rough-cast pebbledash (Rao, Butcher rear)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "StuccoWhite",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "white_stucco_02",
+   "res": "2k",
+   "use": "white stucco (Doctor's villa)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "PlasterStone",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "plaster_stone_wall_01",
+   "res": "2k",
+   "use": "half-rendered rubble (Weaver, Miller)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "BrickRed",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "red_brick",
+   "res": "2k",
+   "use": "red brick (Butcher, Photographer, Postmaster)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "BrickMixed",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "mixed_brick_wall",
+   "res": "2k",
+   "use": "patched brick (Schoolmaster rear, sheds)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "BrickPaintedWorn",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "painted_worn_brick",
+   "res": "2k",
+   "use": "limewashed brick (Twins' side walls, bakery)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "BrickDark",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dark_brick_wall",
+   "res": "2k",
+   "use": "dark engineering brick (mill base, Organist plinth)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "StoneBlock",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rough_block_wall",
+   "res": "2k",
+   "use": "squared rubble (Priest, Schoolmaster, Organist)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "SandstoneBlocks",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "sandstone_blocks_08",
+   "res": "2k",
+   "use": "dressed sandstone quoins and sills",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Weatherboard",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "exterior_wall_cladding",
+   "res": "2k",
+   "use": "painted timber weatherboarding (Farmer barn, boat-sheds)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RawPlankWall",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "raw_plank_wall",
+   "res": "2k",
+   "use": "rough sawn plank walls (barns, sheds, mill upper)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "TimberBeam",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "beam_wall_01",
+   "res": "2k",
+   "use": "exposed timber framing (Dollmaker jetty, Weaver)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RoofSlateGrey",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "roof_slates_02",
+   "res": "2k",
+   "use": "grey slate",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RoofTilesGrey",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "grey_roof_tiles",
+   "res": "2k",
+   "use": "grey concrete tiles (1960s re-roof)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RoofClay2",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "clay_roof_tiles_02",
+   "res": "2k",
+   "use": "red clay plain tiles",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RoofClay3",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "clay_roof_tiles_03",
+   "res": "2k",
+   "use": "weathered clay tiles",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RoofRedSlate",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "red_slate_roof_tiles_01",
+   "res": "2k",
+   "use": "red-brown slate (Organist, Doctor)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Thatch",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "thatch_roof_angled",
+   "res": "2k",
+   "use": "thatch (Weaver, Widow)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "ThatchReed",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "reed_roof_04",
+   "res": "2k",
+   "use": "reed thatch ridge/variant",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "CorrugatedRust",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rusty_corrugated_iron",
+   "res": "2k",
+   "use": "rusty corrugated iron (lean-tos, sheds, byre)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorOldWood1",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "old_wooden_floor_01",
+   "res": "2k",
+   "use": "scuffed boards",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorOldWood2",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "old_wooden_floor_02",
+   "res": "2k",
+   "use": "grey boards",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorDarkPlanks",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dark_wooden_planks",
+   "res": "2k",
+   "use": "dark varnished boards",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorParquet",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "diagonal_parquet",
+   "res": "2k",
+   "use": "parquet (Doctor, Priest study)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorQuarryTile",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "terracotta_floor_tiles",
+   "res": "2k",
+   "use": "quarry tiles (kitchens, sculleries)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorCheckTile",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "checkered_pavement_tiles",
+   "res": "2k",
+   "use": "black/white checker (Doctor hall, Butcher shop)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorBathTile",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dirty_tiles",
+   "res": "2k",
+   "use": "small grubby tiles (bathrooms)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorWornTile",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "worn_tile_floor",
+   "res": "2k",
+   "use": "worn patterned tiles (halls)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorFlagstone",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "slate_floor_03",
+   "res": "2k",
+   "use": "flagstones (cellars, Weaver, Miller)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorConcrete",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "concrete_floor_worn_001",
+   "res": "2k",
+   "use": "cellar/shed concrete",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorBrick",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "brick_floor_003",
+   "res": "2k",
+   "use": "brick floors (scullery, byre, dairy)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FloorDirt",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dirt_floor",
+   "res": "2k",
+   "use": "earth floors (barn, mill wheel pit)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "CarpetWorn",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dirty_carpet",
+   "res": "2k",
+   "use": "stained fitted carpet (1970s bedrooms)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Carpet70s",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Carpet016",
+   "res": "2K",
+   "use": "patterned 1970s carpet",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Carpet70sB",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Carpet014",
+   "res": "2K",
+   "use": "second carpet pattern",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Wallpaper1",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Wallpaper001A",
+   "res": "2K",
+   "use": "floral wallpaper (bedrooms)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Wallpaper1B",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Wallpaper001B",
+   "res": "2K",
+   "use": "floral wallpaper, other colourway",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Wallpaper2",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Wallpaper002A",
+   "res": "2K",
+   "use": "stripe/damask wallpaper (parlours)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Wallpaper2C",
+   "kind": "texture",
+   "source": "ambientcg",
+   "id": "Wallpaper002C",
+   "res": "2K",
+   "use": "damask, faded colourway",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WallpaperJacquard",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "floral_jacquard",
+   "res": "2k",
+   "use": "used as 1970s floral wallpaper (tint)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WallpaperQuatrefoil",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "quatrefoil_jacquard_fabric",
+   "res": "2k",
+   "use": "used as geometric 1970s wallpaper",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "PlasterWorn",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "worn_plaster_wall",
+   "res": "2k",
+   "use": "stained interior plaster",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "PlasterDamaged",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "damaged_plaster",
+   "res": "2k",
+   "use": "plaster with lath showing (damp corners)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "PanelDark",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "dark_paneled_wood",
+   "res": "2k",
+   "use": "dark wood panelling (Priest, Organist, Doctor)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "TileWallWhite",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "interior_tiles",
+   "res": "2k",
+   "use": "white wall tiles (bath, butcher shop, darkroom)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Whitewash",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "white_rough_plaster",
+   "res": "2k",
+   "use": "limewash (cellars, byre, mill)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "CeilingInterior",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "ceiling_interior",
+   "res": "2k",
+   "use": "plaster ceilings with cracks",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricLinen",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rough_linen",
+   "res": "2k",
+   "use": "bedding, curtains",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricTerlenka",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "terlenka",
+   "res": "2k",
+   "use": "1970s curtain fabric",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricGingham",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "gingham_check",
+   "res": "2k",
+   "use": "kitchen curtains/tablecloths",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricVelvet",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "velour_velvet",
+   "res": "2k",
+   "use": "parlour curtains, sofa",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricHessian",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "hessian_230",
+   "res": "2k",
+   "use": "sacks, blackout cloth",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "FabricCorduroy",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "ribbed_corduroy",
+   "res": "2k",
+   "use": "armchairs",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Leather",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "fabric_leather_02",
+   "res": "2k",
+   "use": "doctor's couch, bags",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "MetalPlate",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "metal_plate",
+   "res": "2k",
+   "use": "fuse boxes, tins",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RustyMetal2",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rusty_metal_02",
+   "res": "2k",
+   "use": "rusted fittings, mill hardware",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GreenRust",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "green_metal_rust",
+   "res": "2k",
+   "use": "painted rusty metal (pillar box, gates)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WoodKitchen",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "kitchen_wood",
+   "res": "2k",
+   "use": "kitchen units, worktops",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WoodCabinetWorn",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "wood_cabinet_worn_long",
+   "res": "2k",
+   "use": "cupboards, counters, pigeonholes",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WoodRoughPine",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rough_pine_door",
+   "res": "2k",
+   "use": "ledged plank doors",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "WoodMedieval",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "medieval_wood",
+   "res": "2k",
+   "use": "mill gears, loom frame, beams",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GroundLeaves",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "leaves_forest_ground",
+   "res": "2k",
+   "use": "forest floor inside the wall",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GroundGrassPath",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "grass_path_2",
+   "res": "2k",
+   "use": "worn grass footpaths",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GroundGravel",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "gravel_road",
+   "res": "2k",
+   "use": "gravel drives and the square edges",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GroundMud",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "brown_mud_02",
+   "res": "2k",
+   "use": "yard mud, farmyard",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "GroundPark",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "park_dirt",
+   "res": "2k",
+   "use": "village green bare patches",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "Cobbles2",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "cobblestone_floor_08",
+   "res": "2k",
+   "use": "Main Street setts",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "RockFloor",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "rock_embedded_floor",
+   "res": "2k",
+   "use": "yard paving / forecourts",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  },
+  {
+   "key": "PavingSlabs",
+   "kind": "texture",
+   "source": "polyhaven",
+   "id": "concrete_pavement_02",
+   "res": "2k",
+   "use": "1960s paving slabs (post office, school yard)",
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "note": ""
+  }
+ ],
+ "models": [
+  {
+   "key": "Wardrobe",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "GothicCabinet_01",
+   "res": "2k",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "Bed",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "GothicBed_01",
+   "res": "2k",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-under"
+   ]
+  },
+  {
+   "key": "Chair",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "WoodenChair_01",
+   "res": "2k",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RockingChair",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Rockingchair_01",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.95,
+    1.05
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Shelf",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_bookshelf_worn",
+   "res": "2k",
+   "dims": [
+    1.0,
+    0.35,
+    1.9
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GrandfatherClock",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_grandfather_clock_01",
+   "res": "2k",
+   "dims": [
+    0.55,
+    0.32,
+    2.05
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Barrel",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wine_barrel_01",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.6,
+    0.85
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Crate",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_crate_01",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.45,
+    0.45
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-big?"
+   ]
+  },
+  {
+   "key": "Books",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "book_encyclopedia_set_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.2,
+    0.28
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MantelClock",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "mantel_clock_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "OilLamp",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_oil_lamp",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.18,
+    0.45
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Candleholders",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "brass_candleholders",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.12,
+    0.3
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Candlestick",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_candlestick",
+   "res": "1k",
+   "dims": [
+    0.1,
+    0.1,
+    0.25
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Lantern",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Lantern_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.4
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Bucket",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_bucket_01",
+   "res": "1k",
+   "dims": [
+    0.32,
+    0.32,
+    0.3
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Stool",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_stool_02",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Hammer",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_hammer_01",
+   "res": "1k",
+   "dims": [
+    0.32,
+    0.1,
+    0.04
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Axe",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_axe_02",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.06,
+    0.75
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WateringCan",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "watering_can_metal_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.2,
+    0.35
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Stump",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "tree_stump_01",
+   "res": "2k",
+   "dims": [
+    0.8,
+    0.8,
+    0.5
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DeadTrunk",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dead_tree_trunk",
+   "res": "2k",
+   "dims": [
+    4.0,
+    0.7,
+    0.7
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Branches",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dry_branches_medium_01",
+   "res": "1k",
+   "dims": [
+    1.5,
+    1.0,
+    0.4
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Rocks",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "rock_moss_set_02",
+   "res": "2k",
+   "dims": [
+    1.5,
+    1.2,
+    0.6
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Boulder",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "boulder_01",
+   "res": "2k",
+   "dims": [
+    2.0,
+    1.6,
+    1.2
+   ],
+   "download": "owned",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CartWheel",
+   "kind": "model",
+   "source": "owned",
+   "id": "His_Wil_Cart_Wheel_Wood_Old_01 (Fab Saloon Interior)",
+   "res": "1k",
+   "dims": [
+    1.1,
+    0.12,
+    1.1
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChestWorn",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "container"
+   ]
+  },
+  {
+   "key": "MetalBucket",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Rur_Storage_Bucket_Metal_Worn_03 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BarrelWorn",
+   "kind": "model",
+   "source": "owned",
+   "id": "His_Med_Storage_Barrel_Wood_Worn_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.65,
+    0.65,
+    0.95
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-big"
+   ]
+  },
+  {
+   "key": "OldChair",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Fur_Chair_Wood_Old_03 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ShelfRustic",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Rur_Furniture_Shelf_Wood_Old_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.3,
+    1.0
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FloorLampOld",
+   "kind": "model",
+   "source": "owned",
+   "id": "His_Sal_Furniture_Lamp_Wood_Old_02 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.6
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Horseshoe",
+   "kind": "model",
+   "source": "owned",
+   "id": "His_Wil_Equipment_Horseshoe_Metal_Rusted_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.12,
+    0.02,
+    0.13
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PictureFrame",
+   "kind": "model",
+   "source": "owned",
+   "id": "Urb_Dec_PictureFrame_Wood_Worn_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.03,
+    0.45
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "family-photo"
+   ]
+  },
+  {
+   "key": "CeilingBeam",
+   "kind": "model",
+   "source": "owned",
+   "id": "Ind_Sup_Beam_Wood_Old_04 (Fab)",
+   "res": "1k",
+   "dims": [
+    4.0,
+    0.2,
+    0.22
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Jug",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Sto_Flask_Ceramic_Worn_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.18,
+    0.3
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StoolArmless",
+   "kind": "model",
+   "source": "owned",
+   "id": "Res_Fur_Stool_Wood_Armless_01 (Fab)",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.5
+   ],
+   "download": "owned",
+   "licence": "Fab Standard",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Armchair",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ArmChair_01",
+   "res": "2k",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ArmchairGreen",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "GreenChair_01",
+   "res": "2k",
+   "dims": [
+    0.75,
+    0.8,
+    0.95
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "LoungeChair70s",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "mid_century_lounge_chair",
+   "res": "2k",
+   "dims": [
+    0.8,
+    0.85,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sofa",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Sofa_01",
+   "res": "2k",
+   "dims": [
+    2.0,
+    0.9,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-behind"
+   ]
+  },
+  {
+   "key": "Sofa2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "sofa_02",
+   "res": "2k",
+   "dims": [
+    1.9,
+    0.9,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sofa3",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "sofa_03",
+   "res": "2k",
+   "dims": [
+    1.8,
+    0.85,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SofaPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_sofa",
+   "res": "2k",
+   "dims": [
+    1.6,
+    0.7,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Ottoman",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Ottoman_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.42
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CoffeeTable",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "CoffeeTable_01",
+   "res": "1k",
+   "dims": [
+    1.1,
+    0.6,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CoffeeTableRound",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "coffee_table_round_01",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.8,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DiningTable",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dining_table",
+   "res": "2k",
+   "dims": [
+    1.8,
+    0.9,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableWood1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "WoodenTable_01",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.8,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableWood2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "WoodenTable_02",
+   "res": "1k",
+   "dims": [
+    1.6,
+    0.85,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableWood3",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "WoodenTable_03",
+   "res": "1k",
+   "dims": [
+    2.0,
+    0.9,
+    0.78
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableRound",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "round_wooden_table_01",
+   "res": "1k",
+   "dims": [
+    1.0,
+    1.0,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableRound2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "round_wooden_table_02",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.9,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TablePainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_table",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.7,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableSmall",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "small_wooden_table_01",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SideTable",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "side_table_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SideTableTall",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "side_table_tall_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.45,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TableGallinera",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "gallinera_table",
+   "res": "1k",
+   "dims": [
+    1.5,
+    0.8,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChairDining",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dining_chair_02",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChairPainted1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_chair_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.48,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChairPainted2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_chair_02",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.48,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChairGallinera",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "gallinera_chair",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.5,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SchoolChair",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "SchoolChair_01",
+   "res": "1k",
+   "dims": [
+    0.42,
+    0.42,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SchoolDesk",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "SchoolDesk_01",
+   "res": "1k",
+   "dims": [
+    0.65,
+    0.5,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StoolFolding",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "folding_wooden_stool",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.35,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StoolWood1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_stool_01",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StoolPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_stool",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BenchPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_bench",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.4,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BedIron",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "old_bed_frame",
+   "res": "2k",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-under"
+   ]
+  },
+  {
+   "key": "DayBed",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_day_bed",
+   "res": "2k",
+   "dims": [
+    0.95,
+    1.95,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Nightstand",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ClassicNightstand_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "NightstandPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_nightstand",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Commode",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "GothicCommode_01",
+   "res": "2k",
+   "dims": [
+    1.1,
+    0.5,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChestOfDrawers",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_wooden_drawer_01",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DrawerCabinet",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "drawer_cabinet",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.45,
+    1.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HallConsole",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ClassicConsole_01",
+   "res": "1k",
+   "dims": [
+    1.1,
+    0.4,
+    0.82
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CabinetVintage",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_cabinet_01",
+   "res": "2k",
+   "dims": [
+    1.0,
+    0.45,
+    1.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Cabinet70s",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "modern_wooden_cabinet",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.45,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CabinetPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_cabinet",
+   "res": "2k",
+   "dims": [
+    1.0,
+    0.5,
+    1.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "CabinetPainted2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_cabinet_02",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.45,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ShelvesPainted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "painted_wooden_shelves",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.3,
+    1.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DisplayShelves",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_display_shelves_01",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.4,
+    1.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SteelShelves",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "steel_frame_shelves_01",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.45,
+    1.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SteelShelves2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "steel_frame_shelves_02",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.4,
+    1.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MetalRack",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "worn_metal_rack",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.4,
+    1.7
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "OfficeDesk",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_office_desk",
+   "res": "2k",
+   "dims": [
+    1.4,
+    0.75,
+    0.76
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ToolCart",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "tool_cart",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.45,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PicnicTable",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_picnic_table",
+   "res": "1k",
+   "dims": [
+    1.8,
+    1.5,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Mirror",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ornate_mirror_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "mirror"
+   ]
+  },
+  {
+   "key": "FrameHanging1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hanging_picture_frame_01",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.03,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "family-photo"
+   ]
+  },
+  {
+   "key": "FrameHanging2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hanging_picture_frame_02",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.03,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "family-photo"
+   ]
+  },
+  {
+   "key": "FrameHanging3",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hanging_picture_frame_03",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.03,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FrameFancy1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fancy_picture_frame_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.05,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FrameFancy2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fancy_picture_frame_02",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.05,
+    0.55
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FrameStanding1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "standing_picture_frame_01",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "family-photo"
+   ]
+  },
+  {
+   "key": "FrameStanding2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "standing_picture_frame_02",
+   "res": "1k",
+   "dims": [
+    0.22,
+    0.08,
+    0.18
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "family-photo"
+   ]
+  },
+  {
+   "key": "WallClock",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wall_clock",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "AlarmClock",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "alarm_clock_01",
+   "res": "1k",
+   "dims": [
+    0.14,
+    0.08,
+    0.16
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TV",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Television_01",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.5,
+    0.55
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "tv"
+   ]
+  },
+  {
+   "key": "TV2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "television_02",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.45,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "tv"
+   ]
+  },
+  {
+   "key": "Radio",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_radio_transceiver",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.25,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "radio"
+   ]
+  },
+  {
+   "key": "CassettePlayer",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "cassette_player",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.22,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "radio"
+   ]
+  },
+  {
+   "key": "CassettePortable",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "portable_cassette_player",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.1,
+    0.18
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Boombox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "boombox",
+   "res": "1k",
+   "dims": [
+    0.55,
+    0.2,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Kettle",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_electric_kettle",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.18,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Cooker",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "electric_stove",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MasonryHeater",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "scandinavian_masonry_heater",
+   "res": "2k",
+   "dims": [
+    1.2,
+    0.9,
+    2.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BarrelStove",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "barrel_stove",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.9,
+    1.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Chandelier1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Chandelier_01",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.7,
+    0.7
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Chandelier3",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Chandelier_03",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "LanternChandelier",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "lantern_chandelier_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PullChainSocket",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pull_chain_light_socket",
+   "res": "1k",
+   "dims": [
+    0.1,
+    0.1,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Lightbulb",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "lightbulb_01",
+   "res": "1k",
+   "dims": [
+    0.07,
+    0.07,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CagedLight",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "caged_hanging_light",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WallLamp",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "industrial_wall_lamp",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.3,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DeskLamp",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "desk_lamp_arm_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.4,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WoodenLantern",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_lantern_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StreetLamp",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "street_lamp_01",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.6,
+    4.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StreetLamp2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "street_lamp_02",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.6,
+    4.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Flashlight",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_flashlight",
+   "res": "1k",
+   "dims": [
+    0.06,
+    0.25,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PotEnamel",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pot_enamel_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.25,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PanBrass",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "brass_pan_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.25,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PotBrass1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "brass_pot_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PotBrass2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "brass_pot_02",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MetalJug",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_jug",
+   "res": "1k",
+   "dims": [
+    0.15,
+    0.15,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TeaSet",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "tea_set_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.3,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BowlWood",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_bowl_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BowlWood2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_bowl_02",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SpoonWood",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_spoon",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.06,
+    0.03
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CuttingBoard",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_cutting_board",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.3,
+    0.03
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CeramicPot",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ceramic_pot",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WineBottles",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wine_bottles_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.2,
+    0.32
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Apples",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "food_apple_01",
+   "res": "1k",
+   "dims": [
+    0.08,
+    0.08,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Onions",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "yellow_onion",
+   "res": "1k",
+   "dims": [
+    0.09,
+    0.09,
+    0.09
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SweetPotato",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "sweet_potato",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.08,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TinnedFood",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "russian_food_cans_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.2,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "LongLifeFood",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "long_life_food",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.2,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CheeseBox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "CheeseBox_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CrateWood2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_crate_02",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.6,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-big"
+   ]
+  },
+  {
+   "key": "Barrel2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Barrel_02",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BarrelsWood",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_barrels_01",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.8,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BucketWood2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_bucket_02",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.32
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Wicker1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wicker_basket_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.35,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Wicker2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wicker_basket_02",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.4,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CardboardBox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "cardboard_box_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Suitcase",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_suitcase",
+   "res": "1k",
+   "dims": [
+    0.65,
+    0.2,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Toolbox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_toolbox",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.22,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ToolChest",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_tool_chest",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.45,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "OilTin",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "oil_tin",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.15,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CanRusted",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "can_rusted",
+   "res": "1k",
+   "dims": [
+    0.1,
+    0.1,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Jerrycan",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_jerrycan",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.17,
+    0.47
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TrashCan",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_trash_can",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    0.75
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CompostBags",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "compost_bags",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.6,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CementBag",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "cement_bag",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.4,
+    0.15
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PlanterBox1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "planter_box_01",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.4,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PlanterBox2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "planter_box_02",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.4,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PlanterPot",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "planter_pot_clay",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SeedTray",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "seeding_tray_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.3,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PottedPlant1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "potted_plant_01",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.4,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PottedPlant2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "potted_plant_02",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Vase1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ceramic_vase_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Vase2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "ceramic_vase_02",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.18,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "VaseAntique",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "antique_ceramic_vase_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.25,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "VaseBrass",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "brass_vase_01",
+   "res": "1k",
+   "dims": [
+    0.15,
+    0.15,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CarvedPlate",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "carved_wooden_plate",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.03,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BooksDeco",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "decorative_book_set_01",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.2,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Binder",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "binder_notebook",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.3,
+    0.05
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Clipboard",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "clipboard",
+   "res": "1k",
+   "dims": [
+    0.23,
+    0.32,
+    0.02
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Notepads",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "office_notepads",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.2,
+    0.04
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Stationery",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "stationery_supplies",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.2,
+    0.15
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Stapler",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_stapler",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.05,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChessSet",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "chess_set",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.45,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Dartboard",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dartboard",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.04,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Chalkboard",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "standing_chalkboard_01",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.5,
+    1.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PocketWatch",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pocket_watch",
+   "res": "1k",
+   "dims": [
+    0.06,
+    0.02,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Spectacles",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "round_spectacles",
+   "res": "1k",
+   "dims": [
+    0.13,
+    0.12,
+    0.04
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CigarettePack",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "cigarette_pack",
+   "res": "1k",
+   "dims": [
+    0.06,
+    0.02,
+    0.09
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Lighter",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_lighter",
+   "res": "1k",
+   "dims": [
+    0.04,
+    0.02,
+    0.06
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Binoculars",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "binoculars",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.12,
+    0.07
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Magnifier",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "magnifying_glass_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.1,
+    0.03
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Microscope",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_microscope",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.25,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChemistrySet",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "chemistry_set",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.3,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BunsenBurner",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "bunsen_burner",
+   "res": "1k",
+   "dims": [
+    0.12,
+    0.12,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MedicalBox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "medical_box",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.2,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MedicalTape",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "medical_tape",
+   "res": "1k",
+   "dims": [
+    0.05,
+    0.05,
+    0.03
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Crutches",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_crutches_01",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.15,
+    1.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GasMask",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "old_gas_mask",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RubberBoots",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "rubber_boots",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FishermansHat",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fishermans_hat",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SpinningWheel",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "spinning_wheel_01",
+   "res": "2k",
+   "dims": [
+    0.9,
+    0.5,
+    0.95
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HandSaw",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "handsaw_wood",
+   "res": "1k",
+   "dims": [
+    0.65,
+    0.03,
+    0.18
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HandPlane",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hand_plane_no4",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.07,
+    0.15
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BenchVice",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "bench_vice_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.2,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HandDrill",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "vintage_hand_drill",
+   "res": "1k",
+   "dims": [
+    0.12,
+    0.08,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DrillPress",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "old_drill_press",
+   "res": "2k",
+   "dims": [
+    0.5,
+    0.6,
+    1.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Crowbar",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "crowbar_01",
+   "res": "1k",
+   "dims": [
+    0.75,
+    0.04,
+    0.08
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sledgehammer",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "sledgehammer_01",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.08,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Hatchet",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hatchet",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.05,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Spade",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "rusted_spade_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.08,
+    1.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Pickaxe",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "picke_dirty_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Trowel",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "trowel_01",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.08,
+    0.05
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GardenGloves",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "garden_gloves_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.1,
+    0.05
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Broom",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_broom",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.1,
+    1.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Dustpan",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dustpan",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.3,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Ladder",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_ladder",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.1,
+    2.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Ladder2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "wooden_ladder_02",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.1,
+    3.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Pliers",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pliers",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.05,
+    0.02
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Wrench",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "adjustable_wrench",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.07,
+    0.02
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PipeWrench",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pipe_wrench",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.1,
+    0.03
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SmallOilCan",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "small_oil_can_01",
+   "res": "1k",
+   "dims": [
+    0.12,
+    0.12,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Toolbox2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "metal_toolbox",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.22,
+    0.25
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BoltCutters",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "bolt_cutters_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.15,
+    0.04
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HandTruck",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "hand_truck",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Generator",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "portable_generator",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.5,
+    0.55
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PropaneTank",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "propane_tank",
+   "res": "1k",
+   "dims": [
+    0.35,
+    0.35,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FuseBox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "power_box_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "fuse-box"
+   ]
+  },
+  {
+   "key": "UtilityBox",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "utility_box_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.3,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PowerPoles",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "modular_electricity_poles",
+   "res": "2k",
+   "dims": [
+    0.5,
+    0.5,
+    8.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GateLatch",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "gate_latch_01",
+   "res": "1k",
+   "dims": [
+    0.15,
+    0.06,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "IronGate",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "large_iron_gate",
+   "res": "2k",
+   "dims": [
+    3.0,
+    0.2,
+    2.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GardenHose",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "garden_hose_wall_mounted_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.25,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sprinkler",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "garden_sprinkler_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GardenGnome",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "garden_gnome",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FirePit",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "stone_fire_pit",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.2,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CoveredCar",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "covered_car",
+   "res": "2k",
+   "dims": [
+    4.2,
+    1.8,
+    1.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "OldTyre",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "old_tyre",
+   "res": "1k",
+   "dims": [
+    0.65,
+    0.2,
+    0.65
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WheelRim",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "rusted_wheel_rim_01",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.2,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BullHead",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "bull_head",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.4,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HorseHead",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "horse_head",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.5,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GothicStatue",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "gothic_statue",
+   "res": "2k",
+   "dims": [
+    0.6,
+    0.6,
+    1.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ThrowPillows",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "throw_pillows_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.4,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RubberDuck",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "rubber_duck_toy",
+   "res": "1k",
+   "dims": [
+    0.1,
+    0.08,
+    0.09
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "TreasureChest",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "treasure_chest",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.5,
+    0.55
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "container"
+   ]
+  },
+  {
+   "key": "DeadTrunk2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dead_tree_trunk_02",
+   "res": "2k",
+   "dims": [
+    4.5,
+    0.8,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Stump2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "tree_stump_02",
+   "res": "2k",
+   "dims": [
+    0.7,
+    0.7,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Shrub1",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "shrub_01",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.2,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Shrub2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "shrub_02",
+   "res": "1k",
+   "dims": [
+    1.0,
+    1.0,
+    0.9
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Shrub3",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "shrub_03",
+   "res": "1k",
+   "dims": [
+    1.4,
+    1.4,
+    1.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Shrub4",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "shrub_04",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.9,
+    0.7
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Nettles",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "nettle_plant",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Fern",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fern_02",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.8,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GrassClump",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "grass_medium_01",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GrassClump2",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "grass_medium_02",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Moss",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "moss_01",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    0.05
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Dandelion",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "dandelion_01",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.2,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Periwinkle",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "periwinkle_plant",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.4,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FirTree",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fir_tree_01",
+   "res": "1k",
+   "dims": [
+    5.0,
+    5.0,
+    14.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "heavy - use LOD/impostor",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PineTree",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pine_tree_01",
+   "res": "1k",
+   "dims": [
+    5.0,
+    5.0,
+    15.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "heavy - use LOD/impostor",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SmallTree",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "tree_small_02",
+   "res": "1k",
+   "dims": [
+    3.0,
+    3.0,
+    5.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FirSapling",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "fir_sapling_medium",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.2,
+    2.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PineSapling",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "pine_sapling_medium",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.2,
+    2.0
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RootCluster",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "root_cluster_01",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.0,
+    0.5
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BarkDebris",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "bark_debris_01",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.8,
+    0.1
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RotaryPhone",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "812e8f59f9e749fab483eabf4800dec2",
+   "res": "1k",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "sara El-sisi",
+   "note": "'Rotary Phone', 22.6k faces. Every house has one (living room).",
+   "upgrade": "Rewind Memory PRO retro rooms (Asset Store, URP)",
+   "tags": [
+    "phone"
+   ]
+  },
+  {
+   "key": "Typewriter",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "1d6009449fe84fd79454c4081eb743bf",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.35,
+    0.2
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Kuba 'Volant' W\u00f3jcik",
+   "note": "'1930s style typewriter - w/o branding', 22k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SewingMachine",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "db6aead9ecf947bcbde1f78d3e095fbe",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.25,
+    0.32
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Giravolt / MEMGA",
+   "note": "Singer c.1905 scan, 249k faces - decimate to ~25k on import",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Bathtub",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "d06c028a89a54c469e4af9cac50606fa",
+   "res": "1k",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Lady Lion Studios",
+   "note": "'Vintage Metal Bathtub FREE Low Poly', 4.1k faces",
+   "upgrade": "",
+   "tags": [
+    "hiding-behind-curtain"
+   ]
+  },
+  {
+   "key": "BathtubPhoto",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "ba60ba7d0a4a4b6899021741f450395b",
+   "res": "1k",
+   "dims": [
+    1.7,
+    0.78,
+    0.65
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Igrium",
+   "note": "'Photorealistic Bathtub', 19.7k faces - hero bath for Doctor/Priest/Twins",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Toilet",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Allan-Jay Branscombe",
+   "note": "'Game Ready - Dirty Old Toilet', 7.6k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sink",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "a278d63585494921906ab3500c421ff7",
+   "res": "1k",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "lagesnpiet",
+   "note": "'Sink', 4.1k faces - check it reads as a pedestal basin; else build",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Fridge",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "68d173f205344455933f861042b99fe3",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.62,
+    1.45
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "dylanheyes",
+   "note": "'Old Fridge', 32.6k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FridgeSmall",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "7d12f05773a6403c9ca259ed43604c69",
+   "res": "1k",
+   "dims": [
+    0.55,
+    0.58,
+    1.2
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Chernorot Bogdan",
+   "note": "'USSR Old refrigerator', 9.4k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DollPorcelain",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "9ce09a8a6b1b45ce90c4479b54b4e003",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.12,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "alicean",
+   "note": "'A porcelain doll', 23k faces",
+   "upgrade": "",
+   "tags": [
+    "doll"
+   ]
+  },
+  {
+   "key": "DollAntique",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "a0a494a8c3db4cc4ad10cb433125fe78",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.12,
+    0.4
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "nektar.green",
+   "note": "'3D Antique Doll', 29.9k faces",
+   "upgrade": "",
+   "tags": [
+    "doll"
+   ]
+  },
+  {
+   "key": "DollPolly",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "9ef34eb03f0a42978b3a9d20f0f8f389",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.12,
+    0.35
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "archmage40",
+   "note": "'Porcelain Polly', 20k faces",
+   "upgrade": "",
+   "tags": [
+    "doll"
+   ]
+  },
+  {
+   "key": "Enlarger",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "3174dc4d4f9d4b3e969ce9135ec6d423",
+   "res": "1k",
+   "dims": [
+    0.45,
+    0.55,
+    1.1
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "MarcoFromIADE",
+   "note": "'Axomat 5a Photo Enlarger', 77k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "LoomDobby",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "07ba2b15ffb7425cab23f700828fd7f3",
+   "res": "1k",
+   "dims": [
+    1.6,
+    1.5,
+    1.6
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Spiacente",
+   "note": "'Dobby Loom', 128k faces - decimate to ~30k; fallback: build LoomFrame",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "Scarecrow",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "38b41b2deeb24b1d877c2551526d5654",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.4,
+    2.0
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Mehdi Shahsavan",
+   "note": "'Scarecrow', 32.6k faces (alt: dd66376c24f246f28b10a67f047b8d6a by Baardus, 880 faces)",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HayBales",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "6b775049e57e4d9da87977905493ebfb",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.5,
+    0.45
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "FrodoUndead",
+   "note": "'Hay Bales', 3.3k faces",
+   "upgrade": "",
+   "tags": [
+    "hiding-behind"
+   ]
+  },
+  {
+   "key": "Wheelbarrow",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "48314bafaffc4593ba1d7a5af31810c6",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.6,
+    0.6
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Peter Nox",
+   "note": "'Wooden Wheelbarrow', 1.5k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChurchPew",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "9c2934828dfa4dc2b64102defa3969e7",
+   "res": "1k",
+   "dims": [
+    3.0,
+    0.6,
+    0.95
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Sam Constance",
+   "note": "'old church pew', 948 faces (hero alt: 0fdeca01a1214150aeae21f46cfe98d5 awramos 40.8k)",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "RockingHorse",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "5168ce9d45a3401ea6fe4d92f17bb332",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.35,
+    0.7
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Alex Petuhov",
+   "note": "'Rocking Toy', 16.8k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BabyCrib",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "b945651a5fa841b7aef4ea4da81fcc39",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.65,
+    1.0
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Rukas",
+   "note": "'Old Baby Crib', 4.2k faces",
+   "upgrade": "",
+   "tags": [
+    "hiding-under"
+   ]
+  },
+  {
+   "key": "Globe",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "8bb166a68f70426390eb113ff0fd72a0",
+   "res": "1k",
+   "dims": [
+    0.4,
+    0.4,
+    0.55
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Allan-Jay Branscombe",
+   "note": "'Game Ready - Old World Globe', 26.8k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Cleaver",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "6c3fc11e570b4d3ca4d8a862f3b6a916",
+   "res": "1k",
+   "dims": [
+    0.32,
+    0.03,
+    0.12
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "Barend19",
+   "note": "'Meat clever', 3.2k faces",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Bell",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "b2e02b7b964d4ee0b0e7292ed102270d",
+   "res": "1k",
+   "dims": [
+    1.2,
+    1.2,
+    1.2
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "LukeModels75",
+   "note": "'Classic Bell 3D Model', 32.6k faces - bell tower + school cupola (scaled)",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "AngelStatues",
+   "kind": "model",
+   "source": "sketchfab",
+   "id": "8ac9f760bc7e4931a491d56a57986199",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.6,
+    1.6
+   ],
+   "download": "auto",
+   "licence": "CC BY 4.0",
+   "author": "That's Cool Jack",
+   "note": "'Scanned Angel Statue Collection', 7.6k faces - graveyard",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "KitchenUnit",
+   "kind": "model",
+   "source": "procedural",
+   "id": "box carcass 0.6 deep, WoodKitchen fronts, laminate top",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "KitchenSinkUnit",
+   "kind": "model",
+   "source": "procedural",
+   "id": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Dresser",
+   "kind": "model",
+   "source": "procedural",
+   "id": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Range",
+   "kind": "model",
+   "source": "procedural",
+   "id": "cast-iron range 1.0 wide set into the hearth opening, MetalPlate black",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.55,
+    0.85
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Hearth",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "res": "1k",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hearth"
+   ]
+  },
+  {
+   "key": "Counter",
+   "kind": "model",
+   "source": "procedural",
+   "id": "shop counter, panelled front, glass top optional",
+   "res": "1k",
+   "dims": [
+    2.4,
+    0.6,
+    0.95
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Pigeonholes",
+   "kind": "model",
+   "source": "procedural",
+   "id": "sorting frame 6 cols x 5 rows, 0.18 cells, WoodCabinetWorn",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.35,
+    1.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "PumpOrgan",
+   "kind": "model",
+   "source": "procedural",
+   "id": "reed organ: case 1.25w 0.55d 1.1h + top gallery to 1.9h, 2 pedals, 61 keys, stops",
+   "res": "1k",
+   "dims": [
+    1.25,
+    0.6,
+    1.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "paid model e.g. 'Vintage Old Pump Pipe Organ' (glenfx, Cubebrush)",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "LoomFrame",
+   "kind": "model",
+   "source": "procedural",
+   "id": "fallback floor loom: 4 posts, warp beam, 8 harness frames, bench",
+   "res": "1k",
+   "dims": [
+    1.6,
+    1.5,
+    1.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BalanceScale",
+   "kind": "model",
+   "source": "procedural",
+   "id": "butcher's beam scale: cast pillar, 1.0 beam, 2 pans 0.35, brass weights 1/2/5/10/20 lb",
+   "res": "1k",
+   "dims": [
+    1.1,
+    0.4,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "MeatRail",
+   "kind": "model",
+   "source": "procedural",
+   "id": "ceiling rail 2.4 long with 8 S-hooks, 2 carcass shapes (cloth-wrapped)",
+   "res": "1k",
+   "dims": [
+    2.4,
+    0.2,
+    0.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ButcherBlock",
+   "kind": "model",
+   "source": "procedural",
+   "id": "end-grain block on legs 0.7x0.7x0.85, worn hollow top",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.7,
+    0.85
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DarkroomTrays",
+   "kind": "model",
+   "source": "procedural",
+   "id": "3 enamel trays 0.3x0.4 on a sink bench + tongs + timer",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.5,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "Safelight",
+   "kind": "model",
+   "source": "procedural",
+   "id": "red safelight lamp, wall mounted",
+   "res": "1k",
+   "dims": [
+    0.2,
+    0.15,
+    0.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "HymnBoard",
+   "kind": "model",
+   "source": "procedural",
+   "id": "dark oak hymn board, 3 rows of slide-in number cards",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.05,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "Slate",
+   "kind": "model",
+   "source": "procedural",
+   "id": "school slate in wooden frame 0.3x0.22",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.02,
+    0.22
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ChalkLetters",
+   "kind": "model",
+   "source": "procedural",
+   "id": "scattered wooden letter tiles 0.06 cubes",
+   "res": "1k",
+   "dims": [
+    0.06,
+    0.06,
+    0.06
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "Blackboard",
+   "kind": "model",
+   "source": "procedural",
+   "id": "wall blackboard 2.4x1.2 with chalk ledge",
+   "res": "1k",
+   "dims": [
+    2.4,
+    0.08,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MillGears",
+   "kind": "model",
+   "source": "procedural",
+   "id": "puzzle gear train: 3 shafts, 5 oak gears (radii 0.25/0.35/0.45/0.55/0.65 m), lantern pinion",
+   "res": "1k",
+   "dims": [
+    2.5,
+    1.0,
+    2.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "Millstones",
+   "kind": "model",
+   "source": "procedural",
+   "id": "pair of 1.2 m millstones in a wooden tun + hopper + shoe",
+   "res": "1k",
+   "dims": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WaterWheel",
+   "kind": "model",
+   "source": "procedural",
+   "id": "undershot wheel 4.0 m dia, 1.2 wide, 24 paddles, oak + iron rims",
+   "res": "1k",
+   "dims": [
+    1.2,
+    4.0,
+    4.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Sacks",
+   "kind": "model",
+   "source": "procedural",
+   "id": "stack of 4 hessian flour sacks (FabricHessian)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.6,
+    0.7
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-behind"
+   ]
+  },
+  {
+   "key": "Dollhouse",
+   "kind": "model",
+   "source": "procedural",
+   "id": "1:12 replica of H14 generated from houses/H14 json (shell + rooms + 12 tiny doll slots)",
+   "res": "1k",
+   "dims": [
+    0.75,
+    0.55,
+    0.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "MedicineCabinet",
+   "kind": "model",
+   "source": "procedural",
+   "id": "glass-fronted wall cabinet 0.9x0.3x1.2, 4 shelves, padlock hasp",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.3,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "MedicineBottles",
+   "kind": "model",
+   "source": "procedural",
+   "id": "set of 12 brown/blue/clear bottles with paper labels (labels data-driven)",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.15,
+    0.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "ExamCouch",
+   "kind": "model",
+   "source": "procedural",
+   "id": "leather examination couch with step",
+   "res": "1k",
+   "dims": [
+    1.9,
+    0.7,
+    0.75
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Lectern",
+   "kind": "model",
+   "source": "procedural",
+   "id": "oak lectern",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.5,
+    1.15
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Altar",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing altar block",
+   "res": "1k",
+   "dims": [
+    3.8,
+    1.3,
+    1.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ShrineNiche",
+   "kind": "model",
+   "source": "procedural",
+   "id": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "shrine"
+   ]
+  },
+  {
+   "key": "PartContainer",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing PartContainer chest - per-house skin noted in HOUSES.md",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.6,
+    0.5
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "container"
+   ]
+  },
+  {
+   "key": "CoatHooks",
+   "kind": "model",
+   "source": "procedural",
+   "id": "wall rail with 5 hooks + 2 coats + 1 hat (cloth)",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.25,
+    1.7
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Curtains",
+   "kind": "model",
+   "source": "procedural",
+   "id": "pair of cloth panels on a pole, per window, fabric per room",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.08,
+    1.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Rug",
+   "kind": "model",
+   "source": "procedural",
+   "id": "flat rug quad, fabric per room",
+   "res": "1k",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Radiator",
+   "kind": "model",
+   "source": "procedural",
+   "id": "cast-iron column radiator (only Doctor, Priest)",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.2,
+    0.7
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WashStand",
+   "kind": "model",
+   "source": "procedural",
+   "id": "marble-top wash stand with jug & basin",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.45,
+    0.85
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Mangle",
+   "kind": "model",
+   "source": "procedural",
+   "id": "cast-iron mangle (Widow scullery)",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.45,
+    1.3
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Copper",
+   "kind": "model",
+   "source": "procedural",
+   "id": "brick copper boiler in scullery corner",
+   "res": "1k",
+   "dims": [
+    0.8,
+    0.8,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BathCurtainRail",
+   "kind": "model",
+   "source": "procedural",
+   "id": "rail + plastic curtain around bath (hiding spot)",
+   "res": "1k",
+   "dims": [
+    1.7,
+    0.8,
+    2.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "UnderStairCupboard",
+   "kind": "model",
+   "source": "procedural",
+   "id": "door + void under a stair (hiding spot)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.9,
+    1.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "WalkInCupboard",
+   "kind": "model",
+   "source": "procedural",
+   "id": "panelled cupboard door + 0.8x0.8 void",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.8,
+    2.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "CellarCrates",
+   "kind": "model",
+   "source": "procedural",
+   "id": "stack of crates with a crouch gap behind (hiding spot)",
+   "res": "1k",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding"
+   ]
+  },
+  {
+   "key": "LightSwitch",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing LightSwitch plate",
+   "res": "1k",
+   "dims": [
+    0.09,
+    0.03,
+    0.13
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StoppedClockFront",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing front StoppedClock (hour from HouseCatalog)",
+   "res": "1k",
+   "dims": [
+    0.62,
+    0.05,
+    0.62
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Nameplate",
+   "kind": "model",
+   "source": "procedural",
+   "id": "existing nameplate with family name",
+   "res": "1k",
+   "dims": [
+    1.1,
+    0.04,
+    0.3
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WeakWindowBoards",
+   "kind": "model",
+   "source": "procedural",
+   "id": "weak window: thin frame, cracked pane, rot (WeakWindow component)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.1,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PostBoxPillar",
+   "kind": "model",
+   "source": "procedural",
+   "id": "red pillar post box, 1.5 h",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    1.5
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "PhoneKiosk",
+   "kind": "model",
+   "source": "procedural",
+   "id": "red telephone kiosk 1.0x1.0x2.5, dead line",
+   "res": "1k",
+   "dims": [
+    1.0,
+    1.0,
+    2.5
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BusShelter",
+   "kind": "model",
+   "source": "procedural",
+   "id": "corrugated bus shelter",
+   "res": "1k",
+   "dims": [
+    3.0,
+    1.5,
+    2.4
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WarMemorial",
+   "kind": "model",
+   "source": "procedural",
+   "id": "stone cross on 3 steps",
+   "res": "1k",
+   "dims": [
+    1.8,
+    1.8,
+    4.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Gravestone",
+   "kind": "model",
+   "source": "procedural",
+   "id": "headstone variants (5 profiles) in Stone/SandstoneBlocks, moss decal",
+   "res": "1k",
+   "dims": [
+    0.7,
+    0.15,
+    1.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "Modular Dark Fantasy Graveyard (Hivemind, $49.99, URP)",
+   "tags": []
+  },
+  {
+   "key": "FencePicket",
+   "kind": "model",
+   "source": "procedural",
+   "id": "picket fence 2 m bay, painted, gaps",
+   "res": "1k",
+   "dims": [
+    2.0,
+    0.08,
+    1.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FenceWattle",
+   "kind": "model",
+   "source": "procedural",
+   "id": "woven wattle hurdle 2 m",
+   "res": "1k",
+   "dims": [
+    2.0,
+    0.1,
+    1.1
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FenceRail",
+   "kind": "model",
+   "source": "procedural",
+   "id": "post-and-rail 2.5 m bay",
+   "res": "1k",
+   "dims": [
+    2.5,
+    0.1,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DryStoneWall",
+   "kind": "model",
+   "source": "procedural",
+   "id": "dry-stone wall 1.2 h, 0.6 thick, Stone material, coping stones",
+   "res": "1k",
+   "dims": [
+    2.0,
+    0.6,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "GardenGate",
+   "kind": "model",
+   "source": "procedural",
+   "id": "ledged gate 1.0 w with GateLatch",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.08,
+    1.1
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "WashingLine",
+   "kind": "model",
+   "source": "procedural",
+   "id": "2 posts + line + 3-6 cloth quads that move in wind",
+   "res": "1k",
+   "dims": [
+    6.0,
+    0.3,
+    2.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "VegBeds",
+   "kind": "model",
+   "source": "procedural",
+   "id": "raised beds with cabbage/bean-cane/marrow meshes (simple)",
+   "res": "1k",
+   "dims": [
+    3.0,
+    1.2,
+    0.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Beehive",
+   "kind": "model",
+   "source": "procedural",
+   "id": "WBC beehive",
+   "res": "1k",
+   "dims": [
+    0.55,
+    0.55,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Well",
+   "kind": "model",
+   "source": "procedural",
+   "id": "village well: 2.4 dia stone drum, oak roof, winch, bucket",
+   "res": "1k",
+   "dims": [
+    2.6,
+    2.6,
+    3.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Signpost",
+   "kind": "model",
+   "source": "procedural",
+   "id": "finger signpost (MAIN ST / MILL LANE / CHAPEL LANE...)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.2,
+    2.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "VintageCamera",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "Camera_01",
+   "res": "1k",
+   "dims": [
+    0.18,
+    0.14,
+    0.16
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "FilmProjector",
+   "kind": "model",
+   "source": "polyhaven",
+   "id": "filmstrip_projector_8mm",
+   "res": "1k",
+   "dims": [
+    0.3,
+    0.4,
+    0.3
+   ],
+   "download": "auto",
+   "licence": "CC0 1.0",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "Backdrop",
+   "kind": "model",
+   "source": "procedural",
+   "id": "studio backdrop: painted canvas (cloudy grey) 3.0 x 2.8 on a timber stand",
+   "res": "1k",
+   "dims": [
+    3.0,
+    0.4,
+    2.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "StudioLamp",
+   "kind": "model",
+   "source": "procedural",
+   "id": "studio flood lamp on a tripod stand, 1.8 h",
+   "res": "1k",
+   "dims": [
+    0.5,
+    0.5,
+    1.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "IronSafe",
+   "kind": "model",
+   "source": "procedural",
+   "id": "black cast-iron safe 0.6x0.6x0.8, brass handle, 4 code dials (CodeLockPuzzle dial slots)",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.6,
+    0.8
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "container"
+   ]
+  },
+  {
+   "key": "SmallAltar",
+   "kind": "model",
+   "source": "procedural",
+   "id": "oratory altar 1.6x0.7x1.0, oak, with the altar frontal (ALTAR CLOTH is the part)",
+   "res": "1k",
+   "dims": [
+    1.6,
+    0.7,
+    1.0
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "SortingTable",
+   "kind": "model",
+   "source": "procedural",
+   "id": "post sorting table 2.0x0.9x0.9 with a raised rim",
+   "res": "1k",
+   "dims": [
+    2.0,
+    0.9,
+    0.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "MailSacks",
+   "kind": "model",
+   "source": "procedural",
+   "id": "3 canvas GPO mail sacks (FabricHessian, red stencil)",
+   "res": "1k",
+   "dims": [
+    1.0,
+    0.7,
+    0.6
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding-behind"
+   ]
+  },
+  {
+   "key": "LetterScale",
+   "kind": "model",
+   "source": "procedural",
+   "id": "brass letter scale",
+   "res": "1k",
+   "dims": [
+    0.25,
+    0.15,
+    0.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "ScarecrowBoard",
+   "kind": "model",
+   "source": "procedural",
+   "id": "barn wall board 1.6x1.2: painted map of the fields with 6 peg holes and 6 symbol pegs",
+   "res": "1k",
+   "dims": [
+    1.6,
+    0.1,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "puzzle"
+   ]
+  },
+  {
+   "key": "MilkChurns",
+   "kind": "model",
+   "source": "procedural",
+   "id": "3 steel milk churns",
+   "res": "1k",
+   "dims": [
+    0.9,
+    0.4,
+    0.7
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "CheesePress",
+   "kind": "model",
+   "source": "procedural",
+   "id": "cast-iron cheese press",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.5,
+    1.4
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DollParts",
+   "kind": "model",
+   "source": "procedural",
+   "id": "workbench bins of porcelain heads, hands and glass eyes (data: 40 small meshes)",
+   "res": "1k",
+   "dims": [
+    0.6,
+    0.4,
+    0.25
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "DollCabinet",
+   "kind": "model",
+   "source": "procedural",
+   "id": "glass-fronted display cabinet 1.2x0.4x1.9 with 18 dolls on 4 shelves",
+   "res": "1k",
+   "dims": [
+    1.2,
+    0.4,
+    1.9
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": [
+    "hiding?"
+   ]
+  },
+  {
+   "key": "FallenTree",
+   "kind": "model",
+   "source": "procedural",
+   "id": "night blocker: DeadTrunk2 + branches across a lane (DESIGN 'one random path blocked')",
+   "res": "1k",
+   "dims": [
+    6.0,
+    1.2,
+    1.2
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  },
+  {
+   "key": "BrokenCart",
+   "kind": "model",
+   "source": "procedural",
+   "id": "night blocker: hay cart on its side + CartWheel",
+   "res": "1k",
+   "dims": [
+    3.5,
+    1.6,
+    1.5
+   ],
+   "download": "build",
+   "licence": "own work",
+   "author": null,
+   "note": "",
+   "upgrade": "",
+   "tags": []
+  }
+ ],
+ "audio": [
+  {
+   "key": "clocks",
+   "folder": "344 Audio - Antique Clocks",
+   "use": "Blue Door ticking/chimes (H00), every mantel clock, the 12 chimes when the gate key clock opens"
+  },
+  {
+   "key": "books",
+   "folder": "344 Audio - Antique Books",
+   "use": "page turns, books falling (Schoolmaster, Priest, Postmaster)"
+  },
+  {
+   "key": "typewriter",
+   "folder": "344 Audio - Antique Typewriter",
+   "use": "Postmaster/Doctor typewriter keys (night change: types by itself)"
+  },
+  {
+   "key": "telephone",
+   "folder": "344 Audio - Antique Telephone",
+   "use": "every rotary phone: ring, dial, pick-up (DESIGN 'The phone')"
+  },
+  {
+   "key": "smallmetal",
+   "folder": "344 Audio - Antique Small Metals",
+   "use": "keys, latches, weights on the scale (Butcher), coins"
+  },
+  {
+   "key": "ghostly",
+   "folder": "344 Audio - Ghostly Presences Vol. 1",
+   "use": "hollow-house ambience, sanity events"
+  },
+  {
+   "key": "haunting3",
+   "folder": "344 Audio - Haunting Ambiences Vol. 3",
+   "use": "Act 2/3 beds"
+  },
+  {
+   "key": "haunting5",
+   "folder": "344 Audio - Haunting Ambiences Vol. 5",
+   "use": "cellars/attics"
+  },
+  {
+   "key": "winds",
+   "folder": "344 Audio - Extreme Winds Vol. 1",
+   "use": "the Hollow's approach gusts, bell tower"
+  },
+  {
+   "key": "bells",
+   "folder": "Ivo Vicic - Church Bells",
+   "use": "bell tower tolls (dusk 12, midnight count, dawn)"
+  },
+  {
+   "key": "campfire",
+   "folder": "Ivo Vicic - Campfire - Bonfire FX",
+   "use": "hearth fire loops (all 15 houses)"
+  },
+  {
+   "key": "chimney",
+   "folder": "InMotionAudio - Chimney Wind",
+   "use": "cold hearths of hollow houses"
+  },
+  {
+   "key": "sinister4",
+   "folder": "InMotionAudio - Sinister Textures 4",
+   "use": "build-up beds before scares"
+  },
+  {
+   "key": "sinister5",
+   "folder": "InMotionAudio - Sinister Textures 5",
+   "use": "build-up beds before scares"
+  },
+  {
+   "key": "whistle",
+   "folder": "InMotionAudio - The Death Whistle",
+   "use": "Butcher's bone whistle part"
+  },
+  {
+   "key": "musicbox",
+   "folder": "Sonic Bat - Music Boxes",
+   "use": "Dollmaker music box; lullaby source"
+  },
+  {
+   "key": "vintageradio",
+   "folder": "Sonic Bat - Vintage Radio",
+   "use": "radios/TV static in every house"
+  },
+  {
+   "key": "stormy",
+   "folder": "Sonic Bat - Stormy Night Ambience",
+   "use": "Act 3 rain/wind"
+  },
+  {
+   "key": "interiorwind",
+   "folder": "Jake Fielding - Interior Wind Rain and Storms",
+   "use": "inside houses during storms"
+  },
+  {
+   "key": "fridgehum",
+   "folder": "Jake Fielding - Fridge Hums Vol.2",
+   "use": "1970s fridges, post office exchange hum"
+  },
+  {
+   "key": "locks",
+   "folder": "Epic Stock Media - HD Lock And Mechanism Sound Design Kit",
+   "use": "every puzzle lock, part containers, fuse boxes"
+  },
+  {
+   "key": "hauntedhouse",
+   "folder": "Epic Stock Media - Halloween Game - Haunted House and Horror Audio Scare Kit",
+   "use": "doors, creaks, scare stingers (bell only per DESIGN - use sparingly as foley)"
+  },
+  {
+   "key": "creatures",
+   "folder": "Epic Stock Media - Humanoid Creatures Vol 4 - Monstrous and Undead Creature Vocalization Sound Sets",
+   "use": "the Hollow's breathing/joint clicks"
+  },
+  {
+   "key": "rural",
+   "folder": "Epic Stock Media - Public Spaces - Storms Lakes Parks and Rural Nature Exteriors",
+   "use": "day ambience, mill pond, fields"
+  },
+  {
+   "key": "norway",
+   "folder": "Just Sound Effects - Highlands of Norway",
+   "use": "wind over fields, forest edge"
+  },
+  {
+   "key": "moaningmetal",
+   "folder": "The Noisery - Moaning Metal",
+   "use": "mill gears/waterwheel strain (H09), iron gate"
+  },
+  {
+   "key": "paper",
+   "folder": "Cinematic Sound Design - Paper Foley",
+   "use": "letters (Postmaster puzzle), notes, photos"
+  },
+  {
+   "key": "washing",
+   "folder": "InMotionAudio - Washing Basket Foley",
+   "use": "wicker baskets, Weaver's thread spools"
+  }
+ ],
+ "sonniss_root": "C:/dev/Hollowmere/AssetDownloads/Sonniss.com-GDC2026-GameAudioBundle"
+}

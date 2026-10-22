@@ -1,0 +1,1876 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H07",
+ "index": 7,
+ "name": "Organist's House",
+ "family": "Venn",
+ "part": "Organ pipe",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Red",
+ "chimneys": 3,
+ "clock_hour": 7,
+ "loud_puzzle": true,
+ "archetype": "Tall gaunt Gothic stone house beside the chapel, with an organ bay",
+ "silhouette": "Narrow, tall and dark: steep 55 deg red-slate roof, THREE chimneys (both gables and the rear wing), lancet windows, a stone ORGAN BAY with a pointed window projecting toward the chapel, a red door under a hood mould, ivy over half the front.",
+ "world": {
+  "position": [
+   -42.0,
+   0.3,
+   82.0
+  ],
+  "yaw": 270,
+  "street": "Chapel Lane (east side)",
+  "plot_poly": [
+   [
+    -29.0,
+    75.5
+   ],
+   [
+    -29.0,
+    90.2
+   ],
+   [
+    -48.0,
+    90.2
+   ],
+   [
+    -48.0,
+    75.5
+   ]
+  ],
+  "note": "organ bay (local +x) points north toward the chapel; rear wing backs onto Back Lane"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "C": {
+   "y": -2.4,
+   "h": 2.2,
+   "label": "Cellar"
+  },
+  "G": {
+   "y": 0.0,
+   "h": 3.2,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 3.45,
+   "h": 2.8,
+   "label": "First floor"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -4.5,
+    -4.0,
+    4.5,
+    4.0
+   ],
+   "levels": [
+    "C",
+    "G",
+    "F"
+   ],
+   "walls": "StoneBlock (dark grey, ivy on the west half), SandstoneBlocks hood moulds and lancet surrounds, BrickDark plinth",
+   "t": 0.5,
+   "roof": "Steep gable roof 55 deg, ridge along x at 11.2 m, RoofRedSlate, cast-iron cresting on the ridge; gable chimneys W and E",
+   "note": ""
+  },
+  {
+   "id": "rear",
+   "rect": [
+    -4.5,
+    -9.0,
+    0.5,
+    -4.0
+   ],
+   "levels": [
+    "G",
+    "F"
+   ],
+   "walls": "StoneBlock",
+   "t": 0.5,
+   "roof": "Gable roof 50 deg, ridge along z, RoofRedSlate; chimney on the south gable",
+   "note": ""
+  },
+  {
+   "id": "bay",
+   "rect": [
+    4.5,
+    -1.6,
+    6.2,
+    1.6
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "StoneBlock with a tall pointed window 1.4 x 3.0",
+   "t": 0.5,
+   "roof": "Stone-slate lean-to",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "hall",
+   "name": "Hall",
+   "level": "G",
+   "rect": [
+    -1.2,
+    -4.0,
+    1.0,
+    4.0
+   ],
+   "inner": [
+    -1.14,
+    -3.5,
+    0.94,
+    3.5
+   ],
+   "kind": "hall",
+   "floor": "FloorFlagstone",
+   "walls": "PanelDark full height",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parlour",
+   "name": "Parlour",
+   "level": "G",
+   "rect": [
+    -4.5,
+    0.0,
+    -1.2,
+    4.0
+   ],
+   "inner": [
+    -4.0,
+    0.06,
+    -1.26,
+    3.5
+   ],
+   "kind": "living",
+   "floor": "FloorDarkPlanks",
+   "walls": "Wallpaper2 (oxblood)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "study",
+   "name": "Copying room",
+   "level": "G",
+   "rect": [
+    -4.5,
+    -4.0,
+    -1.2,
+    0.0
+   ],
+   "inner": [
+    -4.0,
+    -3.94,
+    -1.26,
+    -0.06
+   ],
+   "kind": "study",
+   "floor": "FloorDarkPlanks",
+   "walls": "PanelDark",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "music",
+   "name": "Music room (PUZZLE)",
+   "level": "G",
+   "rect": [
+    1.0,
+    -4.0,
+    4.5,
+    4.0
+   ],
+   "inner": [
+    1.06,
+    -3.5,
+    4.0,
+    3.5
+   ],
+   "kind": "music",
+   "floor": "FloorParquet",
+   "walls": "PanelDark to 1.5 m, Wallpaper2C",
+   "ceiling": "CeilingInterior",
+   "light": "chandelier (Chandelier3)",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bay",
+   "name": "Organ bay",
+   "level": "G",
+   "rect": [
+    4.5,
+    -1.6,
+    6.2,
+    1.6
+   ],
+   "inner": [
+    4.56,
+    -1.1,
+    5.7,
+    1.1
+   ],
+   "kind": "music-bay",
+   "floor": "FloorParquet",
+   "walls": "StoneBlock (exposed)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen (rear wing)",
+   "level": "G",
+   "rect": [
+    -4.5,
+    -9.0,
+    0.5,
+    -4.0
+   ],
+   "inner": [
+    -4.0,
+    -8.5,
+    0.0,
+    -4.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Mr Venn's bedroom",
+   "level": "F",
+   "rect": [
+    1.0,
+    -4.0,
+    4.5,
+    4.0
+   ],
+   "inner": [
+    1.06,
+    -3.5,
+    4.0,
+    3.5
+   ],
+   "kind": "bedroom",
+   "floor": "FloorDarkPlanks",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -1.2,
+    -4.0,
+    1.0,
+    4.0
+   ],
+   "inner": [
+    -1.14,
+    -3.5,
+    0.94,
+    3.5
+   ],
+   "kind": "landing",
+   "floor": "FloorDarkPlanks",
+   "walls": "PanelDark",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Mother's room (kept as it was)",
+   "level": "F",
+   "rect": [
+    -4.5,
+    0.0,
+    -1.2,
+    4.0
+   ],
+   "inner": [
+    -4.0,
+    0.06,
+    -1.26,
+    3.5
+   ],
+   "kind": "bedroom",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -4.5,
+    -4.0,
+    -1.2,
+    0.0
+   ],
+   "inner": [
+    -4.0,
+    -3.94,
+    -1.26,
+    -0.06
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite (black border)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "store",
+   "name": "Music store (rear wing)",
+   "level": "F",
+   "rect": [
+    -4.5,
+    -9.0,
+    0.5,
+    -4.0
+   ],
+   "inner": [
+    -4.0,
+    -8.5,
+    0.0,
+    -4.06
+   ],
+   "kind": "storage",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "cellar",
+   "name": "Cellar (bellows chamber)",
+   "level": "C",
+   "rect": [
+    -4.5,
+    -4.0,
+    4.5,
+    4.0
+   ],
+   "inner": [
+    -4.0,
+    -3.5,
+    4.0,
+    3.5
+   ],
+   "kind": "cellar",
+   "floor": "FloorFlagstone",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": "the organ's old hand-pumped bellows reservoir sits under the music room"
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": 0.0,
+   "width": 1.0,
+   "height": 2.4,
+   "kind": "pointed-arch oak door painted red, iron ring handle",
+   "mat": "Door",
+   "colour": "Red",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "ext",
+   "side": "W",
+   "at": -6.5,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_par",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parlour",
+   "side": "W",
+   "at": 3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_study",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "study",
+   "side": "W",
+   "at": -3.0,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_music",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "music",
+   "side": "E",
+   "at": 2.6,
+   "width": 1.1,
+   "height": 2.05,
+   "kind": "double doors",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "study",
+   "room_b": "kitchen",
+   "side": "S",
+   "at": -2.8,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bay",
+   "level": "G",
+   "room_a": "music",
+   "room_b": "bay",
+   "side": "E",
+   "at": 0.0,
+   "width": 2.4,
+   "height": 2.8,
+   "kind": "open pointed arch (no leaf)",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "E",
+   "at": 2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "W",
+   "at": -3.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_store",
+   "level": "F",
+   "room_a": "bath",
+   "room_b": "store",
+   "side": "S",
+   "at": -1.8,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "low door (the store is reached through the bathroom - Mr Venn's odd extension)",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_bay",
+   "room": "bay",
+   "side": "E",
+   "at": 0.0,
+   "width": 1.4,
+   "height": 3.0,
+   "sill": 0.5,
+   "style": "tall pointed window, plain leaded glass, faces the chapel",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_par",
+   "room": "parlour",
+   "side": "N",
+   "at": -2.9,
+   "width": 0.9,
+   "height": 2.0,
+   "sill": 0.9,
+   "style": "lancet pair",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_music",
+   "room": "music",
+   "side": "N",
+   "at": 2.8,
+   "width": 0.9,
+   "height": 2.0,
+   "sill": 0.9,
+   "style": "lancet pair",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "E",
+   "at": -6.5,
+   "width": 1.0,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "sash, rotten",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_study",
+   "room": "study",
+   "side": "W",
+   "at": -2.0,
+   "width": 0.8,
+   "height": 1.6,
+   "sill": 0.9,
+   "style": "lancet, cracked",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b1",
+   "room": "bed1",
+   "side": "N",
+   "at": 2.8,
+   "width": 0.8,
+   "height": 1.6,
+   "sill": 0.9,
+   "style": "lancet",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "N",
+   "at": -2.9,
+   "width": 0.8,
+   "height": 1.6,
+   "sill": 0.9,
+   "style": "lancet",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_store",
+   "room": "store",
+   "side": "S",
+   "at": -2.0,
+   "width": 0.6,
+   "height": 0.8,
+   "sill": 0.9,
+   "style": "small",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    0.05,
+    -3.7,
+    0.95,
+    -0.2
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "stone stair, 17 risers, iron balusters"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    0.05,
+    -3.7,
+    0.95,
+    -0.2
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "hall",
+   "rect": [
+    -1.15,
+    -3.7,
+    -0.3,
+    -1.2
+   ],
+   "frm": "C",
+   "to": "G",
+   "ascent": "S",
+   "kind": "cellar steps under a trapdoor in the hall flags (trapdoor stays open)",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2c",
+   "room": "cellar",
+   "rect": [
+    -1.15,
+    -3.7,
+    -0.3,
+    -1.2
+   ],
+   "frm": "C",
+   "to": "G",
+   "ascent": "S",
+   "kind": "arrives",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -4.5,
+   "z": 2.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "parlour fire",
+   "pots": 2
+  },
+  {
+   "x": 4.5,
+   "z": -3.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "music-room fire (cold)",
+   "pots": 2
+  },
+  {
+   "x": -2.0,
+   "z": -9.0,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "kitchen range = THE HEARTH",
+   "pots": 1
+  }
+ ],
+ "props": [
+  {
+   "id": "H07.p001",
+   "n": 1,
+   "room": "bay",
+   "key": "PumpOrgan",
+   "x": 5.25,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "puzzle",
+   "note": "THE PUMP ORGAN in the bay, keyboard facing west into the room",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "reed organ: case 1.25w 0.55d 1.1h + top gallery to 1.9h, 2 pedals, 61 keys, stops",
+   "source": "procedural",
+   "dims": [
+    1.25,
+    0.6,
+    1.9
+   ]
+  },
+  {
+   "id": "H07.p002",
+   "n": 2,
+   "room": "bay",
+   "key": "StoolPainted",
+   "x": 4.75,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "organ stool",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_stool",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.35,
+    0.45
+   ]
+  },
+  {
+   "id": "H07.p003",
+   "n": 3,
+   "room": "music",
+   "key": "ChestWorn",
+   "x": 2.8,
+   "y": 0.0,
+   "z": -3.22,
+   "yaw": 0,
+   "role": "",
+   "note": "PART CONTAINER: pipe chest (long box 0.9)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H07.p004",
+   "n": 4,
+   "room": "music",
+   "key": "Shelf",
+   "x": 1.265,
+   "y": 0.0,
+   "z": -2.6,
+   "yaw": 90,
+   "role": "",
+   "note": "sheet music to the ceiling",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_bookshelf_worn",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.35,
+    1.9
+   ]
+  },
+  {
+   "id": "H07.p005",
+   "n": 5,
+   "room": "music",
+   "key": "Shelf",
+   "x": 1.265,
+   "y": 0.0,
+   "z": -1.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_bookshelf_worn",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.35,
+    1.9
+   ]
+  },
+  {
+   "id": "H07.p006",
+   "n": 6,
+   "room": "music",
+   "key": "ArmchairGreen",
+   "x": 2.6,
+   "y": 0.0,
+   "z": 1.2,
+   "yaw": 135,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GreenChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.75,
+    0.8,
+    0.95
+   ]
+  },
+  {
+   "id": "H07.p007",
+   "n": 7,
+   "room": "music",
+   "key": "Rug",
+   "x": 2.8,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H07.p008",
+   "n": 8,
+   "room": "music",
+   "key": "FrameFancy2",
+   "x": 1.085,
+   "y": 1.625,
+   "z": 0.5,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "Venn with the chapel choir, 1958",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "fancy_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.05,
+    0.55
+   ]
+  },
+  {
+   "id": "H07.p009",
+   "n": 9,
+   "room": "music",
+   "key": "TableRound2",
+   "x": 2.2,
+   "y": 0.0,
+   "z": -1.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "round_wooden_table_02",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.9,
+    0.75
+   ]
+  },
+  {
+   "id": "H07.p010",
+   "n": 10,
+   "room": "music",
+   "key": "Candleholders",
+   "x": 2.2,
+   "y": 0.75,
+   "z": -1.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H07.p009",
+   "mat": null,
+   "scale": null,
+   "asset": "brass_candleholders",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.12,
+    0.3
+   ]
+  },
+  {
+   "id": "H07.p011",
+   "n": 11,
+   "room": "parlour",
+   "key": "Hearth",
+   "x": -3.62,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "cast-iron fireplace (decorative); THE HEARTH is the kitchen range",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H07.p012",
+   "n": 12,
+   "room": "parlour",
+   "key": "MantelClock",
+   "x": -3.62,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "stopped at 7:00",
+   "on": "H07.p011",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H07.p013",
+   "n": 13,
+   "room": "parlour",
+   "key": "SofaPainted",
+   "x": -2.9,
+   "y": 0.0,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_sofa",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    0.7,
+    0.9
+   ]
+  },
+  {
+   "id": "H07.p014",
+   "n": 14,
+   "room": "parlour",
+   "key": "SideTable",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 3.22,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H07.p015",
+   "n": 15,
+   "room": "parlour",
+   "key": "RotaryPhone",
+   "x": -2.6,
+   "y": 0.6,
+   "z": 3.22,
+   "yaw": 180,
+   "role": "phone",
+   "note": "",
+   "on": "H07.p014",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H07.p016",
+   "n": 16,
+   "room": "parlour",
+   "key": "CassettePlayer",
+   "x": -2.75,
+   "y": 0.6,
+   "z": 3.22,
+   "yaw": 180,
+   "role": "radio",
+   "note": "cassette recorder: tapes of children singing",
+   "on": "H07.p014",
+   "mat": null,
+   "scale": null,
+   "asset": "cassette_player",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.22,
+    0.12
+   ]
+  },
+  {
+   "id": "H07.p017",
+   "n": 17,
+   "room": "parlour",
+   "key": "RockingChair",
+   "x": -2.4,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Rockingchair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.95,
+    1.05
+   ]
+  },
+  {
+   "id": "H07.p018",
+   "n": 18,
+   "room": "study",
+   "key": "OfficeDesk",
+   "x": -3.651,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.85,
+   "asset": "metal_office_desk",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.75,
+    0.76
+   ]
+  },
+  {
+   "id": "H07.p019",
+   "n": 19,
+   "room": "study",
+   "key": "Shelf",
+   "x": -3.4,
+   "y": 0.0,
+   "z": -0.265,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_bookshelf_worn",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.35,
+    1.9
+   ]
+  },
+  {
+   "id": "H07.p020",
+   "n": 20,
+   "room": "study",
+   "key": "Chair",
+   "x": -3.0,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H07.p021",
+   "n": 21,
+   "room": "kitchen",
+   "key": "Hearth",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -8.12,
+   "yaw": 0,
+   "role": "hearth",
+   "note": "black range in the south gable = THE HEARTH",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H07.p022",
+   "n": 22,
+   "room": "kitchen",
+   "key": "Dresser",
+   "x": -0.8,
+   "y": 0.0,
+   "z": -4.34,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H07.p023",
+   "n": 23,
+   "room": "kitchen",
+   "key": "TableWood2",
+   "x": -2.0,
+   "y": 0.0,
+   "z": -6.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_02",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    0.85,
+    0.76
+   ]
+  },
+  {
+   "id": "H07.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -3.67,
+   "y": 0.0,
+   "z": -5.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H07.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "FuseBox",
+   "x": 0.0,
+   "y": 1.4,
+   "z": -4.135,
+   "yaw": 180,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H07.p026",
+   "n": 26,
+   "room": "bed1",
+   "key": "Bed",
+   "x": 2.92,
+   "y": 0.0,
+   "z": 1.8,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H07.p027",
+   "n": 27,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": 3.77,
+   "y": 0.0,
+   "z": 0.7,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H07.p028",
+   "n": 28,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": 3.77,
+   "y": 0.0,
+   "z": 2.9,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H07.p029",
+   "n": 29,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": 2.8,
+   "y": 0.0,
+   "z": -3.17,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H07.p030",
+   "n": 30,
+   "room": "bed2",
+   "key": "DayBed",
+   "x": -2.995,
+   "y": 0.0,
+   "z": 1.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_day_bed",
+   "source": "polyhaven",
+   "dims": [
+    0.95,
+    1.95,
+    0.85
+   ]
+  },
+  {
+   "id": "H07.p031",
+   "n": 31,
+   "room": "bed2",
+   "key": "NightstandPainted",
+   "x": -3.78,
+   "y": 0.0,
+   "z": 0.65,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H07.p032",
+   "n": 32,
+   "room": "bed2",
+   "key": "Commode",
+   "x": -2.9,
+   "y": 0.0,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "",
+   "note": "dressing table with her hairbrushes still on it",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCommode_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.5,
+    0.9
+   ]
+  },
+  {
+   "id": "H07.p033",
+   "n": 33,
+   "room": "bath",
+   "key": "BathtubPhoto",
+   "x": -2.9,
+   "y": 0.0,
+   "z": -0.48,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ba60ba7d0a4a4b6899021741f450395b",
+   "source": "sketchfab",
+   "dims": [
+    1.7,
+    0.78,
+    0.65
+   ]
+  },
+  {
+   "id": "H07.p034",
+   "n": 34,
+   "room": "bath",
+   "key": "Sink",
+   "x": -3.745,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H07.p035",
+   "n": 35,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -3.975,
+   "y": 1.1,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H07.p036",
+   "n": 36,
+   "room": "bath",
+   "key": "Toilet",
+   "x": -3.645,
+   "y": 0.0,
+   "z": -3.4,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H07.p037",
+   "n": 37,
+   "room": "store",
+   "key": "SteelShelves",
+   "x": -0.255,
+   "y": 0.0,
+   "z": -6.5,
+   "yaw": 270,
+   "role": "",
+   "note": "organ pipes of every length, labelled",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    1.9
+   ]
+  },
+  {
+   "id": "H07.p038",
+   "n": 38,
+   "room": "store",
+   "key": "CellarCrates",
+   "x": -3.52,
+   "y": 0.0,
+   "z": -6.5,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H07.p039",
+   "n": 39,
+   "room": "cellar",
+   "key": "Barrel2",
+   "x": 3.67,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "bellows reservoir (leather, cracked) - a big shape",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Barrel_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H07.p040",
+   "n": 40,
+   "room": "cellar",
+   "key": "BarrelsWood",
+   "x": 2.0,
+   "y": 0.0,
+   "z": 3.07,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "wooden_barrels_01",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.8,
+    1.0
+   ]
+  },
+  {
+   "id": "H07.p041",
+   "n": 41,
+   "room": "cellar",
+   "key": "SteelShelves2",
+   "x": -3.77,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_02",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H07.p042",
+   "n": 42,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 0.6,
+   "y": 0.9,
+   "z": 3.375,
+   "yaw": 180,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "puzzle",
+   "room": "bay",
+   "x": 5.25,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "note": "SequencePuzzle reskinned: 6 marked keys (symbols painted on the key fronts); play the village lullaby (children hum it by day; notation on the hymn sheet in the copying room). EVERY KEY PRESS = NoiseRadius.LoudPuzzle"
+  },
+  {
+   "kind": "container",
+   "room": "music",
+   "x": 2.8,
+   "y": 0.0,
+   "z": -3.22,
+   "yaw": 0,
+   "note": "Organ pipe"
+  },
+  {
+   "kind": "item-spot",
+   "room": "music",
+   "x": 2.2,
+   "y": 0.75,
+   "z": -1.6,
+   "yaw": 0,
+   "note": "music-room table"
+  },
+  {
+   "kind": "item-spot",
+   "room": "parlour",
+   "x": -3.62,
+   "y": 1.4,
+   "z": 2.0,
+   "yaw": 90,
+   "note": "parlour mantel"
+  },
+  {
+   "kind": "note-spot",
+   "room": "study",
+   "x": -3.651,
+   "y": 0.646,
+   "z": -1.9,
+   "yaw": 90,
+   "note": "HYMN SHEET with the lullaby in shape-note symbols (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -2.0,
+   "y": 1.4,
+   "z": -8.12,
+   "yaw": 0,
+   "note": "range shelf"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitchen",
+   "x": -2.0,
+   "y": 0.76,
+   "z": -6.3,
+   "yaw": 90,
+   "note": "letter from the vicar about 'the tune' (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": 2.92,
+   "y": 0.0,
+   "z": 1.8,
+   "yaw": 270,
+   "note": "under the bed -> HidingSpot on H07.p026 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": 2.8,
+   "y": 0.0,
+   "z": -3.17,
+   "yaw": 0,
+   "note": "wardrobe -> HidingSpot on H07.p029 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed2",
+   "x": -3.0,
+   "y": 0.9,
+   "z": 0.34,
+   "yaw": 0,
+   "note": "Mrs Venn's lullaby verses (note 3/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -2.9,
+   "y": 0.0,
+   "z": -0.48,
+   "yaw": 180,
+   "note": "behind the bath curtain -> HidingSpot on H07.p033 (BathtubPhoto)"
+  },
+  {
+   "kind": "hiding",
+   "room": "store",
+   "x": -3.52,
+   "y": 0.0,
+   "z": -6.5,
+   "yaw": 90,
+   "note": "behind the pipe crates -> HidingSpot on H07.p038 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 0.6,
+   "y": 0.0,
+   "z": 3.375,
+   "yaw": 180,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "stone ORGAN BAY with a 3 m pointed window facing the chapel",
+  "red pointed-arch door under a sandstone hood mould with carved head stops",
+  "ivy over the west half of the front",
+  "three chimneys (DESIGN): west gable, east gable, rear wing",
+  "iron ridge cresting; a weathervane in the shape of a pipe"
+ ],
+ "plot": [
+  "Front: narrow yew-hedged path, a lych-style gate onto Chapel Lane",
+  "Back: a sunken overgrown garden, a stone bench, a door in the wall into the GRAVEYARD"
+ ],
+ "puzzle": [
+  "LOCK FIRST: the pump organ in the bay, music desk open, a long pipe chest at its feet.",
+  "The hymn sheet (copying room, note 1/3) writes the lullaby in shape notes (= the 6 symbols).",
+  "Children hum the lullaby by day (M6); the cassette recorder in the parlour plays a tape of it (partial).",
+  "Play 4-6 marked keys in order. EVERY KEY = NoiseRadius.LoudPuzzle (DESIGN 'Play the village lullaby... loudly').",
+  "Part: Organ pipe (0.9 m), in the pipe chest."
+ ],
+ "night_changes": [
+  "the organ plays one long low note when the Hollow is within 30 m",
+  "the mother's dressing table mirror shows someone brushing her hair",
+  "sheet music pages are spread on the floor in a trail to the cellar"
+ ],
+ "audio": [
+  "bells (chapel next door)",
+  "organ: generated tones (in-world music only)",
+  "haunting5 in the cellar"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Pump_organ",
+  "https://en.wikipedia.org/wiki/Gothic_Revival_architecture"
+ ],
+ "image_prompt": "tall gaunt dark grey Gothic stone house beside a village chapel, very steep red slate roof with three chimneys, lancet windows, a stone organ bay with a tall pointed window, a red pointed-arch door, ivy over half the front, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

@@ -1,0 +1,1600 @@
+{
+ "schema": "hollowmere.village/1",
+ "conventions": "Unity world metres: +x east, +z north, y up; yaw = Unity Y rotation (front faces)",
+ "bounds": {
+  "inside_wall": [
+   -150,
+   -150,
+   150,
+   150
+  ],
+  "forest_belt_inner": [
+   -128,
+   -140,
+   128,
+   128
+  ],
+  "wall_height": 5.0
+ },
+ "terrain": {
+  "note": "keep the playable ground FLAT at y=0 under streets and house pads (NavMesh + LayoutFingerprint); undulate +-1.5 m only in gardens/fields/forest with a Unity Terrain; square stays at 0; pond surface -0.8; stream bed -1.2 (banks 1:2)",
+  "height_points": [
+   {
+    "name": "square",
+    "x": 0,
+    "z": 117,
+    "y": 0.0
+   },
+   {
+    "name": "green",
+    "x": 0,
+    "z": 4,
+    "y": 0.0
+   },
+   {
+    "name": "chapel hill",
+    "x": -70,
+    "z": 104,
+    "y": 0.6
+   },
+   {
+    "name": "mill pond",
+    "x": -112,
+    "z": -76,
+    "y": -0.8
+   },
+   {
+    "name": "fields",
+    "x": 95,
+    "z": -105,
+    "y": 0.4
+   },
+   {
+    "name": "stream",
+    "x": 0,
+    "z": -115,
+    "y": -1.2
+   }
+  ]
+ },
+ "houses": [
+  {
+   "slug": "H00",
+   "name": "Blue Door House",
+   "position": [
+    10.6,
+    0.45,
+    52.0
+   ],
+   "yaw": 270,
+   "street": "Main Street (east side)",
+   "front_door": [
+    6.1,
+    54.35
+   ],
+   "plot_poly": [
+    [
+     25.1,
+     47.900000000000006
+    ],
+    [
+     25.1,
+     56.1
+    ],
+    [
+     5.099999999999999,
+     56.1
+    ],
+    [
+     5.1000000000000005,
+     47.9
+    ]
+   ],
+   "to_altar": 58.0
+  },
+  {
+   "slug": "H01",
+   "name": "Rao House",
+   "position": [
+    36.0,
+    0.1,
+    6.0
+   ],
+   "yaw": 262,
+   "street": "The Green (east side)",
+   "front_door": [
+    31.587151257153064,
+    5.783745583272339
+   ],
+   "plot_poly": [
+    [
+     59.518066509027804,
+     -0.3890959984136
+    ],
+    [
+     56.84594297059454,
+     18.624050921424548
+    ],
+    [
+     23.57293586087778,
+     13.947834729166338
+    ],
+    [
+     26.245059399311046,
+     -5.065312190671811
+    ]
+   ],
+   "to_altar": 110.8
+  },
+  {
+   "slug": "H02",
+   "name": "Widow's House",
+   "position": [
+    25.5,
+    -0.3,
+    -90.0
+   ],
+   "yaw": 270,
+   "street": "Main Street south (east side, by the stream bridge)",
+   "front_door": [
+    20.7,
+    -90.0
+   ],
+   "plot_poly": [
+    [
+     38.7,
+     -99.0
+    ],
+    [
+     38.699999999999996,
+     -81.0
+    ],
+    [
+     16.699999999999996,
+     -81.0
+    ],
+    [
+     16.700000000000003,
+     -99.0
+    ]
+   ],
+   "to_altar": 203.1
+  },
+  {
+   "slug": "H03",
+   "name": "Schoolmaster's House",
+   "position": [
+    56.0,
+    0.2,
+    58.0
+   ],
+   "yaw": 0,
+   "street": "School Lane (south side, opposite the school)",
+   "front_door": [
+    54.4,
+    63.0
+   ],
+   "plot_poly": [
+    [
+     47.5,
+     43.0
+    ],
+    [
+     61.5,
+     43.0
+    ],
+    [
+     61.5,
+     65.0
+    ],
+    [
+     47.5,
+     65.0
+    ]
+   ],
+   "to_altar": 73.2
+  },
+  {
+   "slug": "H04",
+   "name": "Weaver's House",
+   "position": [
+    -53.8,
+    -0.2,
+    -32.2
+   ],
+   "yaw": 135,
+   "street": "Mill Lane (north-west side)",
+   "front_door": [
+    -51.18370490960977,
+    -34.10918830920368
+   ],
+   "plot_poly": [
+    [
+     -58.46690475583121,
+     -14.805173182810933
+    ],
+    [
+     -71.19482681718907,
+     -27.53309524416879
+    ],
+    [
+     -57.194112549695426,
+     -41.53380951166243
+    ],
+    [
+     -44.466190488337574,
+     -28.805887450304574
+    ]
+   ],
+   "to_altar": 154.8
+  },
+  {
+   "slug": "H05",
+   "name": "Doctor's House",
+   "position": [
+    -62.0,
+    0.3,
+    48.0
+   ],
+   "yaw": 90,
+   "street": "Chapel Lane (west side)",
+   "front_door": [
+    -56.0,
+    48.0
+   ],
+   "plot_poly": [
+    [
+     -76.5,
+     57.0
+    ],
+    [
+     -76.5,
+     34.0
+    ],
+    [
+     -52.0,
+     34.0
+    ],
+    [
+     -52.0,
+     57.0
+    ]
+   ],
+   "to_altar": 85.0
+  },
+  {
+   "slug": "H06",
+   "name": "Twins' House",
+   "position": [
+    -24.0,
+    0.0,
+    29.0
+   ],
+   "yaw": 180,
+   "street": "The Green (north side)",
+   "front_door": [
+    -25.0,
+    25.0
+   ],
+   "plot_poly": [
+    [
+     -15.500000000000002,
+     41.0
+    ],
+    [
+     -32.5,
+     41.0
+    ],
+    [
+     -32.5,
+     21.0
+    ],
+    [
+     -15.499999999999998,
+     21.0
+    ]
+   ],
+   "to_altar": 90.5
+  },
+  {
+   "slug": "H07",
+   "name": "Organist's House",
+   "position": [
+    -42.0,
+    0.3,
+    82.0
+   ],
+   "yaw": 270,
+   "street": "Chapel Lane (east side)",
+   "front_door": [
+    -46.0,
+    82.0
+   ],
+   "plot_poly": [
+    [
+     -29.0,
+     75.5
+    ],
+    [
+     -29.0,
+     90.2
+    ],
+    [
+     -48.0,
+     90.2
+    ],
+    [
+     -48.0,
+     75.5
+    ]
+   ],
+   "to_altar": 54.9
+  },
+  {
+   "slug": "H08",
+   "name": "Butcher's House",
+   "position": [
+    -7.75,
+    0.0,
+    66.0
+   ],
+   "yaw": 90,
+   "street": "Main Street (west side)",
+   "front_door": [
+    -10.75,
+    62.0
+   ],
+   "plot_poly": [
+    [
+     -28.75,
+     70.3
+    ],
+    [
+     -28.75,
+     61.7
+    ],
+    [
+     -3.45,
+     61.7
+    ],
+    [
+     -3.45,
+     70.3
+    ]
+   ],
+   "to_altar": 51.1
+  },
+  {
+   "slug": "H09",
+   "name": "Miller's House",
+   "position": [
+    -104.0,
+    -0.6,
+    -96.0
+   ],
+   "yaw": 0,
+   "street": "Mill Lane (end, at the pond)",
+   "front_door": [
+    -103.5,
+    -92.0
+   ],
+   "plot_poly": [
+    [
+     -110.0,
+     -106.0
+    ],
+    [
+     -92.0,
+     -106.0
+    ],
+    [
+     -92.0,
+     -87.0
+    ],
+    [
+     -110.0,
+     -87.0
+    ]
+   ],
+   "to_altar": 228.8
+  },
+  {
+   "slug": "H10",
+   "name": "Photographer's House",
+   "position": [
+    -8.0,
+    0.0,
+    50.0
+   ],
+   "yaw": 90,
+   "street": "Main Street (west side)",
+   "front_door": [
+    -4.0,
+    50.4
+   ],
+   "plot_poly": [
+    [
+     -22.0,
+     55.3
+    ],
+    [
+     -22.0,
+     44.7
+    ],
+    [
+     -3.7,
+     44.7
+    ],
+    [
+     -3.7,
+     55.3
+    ]
+   ],
+   "to_altar": 61.7
+  },
+  {
+   "slug": "H11",
+   "name": "Priest's House",
+   "position": [
+    -62.0,
+    0.4,
+    80.0
+   ],
+   "yaw": 90,
+   "street": "Chapel Lane (west side)",
+   "front_door": [
+    -58.0,
+    81.5
+   ],
+   "plot_poly": [
+    [
+     -72.0,
+     88.0
+    ],
+    [
+     -72.0,
+     72.0
+    ],
+    [
+     -52.0,
+     72.0
+    ],
+    [
+     -52.0,
+     88.0
+    ]
+   ],
+   "to_altar": 65.5
+  },
+  {
+   "slug": "H12",
+   "name": "Postmaster's House",
+   "position": [
+    10.8,
+    0.1,
+    78.0
+   ],
+   "yaw": 270,
+   "street": "Main Street (east side, by the square)",
+   "front_door": [
+    5.6000000000000005,
+    77.8
+   ],
+   "plot_poly": [
+    [
+     20.800000000000004,
+     72.5
+    ],
+    [
+     20.799999999999997,
+     87.5
+    ],
+    [
+     5.099999999999999,
+     87.5
+    ],
+    [
+     5.100000000000001,
+     72.5
+    ]
+   ],
+   "to_altar": 34.7
+  },
+  {
+   "slug": "H13",
+   "name": "Farmer's House",
+   "position": [
+    86.0,
+    0.2,
+    -34.0
+   ],
+   "yaw": 0,
+   "street": "East Road (south side)",
+   "front_door": [
+    82.5,
+    -30.0
+   ],
+   "plot_poly": [
+    [
+     76.0,
+     -49.0
+    ],
+    [
+     102.0,
+     -49.0
+    ],
+    [
+     102.0,
+     -24.0
+    ],
+    [
+     76.0,
+     -24.0
+    ]
+   ],
+   "to_altar": 164.2
+  },
+  {
+   "slug": "H14",
+   "name": "Dollmaker's House",
+   "position": [
+    -29.0,
+    0.0,
+    -4.0
+   ],
+   "yaw": 90,
+   "street": "The Green (west side)",
+   "front_door": [
+    -25.0,
+    -3.9999999999999996
+   ],
+   "plot_poly": [
+    [
+     -39.0,
+     1.4999999999999991
+    ],
+    [
+     -39.0,
+     -9.5
+    ],
+    [
+     -24.1,
+     -9.5
+    ],
+    [
+     -24.1,
+     1.5
+    ]
+   ],
+   "to_altar": 118.7
+  }
+ ],
+ "landmarks": [
+  {
+   "id": "L_GATE",
+   "name": "Village gate",
+   "pos": [
+    0,
+    150
+   ],
+   "size": [
+    10.4,
+    1.6
+   ],
+   "yaw": 0,
+   "kind": "gate",
+   "keep": true,
+   "note": "existing BuildGate; 'DO NOT LOOK BACK' inscription; ring wall continues E and W"
+  },
+  {
+   "id": "L_SQUARE",
+   "name": "Town square (cobbled)",
+   "pos": [
+    0,
+    117
+   ],
+   "size": [
+    70,
+    60
+   ],
+   "yaw": 0,
+   "kind": "area",
+   "keep": true,
+   "note": "existing Paving 70 x 60; add a 0.15 m kerb + 2 m pavement round its edge, 4 benches, 2 street lamps"
+  },
+  {
+   "id": "L_ALTAR",
+   "name": "Altar + stone circle",
+   "pos": [
+    0,
+    112
+   ],
+   "size": [
+    16,
+    16
+   ],
+   "yaw": 0,
+   "kind": "ritual",
+   "keep": true,
+   "note": "existing"
+  },
+  {
+   "id": "L_BELL",
+   "name": "Bell tower",
+   "pos": [
+    26,
+    132
+   ],
+   "size": [
+    4,
+    4
+   ],
+   "yaw": 0,
+   "kind": "tower",
+   "keep": true,
+   "note": "existing; dress with StoneBlock + a louvred belfry + clock face (stopped)"
+  },
+  {
+   "id": "L_BOARD",
+   "name": "Notice board",
+   "pos": [
+    14,
+    96
+   ],
+   "size": [
+    3.8,
+    0.6
+   ],
+   "yaw": 180,
+   "kind": "board",
+   "keep": true,
+   "note": "existing"
+  },
+  {
+   "id": "L_CHAPEL",
+   "name": "Chapel",
+   "pos": [
+    -60,
+    112
+   ],
+   "size": [
+    12,
+    18
+   ],
+   "yaw": 90,
+   "kind": "chapel",
+   "keep": true,
+   "note": "existing 12 x 18 shell; dress: ChapelWall, ChapelRoof, a west bellcote, 4 lancets per side, porch on the east door"
+  },
+  {
+   "id": "L_GRAVE",
+   "name": "Graveyard",
+   "pos": [
+    -72,
+    104
+   ],
+   "size": [
+    30,
+    34
+   ],
+   "yaw": 0,
+   "kind": "area",
+   "note": "dry-stone wall 1.2 m, LYCHGATE at (-56,88) on Chapel Lane, ~60 Gravestone, 4 AngelStatues, 2 yews (SmallTree dark), 1 open grave; Hollow night spawn stays inside the chapel"
+  },
+  {
+   "id": "L_STORE",
+   "name": "Bakery & General Store",
+   "pos": [
+    44,
+    112
+   ],
+   "size": [
+    12,
+    9
+   ],
+   "yaw": 270,
+   "kind": "shop",
+   "note": "DESIGN zone: by day villagers, tools, batteries; by night locked and dark. Shop window 'HOLLOWMERE STORES - BAKER', bread oven chimney, a delivery van (CoveredCar) outside"
+  },
+  {
+   "id": "L_SCHOOL",
+   "name": "Schoolhouse",
+   "pos": [
+    66,
+    80
+   ],
+   "size": [
+    18,
+    9
+   ],
+   "yaw": 180,
+   "kind": "school",
+   "note": "DESIGN zone: single tall room + bell cupola (Bell scaled 0.5), 12 SchoolDesk + SchoolChair, Blackboard, children's drawings on the walls; schoolyard 26 x 16 to the north with a wall (2.2) and swings"
+  },
+  {
+   "id": "L_GREEN",
+   "name": "Village green",
+   "pos": [
+    0,
+    4
+   ],
+   "size": [
+    44,
+    30
+   ],
+   "yaw": 0,
+   "kind": "area",
+   "note": "grass oval with worn paths; the WELL at (-4, 4); WAR MEMORIAL at (10, 8); 2 benches; an old oak (SmallTree scaled 2.5)"
+  },
+  {
+   "id": "L_WELL",
+   "name": "Well",
+   "pos": [
+    -4,
+    4
+   ],
+   "size": [
+    2.6,
+    2.6
+   ],
+   "yaw": 0,
+   "kind": "well",
+   "note": "DESIGN zone: sounds come up from below at night"
+  },
+  {
+   "id": "L_MEMORIAL",
+   "name": "War memorial",
+   "pos": [
+    10,
+    8
+   ],
+   "size": [
+    1.8,
+    1.8
+   ],
+   "yaw": 180,
+   "kind": "memorial",
+   "note": "names on it match graveyard family names"
+  },
+  {
+   "id": "L_KIOSK",
+   "name": "Telephone kiosk",
+   "pos": [
+    -11,
+    23
+   ],
+   "size": [
+    1.0,
+    1.0
+   ],
+   "yaw": 180,
+   "kind": "kiosk",
+   "note": "dead line; rings once at midnight"
+  },
+  {
+   "id": "L_SHELTER",
+   "name": "Bus shelter",
+   "pos": [
+    7,
+    32
+   ],
+   "size": [
+    3.0,
+    1.5
+   ],
+   "yaw": 270,
+   "kind": "shelter",
+   "note": "timetable: last bus 1977"
+  },
+  {
+   "id": "L_POND",
+   "name": "Mill pond",
+   "pos": [
+    -112,
+    -76
+   ],
+   "size": [
+    30,
+    16
+   ],
+   "yaw": 0,
+   "kind": "water",
+   "note": "water plane at -0.8; reeds; sunk rowing boat"
+  },
+  {
+   "id": "L_FIELDS",
+   "name": "Fields & scarecrows",
+   "pos": [
+    95,
+    -105
+   ],
+   "size": [
+    90,
+    70
+   ],
+   "yaw": 0,
+   "kind": "fields",
+   "note": "tall crop (wheat stubble + standing maize strip 2.2 m for hiding), 6 SCARECROWS (puzzle H13), hedges, a field gate"
+  },
+  {
+   "id": "L_PINFOLD",
+   "name": "Pinfold (animal pound)",
+   "pos": [
+    -46,
+    -10
+   ],
+   "size": [
+    8,
+    8
+   ],
+   "yaw": 0,
+   "kind": "pinfold",
+   "note": "round dry-stone pen 1.5 m"
+  }
+ ],
+ "filler": [
+  {
+   "id": "F01",
+   "name": "terrace pair, boarded (Main St)",
+   "pos": [
+    -7.8,
+    80
+   ],
+   "size": [
+    10,
+    7
+   ],
+   "yaw": 90
+  },
+  {
+   "id": "F02",
+   "name": "cottage, boarded (Main St)",
+   "pos": [
+    10.0,
+    62
+   ],
+   "size": [
+    8,
+    7
+   ],
+   "yaw": 270
+  },
+  {
+   "id": "F03",
+   "name": "cottage, walk-through ruin (Main St)",
+   "pos": [
+    8.6,
+    40
+   ],
+   "size": [
+    8,
+    7
+   ],
+   "yaw": 270
+  },
+  {
+   "id": "F04",
+   "name": "cottage, boarded (Main St)",
+   "pos": [
+    -9.2,
+    36
+   ],
+   "size": [
+    8,
+    7
+   ],
+   "yaw": 90
+  },
+  {
+   "id": "F05",
+   "name": "sexton's cottage",
+   "pos": [
+    -44,
+    62
+   ],
+   "size": [
+    7,
+    6
+   ],
+   "yaw": 270
+  },
+  {
+   "id": "F06",
+   "name": "forge (open-sided)",
+   "pos": [
+    -46,
+    6
+   ],
+   "size": [
+    8,
+    6
+   ],
+   "yaw": 90
+  },
+  {
+   "id": "F07",
+   "name": "cottage, boarded",
+   "pos": [
+    26,
+    -20
+   ],
+   "size": [
+    8,
+    6
+   ],
+   "yaw": 300
+  },
+  {
+   "id": "F08",
+   "name": "pair of cottages",
+   "pos": [
+    -8,
+    -36
+   ],
+   "size": [
+    12,
+    7
+   ],
+   "yaw": 90
+  },
+  {
+   "id": "F09",
+   "name": "cottage, boarded (Mill Lane)",
+   "pos": [
+    -64.3,
+    -65.7
+   ],
+   "size": [
+    8,
+    6
+   ],
+   "yaw": 315
+  },
+  {
+   "id": "F10",
+   "name": "garage + petrol pump (1960s)",
+   "pos": [
+    40,
+    30
+   ],
+   "size": [
+    9,
+    7
+   ],
+   "yaw": 270
+  },
+  {
+   "id": "F11",
+   "name": "cottage, boarded",
+   "pos": [
+    64,
+    22
+   ],
+   "size": [
+    8,
+    7
+   ],
+   "yaw": 0
+  },
+  {
+   "id": "F12",
+   "name": "Dutch barn (open)",
+   "pos": [
+    118,
+    -36
+   ],
+   "size": [
+    14,
+    8
+   ],
+   "yaw": 0
+  },
+  {
+   "id": "F13",
+   "name": "cottage, boarded",
+   "pos": [
+    2.5,
+    -66
+   ],
+   "size": [
+    8,
+    6
+   ],
+   "yaw": 90
+  },
+  {
+   "id": "F14",
+   "name": "allotment sheds x3",
+   "pos": [
+    66,
+    -34
+   ],
+   "size": [
+    9,
+    4
+   ],
+   "yaw": 0
+  },
+  {
+   "id": "F15",
+   "name": "pump house",
+   "pos": [
+    -84,
+    -94
+   ],
+   "size": [
+    4,
+    4
+   ],
+   "yaw": 0
+  },
+  {
+   "id": "F16",
+   "name": "cottage, boarded",
+   "pos": [
+    44,
+    92
+   ],
+   "size": [
+    8,
+    7
+   ],
+   "yaw": 180
+  }
+ ],
+ "roads": [
+  {
+   "id": "R1",
+   "name": "Main Street",
+   "kind": "street",
+   "width": 6.0,
+   "points": [
+    [
+     0,
+     87
+    ],
+    [
+     0.7,
+     72
+    ],
+    [
+     1.5,
+     60
+    ],
+    [
+     0.8,
+     45
+    ],
+    [
+     -1,
+     32
+    ],
+    [
+     0,
+     19
+    ]
+   ],
+   "length": 68.2
+  },
+  {
+   "id": "R2",
+   "name": "Main Street south",
+   "kind": "street",
+   "width": 5.0,
+   "points": [
+    [
+     0,
+     -11
+    ],
+    [
+     4,
+     -30
+    ],
+    [
+     8,
+     -55
+    ],
+    [
+     12,
+     -78
+    ],
+    [
+     16,
+     -100
+    ],
+    [
+     19,
+     -114
+    ],
+    [
+     21,
+     -124
+    ]
+   ],
+   "length": 115.0
+  },
+  {
+   "id": "R3",
+   "name": "Chapel Lane",
+   "kind": "lane",
+   "width": 4.5,
+   "points": [
+    [
+     -35,
+     104
+    ],
+    [
+     -46,
+     100
+    ],
+    [
+     -52,
+     88
+    ],
+    [
+     -53,
+     70
+    ],
+    [
+     -51,
+     52
+    ],
+    [
+     -46,
+     32
+    ],
+    [
+     -36,
+     16
+    ],
+    [
+     -22,
+     8
+    ]
+   ],
+   "length": 116.9
+  },
+  {
+   "id": "R4",
+   "name": "School Lane",
+   "kind": "lane",
+   "width": 4.5,
+   "points": [
+    [
+     1,
+     70
+    ],
+    [
+     20,
+     70
+    ],
+    [
+     40,
+     69
+    ],
+    [
+     58,
+     67.4
+    ],
+    [
+     80,
+     66
+    ]
+   ],
+   "length": 79.1
+  },
+  {
+   "id": "R5",
+   "name": "Mill Lane",
+   "kind": "lane",
+   "width": 4.0,
+   "points": [
+    [
+     -20,
+     -12
+    ],
+    [
+     -28,
+     -20
+    ],
+    [
+     -40,
+     -30
+    ],
+    [
+     -56,
+     -46
+    ],
+    [
+     -72,
+     -62
+    ],
+    [
+     -88,
+     -78
+    ],
+    [
+     -96,
+     -86
+    ]
+   ],
+   "length": 106.1
+  },
+  {
+   "id": "R6",
+   "name": "East Road",
+   "kind": "lane",
+   "width": 4.5,
+   "points": [
+    [
+     22,
+     -2
+    ],
+    [
+     44,
+     -8
+    ],
+    [
+     62,
+     -16
+    ],
+    [
+     82,
+     -22
+    ],
+    [
+     110,
+     -24
+    ],
+    [
+     128,
+     -26
+    ]
+   ],
+   "length": 109.6
+  },
+  {
+   "id": "R7",
+   "name": "Back Lane",
+   "kind": "track",
+   "width": 3.0,
+   "points": [
+    [
+     -24,
+     88
+    ],
+    [
+     -25,
+     70
+    ],
+    [
+     -24,
+     52
+    ],
+    [
+     -22,
+     40
+    ]
+   ],
+   "length": 48.2
+  },
+  {
+   "id": "R8",
+   "name": "Field Track",
+   "kind": "track",
+   "width": 3.0,
+   "points": [
+    [
+     100,
+     -24
+    ],
+    [
+     104,
+     -50
+    ],
+    [
+     96,
+     -76
+    ],
+    [
+     88,
+     -100
+    ]
+   ],
+   "length": 78.8
+  },
+  {
+   "id": "R9",
+   "name": "Green loop",
+   "kind": "path",
+   "width": 2.5,
+   "points": [
+    [
+     -22,
+     8
+    ],
+    [
+     -21,
+     -8
+    ],
+    [
+     -8,
+     -14
+    ],
+    [
+     10,
+     -14
+    ],
+    [
+     21,
+     -6
+    ],
+    [
+     22,
+     10
+    ],
+    [
+     10,
+     20
+    ],
+    [
+     -8,
+     20
+    ],
+    [
+     -22,
+     8
+    ]
+   ],
+   "length": 130.0
+  },
+  {
+   "id": "R10",
+   "name": "Pond path",
+   "kind": "path",
+   "width": 2.0,
+   "points": [
+    [
+     -96,
+     -86
+    ],
+    [
+     -103.5,
+     -90
+    ]
+   ],
+   "length": 8.5
+  },
+  {
+   "id": "R13",
+   "name": "Butcher's Alley",
+   "kind": "path",
+   "width": 2.0,
+   "points": [
+    [
+     1.4,
+     58.5
+    ],
+    [
+     -24.5,
+     58.5
+    ]
+   ],
+   "length": 25.9
+  }
+ ],
+ "stream": {
+  "points": [
+   [
+    -150,
+    -62
+   ],
+   [
+    -132,
+    -68
+   ],
+   [
+    -124,
+    -74
+   ],
+   [
+    -112,
+    -76
+   ],
+   [
+    -98,
+    -80
+   ],
+   [
+    -91.5,
+    -88
+   ],
+   [
+    -91.5,
+    -100
+   ],
+   [
+    -80,
+    -108
+   ],
+   [
+    -40,
+    -112
+   ],
+   [
+    -5,
+    -116
+   ],
+   [
+    19,
+    -114
+   ],
+   [
+    50,
+    -120
+   ],
+   [
+    90,
+    -128
+   ],
+   [
+    150,
+    -136
+   ]
+  ],
+  "width": 3.0,
+  "bed_y": -1.2
+ },
+ "bridges": [
+  {
+   "id": "B1",
+   "name": "Main Street stone bridge (2 arches)",
+   "pos": [
+    19,
+    -114
+   ],
+   "width": 6.0,
+   "length": 10.0
+  },
+  {
+   "id": "B2",
+   "name": "Mill race footbridge",
+   "pos": [
+    -93.5,
+    -84.5
+   ],
+   "width": 2.0,
+   "length": 5.0
+  }
+ ],
+ "night_blockers": [
+  {
+   "id": "BL1",
+   "prop": "FallenTree",
+   "pos": [
+    -52.5,
+    76
+   ]
+  },
+  {
+   "id": "BL2",
+   "prop": "BrokenCart",
+   "pos": [
+    0,
+    38
+   ]
+  },
+  {
+   "id": "BL3",
+   "prop": "FallenTree",
+   "pos": [
+    -48,
+    -38
+   ]
+  },
+  {
+   "id": "BL4",
+   "prop": "BrokenCart",
+   "pos": [
+    52,
+    -12
+   ]
+  },
+  {
+   "id": "BL5",
+   "prop": "FallenTree",
+   "pos": [
+    9,
+    -60
+   ]
+  },
+  {
+   "id": "BL6",
+   "prop": "BrokenCart",
+   "pos": [
+    30,
+    69.6
+   ]
+  }
+ ],
+ "scarecrows": [
+  [
+   70,
+   -80
+  ],
+  [
+   88,
+   -92
+  ],
+  [
+   106,
+   -84
+  ],
+  [
+   118,
+   -110
+  ],
+  [
+   96,
+   -126
+  ],
+  [
+   74,
+   -118
+  ]
+ ],
+ "street_lamps": [
+  [
+   -6,
+   90
+  ],
+  [
+   6,
+   92
+  ],
+  [
+   -4,
+   60
+  ],
+  [
+   5,
+   44
+  ],
+  [
+   -5,
+   22
+  ],
+  [
+   6,
+   -18
+  ],
+  [
+   -26,
+   2
+  ],
+  [
+   -50,
+   56
+  ],
+  [
+   -48,
+   92
+  ],
+  [
+   24,
+   69
+  ],
+  [
+   48,
+   67
+  ],
+  [
+   14,
+   -60
+  ],
+  [
+   -40,
+   -34
+  ]
+ ]
+}

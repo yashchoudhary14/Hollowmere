@@ -1,0 +1,2409 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H01",
+ "index": 1,
+ "name": "Rao House",
+ "family": "Rao",
+ "part": "Family seal ring",
+ "puzzle_kind_m1": "CodeLock",
+ "door_colour": "Green",
+ "chimneys": 1,
+ "clock_hour": 9,
+ "loud_puzzle": false,
+ "archetype": "1930s pebbledash detached house that never opens its shutters, big walled vegetable garden",
+ "silhouette": "Hipped roof with one fat central chimney, a two-storey canted bay on the left, ALL windows shuttered (green shutters, closed), 'RAO' painted on the garden gate, a lean-to greenhouse against the back wall.",
+ "world": {
+  "position": [
+   36.0,
+   0.1,
+   6.0
+  ],
+  "yaw": 262,
+  "street": "The Green (east side)",
+  "plot_poly": [
+   [
+    59.518066509027804,
+    -0.3890959984136
+   ],
+   [
+    56.84594297059454,
+    18.624050921424548
+   ],
+   [
+    23.57293586087778,
+    13.947834729166338
+   ],
+   [
+    26.245059399311046,
+    -5.065312190671811
+   ]
+  ],
+  "note": "walled vegetable garden behind (east)"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "C": {
+   "y": -2.4,
+   "h": 2.2,
+   "label": "Cellar"
+  },
+  "G": {
+   "y": 0.0,
+   "h": 2.7,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 2.95,
+   "h": 2.5,
+   "label": "First floor"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -4.6,
+    -4.4,
+    4.6,
+    4.4
+   ],
+   "levels": [
+    "C",
+    "G",
+    "F"
+   ],
+   "walls": "Pebbledash (grey-brown) over brick; BrickRed plinth 0.5 m; white-painted window surrounds",
+   "t": 0.35,
+   "roof": "Hipped roof 35 deg, RoofTilesGrey (1960s re-roof), hip ridge tiles; central chimney at (\u22120.6, 0.2) rising 1.2 m; 0.4 m boxed eaves with white fascia",
+   "note": ""
+  },
+  {
+   "id": "bay",
+   "rect": [
+    -4.0,
+    4.4,
+    -1.0,
+    5.2
+   ],
+   "levels": [
+    "G",
+    "F"
+   ],
+   "walls": "Pebbledash, 3-face canted bay (shown as rect here; facets at 45 deg on the front corners)",
+   "t": 0.35,
+   "roof": "Lead-covered flat top at 5.5 m",
+   "note": ""
+  },
+  {
+   "id": "greenhouse",
+   "rect": [
+    -2.0,
+    -6.4,
+    3.0,
+    -4.4
+   ],
+   "levels": [
+    "G"
+   ],
+   "walls": "Lean-to greenhouse: brick base 0.6 m, timber + glass (half the panes broken)",
+   "t": 0.12,
+   "roof": "Glass lean-to at 25 deg",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "front",
+   "name": "Front room (sitting room)",
+   "level": "G",
+   "rect": [
+    -4.6,
+    0.0,
+    -0.6,
+    4.4
+   ],
+   "inner": [
+    -4.25,
+    0.06,
+    -0.66,
+    4.05
+   ],
+   "kind": "living",
+   "floor": "Carpet70s",
+   "walls": "WallpaperQuatrefoil (brown/orange)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant with fringed shade",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bayG",
+   "name": "Bay (front room)",
+   "level": "G",
+   "rect": [
+    -4.0,
+    4.4,
+    -1.0,
+    5.2
+   ],
+   "inner": [
+    -3.65,
+    4.46,
+    -1.35,
+    4.85
+   ],
+   "kind": "living-bay",
+   "floor": "Carpet70s",
+   "walls": "WallpaperQuatrefoil",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "hall",
+   "name": "Hall",
+   "level": "G",
+   "rect": [
+    -0.6,
+    0.0,
+    1.4,
+    4.4
+   ],
+   "inner": [
+    -0.54,
+    0.06,
+    1.34,
+    4.05
+   ],
+   "kind": "hall",
+   "floor": "FloorWornTile",
+   "walls": "Wallpaper2C",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "dining",
+   "name": "Dining room",
+   "level": "G",
+   "rect": [
+    1.4,
+    0.0,
+    4.6,
+    4.4
+   ],
+   "inner": [
+    1.46,
+    0.06,
+    4.25,
+    4.05
+   ],
+   "kind": "dining",
+   "floor": "FloorParquet",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "level": "G",
+   "rect": [
+    -4.6,
+    -4.4,
+    1.4,
+    0.0
+   ],
+   "inner": [
+    -4.25,
+    -4.05,
+    1.34,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "TileWallWhite to 1.2 m + PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "back",
+   "name": "Back lobby & cellar stair",
+   "level": "G",
+   "rect": [
+    1.4,
+    -4.4,
+    4.6,
+    0.0
+   ],
+   "inner": [
+    1.46,
+    -4.05,
+    4.25,
+    -0.06
+   ],
+   "kind": "utility",
+   "floor": "FloorBrick",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "glass",
+   "name": "Greenhouse",
+   "level": "G",
+   "rect": [
+    -2.0,
+    -6.4,
+    3.0,
+    -4.4
+   ],
+   "inner": [
+    -1.88,
+    -6.28,
+    2.88,
+    -4.46
+   ],
+   "kind": "greenhouse",
+   "floor": "FloorBrick",
+   "walls": "glass",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed1",
+   "name": "Parents' bedroom",
+   "level": "F",
+   "rect": [
+    -4.6,
+    0.0,
+    -0.6,
+    4.4
+   ],
+   "inner": [
+    -4.25,
+    0.06,
+    -0.66,
+    4.05
+   ],
+   "kind": "bedroom",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bayF",
+   "name": "Bay (bedroom)",
+   "level": "F",
+   "rect": [
+    -4.0,
+    4.4,
+    -1.0,
+    5.2
+   ],
+   "inner": [
+    -3.65,
+    4.46,
+    -1.35,
+    4.85
+   ],
+   "kind": "bedroom-bay",
+   "floor": "CarpetWorn",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Landing",
+   "level": "F",
+   "rect": [
+    -0.6,
+    0.0,
+    1.4,
+    4.4
+   ],
+   "inner": [
+    -0.54,
+    0.06,
+    1.34,
+    4.05
+   ],
+   "kind": "landing",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper2C",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed2",
+   "name": "Grandmother's bedroom",
+   "level": "F",
+   "rect": [
+    1.4,
+    0.0,
+    4.6,
+    4.4
+   ],
+   "inner": [
+    1.46,
+    0.06,
+    4.25,
+    4.05
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bed3",
+   "name": "Box room (shrine room)",
+   "level": "F",
+   "rect": [
+    1.4,
+    -4.4,
+    4.6,
+    0.0
+   ],
+   "inner": [
+    1.46,
+    -4.05,
+    4.25,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "PlasterWorn",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom",
+   "level": "F",
+   "rect": [
+    -4.6,
+    -4.4,
+    1.4,
+    0.0
+   ],
+   "inner": [
+    -4.25,
+    -4.05,
+    1.34,
+    -0.06
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite (avocado border tiles)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "cellar",
+   "name": "Cellar",
+   "level": "C",
+   "rect": [
+    -4.6,
+    -4.4,
+    4.6,
+    4.4
+   ],
+   "inner": [
+    -4.25,
+    -4.05,
+    4.25,
+    4.05
+   ],
+   "kind": "cellar",
+   "floor": "FloorConcrete",
+   "walls": "Whitewash flaking to brick",
+   "ceiling": "joists",
+   "light": "one bulb on a cord, dead until the fuse box is reset",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_front",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": 0.4,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "half-glazed door, sunrise pattern glass",
+   "mat": "Door",
+   "colour": "Green",
+   "role": "front",
+   "note": "tiled porch step; garden gate 6 m in front painted 'RAO'",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "back",
+   "room_b": "ext",
+   "side": "E",
+   "at": -2.2,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "ledged plank, two bolts",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "opens to the side path",
+   "swing": "in"
+  },
+  {
+   "id": "d_front_r",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "front",
+   "side": "W",
+   "at": 3.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "4-panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_din",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "dining",
+   "side": "E",
+   "at": 0.9,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "4-panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kit",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitchen",
+   "side": "S",
+   "at": -0.1,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "4-panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_backl",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "back",
+   "side": "E",
+   "at": -2.2,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "ledged",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_glass",
+   "level": "G",
+   "room_a": "kitchen",
+   "room_b": "glass",
+   "side": "S",
+   "at": -0.6,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "glazed door",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b1",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed1",
+   "side": "W",
+   "at": 2.6,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b2",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bed2",
+   "side": "E",
+   "at": 0.8,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "S",
+   "at": -0.1,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_b3",
+   "level": "F",
+   "room_a": "bed2",
+   "room_b": "bed3",
+   "side": "S",
+   "at": 3.6,
+   "width": 0.75,
+   "height": 2.05,
+   "kind": "connecting door, wallpapered over (visible seam)",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_bay",
+   "room": "bayG",
+   "side": "N",
+   "at": -2.5,
+   "width": 2.0,
+   "height": 1.5,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  },
+  {
+   "id": "w_din",
+   "room": "dining",
+   "side": "N",
+   "at": 3.0,
+   "width": 1.4,
+   "height": 1.3,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  },
+  {
+   "id": "w_k",
+   "room": "kitchen",
+   "side": "W",
+   "at": -2.2,
+   "width": 1.1,
+   "height": 1.1,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": true,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  },
+  {
+   "id": "w_back",
+   "room": "back",
+   "side": "S",
+   "at": 3.4,
+   "width": 0.7,
+   "height": 0.9,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": true,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bayF",
+   "room": "bayF",
+   "side": "N",
+   "at": -2.5,
+   "width": 2.0,
+   "height": 1.3,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  },
+  {
+   "id": "w_b2",
+   "room": "bed2",
+   "side": "N",
+   "at": 3.0,
+   "width": 1.3,
+   "height": 1.2,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  },
+  {
+   "id": "w_bath",
+   "room": "bath",
+   "side": "S",
+   "at": -3.6,
+   "width": 0.8,
+   "height": 0.9,
+   "sill": 1.3,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_b3",
+   "room": "bed3",
+   "side": "E",
+   "at": -2.2,
+   "width": 0.8,
+   "height": 1.0,
+   "sill": 0.85,
+   "style": "1930s casement, leaded top-lights",
+   "weak": false,
+   "curtains": "FabricTerlenka net + heavy curtain",
+   "shutters": "outside, green, CLOSED and nailed (DESIGN Rao signature)",
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "s1",
+   "room": "hall",
+   "rect": [
+    0.4,
+    0.5,
+    1.3,
+    3.8
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "14 risers, painted balusters, Carpet70s runner"
+  },
+  {
+   "id": "s1u",
+   "room": "landing",
+   "rect": [
+    0.4,
+    0.5,
+    1.3,
+    3.8
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "S",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2",
+   "room": "back",
+   "rect": [
+    3.6,
+    -4.0,
+    4.5,
+    -0.6
+   ],
+   "frm": "G",
+   "to": "C",
+   "ascent": "S",
+   "kind": "steep cellar stair, 11 risers, open treads, handrail rope",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s2c",
+   "room": "cellar",
+   "rect": [
+    3.6,
+    -4.0,
+    4.5,
+    -0.6
+   ],
+   "frm": "G",
+   "to": "C",
+   "ascent": "S",
+   "kind": "arrives in the cellar",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -0.6,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 0.9,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "front-room fire = THE HEARTH (back-to-back with kitchen boiler)",
+   "pots": 3
+  }
+ ],
+ "props": [
+  {
+   "id": "H01.p001",
+   "n": 1,
+   "room": "front",
+   "key": "Hearth",
+   "x": -1.8,
+   "y": 0.0,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "hearth",
+   "note": "tiled 1930s fire surround (beige tiles) around the open grate",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H01.p002",
+   "n": 2,
+   "room": "front",
+   "key": "FrameStanding1",
+   "x": -2.4,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "family-photo",
+   "note": "FAMILY PHOTO 1 (counted by the code)",
+   "on": "H01.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.08,
+    0.24
+   ]
+  },
+  {
+   "id": "H01.p003",
+   "n": 3,
+   "room": "front",
+   "key": "FrameStanding2",
+   "x": -1.2,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "family-photo",
+   "note": "FAMILY PHOTO 2 (counted)",
+   "on": "H01.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "standing_picture_frame_02",
+   "source": "polyhaven",
+   "dims": [
+    0.22,
+    0.08,
+    0.18
+   ]
+  },
+  {
+   "id": "H01.p004",
+   "n": 4,
+   "room": "front",
+   "key": "MantelClock",
+   "x": -1.8,
+   "y": 1.4,
+   "z": 0.44,
+   "yaw": 0,
+   "role": "",
+   "note": "stopped at 9:00",
+   "on": "H01.p001",
+   "mat": null,
+   "scale": null,
+   "asset": "mantel_clock_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.14,
+    0.32
+   ]
+  },
+  {
+   "id": "H01.p005",
+   "n": 5,
+   "room": "front",
+   "key": "Sofa2",
+   "x": -3.77,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_02",
+   "source": "polyhaven",
+   "dims": [
+    1.9,
+    0.9,
+    0.85
+   ]
+  },
+  {
+   "id": "H01.p006",
+   "n": 6,
+   "room": "front",
+   "key": "Armchair",
+   "x": -1.6,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 225,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ArmChair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.85,
+    0.85,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p007",
+   "n": 7,
+   "room": "front",
+   "key": "Cabinet70s",
+   "x": -0.915,
+   "y": 0.0,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "",
+   "note": "teak sideboard",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "modern_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    0.8
+   ]
+  },
+  {
+   "id": "H01.p008",
+   "n": 8,
+   "room": "front",
+   "key": "TV",
+   "x": -0.915,
+   "y": 0.8,
+   "z": 1.6,
+   "yaw": 270,
+   "role": "tv",
+   "note": "",
+   "on": "H01.p007",
+   "mat": null,
+   "scale": null,
+   "asset": "Television_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H01.p009",
+   "n": 9,
+   "room": "front",
+   "key": "CoffeeTable",
+   "x": -2.9,
+   "y": 0.0,
+   "z": 2.3,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "CoffeeTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.6,
+    0.45
+   ]
+  },
+  {
+   "id": "H01.p010",
+   "n": 10,
+   "room": "front",
+   "key": "Rug",
+   "x": -2.9,
+   "y": 0.0,
+   "z": 2.3,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "flat rug quad, fabric per room",
+   "source": "procedural",
+   "dims": [
+    2.0,
+    1.4,
+    0.01
+   ]
+  },
+  {
+   "id": "H01.p011",
+   "n": 11,
+   "room": "front",
+   "key": "SideTable",
+   "x": -4.0,
+   "y": 0.0,
+   "z": 0.7,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p012",
+   "n": 12,
+   "room": "front",
+   "key": "RotaryPhone",
+   "x": -4.0,
+   "y": 0.6,
+   "z": 0.7,
+   "yaw": 0,
+   "role": "phone",
+   "note": "",
+   "on": "H01.p011",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H01.p013",
+   "n": 13,
+   "room": "bayG",
+   "key": "PlanterPot",
+   "x": -2.5,
+   "y": 0.0,
+   "z": 4.66,
+   "yaw": 0,
+   "role": "",
+   "note": "dead aspidistra in the bay",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "planter_pot_clay",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.35,
+    0.3
+   ]
+  },
+  {
+   "id": "H01.p014",
+   "n": 14,
+   "room": "hall",
+   "key": "Mirror",
+   "x": -0.515,
+   "y": 1.15,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "hall mirror",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p015",
+   "n": 15,
+   "room": "hall",
+   "key": "FrameHanging3",
+   "x": 1.325,
+   "y": 1.375,
+   "z": 1.0,
+   "yaw": 270,
+   "role": "family-photo",
+   "note": "FAMILY PHOTO 3: three generations on the steps (counted)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_03",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.03,
+    0.45
+   ]
+  },
+  {
+   "id": "H01.p016",
+   "n": 16,
+   "room": "dining",
+   "key": "DiningTable",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_table",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.9,
+    0.76
+   ]
+  },
+  {
+   "id": "H01.p017",
+   "n": 17,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 2.25,
+   "y": 0.0,
+   "z": 1.7,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p018",
+   "n": 18,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 3.75,
+   "y": 0.0,
+   "z": 1.7,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p019",
+   "n": 19,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 2.25,
+   "y": 0.0,
+   "z": 2.7,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p020",
+   "n": 20,
+   "room": "dining",
+   "key": "ChairDining",
+   "x": 3.75,
+   "y": 0.0,
+   "z": 2.7,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "dining_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.5,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p021",
+   "n": 21,
+   "room": "dining",
+   "key": "CabinetVintage",
+   "x": 3.995,
+   "y": 0.0,
+   "z": 0.8,
+   "yaw": 270,
+   "role": "",
+   "note": "glass-fronted china cabinet",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_cabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.45,
+    1.8
+   ]
+  },
+  {
+   "id": "H01.p022",
+   "n": 22,
+   "room": "dining",
+   "key": "FrameFancy1",
+   "x": 3.0,
+   "y": 1.225,
+   "z": 0.085,
+   "yaw": 0,
+   "role": "family-photo",
+   "note": "FAMILY PHOTO 4: wedding (counted)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "fancy_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.75
+   ]
+  },
+  {
+   "id": "H01.p023",
+   "n": 23,
+   "room": "kitchen",
+   "key": "Cooker",
+   "x": -3.2,
+   "y": 0.0,
+   "z": -0.39,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "electric_stove",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p024",
+   "n": 24,
+   "room": "kitchen",
+   "key": "KitchenSinkUnit",
+   "x": -2.3,
+   "y": 0.0,
+   "z": -0.39,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p025",
+   "n": 25,
+   "room": "kitchen",
+   "key": "KitchenUnit",
+   "x": -1.4,
+   "y": 0.0,
+   "z": -0.39,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "box carcass 0.6 deep, WoodKitchen fronts, laminate top",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p026",
+   "n": 26,
+   "room": "kitchen",
+   "key": "TablePainted",
+   "x": -1.8,
+   "y": 0.0,
+   "z": -2.4,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_table",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.7,
+    0.76
+   ]
+  },
+  {
+   "id": "H01.p027",
+   "n": 27,
+   "room": "kitchen",
+   "key": "PotEnamel",
+   "x": -1.8,
+   "y": 0.76,
+   "z": -2.4,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H01.p026",
+   "mat": null,
+   "scale": null,
+   "asset": "pot_enamel_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.25,
+    0.2
+   ]
+  },
+  {
+   "id": "H01.p028",
+   "n": 28,
+   "room": "kitchen",
+   "key": "Onions",
+   "x": -1.5,
+   "y": 0.76,
+   "z": -2.4,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H01.p026",
+   "mat": null,
+   "scale": null,
+   "asset": "yellow_onion",
+   "source": "polyhaven",
+   "dims": [
+    0.09,
+    0.09,
+    0.09
+   ]
+  },
+  {
+   "id": "H01.p029",
+   "n": 29,
+   "room": "kitchen",
+   "key": "ChairPainted1",
+   "x": -1.8,
+   "y": 0.0,
+   "z": -3.15,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_chair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.48,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p030",
+   "n": 30,
+   "room": "kitchen",
+   "key": "ChairPainted2",
+   "x": -1.8,
+   "y": 0.0,
+   "z": -1.65,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_chair_02",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.48,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p031",
+   "n": 31,
+   "room": "kitchen",
+   "key": "Fridge",
+   "x": 0.6,
+   "y": 0.0,
+   "z": -3.71,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "68d173f205344455933f861042b99fe3",
+   "source": "sketchfab",
+   "dims": [
+    0.6,
+    0.62,
+    1.45
+   ]
+  },
+  {
+   "id": "H01.p032",
+   "n": 32,
+   "room": "kitchen",
+   "key": "CabinetPainted",
+   "x": -3.97,
+   "y": 0.0,
+   "z": -0.8,
+   "yaw": 90,
+   "role": "",
+   "note": "larder cupboard - walk-in hiding",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.5,
+    1.9
+   ]
+  },
+  {
+   "id": "H01.p033",
+   "n": 33,
+   "room": "back",
+   "key": "CoatHooks",
+   "x": 1.585,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall rail with 5 hooks + 2 coats + 1 hat (cloth)",
+   "source": "procedural",
+   "dims": [
+    0.9,
+    0.25,
+    1.7
+   ]
+  },
+  {
+   "id": "H01.p034",
+   "n": 34,
+   "room": "back",
+   "key": "Toolbox",
+   "x": 2.4,
+   "y": 0.0,
+   "z": -0.2,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "metal_toolbox",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.22,
+    0.25
+   ]
+  },
+  {
+   "id": "H01.p035",
+   "n": 35,
+   "room": "glass",
+   "key": "PlanterBox1",
+   "x": -1.2,
+   "y": 0.0,
+   "z": -6.05,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "planter_box_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H01.p036",
+   "n": 36,
+   "room": "glass",
+   "key": "PlanterBox1",
+   "x": 0.4,
+   "y": 0.0,
+   "z": -6.05,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "planter_box_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H01.p037",
+   "n": 37,
+   "room": "glass",
+   "key": "SteelShelves2",
+   "x": 2.65,
+   "y": 0.0,
+   "z": -5.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_02",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "id": "H01.p038",
+   "n": 38,
+   "room": "glass",
+   "key": "SeedTray",
+   "x": 2.2,
+   "y": 0.9,
+   "z": -5.4,
+   "yaw": 0,
+   "role": "allow-overlap",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "seeding_tray_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.3,
+    0.08
+   ]
+  },
+  {
+   "id": "H01.p039",
+   "n": 39,
+   "room": "glass",
+   "key": "WateringCan",
+   "x": 1.5,
+   "y": 0.0,
+   "z": -4.8,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "watering_can_metal_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.2,
+    0.35
+   ]
+  },
+  {
+   "id": "H01.p040",
+   "n": 40,
+   "room": "bed1",
+   "key": "Bed",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 1.14,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H01.p041",
+   "n": 41,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -3.7,
+   "y": 0.0,
+   "z": 0.29,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p042",
+   "n": 42,
+   "room": "bed1",
+   "key": "Nightstand",
+   "x": -1.5,
+   "y": 0.0,
+   "z": 0.29,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p043",
+   "n": 43,
+   "room": "bed1",
+   "key": "Wardrobe",
+   "x": -3.92,
+   "y": 0.0,
+   "z": 2.6,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H01.p044",
+   "n": 44,
+   "room": "bed1",
+   "key": "Commode",
+   "x": -0.94,
+   "y": 0.0,
+   "z": 1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "dressing table with triple mirror",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCommode_01",
+   "source": "polyhaven",
+   "dims": [
+    1.1,
+    0.5,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p045",
+   "n": 45,
+   "room": "bed2",
+   "key": "BedIron",
+   "x": 3.22,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "old_bed_frame",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    2.0,
+    1.05
+   ]
+  },
+  {
+   "id": "H01.p046",
+   "n": 46,
+   "room": "bed2",
+   "key": "NightstandPainted",
+   "x": 4.03,
+   "y": 0.0,
+   "z": 1.225,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "painted_wooden_nightstand",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.38,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p047",
+   "n": 47,
+   "room": "bed2",
+   "key": "SideTable",
+   "x": 2.65,
+   "y": 0.0,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "",
+   "note": "washstand-height side table with a jug",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p048",
+   "n": 48,
+   "room": "bed2",
+   "key": "RockingChair",
+   "x": 2.0,
+   "y": 0.0,
+   "z": 3.2,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Rockingchair_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.95,
+    1.05
+   ]
+  },
+  {
+   "id": "H01.p049",
+   "n": 49,
+   "room": "bed3",
+   "key": "DayBed",
+   "x": 3.0,
+   "y": 0.0,
+   "z": -3.045,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_day_bed",
+   "source": "polyhaven",
+   "dims": [
+    0.95,
+    1.95,
+    0.85
+   ]
+  },
+  {
+   "id": "H01.p050",
+   "n": 50,
+   "room": "bed3",
+   "key": "ShrineNiche",
+   "x": 4.125,
+   "y": 0.9,
+   "z": -1.0,
+   "yaw": 270,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p051",
+   "n": 51,
+   "room": "bed3",
+   "key": "Suitcase",
+   "x": 2.4,
+   "y": 0.0,
+   "z": -0.19,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_suitcase",
+   "source": "polyhaven",
+   "dims": [
+    0.65,
+    0.2,
+    0.45
+   ]
+  },
+  {
+   "id": "H01.p052",
+   "n": 52,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": -3.845,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H01.p053",
+   "n": 53,
+   "room": "bath",
+   "key": "BathCurtainRail",
+   "x": -3.7,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "role": "allow-overlap",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "rail + plastic curtain around bath (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.7,
+    0.8,
+    2.0
+   ]
+  },
+  {
+   "id": "H01.p054",
+   "n": 54,
+   "room": "bath",
+   "key": "Sink",
+   "x": -1.0,
+   "y": 0.0,
+   "z": -0.315,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H01.p055",
+   "n": 55,
+   "room": "bath",
+   "key": "Mirror",
+   "x": -1.0,
+   "y": 1.1,
+   "z": -0.085,
+   "yaw": 180,
+   "role": "mirror",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p056",
+   "n": 56,
+   "room": "bath",
+   "key": "Toilet",
+   "x": 0.985,
+   "y": 0.0,
+   "z": -3.4,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H01.p057",
+   "n": 57,
+   "room": "cellar",
+   "key": "FuseBox",
+   "x": 2.0,
+   "y": 1.2,
+   "z": -3.975,
+   "yaw": 0,
+   "role": "fuse-box",
+   "note": "FUSE BOX - must be reset to light the cellar (DESIGN Rao)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H01.p058",
+   "n": 58,
+   "room": "cellar",
+   "key": "ToolChest",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 3.795,
+   "yaw": 180,
+   "role": "puzzle",
+   "note": "LOCKBOX: steel box bolted to the bench, 4 code dials (CodeLockPuzzle)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "metal_tool_chest",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.45,
+    0.9
+   ]
+  },
+  {
+   "id": "H01.p059",
+   "n": 59,
+   "room": "cellar",
+   "key": "SteelShelves",
+   "x": -3.995,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "jars of pickled lime, tins",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "steel_frame_shelves_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    1.9
+   ]
+  },
+  {
+   "id": "H01.p060",
+   "n": 60,
+   "room": "cellar",
+   "key": "BarrelWorn",
+   "x": -3.8,
+   "y": 0.0,
+   "z": -3.6,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "His_Med_Storage_Barrel_Wood_Worn_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    0.65,
+    0.65,
+    0.95
+   ]
+  },
+  {
+   "id": "H01.p061",
+   "n": 61,
+   "room": "cellar",
+   "key": "CellarCrates",
+   "x": 1.2,
+   "y": 0.0,
+   "z": -3.5,
+   "yaw": 0,
+   "role": "",
+   "note": "crates with a crouch gap behind",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H01.p062",
+   "n": 62,
+   "room": "cellar",
+   "key": "TinnedFood",
+   "x": -1.0,
+   "y": 0.0,
+   "z": -3.8,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "russian_food_cans_01",
+   "source": "polyhaven",
+   "dims": [
+    0.3,
+    0.2,
+    0.12
+   ]
+  },
+  {
+   "id": "H01.p063",
+   "n": 63,
+   "room": "cellar",
+   "key": "Chalkboard",
+   "x": 3.97,
+   "y": 0.0,
+   "z": 1.5,
+   "yaw": 270,
+   "role": "",
+   "note": "WRITING ON THE WALL (chalk) explaining the code: which photos count",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "standing_chalkboard_01",
+   "source": "polyhaven",
+   "dims": [
+    1.0,
+    0.5,
+    1.5
+   ]
+  },
+  {
+   "id": "H01.p064",
+   "n": 64,
+   "room": "cellar",
+   "key": "ShelfRustic",
+   "x": 1.5,
+   "y": 0.0,
+   "z": 3.87,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Rur_Furniture_Shelf_Wood_Old_01 (Fab)",
+   "source": "owned",
+   "dims": [
+    1.0,
+    0.3,
+    1.0
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "front",
+   "x": -4.0,
+   "y": 0.6,
+   "z": 0.7,
+   "yaw": 0,
+   "note": "phone table"
+  },
+  {
+   "kind": "note-spot",
+   "room": "dining",
+   "x": 3.0,
+   "y": 0.76,
+   "z": 2.3,
+   "yaw": 90,
+   "note": "Grandmother's letter about the cellar (note 1/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitchen",
+   "x": -1.8,
+   "y": 0.76,
+   "z": -2.4,
+   "yaw": 0,
+   "note": "kitchen table"
+  },
+  {
+   "kind": "hiding",
+   "room": "kitchen",
+   "x": -3.97,
+   "y": 0.0,
+   "z": -0.8,
+   "yaw": 90,
+   "note": "larder cupboard -> HidingSpot on H01.p032 (CabinetPainted)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -2.6,
+   "y": 0.0,
+   "z": 1.14,
+   "yaw": 0,
+   "note": "under the double bed -> HidingSpot on H01.p040 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bed1",
+   "x": -3.92,
+   "y": 0.0,
+   "z": 2.6,
+   "yaw": 90,
+   "note": "wardrobe (bay side) -> HidingSpot on H01.p043 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "bed1",
+   "x": -0.94,
+   "y": 0.9,
+   "z": 0.9,
+   "yaw": 270,
+   "note": "Mr Rao's diary: 'count only those who were here before the autumn' (note 2/3)"
+  },
+  {
+   "kind": "shrine",
+   "room": "bed3",
+   "x": 4.125,
+   "y": 0.0,
+   "z": -1.0,
+   "yaw": 270,
+   "note": "shrine niche over the day-bed"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -3.845,
+   "y": 0.0,
+   "z": -2.2,
+   "yaw": 90,
+   "note": "behind the avocado bath curtain -> HidingSpot on H01.p052 (Bathtub)"
+  },
+  {
+   "kind": "puzzle",
+   "room": "cellar",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 3.795,
+   "yaw": 180,
+   "note": "CodeLockPuzzle: digits = people counted in 4 named family photos AS THEY WERE BY DAY"
+  },
+  {
+   "kind": "container",
+   "room": "cellar",
+   "x": -2.0,
+   "y": 0.0,
+   "z": 3.795,
+   "yaw": 180,
+   "note": "Lockbox holds the family seal ring"
+  },
+  {
+   "kind": "hiding",
+   "room": "cellar",
+   "x": -3.8,
+   "y": 0.0,
+   "z": -3.6,
+   "yaw": 0,
+   "note": "behind the barrels -> HidingSpot on H01.p060 (BarrelWorn) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "cellar",
+   "x": 1.2,
+   "y": 0.0,
+   "z": -3.5,
+   "yaw": 0,
+   "note": "behind the crates -> HidingSpot on H01.p061 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "cellar",
+   "x": 3.97,
+   "y": 1.5,
+   "z": 1.5,
+   "yaw": 270,
+   "note": "chalk writing (note 3/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "cellar",
+   "x": 1.5,
+   "y": 1.0,
+   "z": 3.87,
+   "yaw": 180,
+   "note": "cellar shelf"
+  }
+ ],
+ "exterior": [
+  "all front and side windows have green timber shutters CLOSED and nailed (visible nail heads)",
+  "'RAO' painted in white capitals on the green garden gate (gate 1.2 wide in a 1.4 m brick wall)",
+  "tiled porch step with a cracked boot scraper; milk bottles (3, empty) on the step",
+  "TV aerial bent on the chimney; telephone wire from a pole to the eaves",
+  "lean-to greenhouse on the back wall with half the panes broken"
+ ],
+ "plot": [
+  "Front: 6 m garden, crazy-paving path, overgrown privet hedge 1.6 m both sides",
+  "Back & side: WALLED VEGETABLE GARDEN 14 x 12 m (BrickRed wall 1.8 m): raised beds (VegBeds) of cabbages, bean canes, marrows gone to seed; a scarecrow-like coat on a pole; compost bins (CompostBags); wheelbarrow; a cold frame"
+ ],
+ "puzzle": [
+  "LOCK FIRST: going down the cellar stair the beam of the flashlight lands on the steel lockbox with 4 dials.",
+  "The cellar is DARK: reset the fuse box (hold interact 2 s, small noise) - DESIGN Rao.",
+  "Read the chalk WRITING ON THE WALL: which photos count ('the ones on the mantel, the stairs and the wedding, in that order').",
+  "Each digit = number of people in that photo AS IT WAS BY DAY. At night the photos have extra people (night change) - players must remember, or have photographed them by day (DESIGN Rao twist).",
+  "Wrong code = clunk; 3 wrong codes in a row trips the fuse again.",
+  "Part: Family seal ring, in a velvet pouch in the lockbox."
+ ],
+ "night_changes": [
+  "every family photo gains one extra person (the same pale man) - DESIGN Rao twist",
+  "the shutters are OPEN from the inside on one window",
+  "a pot of dal is warm on the cooker"
+ ],
+ "audio": [
+  "vintageradio: radio tuned to static with a faint sitar sample bleeding through (stays in-world)",
+  "locks: lockbox dials; fridgehum: kitchen fridge"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Roughcast",
+  "https://en.wikipedia.org/wiki/Bay_window"
+ ],
+ "image_prompt": "1930s detached English house finished in grey-brown pebbledash, hipped grey tile roof with one fat central chimney, two-storey canted bay window on the left, every window closed with green wooden shutters, a green garden gate with 'RAO' painted in white, overgrown walled vegetable garden, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}

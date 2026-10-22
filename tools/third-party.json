@@ -1,53 +1,1759 @@
 {
-  "comment": "CC0 assets for the M1.5 look pass, chosen by eye from Poly Haven and ambientCG previews. tools/fetch-assets.ps1 downloads exactly these; CREDITS.md is generated from this file. 'key' is the builder material name or prop slot the asset serves.",
+  "comment": "CC0 assets for the M1.5 look pass, chosen by eye from Poly Haven and ambientCG previews. tools/fetch-assets.ps1 downloads exactly these; CREDITS.md is generated from this file. 'key' is the builder material name or prop slot the asset serves. | v2 (village & houses rebuild): entries appended from docs/design/asset_catalog.json; keys match the house JSON asset keys.",
   "textures": [
-    { "source": "polyhaven", "id": "grey_plaster",                 "res": "2k", "key": "HouseWall",     "use": "weathered, damp exterior plaster" },
-    { "source": "polyhaven", "id": "white_plaster_02",             "res": "2k", "key": "InnerWall",     "use": "stained interior plaster" },
-    { "source": "polyhaven", "id": "wood_peeling_paint_weathered", "res": "2k", "key": "Door",          "use": "front doors, tinted to each house's door colour" },
-    { "source": "polyhaven", "id": "brown_planks_03",              "res": "2k", "key": "Planks",        "use": "old timber planks: gate, bridge, fences, ceilings" },
-    { "source": "ambientcg", "id": "WoodFloor043",                 "res": "2K", "key": "Floor",         "use": "worn, knotted floorboards" },
-    { "source": "polyhaven", "id": "ceramic_roof_01",              "res": "2k", "key": "Roof",          "use": "mossy clay roof tiles" },
-    { "source": "polyhaven", "id": "roof_slates_03",               "res": "2k", "key": "ChapelRoof",    "use": "dark slate roof for the chapel" },
-    { "source": "polyhaven", "id": "stone_wall",                   "res": "2k", "key": "Stone",         "use": "dry-stone wall: the village wall, gate posts, bell tower" },
-    { "source": "polyhaven", "id": "castle_wall_slates",           "res": "2k", "key": "ChapelWall",    "use": "old stone chapel walls" },
-    { "source": "ambientcg", "id": "Rock034",                      "res": "2K", "key": "StandingStone", "use": "mossy rock for the stone circle and the altar" },
-    { "source": "polyhaven", "id": "forrest_ground_01",            "res": "2k", "key": "Ground",        "use": "forest-floor ground: dry grass, twigs, dirt" },
-    { "source": "polyhaven", "id": "brown_mud_leaves_01",          "res": "2k", "key": "Road",          "use": "muddy road with leaves and moss" },
-    { "source": "polyhaven", "id": "mossy_cobblestone",            "res": "2k", "key": "Paving",        "use": "mossy cobbles on the square and the chapel floor" },
-    { "source": "polyhaven", "id": "rusty_metal_04",               "res": "2k", "key": "Metal",         "use": "rusty metal: fuse boxes, the safe, the chain, lantern brackets" },
-    { "source": "polyhaven", "id": "stone_brick_wall_001",         "res": "2k", "key": "HearthStone",   "use": "dark, rough hearth stone" },
-    { "source": "polyhaven", "id": "castle_brick_02_red",          "res": "2k", "key": "Chimney",       "use": "old brick chimneys" },
-    { "source": "polyhaven", "id": "brown_leather",                "res": "2k", "key": "BookLeather",   "use": "the Ritual Book's cover" },
-    { "source": "polyhaven", "id": "fabric_pattern_05",            "res": "2k", "key": "Cloth",         "use": "old cloth: a rug and a tablecloth in each house" },
-    { "source": "polyhaven", "id": "bark_brown_02",                "res": "2k", "key": "Bark",          "use": "bark for the builder's dead trees (Poly Haven's tree models are 50-650 MB each)" }
+    {
+      "source": "polyhaven",
+      "id": "grey_plaster",
+      "res": "2k",
+      "key": "HouseWall",
+      "use": "weathered, damp exterior plaster"
+    },
+    {
+      "source": "polyhaven",
+      "id": "white_plaster_02",
+      "res": "2k",
+      "key": "InnerWall",
+      "use": "stained interior plaster"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wood_peeling_paint_weathered",
+      "res": "2k",
+      "key": "Door",
+      "use": "front doors, tinted to each house's door colour"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brown_planks_03",
+      "res": "2k",
+      "key": "Planks",
+      "use": "old timber planks: gate, bridge, fences, ceilings"
+    },
+    {
+      "source": "ambientcg",
+      "id": "WoodFloor043",
+      "res": "2K",
+      "key": "Floor",
+      "use": "worn, knotted floorboards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ceramic_roof_01",
+      "res": "2k",
+      "key": "Roof",
+      "use": "mossy clay roof tiles"
+    },
+    {
+      "source": "polyhaven",
+      "id": "roof_slates_03",
+      "res": "2k",
+      "key": "ChapelRoof",
+      "use": "dark slate roof for the chapel"
+    },
+    {
+      "source": "polyhaven",
+      "id": "stone_wall",
+      "res": "2k",
+      "key": "Stone",
+      "use": "dry-stone wall: the village wall, gate posts, bell tower"
+    },
+    {
+      "source": "polyhaven",
+      "id": "castle_wall_slates",
+      "res": "2k",
+      "key": "ChapelWall",
+      "use": "old stone chapel walls"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Rock034",
+      "res": "2K",
+      "key": "StandingStone",
+      "use": "mossy rock for the stone circle and the altar"
+    },
+    {
+      "source": "polyhaven",
+      "id": "forrest_ground_01",
+      "res": "2k",
+      "key": "Ground",
+      "use": "forest-floor ground: dry grass, twigs, dirt"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brown_mud_leaves_01",
+      "res": "2k",
+      "key": "Road",
+      "use": "muddy road with leaves and moss"
+    },
+    {
+      "source": "polyhaven",
+      "id": "mossy_cobblestone",
+      "res": "2k",
+      "key": "Paving",
+      "use": "mossy cobbles on the square and the chapel floor"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rusty_metal_04",
+      "res": "2k",
+      "key": "Metal",
+      "use": "rusty metal: fuse boxes, the safe, the chain, lantern brackets"
+    },
+    {
+      "source": "polyhaven",
+      "id": "stone_brick_wall_001",
+      "res": "2k",
+      "key": "HearthStone",
+      "use": "dark, rough hearth stone"
+    },
+    {
+      "source": "polyhaven",
+      "id": "castle_brick_02_red",
+      "res": "2k",
+      "key": "Chimney",
+      "use": "old brick chimneys"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brown_leather",
+      "res": "2k",
+      "key": "BookLeather",
+      "use": "the Ritual Book's cover"
+    },
+    {
+      "source": "polyhaven",
+      "id": "fabric_pattern_05",
+      "res": "2k",
+      "key": "Cloth",
+      "use": "old cloth: a rug and a tablecloth in each house"
+    },
+    {
+      "source": "polyhaven",
+      "id": "bark_brown_02",
+      "res": "2k",
+      "key": "Bark",
+      "use": "bark for the builder's dead trees (Poly Haven's tree models are 50-650 MB each)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "yellow_plaster_02",
+      "res": "2k",
+      "key": "RenderOchre",
+      "use": "ochre render (Dollmaker upper floor)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "worn_mossy_plasterwall",
+      "res": "2k",
+      "key": "RenderMossy",
+      "use": "damp mossy render, base of walls"
+    },
+    {
+      "source": "polyhaven",
+      "id": "worn_cracked_plaster",
+      "res": "2k",
+      "key": "RenderCracked",
+      "use": "cracked render (Widow's House)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rough_plaster_03",
+      "res": "2k",
+      "key": "Pebbledash",
+      "use": "rough-cast pebbledash (Rao, Butcher rear)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "white_stucco_02",
+      "res": "2k",
+      "key": "StuccoWhite",
+      "use": "white stucco (Doctor's villa)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "plaster_stone_wall_01",
+      "res": "2k",
+      "key": "PlasterStone",
+      "use": "half-rendered rubble (Weaver, Miller)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "red_brick",
+      "res": "2k",
+      "key": "BrickRed",
+      "use": "red brick (Butcher, Photographer, Postmaster)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "mixed_brick_wall",
+      "res": "2k",
+      "key": "BrickMixed",
+      "use": "patched brick (Schoolmaster rear, sheds)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_worn_brick",
+      "res": "2k",
+      "key": "BrickPaintedWorn",
+      "use": "limewashed brick (Twins' side walls, bakery)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dark_brick_wall",
+      "res": "2k",
+      "key": "BrickDark",
+      "use": "dark engineering brick (mill base, Organist plinth)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rough_block_wall",
+      "res": "2k",
+      "key": "StoneBlock",
+      "use": "squared rubble (Priest, Schoolmaster, Organist)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "sandstone_blocks_08",
+      "res": "2k",
+      "key": "SandstoneBlocks",
+      "use": "dressed sandstone quoins and sills"
+    },
+    {
+      "source": "polyhaven",
+      "id": "exterior_wall_cladding",
+      "res": "2k",
+      "key": "Weatherboard",
+      "use": "painted timber weatherboarding (Farmer barn, boat-sheds)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "raw_plank_wall",
+      "res": "2k",
+      "key": "RawPlankWall",
+      "use": "rough sawn plank walls (barns, sheds, mill upper)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "beam_wall_01",
+      "res": "2k",
+      "key": "TimberBeam",
+      "use": "exposed timber framing (Dollmaker jetty, Weaver)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "roof_slates_02",
+      "res": "2k",
+      "key": "RoofSlateGrey",
+      "use": "grey slate"
+    },
+    {
+      "source": "polyhaven",
+      "id": "grey_roof_tiles",
+      "res": "2k",
+      "key": "RoofTilesGrey",
+      "use": "grey concrete tiles (1960s re-roof)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "clay_roof_tiles_02",
+      "res": "2k",
+      "key": "RoofClay2",
+      "use": "red clay plain tiles"
+    },
+    {
+      "source": "polyhaven",
+      "id": "clay_roof_tiles_03",
+      "res": "2k",
+      "key": "RoofClay3",
+      "use": "weathered clay tiles"
+    },
+    {
+      "source": "polyhaven",
+      "id": "red_slate_roof_tiles_01",
+      "res": "2k",
+      "key": "RoofRedSlate",
+      "use": "red-brown slate (Organist, Doctor)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "thatch_roof_angled",
+      "res": "2k",
+      "key": "Thatch",
+      "use": "thatch (Weaver, Widow)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "reed_roof_04",
+      "res": "2k",
+      "key": "ThatchReed",
+      "use": "reed thatch ridge/variant"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rusty_corrugated_iron",
+      "res": "2k",
+      "key": "CorrugatedRust",
+      "use": "rusty corrugated iron (lean-tos, sheds, byre)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "old_wooden_floor_01",
+      "res": "2k",
+      "key": "FloorOldWood1",
+      "use": "scuffed boards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "old_wooden_floor_02",
+      "res": "2k",
+      "key": "FloorOldWood2",
+      "use": "grey boards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dark_wooden_planks",
+      "res": "2k",
+      "key": "FloorDarkPlanks",
+      "use": "dark varnished boards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "diagonal_parquet",
+      "res": "2k",
+      "key": "FloorParquet",
+      "use": "parquet (Doctor, Priest study)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "terracotta_floor_tiles",
+      "res": "2k",
+      "key": "FloorQuarryTile",
+      "use": "quarry tiles (kitchens, sculleries)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "checkered_pavement_tiles",
+      "res": "2k",
+      "key": "FloorCheckTile",
+      "use": "black/white checker (Doctor hall, Butcher shop)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dirty_tiles",
+      "res": "2k",
+      "key": "FloorBathTile",
+      "use": "small grubby tiles (bathrooms)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "worn_tile_floor",
+      "res": "2k",
+      "key": "FloorWornTile",
+      "use": "worn patterned tiles (halls)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "slate_floor_03",
+      "res": "2k",
+      "key": "FloorFlagstone",
+      "use": "flagstones (cellars, Weaver, Miller)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "concrete_floor_worn_001",
+      "res": "2k",
+      "key": "FloorConcrete",
+      "use": "cellar/shed concrete"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brick_floor_003",
+      "res": "2k",
+      "key": "FloorBrick",
+      "use": "brick floors (scullery, byre, dairy)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dirt_floor",
+      "res": "2k",
+      "key": "FloorDirt",
+      "use": "earth floors (barn, mill wheel pit)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dirty_carpet",
+      "res": "2k",
+      "key": "CarpetWorn",
+      "use": "stained fitted carpet (1970s bedrooms)"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Carpet016",
+      "res": "2K",
+      "key": "Carpet70s",
+      "use": "patterned 1970s carpet"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Carpet014",
+      "res": "2K",
+      "key": "Carpet70sB",
+      "use": "second carpet pattern"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Wallpaper001A",
+      "res": "2K",
+      "key": "Wallpaper1",
+      "use": "floral wallpaper (bedrooms)"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Wallpaper001B",
+      "res": "2K",
+      "key": "Wallpaper1B",
+      "use": "floral wallpaper, other colourway"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Wallpaper002A",
+      "res": "2K",
+      "key": "Wallpaper2",
+      "use": "stripe/damask wallpaper (parlours)"
+    },
+    {
+      "source": "ambientcg",
+      "id": "Wallpaper002C",
+      "res": "2K",
+      "key": "Wallpaper2C",
+      "use": "damask, faded colourway"
+    },
+    {
+      "source": "polyhaven",
+      "id": "floral_jacquard",
+      "res": "2k",
+      "key": "WallpaperJacquard",
+      "use": "used as 1970s floral wallpaper (tint)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "quatrefoil_jacquard_fabric",
+      "res": "2k",
+      "key": "WallpaperQuatrefoil",
+      "use": "used as geometric 1970s wallpaper"
+    },
+    {
+      "source": "polyhaven",
+      "id": "worn_plaster_wall",
+      "res": "2k",
+      "key": "PlasterWorn",
+      "use": "stained interior plaster"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dark_paneled_wood",
+      "res": "2k",
+      "key": "PanelDark",
+      "use": "dark wood panelling (Priest, Organist, Doctor)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "interior_tiles",
+      "res": "2k",
+      "key": "TileWallWhite",
+      "use": "white wall tiles (bath, butcher shop, darkroom)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "white_rough_plaster",
+      "res": "2k",
+      "key": "Whitewash",
+      "use": "limewash (cellars, byre, mill)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ceiling_interior",
+      "res": "2k",
+      "key": "CeilingInterior",
+      "use": "plaster ceilings with cracks"
+    },
+    {
+      "source": "polyhaven",
+      "id": "green_metal_rust",
+      "res": "2k",
+      "key": "GreenRust",
+      "use": "painted rusty metal (pillar box, gates)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "leaves_forest_ground",
+      "res": "2k",
+      "key": "GroundLeaves",
+      "use": "forest floor inside the wall"
+    },
+    {
+      "source": "polyhaven",
+      "id": "grass_path_2",
+      "res": "2k",
+      "key": "GroundGrassPath",
+      "use": "worn grass footpaths"
+    },
+    {
+      "source": "polyhaven",
+      "id": "gravel_road",
+      "res": "2k",
+      "key": "GroundGravel",
+      "use": "gravel drives and the square edges"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brown_mud_02",
+      "res": "2k",
+      "key": "GroundMud",
+      "use": "yard mud, farmyard"
+    },
+    {
+      "source": "polyhaven",
+      "id": "park_dirt",
+      "res": "2k",
+      "key": "GroundPark",
+      "use": "village green bare patches"
+    },
+    {
+      "source": "polyhaven",
+      "id": "cobblestone_floor_08",
+      "res": "2k",
+      "key": "Cobbles2",
+      "use": "Main Street setts"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rock_embedded_floor",
+      "res": "2k",
+      "key": "RockFloor",
+      "use": "yard paving / forecourts"
+    },
+    {
+      "source": "polyhaven",
+      "id": "concrete_pavement_02",
+      "res": "2k",
+      "key": "PavingSlabs",
+      "use": "1960s paving slabs (post office, school yard)"
+    }
   ],
   "hdris": [
-    { "source": "polyhaven", "id": "overcast_soil_puresky", "res": "2k", "key": "SkyOvercast", "use": "heavy grey sky for day and dusk, and the reflections" }
+    {
+      "source": "polyhaven",
+      "id": "overcast_soil_puresky",
+      "res": "2k",
+      "key": "SkyOvercast",
+      "use": "heavy grey sky for day and dusk, and the reflections"
+    }
   ],
   "models": [
-    { "source": "polyhaven", "id": "GothicCabinet_01",             "res": "2k", "key": "Wardrobe",       "use": "the wardrobe hiding spot" },
-    { "source": "polyhaven", "id": "GothicBed_01",                 "res": "2k", "key": "Bed",            "use": "set dressing: a bed by the hearth" },
-    { "source": "polyhaven", "id": "WoodenChair_01",               "res": "2k", "key": "Chair",          "use": "a tall chair in the chapel" },
-    { "source": "polyhaven", "id": "Rockingchair_01",              "res": "2k", "key": "RockingChair",   "use": "a rocking chair by each hearth" },
-    { "source": "polyhaven", "id": "wooden_bookshelf_worn",        "res": "2k", "key": "Shelf",          "use": "bookshelves in the houses" },
-    { "source": "polyhaven", "id": "vintage_grandfather_clock_01", "res": "2k", "key": "GrandfatherClock","use": "the clock puzzle's case" },
-    { "source": "polyhaven", "id": "wine_barrel_01",               "res": "2k", "key": "Barrel",         "use": "barrels in the houses and yards" },
-    { "source": "polyhaven", "id": "wooden_crate_01",              "res": "2k", "key": "Crate",          "use": "crates in the houses and yards" },
-    { "source": "polyhaven", "id": "book_encyclopedia_set_01",     "res": "1k", "key": "Books",          "use": "books on the wall shelves" },
-    { "source": "polyhaven", "id": "mantel_clock_01",              "res": "1k", "key": "MantelClock",    "use": "on the hearth mantels" },
-    { "source": "polyhaven", "id": "vintage_oil_lamp",             "res": "1k", "key": "OilLamp",        "use": "an oil lamp on each hearth-room table" },
-    { "source": "polyhaven", "id": "brass_candleholders",          "res": "1k", "key": "Candleholders",  "use": "candles on the hearth mantels" },
-    { "source": "polyhaven", "id": "wooden_candlestick",           "res": "1k", "key": "Candlestick",    "use": "a candlestick on each mantel" },
-    { "source": "polyhaven", "id": "Lantern_01",                   "res": "1k", "key": "Lantern",        "use": "a lantern beside each front door" },
-    { "source": "polyhaven", "id": "wooden_bucket_01",             "res": "1k", "key": "Bucket",         "use": "buckets in the houses and yards" },
-    { "source": "polyhaven", "id": "wooden_stool_02",              "res": "1k", "key": "Stool",          "use": "a footstool by the fire" },
-    { "source": "polyhaven", "id": "wooden_hammer_01",             "res": "1k", "key": "Hammer",         "use": "tools left in the yards" },
-    { "source": "polyhaven", "id": "wooden_axe_02",                "res": "1k", "key": "Axe",            "use": "an axe by the front doors" },
-    { "source": "polyhaven", "id": "watering_can_metal_01",        "res": "1k", "key": "WateringCan",    "use": "a watering can by the houses" },
-    { "source": "polyhaven", "id": "tree_stump_01",                "res": "2k", "key": "Stump",          "use": "stumps in the forest and along the wall" },
-    { "source": "polyhaven", "id": "dead_tree_trunk",              "res": "2k", "key": "DeadTrunk",      "use": "fallen trunks in the forest; logs by the hearths" },
-    { "source": "polyhaven", "id": "dry_branches_medium_01",       "res": "1k", "key": "Branches",       "use": "dead wood on the ground" },
-    { "source": "polyhaven", "id": "rock_moss_set_02",             "res": "2k", "key": "Rocks",          "use": "mossy rocks along walls and in the forest" },
-    { "source": "polyhaven", "id": "boulder_01",                   "res": "2k", "key": "Boulder",        "use": "boulders in the forest and along the wall" }
+    {
+      "source": "polyhaven",
+      "id": "GothicCabinet_01",
+      "res": "2k",
+      "key": "Wardrobe",
+      "use": "the wardrobe hiding spot"
+    },
+    {
+      "source": "polyhaven",
+      "id": "GothicBed_01",
+      "res": "2k",
+      "key": "Bed",
+      "use": "set dressing: a bed by the hearth"
+    },
+    {
+      "source": "polyhaven",
+      "id": "WoodenChair_01",
+      "res": "2k",
+      "key": "Chair",
+      "use": "a tall chair in the chapel"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Rockingchair_01",
+      "res": "2k",
+      "key": "RockingChair",
+      "use": "a rocking chair by each hearth"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_bookshelf_worn",
+      "res": "2k",
+      "key": "Shelf",
+      "use": "bookshelves in the houses"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_grandfather_clock_01",
+      "res": "2k",
+      "key": "GrandfatherClock",
+      "use": "the clock puzzle's case"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wine_barrel_01",
+      "res": "2k",
+      "key": "Barrel",
+      "use": "barrels in the houses and yards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_crate_01",
+      "res": "2k",
+      "key": "Crate",
+      "use": "crates in the houses and yards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "book_encyclopedia_set_01",
+      "res": "1k",
+      "key": "Books",
+      "use": "books on the wall shelves"
+    },
+    {
+      "source": "polyhaven",
+      "id": "mantel_clock_01",
+      "res": "1k",
+      "key": "MantelClock",
+      "use": "on the hearth mantels"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_oil_lamp",
+      "res": "1k",
+      "key": "OilLamp",
+      "use": "an oil lamp on each hearth-room table"
+    },
+    {
+      "source": "polyhaven",
+      "id": "brass_candleholders",
+      "res": "1k",
+      "key": "Candleholders",
+      "use": "candles on the hearth mantels"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_candlestick",
+      "res": "1k",
+      "key": "Candlestick",
+      "use": "a candlestick on each mantel"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Lantern_01",
+      "res": "1k",
+      "key": "Lantern",
+      "use": "a lantern beside each front door"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_bucket_01",
+      "res": "1k",
+      "key": "Bucket",
+      "use": "buckets in the houses and yards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_stool_02",
+      "res": "1k",
+      "key": "Stool",
+      "use": "a footstool by the fire"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_hammer_01",
+      "res": "1k",
+      "key": "Hammer",
+      "use": "tools left in the yards"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_axe_02",
+      "res": "1k",
+      "key": "Axe",
+      "use": "an axe by the front doors"
+    },
+    {
+      "source": "polyhaven",
+      "id": "watering_can_metal_01",
+      "res": "1k",
+      "key": "WateringCan",
+      "use": "a watering can by the houses"
+    },
+    {
+      "source": "polyhaven",
+      "id": "tree_stump_01",
+      "res": "2k",
+      "key": "Stump",
+      "use": "stumps in the forest and along the wall"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dead_tree_trunk",
+      "res": "2k",
+      "key": "DeadTrunk",
+      "use": "fallen trunks in the forest; logs by the hearths"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dry_branches_medium_01",
+      "res": "1k",
+      "key": "Branches",
+      "use": "dead wood on the ground"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rock_moss_set_02",
+      "res": "2k",
+      "key": "Rocks",
+      "use": "mossy rocks along walls and in the forest"
+    },
+    {
+      "source": "polyhaven",
+      "id": "boulder_01",
+      "res": "2k",
+      "key": "Boulder",
+      "use": "boulders in the forest and along the wall"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ArmChair_01",
+      "res": "2k",
+      "key": "Armchair",
+      "use": "house/village prop (Armchair)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "GreenChair_01",
+      "res": "2k",
+      "key": "ArmchairGreen",
+      "use": "house/village prop (ArmchairGreen)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Sofa_01",
+      "res": "2k",
+      "key": "Sofa",
+      "use": "house/village prop (Sofa)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "sofa_02",
+      "res": "2k",
+      "key": "Sofa2",
+      "use": "house/village prop (Sofa2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "sofa_03",
+      "res": "2k",
+      "key": "Sofa3",
+      "use": "house/village prop (Sofa3)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_sofa",
+      "res": "2k",
+      "key": "SofaPainted",
+      "use": "house/village prop (SofaPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "CoffeeTable_01",
+      "res": "1k",
+      "key": "CoffeeTable",
+      "use": "house/village prop (CoffeeTable)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "coffee_table_round_01",
+      "res": "1k",
+      "key": "CoffeeTableRound",
+      "use": "house/village prop (CoffeeTableRound)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dining_table",
+      "res": "2k",
+      "key": "DiningTable",
+      "use": "house/village prop (DiningTable)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "WoodenTable_01",
+      "res": "1k",
+      "key": "TableWood1",
+      "use": "house/village prop (TableWood1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "WoodenTable_02",
+      "res": "1k",
+      "key": "TableWood2",
+      "use": "house/village prop (TableWood2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "WoodenTable_03",
+      "res": "1k",
+      "key": "TableWood3",
+      "use": "house/village prop (TableWood3)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "round_wooden_table_01",
+      "res": "1k",
+      "key": "TableRound",
+      "use": "house/village prop (TableRound)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "round_wooden_table_02",
+      "res": "1k",
+      "key": "TableRound2",
+      "use": "house/village prop (TableRound2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_table",
+      "res": "1k",
+      "key": "TablePainted",
+      "use": "house/village prop (TablePainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "small_wooden_table_01",
+      "res": "1k",
+      "key": "TableSmall",
+      "use": "house/village prop (TableSmall)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "side_table_01",
+      "res": "1k",
+      "key": "SideTable",
+      "use": "house/village prop (SideTable)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "side_table_tall_01",
+      "res": "1k",
+      "key": "SideTableTall",
+      "use": "house/village prop (SideTableTall)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "gallinera_table",
+      "res": "1k",
+      "key": "TableGallinera",
+      "use": "house/village prop (TableGallinera)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dining_chair_02",
+      "res": "1k",
+      "key": "ChairDining",
+      "use": "house/village prop (ChairDining)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_chair_01",
+      "res": "1k",
+      "key": "ChairPainted1",
+      "use": "house/village prop (ChairPainted1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_chair_02",
+      "res": "1k",
+      "key": "ChairPainted2",
+      "use": "house/village prop (ChairPainted2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "gallinera_chair",
+      "res": "1k",
+      "key": "ChairGallinera",
+      "use": "house/village prop (ChairGallinera)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "SchoolChair_01",
+      "res": "1k",
+      "key": "SchoolChair",
+      "use": "house/village prop (SchoolChair)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "SchoolDesk_01",
+      "res": "1k",
+      "key": "SchoolDesk",
+      "use": "house/village prop (SchoolDesk)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_stool_01",
+      "res": "1k",
+      "key": "StoolWood1",
+      "use": "house/village prop (StoolWood1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_stool",
+      "res": "1k",
+      "key": "StoolPainted",
+      "use": "house/village prop (StoolPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_bench",
+      "res": "1k",
+      "key": "BenchPainted",
+      "use": "house/village prop (BenchPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "old_bed_frame",
+      "res": "2k",
+      "key": "BedIron",
+      "use": "house/village prop (BedIron)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_day_bed",
+      "res": "2k",
+      "key": "DayBed",
+      "use": "house/village prop (DayBed)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ClassicNightstand_01",
+      "res": "1k",
+      "key": "Nightstand",
+      "use": "house/village prop (Nightstand)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_nightstand",
+      "res": "1k",
+      "key": "NightstandPainted",
+      "use": "house/village prop (NightstandPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "GothicCommode_01",
+      "res": "2k",
+      "key": "Commode",
+      "use": "house/village prop (Commode)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_wooden_drawer_01",
+      "res": "1k",
+      "key": "ChestOfDrawers",
+      "use": "house/village prop (ChestOfDrawers)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "drawer_cabinet",
+      "res": "1k",
+      "key": "DrawerCabinet",
+      "use": "house/village prop (DrawerCabinet)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ClassicConsole_01",
+      "res": "1k",
+      "key": "HallConsole",
+      "use": "house/village prop (HallConsole)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_cabinet_01",
+      "res": "2k",
+      "key": "CabinetVintage",
+      "use": "house/village prop (CabinetVintage)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "modern_wooden_cabinet",
+      "res": "1k",
+      "key": "Cabinet70s",
+      "use": "house/village prop (Cabinet70s)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_cabinet",
+      "res": "2k",
+      "key": "CabinetPainted",
+      "use": "house/village prop (CabinetPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "painted_wooden_shelves",
+      "res": "1k",
+      "key": "ShelvesPainted",
+      "use": "house/village prop (ShelvesPainted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_display_shelves_01",
+      "res": "1k",
+      "key": "DisplayShelves",
+      "use": "house/village prop (DisplayShelves)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "steel_frame_shelves_01",
+      "res": "1k",
+      "key": "SteelShelves",
+      "use": "house/village prop (SteelShelves)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "steel_frame_shelves_02",
+      "res": "1k",
+      "key": "SteelShelves2",
+      "use": "house/village prop (SteelShelves2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "worn_metal_rack",
+      "res": "1k",
+      "key": "MetalRack",
+      "use": "house/village prop (MetalRack)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "metal_office_desk",
+      "res": "2k",
+      "key": "OfficeDesk",
+      "use": "house/village prop (OfficeDesk)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ornate_mirror_01",
+      "res": "1k",
+      "key": "Mirror",
+      "use": "house/village prop (Mirror)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "hanging_picture_frame_01",
+      "res": "1k",
+      "key": "FrameHanging1",
+      "use": "house/village prop (FrameHanging1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "hanging_picture_frame_02",
+      "res": "1k",
+      "key": "FrameHanging2",
+      "use": "house/village prop (FrameHanging2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "hanging_picture_frame_03",
+      "res": "1k",
+      "key": "FrameHanging3",
+      "use": "house/village prop (FrameHanging3)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "fancy_picture_frame_01",
+      "res": "1k",
+      "key": "FrameFancy1",
+      "use": "house/village prop (FrameFancy1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "fancy_picture_frame_02",
+      "res": "1k",
+      "key": "FrameFancy2",
+      "use": "house/village prop (FrameFancy2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "standing_picture_frame_01",
+      "res": "1k",
+      "key": "FrameStanding1",
+      "use": "house/village prop (FrameStanding1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "standing_picture_frame_02",
+      "res": "1k",
+      "key": "FrameStanding2",
+      "use": "house/village prop (FrameStanding2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wall_clock",
+      "res": "1k",
+      "key": "WallClock",
+      "use": "house/village prop (WallClock)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "alarm_clock_01",
+      "res": "1k",
+      "key": "AlarmClock",
+      "use": "house/village prop (AlarmClock)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Television_01",
+      "res": "1k",
+      "key": "TV",
+      "use": "house/village prop (TV)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "television_02",
+      "res": "1k",
+      "key": "TV2",
+      "use": "house/village prop (TV2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_radio_transceiver",
+      "res": "1k",
+      "key": "Radio",
+      "use": "house/village prop (Radio)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "cassette_player",
+      "res": "1k",
+      "key": "CassettePlayer",
+      "use": "house/village prop (CassettePlayer)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_electric_kettle",
+      "res": "1k",
+      "key": "Kettle",
+      "use": "house/village prop (Kettle)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "electric_stove",
+      "res": "2k",
+      "key": "Cooker",
+      "use": "house/village prop (Cooker)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "desk_lamp_arm_01",
+      "res": "1k",
+      "key": "DeskLamp",
+      "use": "house/village prop (DeskLamp)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_lantern_01",
+      "res": "1k",
+      "key": "WoodenLantern",
+      "use": "house/village prop (WoodenLantern)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "street_lamp_01",
+      "res": "2k",
+      "key": "StreetLamp",
+      "use": "house/village prop (StreetLamp)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "street_lamp_02",
+      "res": "2k",
+      "key": "StreetLamp2",
+      "use": "house/village prop (StreetLamp2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "pot_enamel_01",
+      "res": "1k",
+      "key": "PotEnamel",
+      "use": "house/village prop (PotEnamel)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "tea_set_01",
+      "res": "1k",
+      "key": "TeaSet",
+      "use": "house/village prop (TeaSet)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_bowl_01",
+      "res": "1k",
+      "key": "BowlWood",
+      "use": "house/village prop (BowlWood)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_bowl_02",
+      "res": "1k",
+      "key": "BowlWood2",
+      "use": "house/village prop (BowlWood2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_cutting_board",
+      "res": "1k",
+      "key": "CuttingBoard",
+      "use": "house/village prop (CuttingBoard)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "yellow_onion",
+      "res": "1k",
+      "key": "Onions",
+      "use": "house/village prop (Onions)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "sweet_potato",
+      "res": "1k",
+      "key": "SweetPotato",
+      "use": "house/village prop (SweetPotato)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "russian_food_cans_01",
+      "res": "1k",
+      "key": "TinnedFood",
+      "use": "house/village prop (TinnedFood)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Barrel_02",
+      "res": "1k",
+      "key": "Barrel2",
+      "use": "house/village prop (Barrel2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_barrels_01",
+      "res": "1k",
+      "key": "BarrelsWood",
+      "use": "house/village prop (BarrelsWood)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wicker_basket_01",
+      "res": "1k",
+      "key": "Wicker1",
+      "use": "house/village prop (Wicker1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wicker_basket_02",
+      "res": "1k",
+      "key": "Wicker2",
+      "use": "house/village prop (Wicker2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "cardboard_box_01",
+      "res": "1k",
+      "key": "CardboardBox",
+      "use": "house/village prop (CardboardBox)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_suitcase",
+      "res": "1k",
+      "key": "Suitcase",
+      "use": "house/village prop (Suitcase)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "metal_toolbox",
+      "res": "1k",
+      "key": "Toolbox",
+      "use": "house/village prop (Toolbox)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "metal_tool_chest",
+      "res": "1k",
+      "key": "ToolChest",
+      "use": "house/village prop (ToolChest)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "oil_tin",
+      "res": "1k",
+      "key": "OilTin",
+      "use": "house/village prop (OilTin)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "can_rusted",
+      "res": "1k",
+      "key": "CanRusted",
+      "use": "house/village prop (CanRusted)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "metal_jerrycan",
+      "res": "1k",
+      "key": "Jerrycan",
+      "use": "house/village prop (Jerrycan)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "metal_trash_can",
+      "res": "1k",
+      "key": "TrashCan",
+      "use": "house/village prop (TrashCan)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "compost_bags",
+      "res": "1k",
+      "key": "CompostBags",
+      "use": "house/village prop (CompostBags)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "cement_bag",
+      "res": "1k",
+      "key": "CementBag",
+      "use": "house/village prop (CementBag)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "planter_box_01",
+      "res": "1k",
+      "key": "PlanterBox1",
+      "use": "house/village prop (PlanterBox1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "planter_box_02",
+      "res": "1k",
+      "key": "PlanterBox2",
+      "use": "house/village prop (PlanterBox2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "planter_pot_clay",
+      "res": "1k",
+      "key": "PlanterPot",
+      "use": "house/village prop (PlanterPot)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "seeding_tray_01",
+      "res": "1k",
+      "key": "SeedTray",
+      "use": "house/village prop (SeedTray)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "potted_plant_02",
+      "res": "1k",
+      "key": "PottedPlant2",
+      "use": "house/village prop (PottedPlant2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "ceramic_vase_02",
+      "res": "1k",
+      "key": "Vase2",
+      "use": "house/village prop (Vase2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "antique_ceramic_vase_01",
+      "res": "1k",
+      "key": "VaseAntique",
+      "use": "house/village prop (VaseAntique)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "decorative_book_set_01",
+      "res": "1k",
+      "key": "BooksDeco",
+      "use": "house/village prop (BooksDeco)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_stapler",
+      "res": "1k",
+      "key": "Stapler",
+      "use": "house/village prop (Stapler)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "standing_chalkboard_01",
+      "res": "1k",
+      "key": "Chalkboard",
+      "use": "house/village prop (Chalkboard)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "pocket_watch",
+      "res": "1k",
+      "key": "PocketWatch",
+      "use": "house/village prop (PocketWatch)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_lighter",
+      "res": "1k",
+      "key": "Lighter",
+      "use": "house/village prop (Lighter)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "magnifying_glass_01",
+      "res": "1k",
+      "key": "Magnifier",
+      "use": "house/village prop (Magnifier)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_microscope",
+      "res": "1k",
+      "key": "Microscope",
+      "use": "house/village prop (Microscope)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "bunsen_burner",
+      "res": "1k",
+      "key": "BunsenBurner",
+      "use": "house/village prop (BunsenBurner)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "medical_box",
+      "res": "1k",
+      "key": "MedicalBox",
+      "use": "house/village prop (MedicalBox)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "vintage_crutches_01",
+      "res": "1k",
+      "key": "Crutches",
+      "use": "house/village prop (Crutches)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rubber_boots",
+      "res": "1k",
+      "key": "RubberBoots",
+      "use": "house/village prop (RubberBoots)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "spinning_wheel_01",
+      "res": "2k",
+      "key": "SpinningWheel",
+      "use": "house/village prop (SpinningWheel)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "bench_vice_01",
+      "res": "1k",
+      "key": "BenchVice",
+      "use": "house/village prop (BenchVice)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "hatchet",
+      "res": "1k",
+      "key": "Hatchet",
+      "use": "house/village prop (Hatchet)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rusted_spade_01",
+      "res": "1k",
+      "key": "Spade",
+      "use": "house/village prop (Spade)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "picke_dirty_01",
+      "res": "1k",
+      "key": "Pickaxe",
+      "use": "house/village prop (Pickaxe)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_broom",
+      "res": "1k",
+      "key": "Broom",
+      "use": "house/village prop (Broom)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "wooden_ladder",
+      "res": "1k",
+      "key": "Ladder",
+      "use": "house/village prop (Ladder)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "pliers",
+      "res": "1k",
+      "key": "Pliers",
+      "use": "house/village prop (Pliers)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "hand_truck",
+      "res": "1k",
+      "key": "HandTruck",
+      "use": "house/village prop (HandTruck)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "portable_generator",
+      "res": "1k",
+      "key": "Generator",
+      "use": "house/village prop (Generator)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "propane_tank",
+      "res": "1k",
+      "key": "PropaneTank",
+      "use": "house/village prop (PropaneTank)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "power_box_01",
+      "res": "1k",
+      "key": "FuseBox",
+      "use": "house/village prop (FuseBox)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "utility_box_01",
+      "res": "1k",
+      "key": "UtilityBox",
+      "use": "house/village prop (UtilityBox)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "modular_electricity_poles",
+      "res": "2k",
+      "key": "PowerPoles",
+      "use": "house/village prop (PowerPoles)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "gate_latch_01",
+      "res": "1k",
+      "key": "GateLatch",
+      "use": "house/village prop (GateLatch)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "large_iron_gate",
+      "res": "2k",
+      "key": "IronGate",
+      "use": "house/village prop (IronGate)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "garden_hose_wall_mounted_01",
+      "res": "1k",
+      "key": "GardenHose",
+      "use": "house/village prop (GardenHose)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "garden_sprinkler_01",
+      "res": "1k",
+      "key": "Sprinkler",
+      "use": "house/village prop (Sprinkler)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "garden_gnome",
+      "res": "1k",
+      "key": "GardenGnome",
+      "use": "house/village prop (GardenGnome)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "stone_fire_pit",
+      "res": "1k",
+      "key": "FirePit",
+      "use": "house/village prop (FirePit)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "covered_car",
+      "res": "2k",
+      "key": "CoveredCar",
+      "use": "house/village prop (CoveredCar)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "old_tyre",
+      "res": "1k",
+      "key": "OldTyre",
+      "use": "house/village prop (OldTyre)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "rusted_wheel_rim_01",
+      "res": "1k",
+      "key": "WheelRim",
+      "use": "house/village prop (WheelRim)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "gothic_statue",
+      "res": "2k",
+      "key": "GothicStatue",
+      "use": "house/village prop (GothicStatue)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dead_tree_trunk_02",
+      "res": "2k",
+      "key": "DeadTrunk2",
+      "use": "house/village prop (DeadTrunk2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "tree_stump_02",
+      "res": "2k",
+      "key": "Stump2",
+      "use": "house/village prop (Stump2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "shrub_01",
+      "res": "1k",
+      "key": "Shrub1",
+      "use": "house/village prop (Shrub1)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "shrub_02",
+      "res": "1k",
+      "key": "Shrub2",
+      "use": "house/village prop (Shrub2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "shrub_03",
+      "res": "1k",
+      "key": "Shrub3",
+      "use": "house/village prop (Shrub3)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "shrub_04",
+      "res": "1k",
+      "key": "Shrub4",
+      "use": "house/village prop (Shrub4)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "nettle_plant",
+      "res": "1k",
+      "key": "Nettles",
+      "use": "house/village prop (Nettles)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "fern_02",
+      "res": "1k",
+      "key": "Fern",
+      "use": "house/village prop (Fern)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "grass_medium_01",
+      "res": "1k",
+      "key": "GrassClump",
+      "use": "house/village prop (GrassClump)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "grass_medium_02",
+      "res": "1k",
+      "key": "GrassClump2",
+      "use": "house/village prop (GrassClump2)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "moss_01",
+      "res": "1k",
+      "key": "Moss",
+      "use": "house/village prop (Moss)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "dandelion_01",
+      "res": "1k",
+      "key": "Dandelion",
+      "use": "house/village prop (Dandelion)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "periwinkle_plant",
+      "res": "1k",
+      "key": "Periwinkle",
+      "use": "house/village prop (Periwinkle)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "tree_small_02",
+      "res": "1k",
+      "key": "SmallTree",
+      "use": "house/village prop (SmallTree)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "fir_sapling_medium",
+      "res": "1k",
+      "key": "FirSapling",
+      "use": "house/village prop (FirSapling)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "pine_sapling_medium",
+      "res": "1k",
+      "key": "PineSapling",
+      "use": "house/village prop (PineSapling)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "root_cluster_01",
+      "res": "1k",
+      "key": "RootCluster",
+      "use": "house/village prop (RootCluster)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "bark_debris_01",
+      "res": "1k",
+      "key": "BarkDebris",
+      "use": "house/village prop (BarkDebris)"
+    },
+    {
+      "source": "polyhaven",
+      "id": "Camera_01",
+      "res": "1k",
+      "key": "VintageCamera",
+      "use": "house/village prop (VintageCamera)"
+    }
   ]
 }

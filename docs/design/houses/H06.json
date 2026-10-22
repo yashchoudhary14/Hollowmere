@@ -1,0 +1,1989 @@
+{
+ "schema": "hollowmere.house/1",
+ "slug": "H06",
+ "index": 6,
+ "name": "Twins' House",
+ "family": "Abney",
+ "part": "Silver locket",
+ "puzzle_kind_m1": "Sequence",
+ "door_colour": "Yellow",
+ "chimneys": 2,
+ "clock_hour": 2,
+ "loud_puzzle": false,
+ "archetype": "Two identical Victorian brick cottages knocked into one, perfectly mirrored",
+ "silhouette": "Wide and symmetrical: TWO front doors side by side (both yellow; the west one is screwed shut), two identical gable chimneys, twin bay windows, twin dormers. Everything on the west is the mirror image of the east... almost.",
+ "world": {
+  "position": [
+   -24.0,
+   0.0,
+   29.0
+  ],
+  "yaw": 180,
+  "street": "The Green (north side)",
+  "plot_poly": [
+   [
+    -15.500000000000002,
+    41.0
+   ],
+   [
+    -32.5,
+    41.0
+   ],
+   [
+    -32.5,
+    21.0
+   ],
+   [
+    -15.499999999999998,
+    21.0
+   ]
+  ],
+  "note": "two front gardens split by a wall, facing the green"
+ },
+ "conventions": "metres; house-local; origin = (0,0,0) at ground-floor level, centre of the main wing; +z = FRONT (street side); +x = on your LEFT when you stand in the street facing the front door; yaw = Unity Y rotation, 0 = the prop's front faces +z, 90 = +x. See HOUSES.md 'Coordinates'.",
+ "levels": {
+  "G": {
+   "y": 0.0,
+   "h": 2.7,
+   "label": "Ground floor"
+  },
+  "F": {
+   "y": 2.95,
+   "h": 2.5,
+   "label": "First floor"
+  },
+  "A": {
+   "y": 5.7,
+   "h": 2.3,
+   "label": "Attic (under the roof)"
+  }
+ },
+ "wings": [
+  {
+   "id": "main",
+   "rect": [
+    -7.0,
+    -4.0,
+    7.0,
+    4.0
+   ],
+   "levels": [
+    "G",
+    "F",
+    "A"
+   ],
+   "walls": "BrickPaintedWorn (cream limewash over red brick, worn through on the lower 1 m) with BrickRed window arches",
+   "t": 0.35,
+   "roof": "Gable roof 38 deg, ridge along x at 7.9 m, RoofClay3; two front dormers at x=+-4.2 with RoofClay3 cheeks; gable chimneys at x=+-7.0",
+   "note": ""
+  }
+ ],
+ "rooms": [
+  {
+   "id": "hall",
+   "name": "Double hall (knocked through)",
+   "level": "G",
+   "rect": [
+    -2.0,
+    -4.0,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -1.94,
+    -3.65,
+    1.94,
+    3.65
+   ],
+   "kind": "hall",
+   "floor": "FloorWornTile",
+   "walls": "Wallpaper2 (west) / Wallpaper2 (east)",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parW",
+   "name": "West parlour (Ada's)",
+   "level": "G",
+   "rect": [
+    -7.0,
+    0.0,
+    -2.0,
+    4.0
+   ],
+   "inner": [
+    -6.65,
+    0.06,
+    -2.06,
+    3.65
+   ],
+   "kind": "living",
+   "floor": "Carpet70s",
+   "walls": "WallpaperJacquard",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "parE",
+   "name": "East parlour (Ida's)",
+   "level": "G",
+   "rect": [
+    2.0,
+    0.0,
+    7.0,
+    4.0
+   ],
+   "inner": [
+    2.06,
+    0.06,
+    6.65,
+    3.65
+   ],
+   "kind": "living",
+   "floor": "Carpet70s",
+   "walls": "WallpaperJacquard",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitW",
+   "name": "West kitchen (cold)",
+   "level": "G",
+   "rect": [
+    -7.0,
+    -4.0,
+    -2.0,
+    0.0
+   ],
+   "inner": [
+    -6.65,
+    -3.65,
+    -2.06,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "kitE",
+   "name": "East kitchen (lived in)",
+   "level": "G",
+   "rect": [
+    2.0,
+    -4.0,
+    7.0,
+    0.0
+   ],
+   "inner": [
+    2.06,
+    -3.65,
+    6.65,
+    -0.06
+   ],
+   "kind": "kitchen",
+   "floor": "FloorQuarryTile",
+   "walls": "Whitewash",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "landing",
+   "name": "Double landing",
+   "level": "F",
+   "rect": [
+    -2.0,
+    -4.0,
+    2.0,
+    1.5
+   ],
+   "inner": [
+    -1.94,
+    -3.65,
+    1.94,
+    1.44
+   ],
+   "kind": "landing",
+   "floor": "FloorOldWood1",
+   "walls": "Wallpaper2",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bath",
+   "name": "Bathroom (between the halves)",
+   "level": "F",
+   "rect": [
+    -2.0,
+    1.5,
+    2.0,
+    4.0
+   ],
+   "inner": [
+    -1.94,
+    1.56,
+    1.94,
+    3.65
+   ],
+   "kind": "bathroom",
+   "floor": "FloorBathTile",
+   "walls": "TileWallWhite",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bedW",
+   "name": "West bedroom (Ada)",
+   "level": "F",
+   "rect": [
+    -7.0,
+    0.0,
+    -2.0,
+    4.0
+   ],
+   "inner": [
+    -6.65,
+    0.06,
+    -2.06,
+    3.65
+   ],
+   "kind": "bedroom",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "bedE",
+   "name": "East bedroom (Ida)",
+   "level": "F",
+   "rect": [
+    2.0,
+    0.0,
+    7.0,
+    4.0
+   ],
+   "inner": [
+    2.06,
+    0.06,
+    6.65,
+    3.65
+   ],
+   "kind": "bedroom",
+   "floor": "Carpet70sB",
+   "walls": "Wallpaper1",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "nurW",
+   "name": "West back room (the cots)",
+   "level": "F",
+   "rect": [
+    -7.0,
+    -4.0,
+    -2.0,
+    0.0
+   ],
+   "inner": [
+    -6.65,
+    -3.65,
+    -2.06,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "nurE",
+   "name": "East back room (the cots)",
+   "level": "F",
+   "rect": [
+    2.0,
+    -4.0,
+    7.0,
+    0.0
+   ],
+   "inner": [
+    2.06,
+    -3.65,
+    6.65,
+    -0.06
+   ],
+   "kind": "bedroom",
+   "floor": "FloorOldWood2",
+   "walls": "Wallpaper1B",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  },
+  {
+   "id": "attic",
+   "name": "Long attic (PUZZLE end)",
+   "level": "A",
+   "rect": [
+    -7.0,
+    -4.0,
+    7.0,
+    4.0
+   ],
+   "inner": [
+    -6.65,
+    -3.65,
+    6.65,
+    3.65
+   ],
+   "kind": "attic",
+   "floor": "FloorOldWood2",
+   "walls": "RawPlankWall",
+   "ceiling": "CeilingInterior",
+   "light": "pendant",
+   "skirting": "dark oak 0.15",
+   "note": ""
+  }
+ ],
+ "doors": [
+  {
+   "id": "d_frontE",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": 1.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "yellow 4-panel door, brass '7B'",
+   "mat": "Door",
+   "colour": "Yellow",
+   "role": "front",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_frontW",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "N",
+   "at": -1.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "yellow 4-panel door '7A', screwed shut from inside (cannot open)",
+   "mat": "Door",
+   "colour": "Yellow",
+   "role": "sealed",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_back",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "ext",
+   "side": "S",
+   "at": 0.0,
+   "width": 0.9,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "back",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_parW",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parW",
+   "side": "W",
+   "at": 2.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kitW",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitW",
+   "side": "W",
+   "at": -2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_parE",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "parE",
+   "side": "E",
+   "at": 2.4,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_kitE",
+   "level": "G",
+   "room_a": "hall",
+   "room_b": "kitE",
+   "side": "E",
+   "at": -2.6,
+   "width": 0.85,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bedW",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bedW",
+   "side": "W",
+   "at": 0.75,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bedE",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bedE",
+   "side": "E",
+   "at": 0.75,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_nurW",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "nurW",
+   "side": "W",
+   "at": -3.3,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_nurE",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "nurE",
+   "side": "E",
+   "at": -3.3,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  },
+  {
+   "id": "d_bath",
+   "level": "F",
+   "room_a": "landing",
+   "room_b": "bath",
+   "side": "N",
+   "at": 0.0,
+   "width": 0.8,
+   "height": 2.05,
+   "kind": "panel",
+   "mat": "Door",
+   "colour": null,
+   "role": "",
+   "note": "",
+   "swing": "in"
+  }
+ ],
+ "windows": [
+  {
+   "id": "w_bayW",
+   "room": "parW",
+   "side": "N",
+   "at": -4.5,
+   "width": 1.8,
+   "height": 1.5,
+   "sill": 0.7,
+   "style": "twin canted bay (shown flat)",
+   "weak": false,
+   "curtains": "FabricTerlenka",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bedW",
+   "room": "bedW",
+   "side": "N",
+   "at": -4.5,
+   "width": 1.1,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "dormer sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_nurW",
+   "room": "nurW",
+   "side": "S",
+   "at": -4.5,
+   "width": 1.0,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bayE",
+   "room": "parE",
+   "side": "N",
+   "at": 4.5,
+   "width": 1.8,
+   "height": 1.5,
+   "sill": 0.7,
+   "style": "twin canted bay (shown flat)",
+   "weak": false,
+   "curtains": "FabricTerlenka",
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_bedE",
+   "room": "bedE",
+   "side": "N",
+   "at": 4.5,
+   "width": 1.1,
+   "height": 1.2,
+   "sill": 0.9,
+   "style": "dormer sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_nurE",
+   "room": "nurE",
+   "side": "S",
+   "at": 4.5,
+   "width": 1.0,
+   "height": 1.1,
+   "sill": 0.9,
+   "style": "sash",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_kW",
+   "room": "kitW",
+   "side": "S",
+   "at": -4.5,
+   "width": 1.0,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "sash (west)",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_kE",
+   "room": "kitE",
+   "side": "S",
+   "at": 4.5,
+   "width": 1.0,
+   "height": 1.0,
+   "sill": 0.9,
+   "style": "sash (east)",
+   "weak": true,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  },
+  {
+   "id": "w_attic",
+   "room": "attic",
+   "side": "W",
+   "at": 0.0,
+   "width": 0.6,
+   "height": 0.6,
+   "sill": 1.0,
+   "style": "gable light (only on the WEST gable - the east one is bricked up: a difference)",
+   "weak": false,
+   "curtains": null,
+   "shutters": null,
+   "note": ""
+  }
+ ],
+ "stairs": [
+  {
+   "id": "sW",
+   "room": "hall",
+   "rect": [
+    -1.9,
+    -3.6,
+    -0.9999999999999999,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "W stair, mirror image of the other, 13 risers"
+  },
+  {
+   "id": "sWu",
+   "room": "landing",
+   "rect": [
+    -1.9,
+    -3.6,
+    -0.9999999999999999,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "sE",
+   "room": "hall",
+   "rect": [
+    1.0,
+    -3.6,
+    1.9,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "straight",
+   "mat": "FloorDarkPlanks",
+   "note": "E stair, mirror image of the other, 13 risers"
+  },
+  {
+   "id": "sEu",
+   "room": "landing",
+   "rect": [
+    1.0,
+    -3.6,
+    1.9,
+    -0.1
+   ],
+   "frm": "G",
+   "to": "F",
+   "ascent": "N",
+   "kind": "void",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  },
+  {
+   "id": "s3",
+   "room": "landing",
+   "rect": [
+    -0.45,
+    -1.4,
+    0.45,
+    -0.4
+   ],
+   "frm": "F",
+   "to": "A",
+   "ascent": "S",
+   "kind": "loft ladder between the two stair wells",
+   "mat": "FloorDarkPlanks",
+   "note": ""
+  }
+ ],
+ "chimneys_detail": [
+  {
+   "x": -7.0,
+   "z": -1.5,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "west kitchen range (cold, identical decoy hearth)",
+   "pots": 2
+  },
+  {
+   "x": 7.0,
+   "z": -1.5,
+   "w": 0.8,
+   "d": 0.8,
+   "above_ridge": 1.0,
+   "mat": "Chimney",
+   "serves": "east kitchen range = THE HEARTH",
+   "pots": 2
+  }
+ ],
+ "props": [
+  {
+   "id": "H06.p001",
+   "n": 1,
+   "room": "kitW",
+   "key": "Hearth",
+   "x": -6.27,
+   "y": 0.0,
+   "z": -1.5,
+   "yaw": 90,
+   "role": "hearth",
+   "note": "cast-iron range; WEST is cold & swept, EAST is THE HEARTH",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H06.p002",
+   "n": 2,
+   "room": "kitE",
+   "key": "Hearth",
+   "x": 6.27,
+   "y": 0.0,
+   "z": -1.5,
+   "yaw": 270,
+   "role": "hearth",
+   "note": "cast-iron range; WEST is cold & swept, EAST is THE HEARTH",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "existing BuildHearth (HearthStone surround, mantel, Fire) - size per house",
+   "source": "procedural",
+   "dims": [
+    1.8,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "id": "H06.p003",
+   "n": 3,
+   "room": "kitW",
+   "key": "Dresser",
+   "x": -4.0,
+   "y": 0.0,
+   "z": -0.34,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H06.p004",
+   "n": 4,
+   "room": "kitE",
+   "key": "Dresser",
+   "x": 4.0,
+   "y": 0.0,
+   "z": -0.34,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Welsh dresser: base cupboard 0.5 deep + plate rack 0.25 deep, WoodCabinetWorn",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.5,
+    2.0
+   ]
+  },
+  {
+   "id": "H06.p005",
+   "n": 5,
+   "room": "kitW",
+   "key": "KitchenSinkUnit",
+   "x": -5.6,
+   "y": 0.0,
+   "z": -3.32,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H06.p006",
+   "n": 6,
+   "room": "kitE",
+   "key": "KitchenSinkUnit",
+   "x": 5.6,
+   "y": 0.0,
+   "z": -3.32,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "unit + ceramic butler sink 0.6x0.45 + brass taps",
+   "source": "procedural",
+   "dims": [
+    1.0,
+    0.6,
+    0.9
+   ]
+  },
+  {
+   "id": "H06.p007",
+   "n": 7,
+   "room": "kitW",
+   "key": "TableWood1",
+   "x": -4.0,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.8,
+    0.76
+   ]
+  },
+  {
+   "id": "H06.p008",
+   "n": 8,
+   "room": "kitE",
+   "key": "TableWood1",
+   "x": 4.0,
+   "y": 0.0,
+   "z": -2.0,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "WoodenTable_01",
+   "source": "polyhaven",
+   "dims": [
+    1.4,
+    0.8,
+    0.76
+   ]
+  },
+  {
+   "id": "H06.p009",
+   "n": 9,
+   "room": "parW",
+   "key": "Sofa3",
+   "x": -6.195,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_03",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.85,
+    0.8
+   ]
+  },
+  {
+   "id": "H06.p010",
+   "n": 10,
+   "room": "parE",
+   "key": "Sofa3",
+   "x": 6.195,
+   "y": 0.0,
+   "z": 2.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "sofa_03",
+   "source": "polyhaven",
+   "dims": [
+    1.8,
+    0.85,
+    0.8
+   ]
+  },
+  {
+   "id": "H06.p011",
+   "n": 11,
+   "room": "parW",
+   "key": "SideTable",
+   "x": -3.0,
+   "y": 0.0,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p012",
+   "n": 12,
+   "room": "parE",
+   "key": "SideTable",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "side_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p013",
+   "n": 13,
+   "room": "parE",
+   "key": "RotaryPhone",
+   "x": 3.0,
+   "y": 0.6,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "phone",
+   "note": "phone ONLY on the east side (west has the matching table, empty)",
+   "on": "H06.p012",
+   "mat": null,
+   "scale": null,
+   "asset": "812e8f59f9e749fab483eabf4800dec2",
+   "source": "sketchfab",
+   "dims": [
+    0.22,
+    0.25,
+    0.14
+   ]
+  },
+  {
+   "id": "H06.p014",
+   "n": 14,
+   "room": "parW",
+   "key": "Vase2",
+   "x": -3.0,
+   "y": 0.6,
+   "z": 0.34,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": "H06.p011",
+   "mat": null,
+   "scale": null,
+   "asset": "ceramic_vase_02",
+   "source": "polyhaven",
+   "dims": [
+    0.18,
+    0.18,
+    0.3
+   ]
+  },
+  {
+   "id": "H06.p015",
+   "n": 15,
+   "room": "parW",
+   "key": "Cabinet70s",
+   "x": -5.6,
+   "y": 0.0,
+   "z": 0.315,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "modern_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    0.8
+   ]
+  },
+  {
+   "id": "H06.p016",
+   "n": 16,
+   "room": "parE",
+   "key": "Cabinet70s",
+   "x": 5.6,
+   "y": 0.0,
+   "z": 0.315,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "modern_wooden_cabinet",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.45,
+    0.8
+   ]
+  },
+  {
+   "id": "H06.p017",
+   "n": 17,
+   "room": "parW",
+   "key": "TV2",
+   "x": -5.6,
+   "y": 0.8,
+   "z": 0.315,
+   "yaw": 0,
+   "role": "tv",
+   "note": "",
+   "on": "H06.p015",
+   "mat": null,
+   "scale": null,
+   "asset": "television_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "H06.p018",
+   "n": 18,
+   "room": "parE",
+   "key": "TV2",
+   "x": 5.6,
+   "y": 0.8,
+   "z": 0.315,
+   "yaw": 0,
+   "role": "tv",
+   "note": "",
+   "on": "H06.p016",
+   "mat": null,
+   "scale": null,
+   "asset": "television_02",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "H06.p019",
+   "n": 19,
+   "room": "parW",
+   "key": "FrameHanging1",
+   "x": -2.075,
+   "y": 1.35,
+   "z": 3.2,
+   "yaw": 270,
+   "role": "family-photo",
+   "note": "the twins aged 6 (west)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.03,
+    0.5
+   ]
+  },
+  {
+   "id": "H06.p020",
+   "n": 20,
+   "room": "parE",
+   "key": "FrameHanging1",
+   "x": 2.075,
+   "y": 1.35,
+   "z": 3.2,
+   "yaw": 90,
+   "role": "family-photo",
+   "note": "the twins aged 6 (east) - identical except one girl is missing",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "hanging_picture_frame_01",
+   "source": "polyhaven",
+   "dims": [
+    0.4,
+    0.03,
+    0.5
+   ]
+  },
+  {
+   "id": "H06.p021",
+   "n": 21,
+   "room": "parW",
+   "key": "WallClock",
+   "x": -2.09,
+   "y": 1.925,
+   "z": 1.0,
+   "yaw": 270,
+   "role": "",
+   "note": "clock (west) - DIFFERENCE candidate: hands at 2:00 vs 10:00 mirrored",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H06.p022",
+   "n": 22,
+   "room": "parE",
+   "key": "WallClock",
+   "x": 2.09,
+   "y": 1.925,
+   "z": 1.0,
+   "yaw": 90,
+   "role": "",
+   "note": "clock (east)",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "wall_clock",
+   "source": "polyhaven",
+   "dims": [
+    0.35,
+    0.06,
+    0.35
+   ]
+  },
+  {
+   "id": "H06.p023",
+   "n": 23,
+   "room": "hall",
+   "key": "FuseBox",
+   "x": -1.2,
+   "y": 1.4,
+   "z": -3.575,
+   "yaw": 0,
+   "role": "fuse-box",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "power_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.45,
+    0.15,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p024",
+   "n": 24,
+   "room": "hall",
+   "key": "Mirror",
+   "x": 0.0,
+   "y": 1.35,
+   "z": 3.625,
+   "yaw": 180,
+   "role": "",
+   "note": "mirror between the two front doors",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H06.p025",
+   "n": 25,
+   "room": "bedW",
+   "key": "Bed",
+   "x": -5.57,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H06.p026",
+   "n": 26,
+   "room": "bedW",
+   "key": "Nightstand",
+   "x": -6.42,
+   "y": 0.0,
+   "z": 1.1,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p027",
+   "n": 27,
+   "room": "bedW",
+   "key": "Nightstand",
+   "x": -6.42,
+   "y": 0.0,
+   "z": 3.3,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p028",
+   "n": 28,
+   "room": "bedE",
+   "key": "Bed",
+   "x": 5.57,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicBed_01",
+   "source": "polyhaven",
+   "dims": [
+    1.6,
+    2.1,
+    1.4
+   ]
+  },
+  {
+   "id": "H06.p029",
+   "n": 29,
+   "room": "bedE",
+   "key": "Nightstand",
+   "x": 6.42,
+   "y": 0.0,
+   "z": 1.1,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p030",
+   "n": 30,
+   "room": "bedE",
+   "key": "Nightstand",
+   "x": 6.42,
+   "y": 0.0,
+   "z": 3.3,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "ClassicNightstand_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "H06.p031",
+   "n": 31,
+   "room": "bedW",
+   "key": "Wardrobe",
+   "x": -4.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H06.p032",
+   "n": 32,
+   "room": "bedE",
+   "key": "Wardrobe",
+   "x": 4.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "GothicCabinet_01",
+   "source": "polyhaven",
+   "dims": [
+    1.2,
+    0.6,
+    2.1
+   ]
+  },
+  {
+   "id": "H06.p033",
+   "n": 33,
+   "room": "nurW",
+   "key": "BabyCrib",
+   "x": -5.6,
+   "y": 0.0,
+   "z": -3.295,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "b945651a5fa841b7aef4ea4da81fcc39",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.65,
+    1.0
+   ]
+  },
+  {
+   "id": "H06.p034",
+   "n": 34,
+   "room": "nurE",
+   "key": "BabyCrib",
+   "x": 5.6,
+   "y": 0.0,
+   "z": -3.295,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "b945651a5fa841b7aef4ea4da81fcc39",
+   "source": "sketchfab",
+   "dims": [
+    1.2,
+    0.65,
+    1.0
+   ]
+  },
+  {
+   "id": "H06.p035",
+   "n": 35,
+   "room": "nurW",
+   "key": "ChestOfDrawers",
+   "x": -5.6,
+   "y": 0.0,
+   "z": -0.33,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H06.p036",
+   "n": 36,
+   "room": "nurE",
+   "key": "ChestOfDrawers",
+   "x": 5.6,
+   "y": 0.0,
+   "z": -0.33,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_wooden_drawer_01",
+   "source": "polyhaven",
+   "dims": [
+    0.9,
+    0.48,
+    1.0
+   ]
+  },
+  {
+   "id": "H06.p037",
+   "n": 37,
+   "room": "bath",
+   "key": "Bathtub",
+   "x": -0.6,
+   "y": 0.0,
+   "z": 3.301,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": 0.85,
+   "asset": "d06c028a89a54c469e4af9cac50606fa",
+   "source": "sketchfab",
+   "dims": [
+    1.65,
+    0.75,
+    0.62
+   ]
+  },
+  {
+   "id": "H06.p038",
+   "n": 38,
+   "room": "bath",
+   "key": "Toilet",
+   "x": 1.585,
+   "y": 0.0,
+   "z": 3.0,
+   "yaw": 270,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "6ac515a1c4154db18b5b4bd0b46d6405",
+   "source": "sketchfab",
+   "dims": [
+    0.4,
+    0.65,
+    0.8
+   ]
+  },
+  {
+   "id": "H06.p039",
+   "n": 39,
+   "room": "bath",
+   "key": "Sink",
+   "x": 1.4,
+   "y": 0.0,
+   "z": 1.815,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "a278d63585494921906ab3500c421ff7",
+   "source": "sketchfab",
+   "dims": [
+    0.55,
+    0.45,
+    0.85
+   ]
+  },
+  {
+   "id": "H06.p040",
+   "n": 40,
+   "room": "bath",
+   "key": "Mirror",
+   "x": 1.4,
+   "y": 1.1,
+   "z": 1.585,
+   "yaw": 0,
+   "role": "mirror",
+   "note": "the mirror that shows the 'other' half of the house",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "ornate_mirror_01",
+   "source": "polyhaven",
+   "dims": [
+    0.6,
+    0.05,
+    0.9
+   ]
+  },
+  {
+   "id": "H06.p041",
+   "n": 41,
+   "room": "attic",
+   "key": "ChestWorn",
+   "x": 6.37,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "role": "puzzle container",
+   "note": "THE LOCKET BOX: a double music box with two keyholes; Sequence panel = 6 brass tabs on its lid",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "Res_Sto_Chest_Wood_Worn_08 (Fab Saloon Interior)",
+   "source": "owned",
+   "dims": [
+    0.9,
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "H06.p042",
+   "n": 42,
+   "room": "attic",
+   "key": "Suitcase",
+   "x": -6.52,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 90,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "vintage_suitcase",
+   "source": "polyhaven",
+   "dims": [
+    0.65,
+    0.2,
+    0.45
+   ]
+  },
+  {
+   "id": "H06.p043",
+   "n": 43,
+   "room": "attic",
+   "key": "CellarCrates",
+   "x": -4.0,
+   "y": 0.0,
+   "z": 3.17,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "stack of crates with a crouch gap behind (hiding spot)",
+   "source": "procedural",
+   "dims": [
+    1.4,
+    0.9,
+    1.2
+   ]
+  },
+  {
+   "id": "H06.p044",
+   "n": 44,
+   "room": "attic",
+   "key": "RockingHorse",
+   "x": 4.0,
+   "y": 0.0,
+   "z": -3.445,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "5168ce9d45a3401ea6fe4d92f17bb332",
+   "source": "sketchfab",
+   "dims": [
+    0.9,
+    0.35,
+    0.7
+   ]
+  },
+  {
+   "id": "H06.p045",
+   "n": 45,
+   "room": "attic",
+   "key": "TableSmall",
+   "x": -3.0,
+   "y": 0.0,
+   "z": -3.37,
+   "yaw": 0,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "small_wooden_table_01",
+   "source": "polyhaven",
+   "dims": [
+    0.7,
+    0.5,
+    0.72
+   ]
+  },
+  {
+   "id": "H06.p046",
+   "n": 46,
+   "room": "attic",
+   "key": "CardboardBox",
+   "x": 2.5,
+   "y": 0.0,
+   "z": 3.42,
+   "yaw": 180,
+   "role": "",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "asset": "cardboard_box_01",
+   "source": "polyhaven",
+   "dims": [
+    0.5,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "H06.p047",
+   "n": 47,
+   "room": "landing",
+   "key": "ShrineNiche",
+   "x": 1.0,
+   "y": 0.9,
+   "z": -3.525,
+   "yaw": 0,
+   "role": "shrine",
+   "note": "",
+   "on": null,
+   "mat": null,
+   "scale": null,
+   "hung": true,
+   "asset": "carved wall niche 0.6x0.25x0.9 with candle + diamond symbol; hidden unless shrine",
+   "source": "procedural",
+   "dims": [
+    0.6,
+    0.25,
+    0.9
+   ]
+  }
+ ],
+ "anchors": [
+  {
+   "kind": "item-spot",
+   "room": "kitE",
+   "x": 6.27,
+   "y": 1.4,
+   "z": -1.5,
+   "yaw": 270,
+   "note": "east range mantel"
+  },
+  {
+   "kind": "note-spot",
+   "room": "kitE",
+   "x": 3.9,
+   "y": 0.76,
+   "z": -2.0,
+   "yaw": 0,
+   "note": "Ida's note: 'Ada moved the clock again' (note 1/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bedW",
+   "x": -5.57,
+   "y": 0.0,
+   "z": 2.2,
+   "yaw": 90,
+   "note": "under the Ada's bed -> HidingSpot on H06.p025 (Bed) - crouched"
+  },
+  {
+   "kind": "hiding",
+   "room": "bedE",
+   "x": 4.6,
+   "y": 0.0,
+   "z": 0.39,
+   "yaw": 0,
+   "note": "Ida's wardrobe -> HidingSpot on H06.p032 (Wardrobe)"
+  },
+  {
+   "kind": "note-spot",
+   "room": "nurW",
+   "x": -5.5,
+   "y": 1.0,
+   "z": -0.33,
+   "yaw": 180,
+   "note": "midwife's letter, 1951 (note 2/3)"
+  },
+  {
+   "kind": "hiding",
+   "room": "bath",
+   "x": -0.6,
+   "y": 0.0,
+   "z": 3.301,
+   "yaw": 180,
+   "note": "behind the bath curtain -> HidingSpot on H06.p037 (Bathtub)"
+  },
+  {
+   "kind": "puzzle",
+   "room": "attic",
+   "x": 6.37,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "note": "Spot the differences: 3-5 objects differ between the halves (picked per match from DIFFERENCE candidates). Each difference shows a symbol when found; press the symbols on the box in the order the cot-room rhyme gives. SequencePuzzle (6 symbols, 4 in the answer)."
+  },
+  {
+   "kind": "container",
+   "room": "attic",
+   "x": 6.37,
+   "y": 0.0,
+   "z": 0.0,
+   "yaw": 270,
+   "note": "Silver locket"
+  },
+  {
+   "kind": "hiding",
+   "room": "attic",
+   "x": -4.0,
+   "y": 0.0,
+   "z": 3.17,
+   "yaw": 180,
+   "note": "behind the trunks (attic, west end) -> HidingSpot on H06.p043 (CellarCrates) - crouched"
+  },
+  {
+   "kind": "note-spot",
+   "room": "attic",
+   "x": -3.1,
+   "y": 0.72,
+   "z": -3.37,
+   "yaw": 0,
+   "note": "the cot-room rhyme (note 3/3)"
+  },
+  {
+   "kind": "item-spot",
+   "room": "attic",
+   "x": 2.5,
+   "y": 0.4,
+   "z": 3.42,
+   "yaw": 180,
+   "note": "box of matching dresses"
+  },
+  {
+   "kind": "item-spot",
+   "room": "kitW",
+   "x": -4.0,
+   "y": 0.76,
+   "z": -2.0,
+   "yaw": 0,
+   "note": "west kitchen table (the 'wrong' one)"
+  },
+  {
+   "kind": "shrine",
+   "room": "landing",
+   "x": 1.0,
+   "y": 0.0,
+   "z": -3.525,
+   "yaw": 0,
+   "note": "Rite of Return point (active only if this house is a shrine this match)"
+  }
+ ],
+ "exterior": [
+  "TWO yellow front doors side by side: '7A' (west) screwed shut from inside, '7B' (east) is the real door",
+  "twin bays, twin dormers, twin chimneys - perfectly mirrored",
+  "DIFFERENCE (exterior, always on): the east gable window is bricked up, the west one is not",
+  "two milk crates, two boot scrapers, two doorbells - one doorbell works"
+ ],
+ "plot": [
+  "Front: two identical 4 m gardens split by a low wall, each with one standard rose (one dead)",
+  "Back: one shared garden, two identical sheds, two washing lines (one with a child's dress, one empty)"
+ ],
+ "puzzle": [
+  "LOCK FIRST: in the long attic the double music box sits on a trunk with 6 brass symbol tabs on its lid.",
+  "Per match pick 3-5 DIFFERENCE candidates (marked 'DIFFERENCE candidate' in props + a pool of 12): clock hands, a missing photo figure, the phone, a cot blanket colour, a drawer left open, a mirror that doesn't reflect, etc.",
+  "When a player looks at a difference for 2 s it shows a faint symbol (one of the 6).",
+  "The cot-room rhyme (note 3/3) gives the order; press the tabs on the box (SequencePuzzle, 4 steps).",
+  "Wrong: both halves' lights flicker and every clock in the house strikes 2."
+ ],
+ "night_changes": [
+  "the west kitchen hearth (decoy) is LIT and the east (real) one is cold for 30 s",
+  "the twins' cots swap sides",
+  "the screwed-shut door 7A is open a crack"
+ ],
+ "audio": [
+  "musicbox: the double music box plays two lullabies at once, slightly out of tune"
+ ],
+ "references": [
+  "https://en.wikipedia.org/wiki/Semi-detached"
+ ],
+ "image_prompt": "two identical Victorian cream-limewashed brick cottages joined as one perfectly symmetrical house, two yellow front doors side by side, twin bay windows, twin dormers, twin gable chimneys, eerie symmetry, photorealistic, late 1970s rural English village, overcast autumn dusk, damp, muted greens and greys, 35mm film still, Phasmophobia / Resident Evil Village mood, no people, eye-level, 16:9"
+}
